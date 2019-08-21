@@ -19,9 +19,9 @@ const meowOptions = {
   flags: {
     boilerplate: {
       type: 'string',
-      alias: 'b',
-    },
-  },
+      alias: 'b'
+    }
+  }
 };
 
 const cli = meow(helpMessage, meowOptions);

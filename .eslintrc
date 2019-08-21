@@ -1,5 +1,8 @@
 {
   "extends": "prettier",
+  "parserOptions": {
+    "ecmaVersion": 2019
+  },
   "env": {
     "browser": true,
     "commonjs": true,
