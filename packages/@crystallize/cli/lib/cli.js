@@ -5,14 +5,16 @@ const fs = require('fs-extra');
 const meow = require('meow');
 const path = require('path');
 
-const { createBoilerplateProject } = require('./boilerplate');
+const { boilerplates, createBoilerplateProject } = require('./boilerplate');
 
 const helpMessage = `
   Usage
     $ crystallize <project-name>
 
   Options
-    --boilerplate, -b <boilerplate-name>  Use a boilerplate instead of a template
+    --boilerplate, -b <${Object.keys(boilerplates).join(
+      '|'
+    )}>  Create a project with a specific boilerplate
 `;
 
 const meowOptions = {
@@ -55,4 +57,11 @@ if (boilerplate) {
       console.log(err);
       process.exit(1);
     });
+} else {
+  // TODO: Template
+  console.log(
+    chalk.blue('TODO'),
+    'We are currently working on adding templates, please use the "-b" flag for the time being'
+  );
+  cli.showHelp();
 }

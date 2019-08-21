@@ -10,7 +10,7 @@ const remote = 'https://github.com/CrystallizeAPI/';
 const boilerplates = {
   react: `${remote}crystallize-frontend-boilerplate`,
   'react-native': `${remote}crystallize-react-native-boilerplate`,
-  flutter: `${remote}crystallize-flutter-boilerplate`,
+  flutter: `${remote}crystallize-flutter-boilerplate`
 };
 
 const createBoilerplateProject = async (
@@ -35,7 +35,7 @@ const createBoilerplateProject = async (
   console.log(chalk.blue('info'), `Cloning ${remote}`);
 
   await git().clone(remote, projectPath, {
-    shallow: true,
+    shallow: true
   });
 
   const gitPath = path.resolve(projectPath, '.git');
@@ -50,5 +50,6 @@ const createBoilerplateProject = async (
 };
 
 module.exports = {
-  createBoilerplateProject,
+  boilerplates,
+  createBoilerplateProject
 };
