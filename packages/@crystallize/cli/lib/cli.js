@@ -6,6 +6,7 @@ const meow = require('meow');
 const path = require('path');
 
 const { boilerplates, createBoilerplateProject } = require('./boilerplate');
+const { createTemplateProject } = require('./template');
 
 const helpMessage = `
   Usage
@@ -58,10 +59,14 @@ if (boilerplate) {
       process.exit(1);
     });
 } else {
-  // TODO: Template
-  console.log(
-    chalk.blue('TODO'),
-    'We are currently working on adding templates, please use the "-b" flag for the time being'
-  );
-  cli.showHelp();
+  createTemplateProject(projectName, projectPath)
+    .then(() => {
+      console.log(chalk.green('success'), 'Done! Have fun out there!');
+      process.exit(0);
+    })
+    .catch(err => {
+      console.log(chalk.red('error'), err.message);
+      console.log(err);
+      process.exit(1);
+    });
 }

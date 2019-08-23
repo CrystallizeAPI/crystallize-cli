@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "chalk": "^2.4.2",
+    "cross-spawn": "^6.0.5",
     "fs-extra": "^8.1.0",
+    "inquirer": "^6.5.1",
     "meow": "^5.0.0",
     "simple-git": "^1.124.0"
   }
