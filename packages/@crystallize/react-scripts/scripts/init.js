@@ -4,14 +4,16 @@ const chalk = require('chalk');
 const fs = require('fs-extra');
 const path = require('path');
 
-const init = (appPath, appName) => {
+const init = (projectPath, projectName, options) => {
+  const { useNow, useTypescript } = options;
+
   const { name: ownPackageName } = require(path.resolve(
     __dirname,
     '..',
     'package.json'
   ));
-  const ownPath = path.resolve(appPath, 'node_modules', ownPackageName);
-  const appPackage = require(path.resolve(appPath, 'package.json'));
+  const ownPath = path.resolve(projectPath, 'node_modules', ownPackageName);
+  const appPackage = require(path.resolve(projectPath, 'package.json'));
 
   appPackage.scripts = {
     build: 'next build',
@@ -20,10 +22,6 @@ const init = (appPath, appName) => {
 
   appPackage.dependencies = appPackage.dependencies || {};
   appPackage.devDependencies = appPackage.devDependencies || {};
-
-  // Options
-  const useTypescript = appPackage.dependencies['typescript'];
-  const useNow = appPackage.dependencies['now'];
 
   if (useNow) {
     appPackage.scripts = {
@@ -34,7 +32,7 @@ const init = (appPath, appName) => {
   }
 
   fs.writeFileSync(
-    path.resolve(appPath, 'package.json'),
+    path.resolve(projectPath, 'package.json'),
     JSON.stringify(appPackage, null, 2)
   );
 
@@ -52,7 +50,7 @@ const init = (appPath, appName) => {
     return;
   }
 
-  fs.copySync(templatePath, appPath);
+  fs.copySync(templatePath, projectPath);
 };
 
 module.exports = init;

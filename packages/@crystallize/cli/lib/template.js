@@ -18,6 +18,25 @@ const templates = [
 const rootQuestions = [
   {
     type: 'list',
+    name: 'shopToUse',
+    message: 'Which shop do you want to use?',
+    choices: [
+      {
+        value: 'demo',
+        name: 'The demo shop - prefilled with lots of data'
+      },
+      'My very own tenant please'
+    ]
+  },
+  {
+    type: 'input',
+    name: 'tenantId',
+    message: 'Your tenant ID',
+    default: 'demo',
+    when: answers => answers.shopToUse !== 'demo'
+  },
+  {
+    type: 'list',
     name: 'template',
     message: 'Which template would you like to use?',
     choices: templates
@@ -26,8 +45,18 @@ const rootQuestions = [
 
 const reactTemplateQuestions = [
   {
+    type: 'list',
+    name: 'language',
+    message: 'Which language would you like to use?',
+    default: 'javascript',
+    choices: [
+      { name: 'JavaScript', value: 'javascript' },
+      { name: 'TypeScript', value: 'typescript' }
+    ]
+  },
+  {
     type: 'confirm',
-    name: 'now',
+    name: 'useNow',
     message: 'Use Now (zeit.co/now) for deployments?',
     default: true
   }
@@ -42,7 +71,7 @@ const createTemplateProject = async (projectName, projectPath) => {
 
   const template = templates.find(t => t.value === answers.template);
   if (template.type === 'react') {
-    await createReactProject(projectName, projectPath);
+    await createReactProject(projectName, answers.tenantId);
   } else {
     console.error(chalk.red('error'), 'Unknown template type');
     process.exit(1);
@@ -54,8 +83,14 @@ const createTemplateProject = async (projectName, projectPath) => {
  *
  * @param {string} projectName The name of the project
  */
-const createReactProject = async projectName => {
+const createReactProject = async (projectName, tenantId) => {
   const answers = await inquirer.prompt(reactTemplateQuestions);
+  const options = {
+    tenantId,
+    useNow: answers.useNow,
+    useTypescript: answers.language === 'typescript'
+  };
+
   const root = path.resolve(projectName);
 
   fs.ensureDirSync(projectName);
@@ -80,9 +115,12 @@ const createReactProject = async projectName => {
   process.chdir(root);
 
   // Dependencies required to bootstrap the project
-  const dependencies = []; // Skipping '@crystallize/react-scripts' until published
-  if (answers.now) {
-    dependencies.push('now');
+  const dependencyFile = require('../dependencies.json');
+  const dependencies = Object.keys(dependencyFile); // Skipping '@crystallize/react-scripts' until published
+  if (options.useNow) {
+    dependencies.push('now', '@nerdenough/mjml-ncc-bundle');
+  } else {
+    dependencies.push('express', 'cookie-parser');
   }
 
   // Install dependencies
@@ -113,7 +151,7 @@ const createReactProject = async projectName => {
     'node_modules/@crystallize/react-scripts/scripts/init.js'
   );
   const init = require(scriptsPath);
-  init(root, projectName);
+  init(root, projectName, options);
 };
 
 module.exports = {
