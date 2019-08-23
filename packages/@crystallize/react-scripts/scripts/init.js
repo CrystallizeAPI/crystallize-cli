@@ -1,8 +1,25 @@
 'use strict';
 
 const chalk = require('chalk');
+const execSync = require('child_process').execSync;
 const fs = require('fs-extra');
 const path = require('path');
+
+const initialiseRepository = () => {
+  console.log(chalk.blue('info'), 'Initialising git repository');
+  try {
+    execSync('git init', { stdio: 'ignore' });
+    execSync('git add -A', { stdio: 'ignore' });
+    execSync('git commit -m "Initial commit"', { stdio: 'ignore' });
+  } catch (err) {
+    // Perhaps git is not installed
+    console.error(
+      chalk.yellow('warning'),
+      'Unable to initialise a git repository, skipping'
+    );
+    return false;
+  }
+};
 
 const init = (projectPath, projectName, options) => {
   const { useNow, useTypescript } = options;
@@ -52,6 +69,8 @@ const init = (projectPath, projectName, options) => {
 
   fs.copySync(templatePath, projectPath);
   configureTemplate(projectPath, options);
+
+  initialiseRepository();
 };
 
 /**
