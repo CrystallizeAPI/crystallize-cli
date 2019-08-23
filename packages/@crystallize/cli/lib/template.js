@@ -64,11 +64,6 @@ const reactTemplateQuestions = [
 
 const createTemplateProject = async (projectName, projectPath) => {
   const answers = await inquirer.prompt(rootQuestions);
-  console.log(
-    chalk.blue('info'),
-    `Creating project "${projectName}" with template "${answers.template}"`
-  );
-
   const template = templates.find(t => t.value === answers.template);
   if (template.type === 'react') {
     await createReactProject(projectName, answers.tenantId);
@@ -99,7 +94,6 @@ const createReactProject = async (projectName, tenantId) => {
     `Creating your new Crystallize project in ${chalk.green(root)}`
   );
 
-  console.log(chalk.blue('info'), 'Creating initial package.json');
   const packageJson = {
     name: projectName,
     version: '0.1.0',

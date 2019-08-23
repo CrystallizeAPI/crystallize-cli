@@ -3,6 +3,7 @@
 const chalk = require('chalk');
 const execSync = require('child_process').execSync;
 const fs = require('fs-extra');
+const os = require('os');
 const path = require('path');
 
 const initialiseRepository = () => {
@@ -68,7 +69,9 @@ const init = (projectPath, projectName, options) => {
   }
 
   fs.copySync(templatePath, projectPath);
+
   configureTemplate(projectPath, options);
+  configureEnvironment(projectPath, options);
 
   initialiseRepository();
 };
@@ -80,6 +83,8 @@ const init = (projectPath, projectName, options) => {
  * @param {object} options
  */
 const configureTemplate = (projectPath, options) => {
+  console.log(chalk.blue('info'), 'Configuring project template');
+
   // Remove unnecessary server files
   if (options.useNow) {
     fs.removeSync(path.resolve(projectPath, 'server'));
@@ -93,6 +98,49 @@ const configureTemplate = (projectPath, options) => {
     path.resolve(projectPath, 'gitignore'),
     path.resolve(projectPath, '.gitignore')
   );
+};
+
+/**
+ * Configures the environment variables for the project.
+ *
+ * @param {string} projectPath
+ * @param {object} options
+ */
+const configureEnvironment = (projectPath, options) => {
+  console.log(chalk.blue('info'), 'Configuring project environment');
+
+  const envVars = {
+    GTM_ID: '',
+    CRYSTALLIZE_GRAPH_URL_BASE: 'https://graph.crystallize.com',
+    CRYSTALLIZE_TENANT_ID: 'demo',
+    SECRET: 'secret'
+  };
+
+  if (options.tenantId) {
+    envVars.CRYSTALLIZE_TENANT_ID = options.tenantId;
+  }
+
+  // Update .env file
+  const envFileVars = Object.keys(envVars).map(key => `${key}=${envVars[key]}`);
+  fs.writeFileSync(
+    path.resolve(projectPath, '.env'),
+    envFileVars.join(os.EOL) + os.EOL
+  );
+
+  if (options.useNow) {
+    // Update now.json
+    const nowJson = fs.readFileSync(
+      path.resolve(projectPath, 'now.json'),
+      'utf-8'
+    );
+    const nowJsonObj = JSON.parse(nowJson);
+    nowJsonObj.env = envVars;
+    fs.writeFileSync(
+      path.resolve(projectPath, 'now.json'),
+      JSON.stringify(nowJsonObj, null, 2) + os.EOL,
+      'utf-8'
+    );
+  }
 };
 
 module.exports = init;
