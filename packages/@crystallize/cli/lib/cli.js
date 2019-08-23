@@ -4,11 +4,16 @@ const chalk = require('chalk');
 const fs = require('fs-extra');
 const meow = require('meow');
 const path = require('path');
+const logo = require('../logo');
 
 const { boilerplates, createBoilerplateProject } = require('./boilerplate');
 const { createTemplateProject } = require('./template');
 
 const helpMessage = `
+  ${logo}
+
+  Crystallize CLI
+
   Usage
     $ crystallize <project-name>
 
