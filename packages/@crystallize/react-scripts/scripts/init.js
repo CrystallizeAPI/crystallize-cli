@@ -51,6 +51,29 @@ const init = (projectPath, projectName, options) => {
   }
 
   fs.copySync(templatePath, projectPath);
+  configureTemplate(projectPath, options);
+};
+
+/**
+ * Configures the project by adding, removing, and renaming files as needed.
+ *
+ * @param {string} projectPath
+ * @param {object} options
+ */
+const configureTemplate = (projectPath, options) => {
+  // Remove unnecessary server files
+  if (options.useNow) {
+    fs.removeSync(path.resolve(projectPath, 'server'));
+  } else {
+    fs.removeSync(path.resolve(projectPath, 'pages', 'api'));
+    fs.removeSync(path.resolve(projectPath, 'now.json'));
+  }
+
+  // Rename gitignore to .gitignore
+  fs.moveSync(
+    path.resolve(projectPath, 'gitignore'),
+    path.resolve(projectPath, '.gitignore')
+  );
 };
 
 module.exports = init;
