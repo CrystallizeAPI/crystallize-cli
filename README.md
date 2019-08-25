@@ -13,14 +13,20 @@ npm install -g @crystallize/cli
 
 ## Usage
 
+To create a new project with Crystallize simply run the following command:
+
 ```sh
 crystallize <project-name>
 ```
 
+This will walk you through creating a project, allowing you to choose which
+template and preferences you want to use.
+
 ### Boilerplate
 
-You can initialise a project through one of the various boilerplates provided by
-Crystallize.
+You can also initialise a project through one of the various boilerplates
+provided by Crystallize. The boilerplate can be used in place of a template but
+does not provide any customisation options.
 
 ```sh
 crystallize <project-name> -b react
