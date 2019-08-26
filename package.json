@@ -1,6 +1,8 @@
 {
-  "name": "root",
   "private": true,
+  "workspaces": [
+    "packages/@crystallize/*"
+  ],
   "scripts": {
     "lerna": "lerna publish -m \":rocket: publish\""
   },
