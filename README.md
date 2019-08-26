@@ -9,7 +9,7 @@ You'll need to have [Node.js][7] (>=8) installed to use the CLI tool. Then, run
 the following command in your terminal:
 
 ```sh
-npx crystallize <project-name>
+npx @crystallize/cli <project-name>
 ```
 
 This will walk you through creating a project, allowing you to choose which
