@@ -68,11 +68,12 @@ const reactTemplateQuestions = [
     message: 'Which features would you like to use?',
     default: 'javascript',
     choices: [
-      {
-        name: 'Use TypeScript',
-        value: 'typescript',
-        checked: defaultOptions.react && defaultOptions.react.typescript
-      },
+      // TODO: TypeScript template
+      // {
+      //   name: 'Use TypeScript',
+      //   value: 'typescript',
+      //   checked: defaultOptions.react && defaultOptions.react.typescript
+      // },
       {
         name: 'Use Now (https://zeit.co/now) for deployments',
         value: 'useNow',
