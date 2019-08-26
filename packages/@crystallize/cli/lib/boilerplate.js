@@ -56,6 +56,5 @@ const createBoilerplateProject = async (
 };
 
 module.exports = {
-  boilerplates,
   createBoilerplateProject
 };

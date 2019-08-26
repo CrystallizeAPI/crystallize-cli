@@ -2,11 +2,12 @@
 
 const { logError, logSuccess } = require('@crystallize/cli-utils');
 const fs = require('fs-extra');
+const inquirer = require('inquirer');
 const meow = require('meow');
 const path = require('path');
 const logo = require('../logo');
 
-const { boilerplates, createBoilerplateProject } = require('./boilerplate');
+const { createBoilerplateProject } = require('./boilerplate');
 const { createTemplateProject } = require('./template');
 
 const helpMessage = `
