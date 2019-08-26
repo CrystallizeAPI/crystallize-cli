@@ -13,6 +13,14 @@ const boilerplates = {
   flutter: `${remote}crystallize-flutter-boilerplate`
 };
 
+/**
+ * Clones the remote of the specified boilerplate into the project path and
+ * reinitialises the repository with an initial commit.
+ *
+ * @param {string} projectName The ame of the project
+ * @param {string} projectPath The path of the project
+ * @param {string} boilerplate The key of the boilerplate to use
+ */
 const createBoilerplateProject = async (
   projectName,
   projectPath,

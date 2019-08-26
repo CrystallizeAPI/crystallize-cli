@@ -62,6 +62,13 @@ const reactTemplateQuestions = [
   }
 ];
 
+/**
+ * Determines the type of project to be created and calls the corresponding
+ * setup script for the matching template.
+ *
+ * @param {string} projectName The name of the project
+ * @param {string} projectPath The path of the project
+ */
 const createTemplateProject = async (projectName, projectPath) => {
   const answers = await inquirer.prompt(rootQuestions);
   const template = templates.find(t => t.value === answers.template);
