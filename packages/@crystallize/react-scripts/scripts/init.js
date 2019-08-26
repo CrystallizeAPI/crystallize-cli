@@ -1,6 +1,6 @@
 'use strict';
 
-const { logInfo, logWarning } = require('@crystallize/cli-utils');
+const { logError, logInfo, logWarning } = require('@crystallize/cli-utils');
 const chalk = require('chalk');
 const execSync = require('child_process').execSync;
 const fs = require('fs-extra');

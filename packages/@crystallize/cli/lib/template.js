@@ -38,7 +38,7 @@ const rootQuestions = [
   {
     type: 'input',
     name: 'tenantId',
-    message: 'Your tenant ID',
+    message: 'Your tenant ID (https://crystallize.com/signup)',
     default: 'demo',
     when: answers => answers.shopToUse !== 'demo'
   },
@@ -52,20 +52,17 @@ const rootQuestions = [
 
 const reactTemplateQuestions = [
   {
-    type: 'list',
-    name: 'language',
+    type: 'checkbox',
+    name: 'options',
     message: 'Which language would you like to use?',
     default: 'javascript',
     choices: [
-      { name: 'JavaScript', value: 'javascript' },
-      { name: 'TypeScript', value: 'typescript' }
+      { name: 'Use TypeScript', value: 'typescript' },
+      {
+        name: 'Use Now (https://zeit.co/now) for deployments',
+        value: 'useNow'
+      }
     ]
-  },
-  {
-    type: 'confirm',
-    name: 'useNow',
-    message: 'Use Now (zeit.co/now) for deployments?',
-    default: true
   }
 ];
 
@@ -94,10 +91,15 @@ const createTemplateProject = async (projectName, flags) => {
  */
 const createReactProject = async (projectName, tenantId, flags) => {
   const answers = await inquirer.prompt(reactTemplateQuestions);
-  const options = {
+  const options = answers.options.reduce((obj, item) => {
+    obj[item] = true;
+    return obj;
+  }, {});
+
+  const config = {
     tenantId,
-    useNow: answers.useNow,
-    useTypescript: answers.language === 'typescript'
+    useNow: options.useNow,
+    useTypescript: options.typescript
   };
 
   const root = path.resolve(projectName);
@@ -122,7 +124,7 @@ const createReactProject = async (projectName, tenantId, flags) => {
   // Dependencies required to bootstrap the project
   const dependencyFile = require('../dependencies.json');
   const dependencies = Object.keys(dependencyFile); // Skipping '@crystallize/react-scripts' until published
-  if (options.useNow) {
+  if (config.useNow) {
     dependencies.push('now', '@nerdenough/mjml-ncc-bundle');
   } else {
     dependencies.push('express', 'cookie-parser');
@@ -146,7 +148,7 @@ const createReactProject = async (projectName, tenantId, flags) => {
     'node_modules/@crystallize/react-scripts/scripts/init.js'
   );
   const init = require(scriptsPath);
-  init(root, options);
+  init(root, config);
 };
 
 /**
