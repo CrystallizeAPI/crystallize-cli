@@ -18,10 +18,8 @@ const helpMessage = `
     $ crystallize <project-name>
 
   Options
-    --boilerplate, -b <${Object.keys(boilerplates).join(
-      '|'
-    )}>  Create a project with a specific boilerplate
-    --use-npm Use npm instead of yarn
+    --boilerplate, -b <name>  Create a project with a specific boilerplate
+    --use-npm                 Use npm instead of yarn
 `;
 
 const meowOptions = {

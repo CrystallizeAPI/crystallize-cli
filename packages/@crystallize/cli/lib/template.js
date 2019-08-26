@@ -65,7 +65,7 @@ const reactTemplateQuestions = [
   {
     type: 'checkbox',
     name: 'options',
-    message: 'Which language would you like to use?',
+    message: 'Which features would you like to use?',
     default: 'javascript',
     choices: [
       {
