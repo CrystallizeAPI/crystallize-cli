@@ -159,7 +159,9 @@ const createReactProject = async (
 
   // Dependencies required to bootstrap the project
   const dependencyFile = require('../dependencies.json');
-  const dependencies = Object.keys(dependencyFile); // Skipping '@crystallize/react-scripts' until published
+  const dependencies = Object.keys(dependencyFile).concat(
+    '@crystallize/react-scripts'
+  );
   if (config.useNow) {
     dependencies.push('now', '@nerdenough/mjml-ncc-bundle');
   } else {
