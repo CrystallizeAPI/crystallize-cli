@@ -3,24 +3,20 @@
 Bootstrap a React app running on the [headless ecommerce][1] and GraphQL based
 [Product Information Management][2] service [Crystallize][3].
 
-## Installation
-
-```sh
-yarn global add @crystallize/cli
-# or
-npm install -g @crystallize/cli
-```
-
 ## Usage
 
-To create a new project with Crystallize simply run the following command:
-
 ```sh
-crystallize <project-name>
+npx crystallize <project-name>
 ```
 
 This will walk you through creating a project, allowing you to choose which
 template and preferences you want to use.
+
+### Templates
+
+The default mode of the Crystallize CLI is to use a template. Each template has
+different options that can be chosen to configure the initial project to suit
+your needs.
 
 ### Boilerplate
 

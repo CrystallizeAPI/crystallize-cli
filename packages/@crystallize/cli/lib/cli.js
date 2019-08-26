@@ -1,6 +1,6 @@
 'use strict';
 
-const chalk = require('chalk');
+const { logError, logSuccess } = require('@crystallize/cli-utils');
 const fs = require('fs-extra');
 const meow = require('meow');
 const path = require('path');
@@ -43,35 +43,28 @@ const projectName = cli.input[0];
 const projectPath = path.resolve(projectName);
 
 if (fs.existsSync(projectPath)) {
-  console.error(
-    chalk.red('error'),
-    'A folder with this project name already exists'
-  );
+  logError('A folder with this project name already exists');
   return process.exit(0);
 }
 
 const { boilerplate } = cli.flags;
 
+const handleSuccess = () => {
+  logSuccess('Done! Have fun out there!');
+  process.exit(0);
+};
+
+const handleError = err => {
+  logError(err.message, err);
+  process.exit(1);
+};
+
 if (boilerplate) {
   createBoilerplateProject(projectName, projectPath, boilerplate)
-    .then(() => {
-      console.log(chalk.green('success'), 'Done! Have fun out there!');
-      process.exit(0);
-    })
-    .catch(err => {
-      console.log(chalk.red('error'), err.message);
-      console.log(err);
-      process.exit(1);
-    });
+    .then(handleSuccess)
+    .catch(handleError);
 } else {
   createTemplateProject(projectName, projectPath)
-    .then(() => {
-      console.log(chalk.green('success'), 'Done! Have fun out there!');
-      process.exit(0);
-    })
-    .catch(err => {
-      console.log(chalk.red('error'), err.message);
-      console.log(err);
-      process.exit(1);
-    });
+    .then(handleSuccess)
+    .catch(handleError);
 }

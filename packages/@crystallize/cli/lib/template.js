@@ -1,5 +1,6 @@
 'use strict';
 
+const { logDebug, logError, logInfo } = require('@crystallize/cli-utils');
 const chalk = require('chalk');
 const fs = require('fs-extra');
 const inquirer = require('inquirer');
@@ -75,7 +76,7 @@ const createTemplateProject = async (projectName, projectPath) => {
   if (template.type === 'react') {
     await createReactProject(projectName, answers.tenantId);
   } else {
-    console.error(chalk.red('error'), 'Unknown template type');
+    logError(`Unknown template type: "${template.type}`);
     process.exit(1);
   }
 };
@@ -96,10 +97,7 @@ const createReactProject = async (projectName, tenantId) => {
   const root = path.resolve(projectName);
 
   fs.ensureDirSync(projectName);
-  console.log(
-    chalk.blue('info'),
-    `Creating your new Crystallize project in ${chalk.green(root)}`
-  );
+  logInfo(`Creating your new Crystallize project in ${chalk.green(root)}`);
 
   const packageJson = {
     name: projectName,
@@ -125,10 +123,7 @@ const createReactProject = async (projectName, tenantId) => {
   }
 
   // Install dependencies
-  console.log(
-    chalk.blue('info'),
-    `Installing dependencies: ${dependencies.join(', ')}`
-  );
+  logInfo(`Installing dependencies: ${dependencies.join(', ')}`);
   spawn.sync(
     'npm',
     ['install', '--save', '--loglevel', 'error'].concat(dependencies),
@@ -137,10 +132,7 @@ const createReactProject = async (projectName, tenantId) => {
 
   if (process.env.DEV) {
     // Link the package instead of npm install
-    console.log(
-      chalk.blue('dev'),
-      'Running "npm link @crystallize/react-scripts"'
-    );
+    logDebug('Running "npm link @crystallize/react-scripts"');
     spawn.sync('npm', ['link', '@crystallize/react-scripts'], {
       stdio: 'inherit'
     });
@@ -152,7 +144,7 @@ const createReactProject = async (projectName, tenantId) => {
     'node_modules/@crystallize/react-scripts/scripts/init.js'
   );
   const init = require(scriptsPath);
-  init(root, projectName, options);
+  init(root, options);
 };
 
 module.exports = {

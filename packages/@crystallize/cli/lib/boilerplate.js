@@ -1,6 +1,6 @@
 'use strict';
 
-const chalk = require('chalk');
+const { logError, logInfo } = require('@crystallize/cli-utils');
 const fs = require('fs-extra');
 const git = require('simple-git/promise');
 const path = require('path');
@@ -28,19 +28,17 @@ const createBoilerplateProject = async (
 ) => {
   const remote = boilerplates[boilerplate];
   if (!remote) {
-    console.log(
-      chalk.red('error'),
+    logError(
       `The boilerplate "${boilerplate}" does not exist, possible options include:`,
       `"${Object.keys(boilerplates).join('", "')}"`
     );
     return process.exit(0);
   }
 
-  console.log(
-    chalk.blue('info'),
+  logInfo(
     `Creating project "${projectName}" with boilerplate "${boilerplate}"`
   );
-  console.log(chalk.blue('info'), `Cloning ${remote}`);
+  logInfo(`Cloning ${remote}`);
 
   await git().clone(remote, projectPath, {
     shallow: true
@@ -48,10 +46,10 @@ const createBoilerplateProject = async (
 
   const gitPath = path.resolve(projectPath, '.git');
 
-  console.log(chalk.blue('info'), `Removing ${gitPath}`);
+  logInfo(`Removing ${gitPath}`);
   fs.removeSync(gitPath);
 
-  console.log(chalk.blue('info'), `Initialising repo!`);
+  logInfo(`Initialising repo!`);
   await git(projectPath).init();
   await git(projectPath).add('-A');
   return git(projectPath).commit('Initial commit');

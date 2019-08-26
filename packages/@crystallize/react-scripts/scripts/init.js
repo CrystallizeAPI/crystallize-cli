@@ -1,28 +1,34 @@
 'use strict';
 
+const { logInfo, logWarning } = require('@crystallize/cli-utils');
 const chalk = require('chalk');
 const execSync = require('child_process').execSync;
 const fs = require('fs-extra');
 const os = require('os');
 const path = require('path');
 
+/**
+ * Initiales a new git repository with an initial commit.
+ */
 const initialiseRepository = () => {
-  console.log(chalk.blue('info'), 'Initialising git repository');
+  logInfo('Initialising git repository');
   try {
     execSync('git init', { stdio: 'ignore' });
     execSync('git add -A', { stdio: 'ignore' });
     execSync('git commit -m "Initial commit"', { stdio: 'ignore' });
   } catch (err) {
     // Perhaps git is not installed
-    console.error(
-      chalk.yellow('warning'),
-      'Unable to initialise a git repository, skipping'
-    );
+    logWarning('Unable to initialise a git repository, skipping');
     return false;
   }
 };
 
-const init = (projectPath, projectName, options) => {
+/**
+ *
+ * @param {string} projectPath The path of the project
+ * @param {object} options Options for initial project config
+ */
+const init = (projectPath, options) => {
   const { useNow, useTypescript } = options;
 
   const { name: ownPackageName } = require(path.resolve(
@@ -60,8 +66,7 @@ const init = (projectPath, projectName, options) => {
   );
 
   if (!fs.existsSync(templatePath)) {
-    console.log(
-      chalk.red('error'),
+    logError(
       'Could not locate the supplied template:',
       chalk.green(templatePath)
     );
@@ -83,7 +88,7 @@ const init = (projectPath, projectName, options) => {
  * @param {object} options
  */
 const configureTemplate = (projectPath, options) => {
-  console.log(chalk.blue('info'), 'Configuring project template');
+  logInfo('Configuring project template');
 
   // Remove unnecessary server files
   if (options.useNow) {
@@ -107,7 +112,7 @@ const configureTemplate = (projectPath, options) => {
  * @param {object} options
  */
 const configureEnvironment = (projectPath, options) => {
-  console.log(chalk.blue('info'), 'Configuring project environment');
+  logInfo('Configuring project environment');
 
   const envVars = {
     GTM_ID: '',
