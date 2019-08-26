@@ -7,12 +7,17 @@ const {
   shouldUseYarn
 } = require('@crystallize/cli-utils');
 const chalk = require('chalk');
+const Conf = require('conf');
 const execSync = require('child_process').execSync;
 const fs = require('fs-extra');
 const inquirer = require('inquirer');
+const isEqual = require('lodash/isEqual');
 const os = require('os');
 const path = require('path');
 const spawn = require('cross-spawn');
+
+const config = new Conf({ projectName: 'crystallize' });
+const defaultOptions = config.get('defaults', {});
 
 const templates = [
   {
@@ -50,6 +55,12 @@ const rootQuestions = [
   }
 ];
 
+const reduceOptions = answers =>
+  answers.options.reduce((obj, item) => {
+    obj[item] = true;
+    return obj;
+  }, {});
+
 const reactTemplateQuestions = [
   {
     type: 'checkbox',
@@ -57,12 +68,27 @@ const reactTemplateQuestions = [
     message: 'Which language would you like to use?',
     default: 'javascript',
     choices: [
-      { name: 'Use TypeScript', value: 'typescript' },
+      {
+        name: 'Use TypeScript',
+        value: 'typescript',
+        checked: defaultOptions.react && defaultOptions.react.typescript
+      },
       {
         name: 'Use Now (https://zeit.co/now) for deployments',
-        value: 'useNow'
+        value: 'useNow',
+        checked: defaultOptions.react && defaultOptions.react.useNow
       }
     ]
+  },
+  {
+    type: 'confirm',
+    name: 'saveDefaults',
+    message: 'Save these template settings as default?',
+    default: true,
+    when: answers => {
+      const options = reduceOptions(answers);
+      return !isEqual(defaultOptions.react, options);
+    }
   }
 ];
 
@@ -71,13 +97,14 @@ const reactTemplateQuestions = [
  * setup script for the matching template.
  *
  * @param {string} projectName The name of the project
+ * @param {string} projectPath The path of the project
  * @param {object} flags Flags specified via the cli
  */
-const createTemplateProject = async (projectName, flags) => {
+const createTemplateProject = async (projectName, projectPath, flags) => {
   const answers = await inquirer.prompt(rootQuestions);
   const template = templates.find(t => t.value === answers.template);
   if (template.type === 'react') {
-    await createReactProject(projectName, answers.tenantId, flags);
+    await createReactProject(projectName, projectPath, answers.tenantId, flags);
   } else {
     logError(`Unknown template type: "${template.type}`);
     process.exit(1);
@@ -88,24 +115,32 @@ const createTemplateProject = async (projectName, flags) => {
  * Creates a new React project and asks React project specific questions.
  *
  * @param {string} projectName The name of the project
+ * @param {string} projectPath The path of the project
+ * @param {string} tenantId The id of the shop to use
+ * @param {object} flags Flags specified via the cli
  */
-const createReactProject = async (projectName, tenantId, flags) => {
+const createReactProject = async (
+  projectName,
+  projectPath,
+  tenantId,
+  flags
+) => {
   const answers = await inquirer.prompt(reactTemplateQuestions);
-  const options = answers.options.reduce((obj, item) => {
-    obj[item] = true;
-    return obj;
-  }, {});
+  const options = reduceOptions(answers);
 
-  const config = {
+  if (answers.saveDefaults) {
+    logInfo('Saving default template preferences');
+    config.set('defaults.react', options);
+  }
+
+  const templateOptions = {
     tenantId,
     useNow: options.useNow,
     useTypescript: options.typescript
   };
 
-  const root = path.resolve(projectName);
-
   fs.ensureDirSync(projectName);
-  logInfo(`Creating your new Crystallize project in ${chalk.green(root)}`);
+  logInfo(`Creating a new Crystallize project in ${chalk.green(projectPath)}`);
 
   const packageJson = {
     name: projectName,
@@ -115,11 +150,11 @@ const createReactProject = async (projectName, tenantId, flags) => {
   };
 
   fs.writeFileSync(
-    path.resolve(root, 'package.json'),
+    path.resolve(projectPath, 'package.json'),
     JSON.stringify(packageJson, null, 2) + os.EOL
   );
 
-  process.chdir(root);
+  process.chdir(projectPath);
 
   // Dependencies required to bootstrap the project
   const dependencyFile = require('../dependencies.json');
@@ -148,7 +183,7 @@ const createReactProject = async (projectName, tenantId, flags) => {
     'node_modules/@crystallize/react-scripts/scripts/init.js'
   );
   const init = require(scriptsPath);
-  init(root, config);
+  init(projectPath, templateOptions);
 };
 
 /**

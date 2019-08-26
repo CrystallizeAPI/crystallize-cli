@@ -9,9 +9,11 @@
   "dependencies": {
     "@crystallize/cli-utils": "^0.0.0",
     "chalk": "^2.4.2",
+    "conf": "^5.0.0",
     "cross-spawn": "^6.0.5",
     "fs-extra": "^8.1.0",
     "inquirer": "^6.5.1",
+    "lodash": "^4.17.15",
     "meow": "^5.0.0",
     "simple-git": "^1.124.0"
   }

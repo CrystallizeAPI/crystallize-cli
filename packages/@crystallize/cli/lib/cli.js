@@ -68,7 +68,7 @@ if (boilerplate) {
     .then(handleSuccess)
     .catch(handleError);
 } else {
-  createTemplateProject(projectName, cli.flags)
+  createTemplateProject(projectName, projectPath, cli.flags)
     .then(handleSuccess)
     .catch(handleError);
 }
