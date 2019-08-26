@@ -1,9 +1,9 @@
 {
   "name": "@crystallize/react-scripts",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "license": "MIT",
   "devDependencies": {
-    "@crystallize/cli-utils": "^0.0.1-alpha.0",
+    "@crystallize/cli-utils": "^0.0.1-alpha.1",
     "chalk": "^2.4.2",
     "fs-extra": "^8.1.0"
   },
