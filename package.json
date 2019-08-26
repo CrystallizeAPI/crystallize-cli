@@ -1,6 +1,9 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "lerna": "lerna publish -m \":rocket: publish\""
+  },
   "devDependencies": {
     "eslint": "^6.2.1",
     "eslint-config-prettier": "^6.1.0",

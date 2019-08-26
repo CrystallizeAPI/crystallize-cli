@@ -1,9 +1,12 @@
 # Crystallize CLI
 
-Bootstrap a React app running on the [headless ecommerce][1] and GraphQL based
+Bootstrap an app running on the [headless ecommerce][1] and GraphQL based
 [Product Information Management][2] service [Crystallize][3].
 
 ## Usage
+
+You'll need to have [Node.js][7] (>=8) installed to use the CLI tool. Then, run
+the following command in your terminal:
 
 ```sh
 npx crystallize <project-name>
@@ -17,6 +20,10 @@ template and preferences you want to use.
 The default mode of the Crystallize CLI is to use a template. Each template has
 different options that can be chosen to configure the initial project to suit
 your needs.
+
+Current templates include:
+
+- Next.js + React
 
 ### Boilerplate
 
@@ -40,3 +47,4 @@ The current boilerplates include:
 [4]: https://github.com/CrystallizeAPI/crystallize-frontend-boilerplate
 [5]: https://github.com/CrystallizeAPI/crystallize-react-native-boilerplate
 [6]: https://github.com/CrystallizeAPI/crystallize-flutter-boilerplate
+[7]: https://nodejs.org
