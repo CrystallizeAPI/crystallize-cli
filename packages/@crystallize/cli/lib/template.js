@@ -162,7 +162,7 @@ const createReactProject = async (
   const dependencies = Object.keys(dependencyFile).concat(
     '@crystallize/react-scripts'
   );
-  if (config.useNow) {
+  if (templateOptions.useNow) {
     dependencies.push('now', '@nerdenough/mjml-ncc-bundle');
   } else {
     dependencies.push('express', 'cookie-parser');
