@@ -21,6 +21,7 @@ const helpMessage = `
     --boilerplate, -b <${Object.keys(boilerplates).join(
       '|'
     )}>  Create a project with a specific boilerplate
+    --use-npm Use npm instead of yarn
 `;
 
 const meowOptions = {
@@ -28,6 +29,9 @@ const meowOptions = {
     boilerplate: {
       type: 'string',
       alias: 'b'
+    },
+    useNpm: {
+      type: 'boolean'
     }
   }
 };
@@ -64,7 +68,7 @@ if (boilerplate) {
     .then(handleSuccess)
     .catch(handleError);
 } else {
-  createTemplateProject(projectName, projectPath)
+  createTemplateProject(projectName, cli.flags)
     .then(handleSuccess)
     .catch(handleError);
 }

@@ -1,7 +1,13 @@
 'use strict';
 
-const { logDebug, logError, logInfo } = require('@crystallize/cli-utils');
+const {
+  logDebug,
+  logError,
+  logInfo,
+  shouldUseYarn
+} = require('@crystallize/cli-utils');
 const chalk = require('chalk');
+const execSync = require('child_process').execSync;
 const fs = require('fs-extra');
 const inquirer = require('inquirer');
 const os = require('os');
@@ -68,13 +74,13 @@ const reactTemplateQuestions = [
  * setup script for the matching template.
  *
  * @param {string} projectName The name of the project
- * @param {string} projectPath The path of the project
+ * @param {object} flags Flags specified via the cli
  */
-const createTemplateProject = async (projectName, projectPath) => {
+const createTemplateProject = async (projectName, flags) => {
   const answers = await inquirer.prompt(rootQuestions);
   const template = templates.find(t => t.value === answers.template);
   if (template.type === 'react') {
-    await createReactProject(projectName, answers.tenantId);
+    await createReactProject(projectName, answers.tenantId, flags);
   } else {
     logError(`Unknown template type: "${template.type}`);
     process.exit(1);
@@ -86,7 +92,7 @@ const createTemplateProject = async (projectName, projectPath) => {
  *
  * @param {string} projectName The name of the project
  */
-const createReactProject = async (projectName, tenantId) => {
+const createReactProject = async (projectName, tenantId, flags) => {
   const answers = await inquirer.prompt(reactTemplateQuestions);
   const options = {
     tenantId,
@@ -123,17 +129,13 @@ const createReactProject = async (projectName, tenantId) => {
   }
 
   // Install dependencies
-  logInfo(`Installing dependencies: ${dependencies.join(', ')}`);
-  spawn.sync(
-    'npm',
-    ['install', '--save', '--loglevel', 'error'].concat(dependencies),
-    { stdio: 'inherit' }
-  );
+  const useYarn = !flags.useNpm && shouldUseYarn();
+  installNodeDependencies(useYarn, dependencies);
 
   if (process.env.DEV) {
     // Link the package instead of npm install
     logDebug('Running "npm link @crystallize/react-scripts"');
-    spawn.sync('npm', ['link', '@crystallize/react-scripts'], {
+    execSync('npm link @crystallize/react-scripts', {
       stdio: 'inherit'
     });
   }
@@ -145,6 +147,29 @@ const createReactProject = async (projectName, tenantId) => {
   );
   const init = require(scriptsPath);
   init(root, options);
+};
+
+/**
+ * Installs Node dependencies using either npm or Yarn.
+ *
+ * @param {boolean} useYarn Should Yarn be used for installing dependencies?
+ * @param {array} dependencies Array of dependencies to install
+ */
+const installNodeDependencies = (useYarn, dependencies) => {
+  let command;
+  let args;
+
+  if (useYarn) {
+    logInfo(`Installing dependencies with yarn: ${dependencies.join(', ')}`);
+    command = 'yarnpkg';
+    args = ['add'].concat(dependencies);
+  } else {
+    logInfo(`Installing dependencies with npm: ${dependencies.join(', ')}`);
+    command = 'npm';
+    args = ['install', '--save', '--loglevel', 'error'].concat(dependencies);
+  }
+
+  return spawn.sync(command, args, { stdio: 'inherit' });
 };
 
 module.exports = {
