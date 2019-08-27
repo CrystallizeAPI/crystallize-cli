@@ -32,7 +32,7 @@ provided by Crystallize. The boilerplate can be used in place of a template but
 does not provide any customisation options.
 
 ```sh
-crystallize <project-name> -b react
+npx @crystallize/cli <project-name> -b react
 ```
 
 The current boilerplates include:
