@@ -1,5 +1,7 @@
 # Crystallize CLI
 
+![](https://travis-ci.org/CrystallizeAPI/crystallize-cli.svg?branch=master)
+
 Bootstrap an app running on the [headless ecommerce][1] and GraphQL based
 [Product Information Management][2] service [Crystallize][3].
 
