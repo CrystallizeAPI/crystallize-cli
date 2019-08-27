@@ -4,7 +4,8 @@
     "packages/@crystallize/*"
   ],
   "scripts": {
-    "lerna": "lerna publish -m \":rocket: publish\""
+    "lerna": "lerna publish -m \":rocket: publish\"",
+    "lint": "eslint ./packages"
   },
   "devDependencies": {
     "eslint": "^6.2.1",
