@@ -40,6 +40,24 @@ The `scripts/init.js` file is called by the cli when this template is chosen,
 and it is used to configure the template files based on the user selected
 options.
 
+## Local Development
+
+1. Cone the repo with
+   `git clone https://github.com/CrystallizeAPI/crystallize-cli.git`.
+2. Run `yarn` to install any required dependencies.
+3. Navigate into `pacakges/@crystallize/cli` and run `npm link`. Running
+   `crystallize` in your terminal should now reference your local copy of the
+   package.
+
+## Deployment
+
+If you are a member of Crystallize you can deploy new versions of the pages by
+running `yarn lerna`. This will walk you through versioning any packages you've
+modified and publishing the packages to npm.
+
+If you are not a member of Crystallize please submit a pull request and we'll be
+happy to take a look 🙂.
+
 [0]:
   https://github.com/CrystallizeAPI/crystallize-cli/tree/master/packages/%40crystallize/cli
 [1]:
