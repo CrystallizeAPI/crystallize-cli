@@ -147,6 +147,7 @@ const createReactProject = async (
   logInfo(`Creating a new Crystallize project in ${chalk.green(projectPath)}`);
 
   process.chdir(projectPath);
+  fs.removeSync(path.resolve('package-lock.json'));
 
   const oldPackageJson = fs.readFileSync(path.resolve('package.json'), 'utf-8');
   const oldPackageJsonObj = JSON.parse(oldPackageJson);
@@ -157,6 +158,7 @@ const createReactProject = async (
 
   if (templateOptions.useNow) {
     delete oldPackageJsonObj.dependencies['express'];
+    delete oldPackageJsonObj.dependencies['body-parser'];
     delete oldPackageJsonObj.dependencies['cookie-parser'];
     scripts['dev'] = scripts['now-dev'];
   } else {
