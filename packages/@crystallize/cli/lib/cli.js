@@ -53,7 +53,6 @@ if (fs.existsSync(projectPath)) {
 const { boilerplate } = cli.flags;
 
 const handleSuccess = () => {
-  logSuccess('Done! Have fun out there!');
   process.exit(0);
 };
 

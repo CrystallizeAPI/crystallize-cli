@@ -4,6 +4,7 @@ const {
   logDebug,
   logError,
   logInfo,
+  logSuccess,
   shouldUseYarn
 } = require('@crystallize/cli-utils');
 const chalk = require('chalk');
@@ -187,6 +188,8 @@ const createReactProject = async (
   );
   const init = require(scriptsPath);
   init(projectPath, templateOptions);
+
+  showInstructions(projectPath, useYarn, templateOptions);
 };
 
 /**
@@ -210,6 +213,43 @@ const installNodeDependencies = (useYarn, dependencies) => {
   }
 
   return spawn.sync(command, args, { stdio: 'inherit' });
+};
+
+/**
+ * Shows the postinstall instructions on the screen, such as how to run the
+ * project in dev and prod modes.
+ *
+ * @param {string} projectPath The path of the project
+ * @param {string} useYarn Should the commands be shown as yarn or npm?
+ * @param {object} templateOptions User specified template configuration
+ */
+const showInstructions = (projectPath, useYarn, templateOptions) => {
+  console.log();
+  logSuccess(`Done! Your project has been created in ${projectPath}`);
+  console.log();
+  console.log(
+    `Use ${chalk.green(
+      useYarn ? 'yarn dev' : 'npm run dev'
+    )} to run the app in development mode`
+  );
+  console.log(
+    `Use ${chalk.green(
+      useYarn ? 'yarn prod' : 'npm run prod'
+    )} to run the app in production mode`
+  );
+
+  console.log();
+
+  if (templateOptions.useNow) {
+    console.log(
+      `Install now globally with ${chalk.green(
+        useYarn ? 'yarn global add now' : 'npm install --global now'
+      )}`
+    );
+    console.log(
+      `Deploy to Now (https://zeit.co/now) by running ${chalk.green('now')}`
+    );
+  }
 };
 
 module.exports = {
