@@ -6,7 +6,8 @@ const {
   logInfo,
   logSuccess,
   shouldUseYarn,
-  cloneRepository
+  cloneRepository,
+  installNodeDependencies
 } = require('@crystallize/cli-utils');
 const chalk = require('chalk');
 const Conf = require('conf');
@@ -16,7 +17,6 @@ const inquirer = require('inquirer');
 const isEqual = require('lodash/isEqual');
 const os = require('os');
 const path = require('path');
-const spawn = require('cross-spawn');
 const { boilerplates } = require('./boilerplate');
 
 const config = new Conf({ projectName: 'crystallize' });
@@ -207,41 +207,6 @@ const createReactProject = async (
 };
 
 /**
- * Installs Node dependencies using either npm or Yarn.
- *
- * @param {boolean} useYarn Should Yarn be used for installing dependencies?
- * @param {array} dependencies Array of dependencies to install
- */
-const installNodeDependencies = (useYarn, dependencies, devDependencies) => {
-  let command;
-  let dependencyArgs;
-  let devDependencyArgs;
-
-  if (useYarn) {
-    logInfo(`Installing dependencies with yarn: ${dependencies.join(', ')}`);
-    command = 'yarnpkg';
-    dependencyArgs = ['add'].concat(dependencies);
-    devDependencyArgs = ['add', '-D'].concat(devDependencies);
-  } else {
-    logInfo(`Installing dependencies with npm: ${dependencies.join(', ')}`);
-    command = 'npm';
-    dependencyArgs = ['install', '--save', '--loglevel', 'error'].concat(
-      dependencies
-    );
-    devDependencyArgs = [
-      'install',
-      '--save',
-      '-D',
-      '--loglevel',
-      'error'
-    ].concat(devDependencies);
-  }
-
-  spawn.sync(command, dependencyArgs, { stdio: 'inherit' });
-  return spawn.sync(command, devDependencyArgs, { stdio: 'inherit' });
-};
-
-/**
  * Shows the postinstall instructions on the screen, such as how to run the
  * project in dev and prod modes.
  *
@@ -264,9 +229,8 @@ const showInstructions = (projectPath, useYarn, templateOptions) => {
     )} to run the app in production mode`
   );
 
-  console.log();
-
   if (templateOptions.useNow) {
+    console.log();
     console.log(
       `Install now globally with ${chalk.green(
         useYarn ? 'yarn global add now' : 'npm install --global now'
@@ -276,6 +240,8 @@ const showInstructions = (projectPath, useYarn, templateOptions) => {
       `Deploy to Now (https://zeit.co/now) by running ${chalk.green('now')}`
     );
   }
+
+  console.log();
 };
 
 module.exports = {
