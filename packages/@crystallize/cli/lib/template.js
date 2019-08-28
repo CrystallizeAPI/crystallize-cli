@@ -5,7 +5,8 @@ const {
   logError,
   logInfo,
   logSuccess,
-  shouldUseYarn
+  shouldUseYarn,
+  cloneRepository
 } = require('@crystallize/cli-utils');
 const chalk = require('chalk');
 const Conf = require('conf');
@@ -16,6 +17,7 @@ const isEqual = require('lodash/isEqual');
 const os = require('os');
 const path = require('path');
 const spawn = require('cross-spawn');
+const { boilerplates } = require('./boilerplate');
 
 const config = new Conf({ projectName: 'crystallize' });
 const defaultOptions = config.get('defaults', {});
@@ -141,14 +143,39 @@ const createReactProject = async (
     useTypescript: options.typescript
   };
 
-  fs.ensureDirSync(projectName);
+  cloneRepository(boilerplates['react'], projectPath);
   logInfo(`Creating a new Crystallize project in ${chalk.green(projectPath)}`);
+
+  process.chdir(projectPath);
+
+  const oldPackageJson = fs.readFileSync(path.resolve('package.json'), 'utf-8');
+  const oldPackageJsonObj = JSON.parse(oldPackageJson);
+
+  const scripts = oldPackageJsonObj.scripts;
+  delete scripts['postinstall'];
+  delete scripts['greet'];
+
+  if (templateOptions.useNow) {
+    delete oldPackageJsonObj.dependencies['express'];
+    delete oldPackageJsonObj.dependencies['cookie-parser'];
+    scripts['dev'] = scripts['now-dev'];
+  } else {
+    delete oldPackageJsonObj.dependencies['now'];
+    delete oldPackageJsonObj.dependencies['@nerdenough/mjml-ncc-bundle'];
+  }
+
+  delete scripts['now-dev'];
+
+  const dependencies = Object.keys(oldPackageJsonObj.dependencies).concat(
+    '@crystallize/react-scripts'
+  );
+  const devDependencies = Object.keys(oldPackageJsonObj.devDependencies);
 
   const packageJson = {
     name: projectName,
     version: '0.1.0',
     private: true,
-    scripts: {}
+    scripts
   };
 
   fs.writeFileSync(
@@ -156,22 +183,9 @@ const createReactProject = async (
     JSON.stringify(packageJson, null, 2) + os.EOL
   );
 
-  process.chdir(projectPath);
-
-  // Dependencies required to bootstrap the project
-  const dependencyFile = require('../dependencies.json');
-  const dependencies = Object.keys(dependencyFile).concat(
-    '@crystallize/react-scripts'
-  );
-  if (templateOptions.useNow) {
-    dependencies.push('now', '@nerdenough/mjml-ncc-bundle');
-  } else {
-    dependencies.push('express', 'cookie-parser');
-  }
-
   // Install dependencies
   const useYarn = !flags.useNpm && shouldUseYarn();
-  installNodeDependencies(useYarn, dependencies);
+  installNodeDependencies(useYarn, dependencies, devDependencies);
 
   if (process.env.DEV) {
     // Link the package instead of npm install
@@ -198,21 +212,33 @@ const createReactProject = async (
  * @param {boolean} useYarn Should Yarn be used for installing dependencies?
  * @param {array} dependencies Array of dependencies to install
  */
-const installNodeDependencies = (useYarn, dependencies) => {
+const installNodeDependencies = (useYarn, dependencies, devDependencies) => {
   let command;
-  let args;
+  let dependencyArgs;
+  let devDependencyArgs;
 
   if (useYarn) {
     logInfo(`Installing dependencies with yarn: ${dependencies.join(', ')}`);
     command = 'yarnpkg';
-    args = ['add'].concat(dependencies);
+    dependencyArgs = ['add'].concat(dependencies);
+    devDependencyArgs = ['add', '-D'].concat(devDependencies);
   } else {
     logInfo(`Installing dependencies with npm: ${dependencies.join(', ')}`);
     command = 'npm';
-    args = ['install', '--save', '--loglevel', 'error'].concat(dependencies);
+    dependencyArgs = ['install', '--save', '--loglevel', 'error'].concat(
+      dependencies
+    );
+    devDependencyArgs = [
+      'install',
+      '--save',
+      '-D',
+      '--loglevel',
+      'error'
+    ].concat(devDependencies);
   }
 
-  return spawn.sync(command, args, { stdio: 'inherit' });
+  spawn.sync(command, dependencyArgs, { stdio: 'inherit' });
+  return spawn.sync(command, devDependencyArgs, { stdio: 'inherit' });
 };
 
 /**

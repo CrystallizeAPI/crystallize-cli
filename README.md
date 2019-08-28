@@ -7,8 +7,12 @@ Bootstrap an app running on the [headless ecommerce][1] and GraphQL based
 
 ## Usage
 
-You'll need to have [Node.js][7] (>=8) installed to use the CLI tool. Then, run
-the following command in your terminal:
+You'll need the following installed to use Crystallize CLI:
+
+- [Node.js][7] (>=8)
+- [Git][8]
+
+To create a new app using Crystallize, simply run the following command:
 
 ```sh
 npx @crystallize/cli <project-name>
@@ -50,3 +54,4 @@ The current boilerplates include:
 [5]: https://github.com/CrystallizeAPI/crystallize-react-native-boilerplate
 [6]: https://github.com/CrystallizeAPI/crystallize-flutter-boilerplate
 [7]: https://nodejs.org
+[8]: https://git-scm.com/

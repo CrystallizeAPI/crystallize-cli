@@ -1,8 +1,11 @@
 'use strict';
 
 const { logError, logInfo } = require('@crystallize/cli-utils');
+const {
+  initialiseRepository,
+  cloneRepository
+} = require('@crystallize/cli-utils/git');
 const fs = require('fs-extra');
-const git = require('simple-git/promise');
 const path = require('path');
 
 const remote = 'https://github.com/CrystallizeAPI/';
@@ -38,23 +41,15 @@ const createBoilerplateProject = async (
   logInfo(
     `Creating project "${projectName}" with boilerplate "${boilerplate}"`
   );
-  logInfo(`Cloning ${remote}`);
 
-  await git().clone(remote, projectPath, {
-    shallow: true
-  });
+  if (!cloneRepository(remote, projectPath)) {
+    process.exit(1);
+  }
 
-  const gitPath = path.resolve(projectPath, '.git');
-
-  logInfo(`Removing ${gitPath}`);
-  fs.removeSync(gitPath);
-
-  logInfo(`Initialising repo!`);
-  await git(projectPath).init();
-  await git(projectPath).add('-A');
-  return git(projectPath).commit('Initial commit');
+  initialiseRepository(projectPath);
 };
 
 module.exports = {
+  boilerplates,
   createBoilerplateProject
 };
