@@ -34,8 +34,8 @@ Current templates include:
 ### Boilerplate
 
 You can also initialise a project through one of the various boilerplates
-provided by Crystallize. The boilerplate can be used in place of a template but
-does not provide any customisation options.
+provided by Crystallize. This clones the boilerplate without any customisation
+options.
 
 ```sh
 npx @crystallize/cli <project-name> -b react
