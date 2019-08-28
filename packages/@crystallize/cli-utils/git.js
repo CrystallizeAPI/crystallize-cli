@@ -11,6 +11,7 @@ const { logInfo, logError } = require('./log');
  */
 const initialiseRepository = projectPath => {
   logInfo('Initialising git repository');
+  process.chdir(projectPath);
 
   if (fs.existsSync(path.resolve(projectPath, '.git'))) {
     fs.removeSync(path.resolve(projectPath, '.git'));

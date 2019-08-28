@@ -1,12 +1,11 @@
 'use strict';
 
-const { logError, logInfo } = require('@crystallize/cli-utils');
+const { logError, logInfo, logSuccess } = require('@crystallize/cli-utils');
 const {
   initialiseRepository,
   cloneRepository
 } = require('@crystallize/cli-utils/git');
-const fs = require('fs-extra');
-const path = require('path');
+const chalk = require('chalk');
 
 const remote = 'https://github.com/CrystallizeAPI/';
 
@@ -47,6 +46,12 @@ const createBoilerplateProject = async (
   }
 
   initialiseRepository(projectPath);
+
+  console.log();
+  logSuccess(
+    `Done! Your project has been created in ${chalk.green(projectPath)}`
+  );
+  console.log();
 };
 
 module.exports = {
