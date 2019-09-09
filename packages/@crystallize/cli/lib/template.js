@@ -78,7 +78,7 @@ const reactTemplateQuestions = [
       //   checked: defaultOptions.react && defaultOptions.react.typescript
       // },
       {
-        name: 'Use Now (https://zeit.co/now) for deployments',
+        name: 'Use ZEIT Now (https://zeit.co/now) for deployments',
         value: 'useNow',
         checked: defaultOptions.react && defaultOptions.react.useNow
       }
@@ -239,7 +239,9 @@ const showInstructions = (projectPath, useYarn, templateOptions) => {
       )}`
     );
     console.log(
-      `Deploy to Now (https://zeit.co/now) by running ${chalk.green('now')}`
+      `Deploy to ZEIT Now (https://zeit.co/now) by running ${chalk.green(
+        'now'
+      )}`
     );
   }
 
