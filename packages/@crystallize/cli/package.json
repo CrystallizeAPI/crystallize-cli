@@ -13,8 +13,7 @@
     "fs-extra": "^8.1.0",
     "inquirer": "^6.5.1",
     "lodash": "^4.17.15",
-    "meow": "^5.0.0",
-    "simple-git": "^1.124.0"
+    "meow": "^5.0.0"
   },
   "publishConfig": {
     "access": "public"
