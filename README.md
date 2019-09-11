@@ -47,6 +47,11 @@ The current boilerplates include:
 - [react-native][5]: A boilerplate for React Native
 - [flutter][6]: A boilerplate for Flutter
 
+## Contributing
+
+If you'd like to help improve our CLI tool, check out the [contributing
+guidelines][9] for an overview of the codebase and structure.
+
 [1]: https://crystallize.com/product
 [2]: https://crystallize.com/product/product-information-management
 [3]: https://crystallize.com/
@@ -55,3 +60,5 @@ The current boilerplates include:
 [6]: https://github.com/CrystallizeAPI/crystallize-flutter-boilerplate
 [7]: https://nodejs.org
 [8]: https://git-scm.com/
+[9]:
+  https://github.com/CrystallizeAPI/crystallize-cli/blob/master/CONTRIBUTING.md
