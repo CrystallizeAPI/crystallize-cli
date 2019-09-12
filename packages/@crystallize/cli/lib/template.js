@@ -37,8 +37,8 @@ const rootQuestions = [
     message: 'Which shop do you want to use?',
     choices: [
       {
-        value: 'demo',
-        name: 'The demo shop - prefilled with lots of data'
+        value: 'teddy-bear-shop',
+        name: 'The teddy bear shop - prefilled with lots of teddy bears'
       },
       'My very own tenant please'
     ]
@@ -47,8 +47,8 @@ const rootQuestions = [
     type: 'input',
     name: 'tenantId',
     message: 'Your tenant ID (https://crystallize.com/signup)',
-    default: 'demo',
-    when: answers => answers.shopToUse !== 'demo'
+    default: 'teddy-bear-shop',
+    when: answers => answers.shopToUse !== 'teddy-bear-shop'
   },
   {
     type: 'list',

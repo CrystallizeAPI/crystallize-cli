@@ -47,7 +47,7 @@ const configureEnvironment = (projectPath, options) => {
   const envVars = {
     GTM_ID: '',
     CRYSTALLIZE_GRAPH_URL_BASE: 'https://graph.crystallize.com',
-    CRYSTALLIZE_TENANT_ID: 'demo',
+    CRYSTALLIZE_TENANT_ID: 'teddy-bear-shop',
     SECRET: 'secret'
   };
 
