@@ -1,5 +1,4 @@
 const execSync = require('child_process').execSync;
-const spawn = require('cross-spawn');
 const { logInfo } = require('./log');
 
 /**
@@ -21,7 +20,7 @@ const shouldUseYarn = () => {
  * @param {array} dependencies Array of dependencies to install
  */
 const installNodeDependencies = useYarn => {
-  return spawn.sync(useYarn ? 'yarn' : 'npm install', {
+  execSync(useYarn ? 'yarnpkg install' : 'npm install', {
     stdio: 'inherit'
   });
 };
