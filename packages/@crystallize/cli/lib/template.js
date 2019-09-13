@@ -168,16 +168,18 @@ const createReactProject = async (
 
   delete scripts['now-dev'];
 
-  const dependencies = Object.keys(oldPackageJsonObj.dependencies).concat(
-    '@crystallize/react-scripts'
-  );
-  const devDependencies = Object.keys(oldPackageJsonObj.devDependencies);
-
   const packageJson = {
     name: projectName,
     version: '0.1.0',
     private: true,
-    scripts
+    scripts,
+    dependencies: {
+      ...oldPackageJsonObj.dependencies,
+      '@crystallize/react-scripts': 'latest'
+    },
+    devDependencies: {
+      ...oldPackageJsonObj.devDependencies
+    }
   };
 
   fs.writeFileSync(
@@ -187,7 +189,7 @@ const createReactProject = async (
 
   // Install dependencies
   const useYarn = !flags.useNpm && shouldUseYarn();
-  installNodeDependencies(useYarn, dependencies, devDependencies);
+  installNodeDependencies(useYarn);
 
   if (process.env.DEV) {
     // Link the package instead of npm install
