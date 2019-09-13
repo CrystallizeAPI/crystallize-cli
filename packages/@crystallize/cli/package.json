@@ -1,13 +1,13 @@
 {
   "name": "@crystallize/cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "license": "MIT",
   "bin": {
     "crystallize": "./index.js"
   },
   "dependencies": {
-    "@crystallize/cli-utils": "^1.0.0",
+    "@crystallize/cli-utils": "^1.0.1",
     "chalk": "^2.4.2",
     "conf": "^5.0.0",
     "fs-extra": "^8.1.0",
