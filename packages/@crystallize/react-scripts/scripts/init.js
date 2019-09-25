@@ -68,8 +68,11 @@ const configureEnvironment = (projectPath, options) => {
       path.resolve(projectPath, 'now.json'),
       'utf-8'
     );
+
     const nowJsonObj = JSON.parse(nowJson);
     nowJsonObj.env = envVars;
+    nowJsonObj.alias = [options.nowAlias];
+
     fs.writeFileSync(
       path.resolve(projectPath, 'now.json'),
       JSON.stringify(nowJsonObj, null, 2) + os.EOL,

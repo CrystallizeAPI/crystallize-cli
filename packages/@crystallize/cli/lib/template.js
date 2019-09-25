@@ -85,6 +85,13 @@ const reactTemplateQuestions = [
     ]
   },
   {
+    type: 'input',
+    name: 'nowAlias',
+    message: 'Preferred alias or domain to use with ZEIT Now',
+    default: 'my-crystallize-app',
+    when: answers => answers.options.find(opt => opt === 'useNow')
+  },
+  {
     type: 'confirm',
     name: 'saveDefaults',
     message: 'Save these template settings as default?',
@@ -140,7 +147,8 @@ const createReactProject = async (
   const templateOptions = {
     tenantId,
     useNow: options.useNow,
-    useTypescript: options.typescript
+    useTypescript: options.typescript,
+    nowAlias: answers.nowAlias
   };
 
   cloneRepository(boilerplates['react'], projectPath);
