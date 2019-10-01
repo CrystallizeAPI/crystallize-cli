@@ -80,9 +80,28 @@ const reactTemplateQuestions = [
       {
         name: 'Use ZEIT Now (https://zeit.co/now) for deployments',
         value: 'useNow',
-        checked: defaultOptions.react && defaultOptions.react.useNow
+        checked: (defaultOptions.react && defaultOptions.react.useNow) || true
+      },
+      {
+        name: 'Add payment methods for checkout',
+        value: 'customisePayment',
+        checked:
+          (defaultOptions.react && defaultOptions.react.customisePayment) ||
+          true
       }
     ]
+  },
+  {
+    type: 'checkbox',
+    message: 'Which payment methods would you like to use?',
+    name: 'paymentMethods',
+    choices: [
+      { name: 'Stripe (https://stripe.com)', value: 'stripe' },
+      { name: 'Klarna (https://www.klarna.com)', value: 'klarna' },
+      { name: 'PayPal (https://www.paypal.com)', value: 'paypal' },
+      { name: 'Vipps (https://www.vipps.no)', value: 'vipps' }
+    ],
+    when: answers => answers.options.find(opt => opt === 'customisePayment')
   },
   {
     type: 'confirm',
