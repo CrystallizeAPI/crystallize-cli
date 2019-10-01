@@ -69,7 +69,6 @@ const reactTemplateQuestions = [
     type: 'checkbox',
     name: 'options',
     message: 'Which features would you like to use?',
-    default: 'javascript',
     choices: [
       // TODO: TypeScript template
       // {
