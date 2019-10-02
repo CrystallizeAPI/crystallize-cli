@@ -21,6 +21,7 @@ const { boilerplates } = require('./boilerplate');
 
 const config = new Conf({ projectName: 'crystallize' });
 const defaultOptions = config.get('defaults', {});
+const paymentMethods = config.get('defaults.react.paymentMethods', {});
 
 const templates = [
   {
@@ -58,11 +59,16 @@ const rootQuestions = [
   }
 ];
 
-const reduceOptions = answers =>
-  answers.options.reduce((obj, item) => {
+const arrayToObject = array =>
+  array.reduce((obj, item) => {
     obj[item] = true;
     return obj;
   }, {});
+
+const reduceOptions = answers => ({
+  ...arrayToObject(answers.options),
+  paymentMethods: arrayToObject(answers.paymentMethods)
+});
 
 const reactTemplateQuestions = [
   {
@@ -95,12 +101,43 @@ const reactTemplateQuestions = [
     message: 'Which payment methods would you like to use?',
     name: 'paymentMethods',
     choices: [
-      { name: 'Stripe (https://stripe.com)', value: 'stripe' },
-      { name: 'Klarna (https://www.klarna.com)', value: 'klarna' },
-      { name: 'PayPal (https://www.paypal.com)', value: 'paypal' },
-      { name: 'Vipps (https://www.vipps.no)', value: 'vipps' }
+      {
+        name: 'Stripe (https://stripe.com)',
+        value: 'stripe',
+        checked: paymentMethods.stripe
+      }
+      // {
+      //   name: 'Klarna (https://www.klarna.com)',
+      //   value: 'klarna',
+      //   checked: paymentMethods.klarna
+      // },
+      // {
+      //   name: 'PayPal (https://www.paypal.com)',
+      //   value: 'paypal',
+      //   checked: paymentMethods.paypal
+      // },
+      // {
+      //   name: 'Vipps (https://www.vipps.no)',
+      //   value: 'vipps',
+      //   checked: paymentMethods.vipps
+      // }
     ],
     when: answers => answers.options.find(opt => opt === 'customisePayment')
+  },
+  {
+    type: 'input',
+    name: 'stripePublishableKey',
+    message:
+      'Stripe Publishable Key (https://dashboard.stripe.com/test/apikeys)',
+    default: 'stripe',
+    when: answers => answers.paymentMethods.find(method => method === 'stripe')
+  },
+  {
+    type: 'input',
+    name: 'stripeSecretKey',
+    message: 'Stripe Secret Key (https://dashboard.stripe.com/test/apikeys)',
+    default: 'stripe',
+    when: answers => answers.paymentMethods.find(method => method === 'stripe')
   },
   {
     type: 'confirm',
@@ -152,6 +189,7 @@ const createReactProject = async (
 
   if (answers.saveDefaults) {
     logInfo('Saving default template preferences');
+    logInfo('Note: This will not save any tokens or keys');
     config.set('defaults.react', options);
   }
 
