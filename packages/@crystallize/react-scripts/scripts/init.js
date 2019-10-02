@@ -48,7 +48,9 @@ const configureEnvironment = (projectPath, options) => {
     GTM_ID: '',
     CRYSTALLIZE_GRAPH_URL_BASE: 'https://graph.crystallize.com',
     CRYSTALLIZE_TENANT_ID: 'teddy-bear-shop',
-    SECRET: 'secret'
+    SECRET: 'secret',
+    STRIPE_SECRET_KEY: options.paymentCredentials.stripeSecretKey,
+    STRIPE_PUBLISHABLE_KEY: options.paymentCredentials.stripePublishableKey
   };
 
   if (options.tenantId) {

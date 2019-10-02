@@ -195,8 +195,11 @@ const createReactProject = async (
 
   const templateOptions = {
     tenantId,
-    useNow: options.useNow,
-    useTypescript: options.typescript
+    paymentCredentials: {
+      stripeSecretKey: answers.stripeSecretKey,
+      stripePublishableKey: answers.stripePublishableKey
+    },
+    ...options
   };
 
   cloneRepository(boilerplates['react'], projectPath);
