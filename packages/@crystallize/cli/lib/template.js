@@ -81,8 +81,20 @@ const reactTemplateQuestions = [
         name: 'Use ZEIT Now (https://zeit.co/now) for deployments',
         value: 'useNow',
         checked: defaultOptions.react && defaultOptions.react.useNow
+      },
+      {
+        name: 'Use SendGrid (https://sendgrid.com) for emails',
+        value: 'useSendGrid',
+        checked: defaultOptions.react && defaultOptions.react.useSendGrid
       }
     ]
+  },
+  {
+    type: 'input',
+    name: 'sendGridApiKey',
+    message: 'SendGrid API Key (https://app.sendgrid.com/settings/api_keys)',
+    default: 'sendgrid',
+    when: answers => answers.options.find(option => option === 'useSendGrid')
   },
   {
     type: 'confirm',
@@ -134,13 +146,14 @@ const createReactProject = async (
 
   if (answers.saveDefaults) {
     logInfo('Saving default template preferences');
+    logInfo('Note: This will not save any tokens or keys');
     config.set('defaults.react', options);
   }
 
   const templateOptions = {
     tenantId,
-    useNow: options.useNow,
-    useTypescript: options.typescript
+    sendGridApiKey: answers.sendGridApiKey,
+    ...options
   };
 
   cloneRepository(boilerplates['react'], projectPath);
