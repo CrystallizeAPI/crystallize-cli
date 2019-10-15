@@ -48,7 +48,8 @@ const configureEnvironment = (projectPath, options) => {
     GTM_ID: '',
     CRYSTALLIZE_GRAPH_URL_BASE: 'https://graph.crystallize.com',
     CRYSTALLIZE_TENANT_ID: 'teddy-bear-shop',
-    SECRET: 'secret'
+    SECRET: 'secret',
+    SENDGRID_API_KEY: options.sendGridApiKey
   };
 
   if (options.tenantId) {
@@ -69,7 +70,10 @@ const configureEnvironment = (projectPath, options) => {
       'utf-8'
     );
     const nowJsonObj = JSON.parse(nowJson);
-    nowJsonObj.env = envVars;
+    nowJsonObj.env = {
+      ...envVars,
+      SENDGRID_API_KEY: '@sendgrid-api-key'
+    };
     fs.writeFileSync(
       path.resolve(projectPath, 'now.json'),
       JSON.stringify(nowJsonObj, null, 2) + os.EOL,
