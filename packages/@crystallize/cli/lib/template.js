@@ -127,14 +127,14 @@ const reactTemplateQuestions = [
   {
     type: 'input',
     name: 'klarnaUsername',
-    message: 'Klarna Username ',
+    message: 'Klarna Username (https://playground.eu.portal.klarna.com)',
     default: 'klarna',
     when: answers => answers.paymentMethods.find(method => method === 'klarna')
   },
   {
     type: 'input',
     name: 'klarnaPassword',
-    message: 'Klarna Password',
+    message: 'Klarna Password (https://playground.eu.portal.klarna.com)',
     default: 'klarna',
     when: answers => answers.paymentMethods.find(method => method === 'klarna')
   },
