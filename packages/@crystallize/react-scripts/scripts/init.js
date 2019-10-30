@@ -41,17 +41,28 @@ const configureTemplate = (projectPath, options) => {
  * @param {string} projectPath
  * @param {object} options
  */
-const configureEnvironment = (projectPath, options) => {
+const configureEnvironment = async (projectPath, options) => {
   logInfo('Configuring project environment');
 
   const envVars = {
     GTM_ID: '',
     CRYSTALLIZE_GRAPH_URL_BASE: 'https://graph.crystallize.com',
     CRYSTALLIZE_TENANT_ID: 'teddy-bear-shop',
-    SECRET: 'secret',
-    STRIPE_SECRET_KEY: options.paymentCredentials.stripeSecretKey,
-    STRIPE_PUBLISHABLE_KEY: options.paymentCredentials.stripePublishableKey
+    SECRET: 'secret'
   };
+
+  // include stripe credentials if stripe is selected
+  if (options.paymentCredentials.stripeSecretKey) {
+    envVars.STRIPE_SECRET_KEY = options.paymentCredentials.stripeSecretKey;
+    envVars.STRIPE_PUBLISHABLE_KEY =
+      options.paymentCredentials.stripePublishableKey;
+  }
+  // include klarna credentials if klarna is selected
+  if (options.paymentCredentials.klarnaUsername) {
+    envVars.KLARNA_USERNAME = options.paymentCredentials.klarnaUsername;
+    envVars.KLARNA_PASSWORD = options.paymentCredentials.klarnaPassword;
+    envVars.NGROK_URL = options.paymentCredentials.ngrokUrl;
+  }
 
   if (options.tenantId) {
     envVars.CRYSTALLIZE_TENANT_ID = options.tenantId;
@@ -59,6 +70,7 @@ const configureEnvironment = (projectPath, options) => {
 
   // Update .env file
   const envFileVars = Object.keys(envVars).map(key => `${key}=${envVars[key]}`);
+
   fs.writeFileSync(
     path.resolve(projectPath, '.env'),
     envFileVars.join(os.EOL) + os.EOL

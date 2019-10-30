@@ -105,12 +105,12 @@ const reactTemplateQuestions = [
         name: 'Stripe (https://stripe.com)',
         value: 'stripe',
         checked: paymentMethods.stripe
+      },
+      {
+        name: 'Klarna (https://www.klarna.com)',
+        value: 'klarna',
+        checked: paymentMethods.klarna
       }
-      // {
-      //   name: 'Klarna (https://www.klarna.com)',
-      //   value: 'klarna',
-      //   checked: paymentMethods.klarna
-      // },
       // {
       //   name: 'PayPal (https://www.paypal.com)',
       //   value: 'paypal',
@@ -123,6 +123,28 @@ const reactTemplateQuestions = [
       // }
     ],
     when: answers => answers.options.find(opt => opt === 'customisePayment')
+  },
+  {
+    type: 'input',
+    name: 'klarnaUsername',
+    message: 'Klarna Username ',
+    default: 'klarna',
+    when: answers => answers.paymentMethods.find(method => method === 'klarna')
+  },
+  {
+    type: 'input',
+    name: 'klarnaPassword',
+    message: 'Klarna Password',
+    default: 'klarna',
+    when: answers => answers.paymentMethods.find(method => method === 'klarna')
+  },
+  {
+    type: 'input',
+    name: 'ngrokUrl',
+    message:
+      'Please provide a ngrok endpoint (will be used for order confirmation by Klarna)',
+    default: 'klarna',
+    when: answers => answers.paymentMethods.find(method => method === 'klarna')
   },
   {
     type: 'input',
@@ -197,7 +219,10 @@ const createReactProject = async (
     tenantId,
     paymentCredentials: {
       stripeSecretKey: answers.stripeSecretKey,
-      stripePublishableKey: answers.stripePublishableKey
+      stripePublishableKey: answers.stripePublishableKey,
+      klarnaUsername: answers.klarnaUsername,
+      klarnaPassword: answers.klarnaPassword,
+      ngrokUrl: answers.ngrokUrl
     },
     ...options
   };
