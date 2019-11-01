@@ -46,7 +46,7 @@ const configureEnvironment = async (projectPath, options) => {
 
   const envVars = {
     GTM_ID: '',
-    CRYSTALLIZE_GRAPH_URL_BASE: 'https://graph.crystallize.com',
+    CRYSTALLIZE_GRAPH_URL_BASE: 'https://api-dev.crystallize.digital',
     CRYSTALLIZE_TENANT_ID: 'teddy-bear-shop',
     SECRET: 'secret'
   };
