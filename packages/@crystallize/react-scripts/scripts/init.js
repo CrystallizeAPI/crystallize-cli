@@ -47,7 +47,7 @@ const configureEnvironment = async (projectPath, options) => {
   const envVars = {
     GTM_ID: '',
     CRYSTALLIZE_GRAPH_URL_BASE: 'https://api-dev.crystallize.digital',
-    CRYSTALLIZE_TENANT_ID: 'teddy-bear-shop',
+    CRYSTALLIZE_TENANT_ID: options.tenantId,
     SECRET: 'secret'
   };
 
@@ -62,6 +62,10 @@ const configureEnvironment = async (projectPath, options) => {
     envVars.KLARNA_USERNAME = options.paymentCredentials.klarnaUsername;
     envVars.KLARNA_PASSWORD = options.paymentCredentials.klarnaPassword;
     envVars.NGROK_URL = options.paymentCredentials.ngrokUrl;
+  }
+
+  if (options.sendGridApiKey) {
+    envVars.SENDGRID_API_KEY = options.sendGridApiKey;
   }
 
   if (options.tenantId) {
@@ -84,6 +88,11 @@ const configureEnvironment = async (projectPath, options) => {
     );
     const nowJsonObj = JSON.parse(nowJson);
     nowJsonObj.env = envVars;
+
+    if (options.sendGridApiKey) {
+      nowJsonObj.env.SENDGRID_API_KEY = '@sendgrid-api-key';
+    }
+
     fs.writeFileSync(
       path.resolve(projectPath, 'now.json'),
       JSON.stringify(nowJsonObj, null, 2) + os.EOL,

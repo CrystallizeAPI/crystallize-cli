@@ -76,12 +76,6 @@ const reactTemplateQuestions = [
     name: 'options',
     message: 'Which features would you like to use?',
     choices: [
-      // TODO: TypeScript template
-      // {
-      //   name: 'Use TypeScript',
-      //   value: 'typescript',
-      //   checked: defaultOptions.react && defaultOptions.react.typescript
-      // },
       {
         name: 'Use ZEIT Now (https://zeit.co/now) for deployments',
         value: 'useNow',
@@ -93,6 +87,11 @@ const reactTemplateQuestions = [
         checked:
           (defaultOptions.react && defaultOptions.react.customisePayment) ||
           true
+      },
+      {
+        name: 'Use SendGrid (https://sendgrid.com) for emails',
+        value: 'useSendGrid',
+        checked: defaultOptions.react && defaultOptions.react.useSendGrid
       }
     ]
   },
@@ -126,6 +125,21 @@ const reactTemplateQuestions = [
   },
   {
     type: 'input',
+    name: 'stripePublishableKey',
+    message:
+      'Stripe Publishable Key (https://dashboard.stripe.com/test/apikeys)',
+    default: 'stripe',
+    when: answers => answers.paymentMethods.find(method => method === 'stripe')
+  },
+  {
+    type: 'input',
+    name: 'stripeSecretKey',
+    message: 'Stripe Secret Key (https://dashboard.stripe.com/test/apikeys)',
+    default: 'stripe',
+    when: answers => answers.paymentMethods.find(method => method === 'stripe')
+  },
+  {
+    type: 'input',
     name: 'klarnaUsername',
     message: 'Klarna Username (https://playground.eu.portal.klarna.com)',
     default: 'klarna',
@@ -148,18 +162,10 @@ const reactTemplateQuestions = [
   },
   {
     type: 'input',
-    name: 'stripePublishableKey',
-    message:
-      'Stripe Publishable Key (https://dashboard.stripe.com/test/apikeys)',
-    default: 'stripe',
-    when: answers => answers.paymentMethods.find(method => method === 'stripe')
-  },
-  {
-    type: 'input',
-    name: 'stripeSecretKey',
-    message: 'Stripe Secret Key (https://dashboard.stripe.com/test/apikeys)',
-    default: 'stripe',
-    when: answers => answers.paymentMethods.find(method => method === 'stripe')
+    name: 'sendGridApiKey',
+    message: 'SendGrid API Key (https://app.sendgrid.com/settings/api_keys)',
+    default: 'sendgrid',
+    when: answers => answers.options.find(option => option === 'useSendGrid')
   },
   {
     type: 'confirm',
@@ -183,9 +189,10 @@ const reactTemplateQuestions = [
  */
 const createTemplateProject = async (projectName, projectPath, flags) => {
   const answers = await inquirer.prompt(rootQuestions);
+  const tenantId = answers.tenantId || 'teddy-bear-shop';
   const template = templates.find(t => t.value === answers.template);
   if (template.type === 'react') {
-    await createReactProject(projectName, projectPath, answers.tenantId, flags);
+    await createReactProject(projectName, projectPath, tenantId, flags);
   } else {
     logError(`Unknown template type: "${template.type}`);
     process.exit(1);
@@ -224,6 +231,7 @@ const createReactProject = async (
       klarnaPassword: answers.klarnaPassword,
       ngrokUrl: answers.ngrokUrl
     },
+    sendGridApiKey: answers.sendGridApiKey,
     ...options
   };
 
@@ -328,6 +336,23 @@ const showInstructions = (projectPath, useYarn, templateOptions) => {
       `Deploy to ZEIT Now (https://zeit.co/now) by running ${chalk.green(
         'now'
       )}`
+    );
+    console.log();
+    console.log(
+      `Note that you will need to manually add any secret api keys as a Now Secret. Secret names are defined in ${chalk.blue(
+        'now.json'
+      )}.`
+    );
+    console.log(
+      `You can do this by running ${chalk.green(
+        'now secrets add <secret-name> <secret-value>'
+      )}`
+    );
+    console.log();
+    console.log(
+      `See ${chalk.blue(
+        'https://zeit.co/docs/v2/serverless-functions/env-and-secrets'
+      )} for more details.`
     );
   }
 
