@@ -347,6 +347,11 @@ const showInstructions = (projectPath, useYarn, templateOptions) => {
     )} to run the app in production mode`
   );
 
+  console.log();
+  console.log(
+    `Environment variables can be configured in ${chalk.blue('.env')}.`
+  );
+
   if (templateOptions.useNow) {
     console.log();
     console.log(
