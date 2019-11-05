@@ -110,18 +110,16 @@ const reactTemplateQuestions = [
         value: 'klarna',
         checked: paymentMethods.klarna
       }
-      // {
-      //   name: 'PayPal (https://www.paypal.com)',
-      //   value: 'paypal',
-      //   checked: paymentMethods.paypal
-      // },
-      // {
-      //   name: 'Vipps (https://www.vipps.no)',
-      //   value: 'vipps',
-      //   checked: paymentMethods.vipps
-      // }
     ],
     when: answers => answers.options.find(opt => opt === 'customisePayment')
+  },
+  {
+    type: 'confirm',
+    name: 'configureTokens',
+    message:
+      'Configure tokens and API keys now? (You can configure these in your .env file later)',
+    default:
+      (defaultOptions.react && defaultOptions.react.configureTokens) || true
   },
   {
     type: 'input',
@@ -129,43 +127,55 @@ const reactTemplateQuestions = [
     message:
       'Stripe Publishable Key (https://dashboard.stripe.com/test/apikeys)',
     default: 'stripe',
-    when: answers => answers.paymentMethods.find(method => method === 'stripe')
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods.find(method => method === 'stripe')
   },
   {
     type: 'input',
     name: 'stripeSecretKey',
     message: 'Stripe Secret Key (https://dashboard.stripe.com/test/apikeys)',
     default: 'stripe',
-    when: answers => answers.paymentMethods.find(method => method === 'stripe')
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods.find(method => method === 'stripe')
   },
   {
     type: 'input',
     name: 'klarnaUsername',
     message: 'Klarna Username (https://playground.eu.portal.klarna.com)',
     default: 'klarna',
-    when: answers => answers.paymentMethods.find(method => method === 'klarna')
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods.find(method => method === 'klarna')
   },
   {
     type: 'input',
     name: 'klarnaPassword',
     message: 'Klarna Password (https://playground.eu.portal.klarna.com)',
     default: 'klarna',
-    when: answers => answers.paymentMethods.find(method => method === 'klarna')
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods.find(method => method === 'klarna')
   },
   {
     type: 'input',
     name: 'ngrokUrl',
     message:
-      'Please provide a ngrok endpoint (will be used for order confirmation by Klarna)',
+      'Please provide an HTTPS ngrok endpoint (https://ngrok.com/) for testing Klarna order confirmation locally',
     default: 'klarna',
-    when: answers => answers.paymentMethods.find(method => method === 'klarna')
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods.find(method => method === 'klarna')
   },
   {
     type: 'input',
     name: 'sendGridApiKey',
     message: 'SendGrid API Key (https://app.sendgrid.com/settings/api_keys)',
     default: 'sendgrid',
-    when: answers => answers.options.find(option => option === 'useSendGrid')
+    when: answers =>
+      answers.configureTokens &&
+      answers.options.find(option => option === 'useSendGrid')
   },
   {
     type: 'confirm',
@@ -224,16 +234,28 @@ const createReactProject = async (
 
   const templateOptions = {
     tenantId,
-    paymentCredentials: {
-      stripeSecretKey: answers.stripeSecretKey,
-      stripePublishableKey: answers.stripePublishableKey,
-      klarnaUsername: answers.klarnaUsername,
-      klarnaPassword: answers.klarnaPassword,
-      ngrokUrl: answers.ngrokUrl
-    },
-    sendGridApiKey: answers.sendGridApiKey,
+    paymentCredentials: {},
     ...options
   };
+
+  if (options.paymentMethods.stripe) {
+    templateOptions.paymentCredentials.stripeSecretKey =
+      answers.stripeSecretKey || 'stripe';
+    templateOptions.paymentCredentials.stripePublishableKey =
+      answers.stripePublishableKey || 'stripe';
+  }
+
+  if (options.paymentMethods.klarna) {
+    templateOptions.paymentCredentials.klarnaUsername =
+      answers.klarnaUsername || 'klarna';
+    templateOptions.paymentCredentials.klarnaPassword =
+      answers.klarnaPassword || 'klarna';
+    templateOptions.paymentCredentials.ngrokUrl = answers.ngrokUrl || 'klarna';
+  }
+
+  if (options.useSendGrid) {
+    templateOptions.sendGridApiKey = answers.sendGridApikey || 'sendgrid';
+  }
 
   cloneRepository(boilerplates['react'], projectPath);
   logInfo(`Creating a new Crystallize project in ${chalk.green(projectPath)}`);
