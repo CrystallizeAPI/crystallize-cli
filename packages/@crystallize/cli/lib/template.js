@@ -21,6 +21,7 @@ const { boilerplates } = require('./boilerplate');
 
 const config = new Conf({ projectName: 'crystallize' });
 const defaultOptions = config.get('defaults', {});
+const paymentMethods = config.get('defaults.react.paymentMethods', {});
 
 const templates = [
   {
@@ -58,29 +59,34 @@ const rootQuestions = [
   }
 ];
 
-const reduceOptions = answers =>
-  answers.options.reduce((obj, item) => {
+const arrayToObject = array =>
+  array.reduce((obj, item) => {
     obj[item] = true;
     return obj;
   }, {});
+
+const reduceOptions = answers => ({
+  ...arrayToObject(answers.options),
+  paymentMethods: arrayToObject(answers.paymentMethods)
+});
 
 const reactTemplateQuestions = [
   {
     type: 'checkbox',
     name: 'options',
     message: 'Which features would you like to use?',
-    default: 'javascript',
     choices: [
-      // TODO: TypeScript template
-      // {
-      //   name: 'Use TypeScript',
-      //   value: 'typescript',
-      //   checked: defaultOptions.react && defaultOptions.react.typescript
-      // },
       {
         name: 'Use ZEIT Now (https://zeit.co/now) for deployments',
         value: 'useNow',
-        checked: defaultOptions.react && defaultOptions.react.useNow
+        checked: (defaultOptions.react && defaultOptions.react.useNow) || true
+      },
+      {
+        name: 'Add payment methods for checkout',
+        value: 'customisePayment',
+        checked:
+          (defaultOptions.react && defaultOptions.react.customisePayment) ||
+          true
       },
       {
         name: 'Use SendGrid (https://sendgrid.com) for emails',
@@ -90,11 +96,86 @@ const reactTemplateQuestions = [
     ]
   },
   {
+    type: 'checkbox',
+    message: 'Which payment methods would you like to use?',
+    name: 'paymentMethods',
+    choices: [
+      {
+        name: 'Stripe (https://stripe.com)',
+        value: 'stripe',
+        checked: paymentMethods.stripe
+      },
+      {
+        name: 'Klarna (https://www.klarna.com)',
+        value: 'klarna',
+        checked: paymentMethods.klarna
+      }
+    ],
+    when: answers => answers.options.find(opt => opt === 'customisePayment')
+  },
+  {
+    type: 'confirm',
+    name: 'configureTokens',
+    message:
+      'Configure tokens and API keys now? (You can configure these in your .env file later)',
+    default:
+      (defaultOptions.react && defaultOptions.react.configureTokens) || true
+  },
+  {
+    type: 'input',
+    name: 'stripePublishableKey',
+    message:
+      'Stripe Publishable Key (https://dashboard.stripe.com/test/apikeys)',
+    default: 'stripe',
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods.find(method => method === 'stripe')
+  },
+  {
+    type: 'input',
+    name: 'stripeSecretKey',
+    message: 'Stripe Secret Key (https://dashboard.stripe.com/test/apikeys)',
+    default: 'stripe',
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods.find(method => method === 'stripe')
+  },
+  {
+    type: 'input',
+    name: 'klarnaUsername',
+    message: 'Klarna Username (https://playground.eu.portal.klarna.com)',
+    default: 'klarna',
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods.find(method => method === 'klarna')
+  },
+  {
+    type: 'input',
+    name: 'klarnaPassword',
+    message: 'Klarna Password (https://playground.eu.portal.klarna.com)',
+    default: 'klarna',
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods.find(method => method === 'klarna')
+  },
+  {
+    type: 'input',
+    name: 'ngrokUrl',
+    message:
+      'Please provide an HTTPS ngrok endpoint (https://ngrok.com/) for testing Klarna order confirmation locally',
+    default: 'klarna',
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods.find(method => method === 'klarna')
+  },
+  {
     type: 'input',
     name: 'sendGridApiKey',
     message: 'SendGrid API Key (https://app.sendgrid.com/settings/api_keys)',
     default: 'sendgrid',
-    when: answers => answers.options.find(option => option === 'useSendGrid')
+    when: answers =>
+      answers.configureTokens &&
+      answers.options.find(option => option === 'useSendGrid')
   },
   {
     type: 'confirm',
@@ -153,9 +234,28 @@ const createReactProject = async (
 
   const templateOptions = {
     tenantId,
-    sendGridApiKey: answers.sendGridApiKey,
+    paymentCredentials: {},
     ...options
   };
+
+  if (options.paymentMethods.stripe) {
+    templateOptions.paymentCredentials.stripeSecretKey =
+      answers.stripeSecretKey || 'stripe';
+    templateOptions.paymentCredentials.stripePublishableKey =
+      answers.stripePublishableKey || 'stripe';
+  }
+
+  if (options.paymentMethods.klarna) {
+    templateOptions.paymentCredentials.klarnaUsername =
+      answers.klarnaUsername || 'klarna';
+    templateOptions.paymentCredentials.klarnaPassword =
+      answers.klarnaPassword || 'klarna';
+    templateOptions.paymentCredentials.ngrokUrl = answers.ngrokUrl || 'klarna';
+  }
+
+  if (options.useSendGrid) {
+    templateOptions.sendGridApiKey = answers.sendGridApikey || 'sendgrid';
+  }
 
   cloneRepository(boilerplates['react'], projectPath);
   logInfo(`Creating a new Crystallize project in ${chalk.green(projectPath)}`);
@@ -245,6 +345,11 @@ const showInstructions = (projectPath, useYarn, templateOptions) => {
     `Use ${chalk.green(
       useYarn ? 'yarn prod' : 'npm run prod'
     )} to run the app in production mode`
+  );
+
+  console.log();
+  console.log(
+    `Environment variables can be configured in ${chalk.blue('.env')}.`
   );
 
   if (templateOptions.useNow) {
