@@ -123,6 +123,26 @@ const reactTemplateQuestions = [
   },
   {
     type: 'input',
+    name: 'crystallizeAccessTokenId',
+    message:
+      'Crystallize Access Token ID (https://pim.crystallize.com/settings/access-tokens)',
+    default: 'crystallize',
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods.find(method => method === 'stripe')
+  },
+  {
+    type: 'input',
+    name: 'crystallizeAccessTokenSecret',
+    message:
+      'Crystallize Access Token Secret (https://pim.crystallize.com/settings/access-tokens)',
+    default: 'crystallize',
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods.find(method => method === 'stripe')
+  },
+  {
+    type: 'input',
     name: 'stripePublishableKey',
     message:
       'Stripe Publishable Key (https://dashboard.stripe.com/test/apikeys)',
@@ -234,6 +254,9 @@ const createReactProject = async (
 
   const templateOptions = {
     tenantId,
+    crystallizeAccessTokenId: answers.crystallizeAccessTokenId || 'crystallize',
+    crystallizeAccessTokenSecret:
+      answers.crystallizeAccessTokenSecret || 'crystallize',
     paymentCredentials: {},
     ...options
   };

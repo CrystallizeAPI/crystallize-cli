@@ -48,6 +48,8 @@ const configureEnvironment = async (projectPath, options) => {
     GTM_ID: '',
     CRYSTALLIZE_GRAPH_URL_BASE: 'https://graph.crystallize.com',
     CRYSTALLIZE_TENANT_ID: options.tenantId,
+    MY_CRYSTALLIZE_SECRET_TOKEN_ID: options.crystallizeAccessTokenId,
+    MY_CRYSTALLIZE_SECRET_TOKEN: options.crystallizeAccessTokenSecret,
     SECRET: 'secret'
   };
 
