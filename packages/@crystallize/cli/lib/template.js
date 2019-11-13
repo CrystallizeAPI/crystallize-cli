@@ -47,7 +47,7 @@ const rootQuestions = [
   {
     type: 'input',
     name: 'tenantId',
-    message: 'Your tenant ID (https://crystallize.com/signup)',
+    message: 'Your tenant identifier (https://crystallize.com/signup)',
     default: 'teddy-bear-shop',
     when: answers => answers.shopToUse !== 'teddy-bear-shop'
   },
@@ -59,7 +59,7 @@ const rootQuestions = [
   }
 ];
 
-const arrayToObject = array =>
+const arrayToObject = (array = []) =>
   array.reduce((obj, item) => {
     obj[item] = true;
     return obj;
