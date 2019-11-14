@@ -95,6 +95,16 @@ const configureEnvironment = async (projectPath, options) => {
       nowJsonObj.env.SENDGRID_API_KEY = '@sendgrid-api-key';
     }
 
+    if (options.paymentCredentials.klarnaUsername) {
+      nowJsonObj.env.KLARNA_USERNAME = '@klarna-username';
+      nowJsonObj.env.KLARNA_PASSWORD = '@klarna-password';
+    }
+
+    if (options.paymentCredentials.stripeSecretKey) {
+      nowJsonObj.env.STRIPE_SECRET_KEY = '@stripe-secret-key';
+      nowJsonObj.env.STRIPE_PUBLISHABLE_KEY = '@stripe-publishable-key';
+    }
+
     fs.writeFileSync(
       path.resolve(projectPath, 'now.json'),
       JSON.stringify(nowJsonObj, null, 2) + os.EOL,
