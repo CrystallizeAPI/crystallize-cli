@@ -95,6 +95,11 @@ const configureEnvironment = async (projectPath, options) => {
       nowJsonObj.env.SENDGRID_API_KEY = '@sendgrid-api-key';
     }
 
+    nowJsonObj.env.MY_CRYSTALLIZE_SECRET_TOKEN_ID =
+      '@crystallize-access-token-id';
+    nowJsonObj.env.MY_CRYSTALLIZE_SECRET_TOKEN =
+      '@crystallize-access-token-secret';
+
     if (options.paymentCredentials.klarnaUsername) {
       nowJsonObj.env.KLARNA_USERNAME = '@klarna-username';
       nowJsonObj.env.KLARNA_PASSWORD = '@klarna-password';
