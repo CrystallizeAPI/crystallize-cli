@@ -360,9 +360,7 @@ const showInstructions = (projectPath, useYarn, templateOptions) => {
   logSuccess(`Done! Your project has been created in ${projectPath}`);
   console.log();
   console.log(
-    `Use ${chalk.green(
-      useYarn ? 'yarn dev' : 'npm run dev'
-    )} to run the app in development mode`
+    `Use ${chalk.green('now dev')} to run the app in development mode`
   );
   console.log(
     `Use ${chalk.green(
