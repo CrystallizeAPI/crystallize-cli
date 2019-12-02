@@ -129,6 +129,7 @@ const reactTemplateQuestions = [
     default: 'crystallize',
     when: answers =>
       answers.configureTokens &&
+      answers.paymentMethods &&
       answers.paymentMethods.find(method => method === 'stripe')
   },
   {
@@ -139,6 +140,7 @@ const reactTemplateQuestions = [
     default: 'crystallize',
     when: answers =>
       answers.configureTokens &&
+      answers.paymentMethods &&
       answers.paymentMethods.find(method => method === 'stripe')
   },
   {
@@ -149,6 +151,7 @@ const reactTemplateQuestions = [
     default: 'stripe',
     when: answers =>
       answers.configureTokens &&
+      answers.paymentMethods &&
       answers.paymentMethods.find(method => method === 'stripe')
   },
   {
@@ -158,6 +161,7 @@ const reactTemplateQuestions = [
     default: 'stripe',
     when: answers =>
       answers.configureTokens &&
+      answers.paymentMethods &&
       answers.paymentMethods.find(method => method === 'stripe')
   },
   {
@@ -167,6 +171,7 @@ const reactTemplateQuestions = [
     default: 'klarna',
     when: answers =>
       answers.configureTokens &&
+      answers.paymentMethods &&
       answers.paymentMethods.find(method => method === 'klarna')
   },
   {
@@ -176,6 +181,7 @@ const reactTemplateQuestions = [
     default: 'klarna',
     when: answers =>
       answers.configureTokens &&
+      answers.paymentMethods &&
       answers.paymentMethods.find(method => method === 'klarna')
   },
   {
@@ -186,6 +192,7 @@ const reactTemplateQuestions = [
     default: 'klarna',
     when: answers =>
       answers.configureTokens &&
+      answers.paymentMethods &&
       answers.paymentMethods.find(method => method === 'klarna')
   },
   {
