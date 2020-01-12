@@ -43,7 +43,7 @@ npx @crystallize/cli <project-name> -b react
 
 The current boilerplates include:
 
-- [react][4]: A boilerplate for React with Next.js
+- [nextjs][4]: A boilerplate for React with Next.js
 - [react-native][5]: A boilerplate for React Native
 - [flutter][6]: A boilerplate for Flutter
 
