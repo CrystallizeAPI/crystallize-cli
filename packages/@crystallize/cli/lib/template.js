@@ -26,8 +26,8 @@ const paymentMethods = config.get('defaults.react.paymentMethods', {});
 const templates = [
   {
     name: 'Next.js + React',
-    value: 'nextjs-react',
-    type: 'react'
+    value: 'nextjs',
+    type: 'nextjs'
   }
 ];
 
@@ -228,8 +228,8 @@ const createTemplateProject = async (projectName, projectPath, flags) => {
   const answers = await inquirer.prompt(rootQuestions);
   const tenantId = answers.tenantId || 'teddy-bear-shop';
   const template = templates.find(t => t.value === answers.template);
-  if (template.type === 'react') {
-    await createReactProject(projectName, projectPath, tenantId, flags);
+  if (template.type === 'nextjs') {
+    await createNextjsProject(projectName, projectPath, tenantId, flags);
   } else {
     logError(`Unknown template type: "${template.type}`);
     process.exit(1);
@@ -244,7 +244,7 @@ const createTemplateProject = async (projectName, projectPath, flags) => {
  * @param {string} tenantId The id of the shop to use
  * @param {object} flags Flags specified via the cli
  */
-const createReactProject = async (
+const createNextjsProject = async (
   projectName,
   projectPath,
   tenantId,
@@ -287,7 +287,7 @@ const createReactProject = async (
     templateOptions.sendGridApiKey = answers.sendGridApikey || 'sendgrid';
   }
 
-  cloneRepository(boilerplates['react'], projectPath);
+  cloneRepository(boilerplates['nextjs'], projectPath);
   logInfo(`Creating a new Crystallize project in ${chalk.green(projectPath)}`);
 
   process.chdir(projectPath);
