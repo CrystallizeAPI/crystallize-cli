@@ -10,7 +10,7 @@ const chalk = require('chalk');
 const remote = 'https://github.com/CrystallizeAPI/';
 
 const boilerplates = {
-  react: `${remote}crystallize-frontend-boilerplate`,
+  nextjs: `${remote}crystallize-nextjs-boilerplate`,
   'react-native': `${remote}crystallize-react-native-boilerplate`,
   flutter: `${remote}crystallize-flutter-boilerplate`
 };
