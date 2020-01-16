@@ -30,6 +30,7 @@ your needs.
 Current templates include:
 
 - Next.js + React
+- Gatsby + React
 
 ### Boilerplate
 
