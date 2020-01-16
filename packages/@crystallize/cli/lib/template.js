@@ -1,6 +1,6 @@
 'use strict';
 
-const { logError, logSuccess } = require('@crystallize/cli-utils');
+const { logError } = require('@crystallize/cli-utils');
 const inquirer = require('inquirer');
 
 const { createGatsbyProject } = require('./templates/gatsby');
@@ -46,17 +46,6 @@ const rootQuestions = [
     choices: templates
   }
 ];
-
-const arrayToObject = (array = []) =>
-  array.reduce((obj, item) => {
-    obj[item] = true;
-    return obj;
-  }, {});
-
-const reduceOptions = answers => ({
-  ...arrayToObject(answers.options),
-  paymentMethods: arrayToObject(answers.paymentMethods)
-});
 
 /**
  * Determines the type of project to be created and calls the corresponding

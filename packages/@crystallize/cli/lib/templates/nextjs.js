@@ -3,6 +3,7 @@
 const {
   logDebug,
   logInfo,
+  logSuccess,
   shouldUseYarn,
   cloneRepository,
   installNodeDependencies
@@ -11,6 +12,7 @@ const chalk = require('chalk');
 const Conf = require('conf');
 const execSync = require('child_process').execSync;
 const fs = require('fs-extra');
+const inquirer = require('inquirer');
 const isEqual = require('lodash/isEqual');
 const os = require('os');
 const path = require('path');
@@ -19,6 +21,17 @@ const { boilerplates } = require('../boilerplate');
 const config = new Conf({ projectName: 'crystallize' });
 const defaultOptions = config.get('defaults', {});
 const paymentMethods = config.get('defaults.gatsby.paymentMethods', {});
+
+const arrayToObject = (array = []) =>
+  array.reduce((obj, item) => {
+    obj[item] = true;
+    return obj;
+  }, {});
+
+const reduceOptions = answers => ({
+  ...arrayToObject(answers.options),
+  paymentMethods: arrayToObject(answers.paymentMethods)
+});
 
 const gatsbyTemplateQuestions = [
   {
