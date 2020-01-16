@@ -11,6 +11,7 @@ const remote = 'https://github.com/CrystallizeAPI/';
 
 const boilerplates = {
   nextjs: `${remote}crystallize-nextjs-boilerplate`,
+  gatsby: `${remote}crystallize-gatsby-boilerplate`,
   'react-native': `${remote}crystallize-react-native-boilerplate`,
   flutter: `${remote}crystallize-flutter-boilerplate`
 };
