@@ -49,8 +49,7 @@ const createGatsbyProject = async (
     private: true,
     scripts,
     dependencies: {
-      ...oldPackageJsonObj.dependencies,
-      '@crystallize/react-scripts': 'latest'
+      ...oldPackageJsonObj.dependencies
     },
     devDependencies: {
       ...oldPackageJsonObj.devDependencies
@@ -66,21 +65,15 @@ const createGatsbyProject = async (
   const useYarn = !flags.useNpm && shouldUseYarn();
   installNodeDependencies(useYarn);
 
-  if (process.env.DEV) {
-    // Link the package instead of npm install
-    logDebug('Running "npm link @crystallize/react-scripts"');
-    execSync('npm link @crystallize/react-scripts', {
-      stdio: 'inherit'
-    });
-  }
-
-  // Run project's init script
-  const scriptsPath = path.resolve(
-    process.cwd(),
-    'node_modules/@crystallize/react-scripts/scripts/init.js'
+  // Setup Crystallize config
+  fs.writeFileSync(
+    path.resolve('crystallize-config'),
+    [
+      'CRYSTALLIZE_API_BASE=https://graph.crystallize.com',
+      `CRYSTALLIZE_TENANT_ID=${tenantId}`
+    ].join(os.EOL),
+    'utf-8'
   );
-  const init = require(scriptsPath);
-  init(projectPath, templateOptions);
 
   showInstructions(projectPath, useYarn, templateOptions);
 };
