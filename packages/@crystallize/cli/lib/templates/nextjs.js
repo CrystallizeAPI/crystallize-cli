@@ -247,13 +247,11 @@ const createNextjsProject = async (
     delete oldPackageJsonObj.dependencies['express'];
     delete oldPackageJsonObj.dependencies['body-parser'];
     delete oldPackageJsonObj.dependencies['cookie-parser'];
-    scripts['dev'] = scripts['now-dev'];
   } else {
     delete oldPackageJsonObj.dependencies['now'];
     delete oldPackageJsonObj.dependencies['@nerdenough/mjml-ncc-bundle'];
+    delete scripts['now-dev'];
   }
-
-  delete scripts['now-dev'];
 
   const packageJson = {
     name: projectName,
