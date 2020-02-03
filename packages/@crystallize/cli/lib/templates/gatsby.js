@@ -69,7 +69,7 @@ const createGatsbyProject = async (
   fs.writeFileSync(
     path.resolve('crystallize-config'),
     [
-      'CRYSTALLIZE_API_BASE=https://graph.crystallize.com',
+      'CRYSTALLIZE_API_BASE=https://api.crystallize.com',
       `CRYSTALLIZE_TENANT_ID=${tenantId}`
     ].join(os.EOL),
     'utf-8'
