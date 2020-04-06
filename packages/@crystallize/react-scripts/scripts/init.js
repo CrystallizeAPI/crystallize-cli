@@ -30,7 +30,6 @@ const configureTemplate = (projectPath, options) => {
   if (options.useNow) {
     fs.removeSync(path.resolve(projectPath, 'server'));
   } else {
-    fs.removeSync(path.resolve(projectPath, 'pages', 'api'));
     fs.removeSync(path.resolve(projectPath, 'now.json'));
   }
 };
@@ -50,7 +49,7 @@ const configureEnvironment = async (projectPath, options) => {
     CRYSTALLIZE_TENANT_ID: options.tenantId,
     MY_CRYSTALLIZE_SECRET_TOKEN_ID: options.crystallizeAccessTokenId,
     MY_CRYSTALLIZE_SECRET_TOKEN: options.crystallizeAccessTokenSecret,
-    SECRET: 'secret'
+    SECRET: 'secret',
   };
 
   // include stripe credentials if stripe is selected
@@ -75,7 +74,9 @@ const configureEnvironment = async (projectPath, options) => {
   }
 
   // Update .env file
-  const envFileVars = Object.keys(envVars).map(key => `${key}=${envVars[key]}`);
+  const envFileVars = Object.keys(envVars).map(
+    (key) => `${key}=${envVars[key]}`
+  );
 
   fs.writeFileSync(
     path.resolve(projectPath, '.env'),
