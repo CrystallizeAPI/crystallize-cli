@@ -6,6 +6,8 @@ const inquirer = require('inquirer');
 const { createGatsbyProject } = require('./templates/gatsby');
 const { createNextjsProject } = require('./templates/nextjs');
 
+const defaultTenantId = 'furniture';
+
 const templates = [
   {
     name: 'Next.js + React',
@@ -26,8 +28,8 @@ const rootQuestions = [
     message: 'Which shop do you want to use?',
     choices: [
       {
-        value: 'teddy-bear-shop',
-        name: 'The teddy bear shop - prefilled with lots of teddy bears'
+        value: defaultTenantId,
+        name: 'Our template shop - prefilled with lots of juicy data'
       },
       'My very own tenant please'
     ]
@@ -36,8 +38,8 @@ const rootQuestions = [
     type: 'input',
     name: 'tenantId',
     message: 'Your tenant identifier (https://crystallize.com/signup)',
-    default: 'teddy-bear-shop',
-    when: answers => answers.shopToUse !== 'teddy-bear-shop'
+    default: defaultTenantId,
+    when: answers => answers.shopToUse !== defaultTenantId
   },
   {
     type: 'list',
@@ -57,7 +59,7 @@ const rootQuestions = [
  */
 const createTemplateProject = async (projectName, projectPath, flags) => {
   const answers = await inquirer.prompt(rootQuestions);
-  const tenantId = answers.tenantId || 'teddy-bear-shop';
+  const tenantId = answers.tenantId || defaultTenantId;
   const template = templates.find(t => t.value === answers.template);
   if (template.type === 'nextjs') {
     await createNextjsProject(projectName, projectPath, tenantId, flags);
