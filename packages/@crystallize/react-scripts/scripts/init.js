@@ -24,14 +24,12 @@ const init = (projectPath, options) => {
  */
 const configureTemplate = (projectPath, options) => {
   logInfo('Configuring project template');
-  fs.removeSync(path.resolve('.crystallize-greeting'));
+  // fs.removeSync(path.resolve('.crystallize-greeting'));
 
   // Remove unnecessary server files
-  if (options.useNow) {
-    fs.removeSync(path.resolve(projectPath, 'server'));
-  } else {
-    fs.removeSync(path.resolve(projectPath, 'now.json'));
-  }
+  // if (!options.useVercel) {
+  //   fs.removeSync(path.resolve(projectPath, 'vercel.json'));
+  // }
 };
 
 /**
@@ -44,79 +42,87 @@ const configureEnvironment = async (projectPath, options) => {
   logInfo('Configuring project environment');
 
   const envVars = {
-    GTM_ID: '',
-    CRYSTALLIZE_API_URL: 'https://api.crystallize.com',
-    CRYSTALLIZE_TENANT_ID: options.tenantId,
-    MY_CRYSTALLIZE_SECRET_TOKEN_ID: options.crystallizeAccessTokenId,
-    MY_CRYSTALLIZE_SECRET_TOKEN: options.crystallizeAccessTokenSecret,
-    SECRET: 'secret',
+    NEXT_PUBLIC_CRYSTALLIZE_TENANT_ID: options.tenantId || 'teddy-bear-shop',
+    JWT_SECRET: 'come-up-with-a-good-secret-here'
+  };
+
+  const envLocalVars = {
+    CRYSTALLIZE_SECRET_TOKEN_ID: options.crystallizeAccessTokenId,
+    CRYSTALLIZE_SECRET_TOKEN: options.crystallizeAccessTokenSecret
   };
 
   // include stripe credentials if stripe is selected
   if (options.paymentCredentials.stripeSecretKey) {
-    envVars.STRIPE_SECRET_KEY = options.paymentCredentials.stripeSecretKey;
-    envVars.STRIPE_PUBLISHABLE_KEY =
+    envLocalVars.STRIPE_SECRET_KEY = options.paymentCredentials.stripeSecretKey;
+    envLocalVars.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY =
       options.paymentCredentials.stripePublishableKey;
   }
   // include klarna credentials if klarna is selected
   if (options.paymentCredentials.klarnaUsername) {
-    envVars.KLARNA_USERNAME = options.paymentCredentials.klarnaUsername;
-    envVars.KLARNA_PASSWORD = options.paymentCredentials.klarnaPassword;
-    envVars.NGROK_URL = options.paymentCredentials.ngrokUrl;
+    envLocalVars.KLARNA_USERNAME = options.paymentCredentials.klarnaUsername;
+    envLocalVars.KLARNA_PASSWORD = options.paymentCredentials.klarnaPassword;
+    envLocalVars.NGROK_URL = options.paymentCredentials.ngrokUrl;
   }
 
   if (options.sendGridApiKey) {
-    envVars.SENDGRID_API_KEY = options.sendGridApiKey;
-  }
-
-  if (options.tenantId) {
-    envVars.CRYSTALLIZE_TENANT_ID = options.tenantId;
+    envLocalVars.SENDGRID_API_KEY = options.sendGridApiKey;
   }
 
   // Update .env file
-  const envFileVars = Object.keys(envVars).map(
-    (key) => `${key}=${envVars[key]}`
-  );
-
   fs.writeFileSync(
     path.resolve(projectPath, '.env'),
-    envFileVars.join(os.EOL) + os.EOL
+    Object.keys(envVars)
+      .map(key => `${key}=${envVars[key]}`)
+      .join(os.EOL) + os.EOL
   );
 
-  if (options.useNow) {
-    // Update now.json
-    const nowJson = fs.readFileSync(
-      path.resolve(projectPath, 'now.json'),
-      'utf-8'
-    );
-    const nowJsonObj = JSON.parse(nowJson);
-    nowJsonObj.env = envVars;
+  // Update .env.local file
+  fs.writeFileSync(
+    path.resolve(projectPath, '.env.local'),
+    Object.keys(envLocalVars)
+      .map(key => `${key}=${envVars[key]}`)
+      .join(os.EOL) + os.EOL
+  );
 
-    if (options.sendGridApiKey) {
-      nowJsonObj.env.SENDGRID_API_KEY = '@sendgrid-api-key';
+  // Update vercel.json
+  const vercelJson = fs.readFileSync(
+    path.resolve(projectPath, 'vercel.json'),
+    'utf-8'
+  );
+  const vercelJsonObj = JSON.parse(vercelJson);
+  vercelJsonObj.env = {};
+
+  vercelJson.build = {
+    env: {
+      NEXT_PUBLIC_CRYSTALLIZE_TENANT_ID: options.tenantId
     }
+  };
 
-    nowJsonObj.env.MY_CRYSTALLIZE_SECRET_TOKEN_ID =
-      '@crystallize-access-token-id';
-    nowJsonObj.env.MY_CRYSTALLIZE_SECRET_TOKEN =
-      '@crystallize-access-token-secret';
-
-    if (options.paymentCredentials.klarnaUsername) {
-      nowJsonObj.env.KLARNA_USERNAME = '@klarna-username';
-      nowJsonObj.env.KLARNA_PASSWORD = '@klarna-password';
-    }
-
-    if (options.paymentCredentials.stripeSecretKey) {
-      nowJsonObj.env.STRIPE_SECRET_KEY = '@stripe-secret-key';
-      nowJsonObj.env.STRIPE_PUBLISHABLE_KEY = '@stripe-publishable-key';
-    }
-
-    fs.writeFileSync(
-      path.resolve(projectPath, 'now.json'),
-      JSON.stringify(nowJsonObj, null, 2) + os.EOL,
-      'utf-8'
-    );
+  if (options.sendGridApiKey) {
+    vercelJsonObj.env.SENDGRID_API_KEY = '@sendgrid-api-key';
   }
+
+  vercelJsonObj.env.CRYSTALLIZE_SECRET_TOKEN_ID =
+    '@crystallize-access-token-id';
+  vercelJsonObj.env.CRYSTALLIZE_SECRET_TOKEN =
+    '@crystallize-access-token-secret';
+
+  if (options.paymentCredentials.klarnaUsername) {
+    vercelJsonObj.env.KLARNA_USERNAME = '@klarna-username';
+    vercelJsonObj.env.KLARNA_PASSWORD = '@klarna-password';
+  }
+
+  if (options.paymentCredentials.stripeSecretKey) {
+    vercelJsonObj.env.STRIPE_SECRET_KEY = '@stripe-secret-key';
+    vercelJsonObj.build.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY =
+      '@stripe-publishable-key';
+  }
+
+  fs.writeFileSync(
+    path.resolve(projectPath, 'vercel.json'),
+    JSON.stringify(vercelJsonObj, null, 2) + os.EOL,
+    'utf-8'
+  );
 };
 
 module.exports = init;

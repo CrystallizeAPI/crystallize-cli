@@ -33,17 +33,18 @@ const reduceOptions = answers => ({
   paymentMethods: arrayToObject(answers.paymentMethods)
 });
 
-const gatsbyTemplateQuestions = [
+const nextjsTemplateQuestions = [
   {
     type: 'checkbox',
     name: 'options',
     message: 'Which features would you like to use?',
     choices: [
-      {
-        name: 'Use ZEIT Now (https://zeit.co/now) for deployments',
-        value: 'useNow',
-        checked: (defaultOptions.react && defaultOptions.react.useNow) || true
-      },
+      // {
+      //   name: 'Use ZEIT Now (https://zeit.co/now) for deployments',
+      //   value: 'useVercel',
+      //   checked:
+      //     (defaultOptions.react && defaultOptions.react.useVercel) || true
+      // },
       {
         name: 'Add payment methods for checkout',
         value: 'customisePayment',
@@ -80,7 +81,7 @@ const gatsbyTemplateQuestions = [
     type: 'confirm',
     name: 'configureTokens',
     message:
-      'Configure tokens and API keys now? (You can configure these in your .env file later)',
+      'Configure tokens and API keys now? (You can configure these in your .env/.env.local file later)',
     default:
       (defaultOptions.react && defaultOptions.react.configureTokens) || true
   },
@@ -193,7 +194,7 @@ const createNextjsProject = async (
   tenantId,
   flags
 ) => {
-  const answers = await inquirer.prompt(gatsbyTemplateQuestions);
+  const answers = await inquirer.prompt(nextjsTemplateQuestions);
   const options = reduceOptions(answers);
 
   if (answers.saveDefaults) {
@@ -240,24 +241,24 @@ const createNextjsProject = async (
   const oldPackageJsonObj = JSON.parse(oldPackageJson);
 
   const scripts = oldPackageJsonObj.scripts;
-  delete scripts['postinstall'];
-  delete scripts['greet'];
+  // delete scripts['postinstall'];
+  // delete scripts['greet'];
 
-  if (templateOptions.useNow) {
-    delete oldPackageJsonObj.dependencies['express'];
-    delete oldPackageJsonObj.dependencies['body-parser'];
-    delete oldPackageJsonObj.dependencies['cookie-parser'];
-  } else {
-    delete oldPackageJsonObj.dependencies['now'];
-    delete oldPackageJsonObj.dependencies['@nerdenough/mjml-ncc-bundle'];
-    delete scripts['now-dev'];
-  }
+  // if (templateOptions.useVercel) {
+  //   delete oldPackageJsonObj.dependencies['express'];
+  //   delete oldPackageJsonObj.dependencies['body-parser'];
+  //   delete oldPackageJsonObj.dependencies['cookie-parser'];
+  // } else {
+  //   delete oldPackageJsonObj.dependencies['now'];
+  //   delete oldPackageJsonObj.dependencies['@nerdenough/mjml-ncc-bundle'];
+  //   delete scripts['now-dev'];
+  // }
 
   const packageJson = {
     name: projectName,
     version: '0.1.0',
     private: true,
-    scripts,
+    scripts: oldPackageJsonObj.scripts,
     dependencies: {
       ...oldPackageJsonObj.dependencies,
       '@crystallize/react-scripts': 'latest'
@@ -301,17 +302,18 @@ const createNextjsProject = async (
  *
  * @param {string} projectPath The path of the project
  * @param {string} useYarn Should the commands be shown as yarn or npm?
- * @param {object} templateOptions User specified template configuration
  */
-const showInstructions = (projectPath, useYarn, templateOptions) => {
+const showInstructions = (projectPath, useYarn) => {
   console.log();
   logSuccess(`Done! Your project has been created in ${projectPath}`);
   console.log();
   console.log(
-    `Use ${chalk.green('now dev')} to run the app in development mode`
+    `Run ${chalk.green(
+      useYarn ? 'yarn dev' : 'npm run dev'
+    )} to run the app in development mode`
   );
   console.log(
-    `Use ${chalk.green(
+    `Run ${chalk.green(
       useYarn ? 'yarn prod' : 'npm run prod'
     )} to run the app in production mode`
   );
@@ -320,37 +322,37 @@ const showInstructions = (projectPath, useYarn, templateOptions) => {
   console.log(
     `Environment variables can be configured in ${chalk.blue('.env')}.`
   );
+  console.log(
+    `Local/user specific environment variables can be configured in ${chalk.blue(
+      '.env.local'
+    )}.`
+  );
 
-  if (templateOptions.useNow) {
-    console.log();
-    console.log(
-      `Install now globally with ${chalk.green(
-        useYarn ? 'yarn global add now' : 'npm install --global now'
-      )}`
-    );
-    console.log(
-      `Deploy to ZEIT Now (https://zeit.co/now) by running ${chalk.green(
-        'now'
-      )}`
-    );
-    console.log();
-    console.log(
-      `Note that you will need to manually add any secret api keys as a Now Secret. Secret names are defined in ${chalk.blue(
-        'now.json'
-      )}.`
-    );
-    console.log(
-      `You can do this by running ${chalk.green(
-        'now secrets add <secret-name> <secret-value>'
-      )}`
-    );
-    console.log();
-    console.log(
-      `See ${chalk.blue(
-        'https://zeit.co/docs/v2/serverless-functions/env-and-secrets'
-      )} for more details.`
-    );
-  }
+  console.log();
+
+  console.log(
+    `Deploy to Vercel (https://vercel.com) by running ${chalk.green(
+      useYarn ? 'yarn vercel' : 'npm run vercel'
+    )}`
+  );
+  console.log();
+  console.log(
+    `Note that you will need to manually add any secret api keys as a Vercel Secret. Secret names are defined in ${chalk.blue(
+      'vercel.json'
+    )}.`
+  );
+  console.log(
+    `You can do this by running ${chalk.green(
+      (useYarn ? 'yarn ' : 'npm run ') +
+        'vercel secrets add <secret-name> <secret-value>'
+    )}`
+  );
+  console.log();
+  console.log(
+    `See ${chalk.blue(
+      'https://vercel.com/docs/v2/serverless-functions/env-and-secrets'
+    )} for more details.`
+  );
 
   console.log();
 };
