@@ -1,7 +1,7 @@
 const execSync = require('child_process').execSync;
 const fs = require('fs-extra');
 const path = require('path');
-const { logInfo, logError } = require('./log');
+const { logInfo, logError, logDebug } = require('./log');
 
 /**
  * Initialises a repository and creates an initial commit. Deletes existing
@@ -42,6 +42,8 @@ const cloneRepository = (remote, destination) => {
     execSync(`git clone --depth 1 ${remote} ${destination}`);
     return true;
   } catch (err) {
+    logDebug(err);
+
     // Perhaps git is not installed
     logError(`Unable to clone ${remote}`);
     return false;
