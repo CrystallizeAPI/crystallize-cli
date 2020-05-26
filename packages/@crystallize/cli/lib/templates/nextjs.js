@@ -150,17 +150,6 @@ const nextjsTemplateQuestions = [
   },
   {
     type: 'input',
-    name: 'ngrokUrl',
-    message:
-      'Please provide an HTTPS ngrok endpoint (https://ngrok.com/) for testing Klarna order confirmation locally',
-    default: 'klarna',
-    when: answers =>
-      answers.configureTokens &&
-      answers.paymentMethods &&
-      answers.paymentMethods.find(method => method === 'klarna')
-  },
-  {
-    type: 'input',
     name: 'sendGridApiKey',
     message: 'SendGrid API Key (https://app.sendgrid.com/settings/api_keys)',
     default: 'sendgrid',
@@ -224,7 +213,6 @@ const createNextjsProject = async (
       answers.klarnaUsername || 'klarna';
     templateOptions.paymentCredentials.klarnaPassword =
       answers.klarnaPassword || 'klarna';
-    templateOptions.paymentCredentials.ngrokUrl = answers.ngrokUrl || 'klarna';
   }
 
   if (options.useSendGrid) {

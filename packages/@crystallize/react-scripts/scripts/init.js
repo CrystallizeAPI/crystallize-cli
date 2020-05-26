@@ -61,7 +61,6 @@ const configureEnvironment = async (projectPath, options) => {
   if (options.paymentCredentials.klarnaUsername) {
     envLocalVars.KLARNA_USERNAME = options.paymentCredentials.klarnaUsername;
     envLocalVars.KLARNA_PASSWORD = options.paymentCredentials.klarnaPassword;
-    envLocalVars.NGROK_URL = options.paymentCredentials.ngrokUrl;
   }
 
   if (options.sendGridApiKey) {
@@ -80,7 +79,7 @@ const configureEnvironment = async (projectPath, options) => {
   fs.writeFileSync(
     path.resolve(projectPath, '.env.local'),
     Object.keys(envLocalVars)
-      .map(key => `${key}=${envVars[key]}`)
+      .map(key => `${key}=${envLocalVars[key]}`)
       .join(os.EOL) + os.EOL
   );
 
