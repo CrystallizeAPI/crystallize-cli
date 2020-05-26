@@ -42,11 +42,11 @@ const configureEnvironment = async (projectPath, options) => {
   logInfo('Configuring project environment');
 
   const envVars = {
-    NEXT_PUBLIC_CRYSTALLIZE_TENANT_ID: options.tenantId,
-    JWT_SECRET: 'come-up-with-a-good-secret-here'
+    NEXT_PUBLIC_CRYSTALLIZE_TENANT_ID: options.tenantId
   };
 
   const envLocalVars = {
+    JWT_SECRET: 'come-up-with-a-good-secret-here',
     CRYSTALLIZE_SECRET_TOKEN_ID: options.crystallizeAccessTokenId,
     CRYSTALLIZE_SECRET_TOKEN: options.crystallizeAccessTokenSecret
   };
