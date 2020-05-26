@@ -1,6 +1,6 @@
 {
   "name": "@crystallize/react-scripts",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "license": "MIT",
   "dependencies": {
     "@crystallize/cli-utils": "^1.0.2",
