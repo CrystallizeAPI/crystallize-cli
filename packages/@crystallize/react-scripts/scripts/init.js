@@ -42,11 +42,11 @@ const configureEnvironment = async (projectPath, options) => {
   logInfo('Configuring project environment');
 
   const envVars = {
-    NEXT_PUBLIC_CRYSTALLIZE_TENANT_ID: options.tenantId,
-    JWT_SECRET: 'come-up-with-a-good-secret-here'
+    NEXT_PUBLIC_CRYSTALLIZE_TENANT_ID: options.tenantId
   };
 
   const envLocalVars = {
+    JWT_SECRET: 'come-up-with-a-good-secret-here',
     CRYSTALLIZE_SECRET_TOKEN_ID: options.crystallizeAccessTokenId,
     CRYSTALLIZE_SECRET_TOKEN: options.crystallizeAccessTokenSecret
   };
@@ -61,7 +61,6 @@ const configureEnvironment = async (projectPath, options) => {
   if (options.paymentCredentials.klarnaUsername) {
     envLocalVars.KLARNA_USERNAME = options.paymentCredentials.klarnaUsername;
     envLocalVars.KLARNA_PASSWORD = options.paymentCredentials.klarnaPassword;
-    envLocalVars.NGROK_URL = options.paymentCredentials.ngrokUrl;
   }
 
   if (options.sendGridApiKey) {
@@ -80,7 +79,7 @@ const configureEnvironment = async (projectPath, options) => {
   fs.writeFileSync(
     path.resolve(projectPath, '.env.local'),
     Object.keys(envLocalVars)
-      .map(key => `${key}=${envVars[key]}`)
+      .map(key => `${key}=${envLocalVars[key]}`)
       .join(os.EOL) + os.EOL
   );
 
