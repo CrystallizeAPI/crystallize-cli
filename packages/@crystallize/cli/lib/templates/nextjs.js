@@ -331,9 +331,9 @@ const showInstructions = (projectPath, useYarn) => {
   console.log();
 
   console.log(
-    `Deploy to Vercel (https://vercel.com) by running ${chalk.green(
-      useYarn ? 'yarn vercel' : 'npm run vercel'
-    )}`
+    `Deploy to Vercel (https://vercel.com) by installing it globally with ${chalk.green(
+      useYarn ? 'yarn global add vercel' : 'npm i -g vercel'
+    )} followed by ${chalk.green('vercel')}`
   );
   console.log();
   console.log(
