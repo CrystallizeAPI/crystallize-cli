@@ -42,11 +42,13 @@ const configureEnvironment = async (projectPath, options) => {
   logInfo('Configuring project environment');
 
   const envVars = {
-    NEXT_PUBLIC_CRYSTALLIZE_TENANT_ID: options.tenantId
+    NEXT_PUBLIC_CRYSTALLIZE_CATALOGUE_URL: `https://api.crystallize.com/${options.tenantId}/catalogue`,
+    CRYSTALLIZE_CORE_URL: `https://pim.crystallize.com/graph/core`,
+    CRYSTALLIZE_ORDERS_URL: `https://api.crystallize.com/${options.tenantId}/orders`,
+    JWT_SECRET: 'come-up-with-a-super-secret-token-here'
   };
 
   const envLocalVars = {
-    JWT_SECRET: 'come-up-with-a-good-secret-here',
     CRYSTALLIZE_SECRET_TOKEN_ID: options.crystallizeAccessTokenId,
     CRYSTALLIZE_SECRET_TOKEN: options.crystallizeAccessTokenSecret
   };
