@@ -53,6 +53,12 @@ const configureEnvironment = async (projectPath, options) => {
     CRYSTALLIZE_SECRET_TOKEN: options.crystallizeAccessTokenSecret
   };
 
+  envVars.NEXT_PUBLIC_CRYSTALLIZE_IS_MULTILINGUAL = options.multilingual
+    ? 'true'
+    : 'false';
+  envVars.NEXT_PUBLIC_CRYSTALLIZE_LANGUAGES =
+    options.multilingualLanguages || 'en';
+
   // include stripe credentials if stripe is selected
   if (options.paymentCredentials.stripeSecretKey) {
     envLocalVars.STRIPE_SECRET_KEY = options.paymentCredentials.stripeSecretKey;

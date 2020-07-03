@@ -30,10 +30,33 @@ const arrayToObject = (array = []) =>
 
 const reduceOptions = answers => ({
   ...arrayToObject(answers.options),
-  paymentMethods: arrayToObject(answers.paymentMethods)
+  paymentMethods: arrayToObject(answers.paymentMethods),
+  multilingual: answers.multilingual,
+  multilingualLanguages: answers.multilingualLanguages
 });
 
 const nextjsTemplateQuestions = [
+  {
+    type: 'confirm',
+    message: 'Would you like to enable multiple languages?',
+    name: 'multilingual',
+    default:
+      (defaultOptions.react && defaultOptions.react.multilingual) || false
+  },
+  {
+    type: 'input',
+    name: 'multilingualLanguages',
+    message:
+      'Please provide your the languages you will support\n(The list of languages must match the language codes that you specify in Crystallize, e.g.: "en,de")',
+    default: 'en,de',
+    validate: function(input) {
+      if (!input || input.match(/;\|/)) {
+        return 'Please seperate the languages with comma (,). Example: "en,de"';
+      }
+      return true;
+    },
+    when: answers => answers.multilingual
+  },
   {
     type: 'checkbox',
     name: 'options',
@@ -59,6 +82,7 @@ const nextjsTemplateQuestions = [
       }
     ]
   },
+
   {
     type: 'checkbox',
     message: 'Which payment methods would you like to use?',
@@ -73,90 +97,96 @@ const nextjsTemplateQuestions = [
         name: 'Klarna (https://www.klarna.com)',
         value: 'klarna',
         checked: paymentMethods.klarna
+      },
+      {
+        name: 'Vipps (https://vipps.no)',
+        value: 'vipps',
+        checked: paymentMethods.vipps
       }
     ],
     when: answers => answers.options.find(opt => opt === 'customisePayment')
   },
-  {
-    type: 'confirm',
-    name: 'configureTokens',
-    message:
-      'Configure tokens and API keys now? (You can configure these in your .env/.env.local file later)',
-    default:
-      (defaultOptions.react && defaultOptions.react.configureTokens) || true
-  },
-  {
-    type: 'input',
-    name: 'crystallizeAccessTokenId',
-    message:
-      'Crystallize Access Token ID (https://pim.crystallize.com/settings/access-tokens)',
-    default: 'crystallize',
-    when: answers =>
-      answers.configureTokens &&
-      answers.paymentMethods &&
-      answers.paymentMethods.find(method => method === 'stripe')
-  },
-  {
-    type: 'input',
-    name: 'crystallizeAccessTokenSecret',
-    message:
-      'Crystallize Access Token Secret (https://pim.crystallize.com/settings/access-tokens)',
-    default: 'crystallize',
-    when: answers =>
-      answers.configureTokens &&
-      answers.paymentMethods &&
-      answers.paymentMethods.find(method => method === 'stripe')
-  },
-  {
-    type: 'input',
-    name: 'stripePublishableKey',
-    message:
-      'Stripe Publishable Key (https://dashboard.stripe.com/test/apikeys)',
-    default: 'stripe',
-    when: answers =>
-      answers.configureTokens &&
-      answers.paymentMethods &&
-      answers.paymentMethods.find(method => method === 'stripe')
-  },
-  {
-    type: 'input',
-    name: 'stripeSecretKey',
-    message: 'Stripe Secret Key (https://dashboard.stripe.com/test/apikeys)',
-    default: 'stripe',
-    when: answers =>
-      answers.configureTokens &&
-      answers.paymentMethods &&
-      answers.paymentMethods.find(method => method === 'stripe')
-  },
-  {
-    type: 'input',
-    name: 'klarnaUsername',
-    message: 'Klarna Username (https://playground.eu.portal.klarna.com)',
-    default: 'klarna',
-    when: answers =>
-      answers.configureTokens &&
-      answers.paymentMethods &&
-      answers.paymentMethods.find(method => method === 'klarna')
-  },
-  {
-    type: 'input',
-    name: 'klarnaPassword',
-    message: 'Klarna Password (https://playground.eu.portal.klarna.com)',
-    default: 'klarna',
-    when: answers =>
-      answers.configureTokens &&
-      answers.paymentMethods &&
-      answers.paymentMethods.find(method => method === 'klarna')
-  },
-  {
-    type: 'input',
-    name: 'sendGridApiKey',
-    message: 'SendGrid API Key (https://app.sendgrid.com/settings/api_keys)',
-    default: 'sendgrid',
-    when: answers =>
-      answers.configureTokens &&
-      answers.options.find(option => option === 'useSendGrid')
-  },
+
+  // {
+  //   type: 'confirm',
+  //   name: 'configureTokens',
+  //   message:
+  //     'Configure tokens and API keys now? (You can configure these in your .env/.env.local file later)',
+  //   default:
+  //     (defaultOptions.react && defaultOptions.react.configureTokens) || true
+  // },
+  // {
+  //   type: 'input',
+  //   name: 'crystallizeAccessTokenId',
+  //   message:
+  //     'Crystallize Access Token ID (https://pim.crystallize.com/settings/access-tokens)',
+  //   default: 'crystallize',
+  //   when: answers =>
+  //     answers.configureTokens &&
+  //     answers.paymentMethods &&
+  //     answers.paymentMethods.find(method => method === 'stripe')
+  // },
+  // {
+  //   type: 'input',
+  //   name: 'crystallizeAccessTokenSecret',
+  //   message:
+  //     'Crystallize Access Token Secret (https://pim.crystallize.com/settings/access-tokens)',
+  //   default: 'crystallize',
+  //   when: answers =>
+  //     answers.configureTokens &&
+  //     answers.paymentMethods &&
+  //     answers.paymentMethods.find(method => method === 'stripe')
+  // },
+  // {
+  //   type: 'input',
+  //   name: 'stripePublishableKey',
+  //   message:
+  //     'Stripe Publishable Key (https://dashboard.stripe.com/test/apikeys)',
+  //   default: 'stripe',
+  //   when: answers =>
+  //     answers.configureTokens &&
+  //     answers.paymentMethods &&
+  //     answers.paymentMethods.find(method => method === 'stripe')
+  // },
+  // {
+  //   type: 'input',
+  //   name: 'stripeSecretKey',
+  //   message: 'Stripe Secret Key (https://dashboard.stripe.com/test/apikeys)',
+  //   default: 'stripe',
+  //   when: answers =>
+  //     answers.configureTokens &&
+  //     answers.paymentMethods &&
+  //     answers.paymentMethods.find(method => method === 'stripe')
+  // },
+  // {
+  //   type: 'input',
+  //   name: 'klarnaUsername',
+  //   message: 'Klarna Username (https://playground.eu.portal.klarna.com)',
+  //   default: 'klarna',
+  //   when: answers =>
+  //     answers.configureTokens &&
+  //     answers.paymentMethods &&
+  //     answers.paymentMethods.find(method => method === 'klarna')
+  // },
+  // {
+  //   type: 'input',
+  //   name: 'klarnaPassword',
+  //   message: 'Klarna Password (https://playground.eu.portal.klarna.com)',
+  //   default: 'klarna',
+  //   when: answers =>
+  //     answers.configureTokens &&
+  //     answers.paymentMethods &&
+  //     answers.paymentMethods.find(method => method === 'klarna')
+  // },
+  // {
+  //   type: 'input',
+  //   name: 'sendGridApiKey',
+  //   message: 'SendGrid API Key (https://app.sendgrid.com/settings/api_keys)',
+  //   default: 'sendgrid',
+  //   when: answers =>
+  //     answers.configureTokens &&
+  //     answers.options.find(option => option === 'useSendGrid')
+  // },
   {
     type: 'confirm',
     name: 'saveDefaults',
@@ -188,7 +218,7 @@ const createNextjsProject = async (
 
   if (answers.saveDefaults) {
     logInfo('Saving default template preferences');
-    logInfo('Note: This will not save any tokens or keys');
+    // logInfo('Note: This will not save any tokens or keys');
     config.set('defaults.react', options);
   }
 
@@ -228,20 +258,6 @@ const createNextjsProject = async (
   const oldPackageJson = fs.readFileSync(path.resolve('package.json'), 'utf-8');
   const oldPackageJsonObj = JSON.parse(oldPackageJson);
 
-  const scripts = oldPackageJsonObj.scripts;
-  // delete scripts['postinstall'];
-  // delete scripts['greet'];
-
-  // if (templateOptions.useVercel) {
-  //   delete oldPackageJsonObj.dependencies['express'];
-  //   delete oldPackageJsonObj.dependencies['body-parser'];
-  //   delete oldPackageJsonObj.dependencies['cookie-parser'];
-  // } else {
-  //   delete oldPackageJsonObj.dependencies['now'];
-  //   delete oldPackageJsonObj.dependencies['@nerdenough/mjml-ncc-bundle'];
-  //   delete scripts['now-dev'];
-  // }
-
   const packageJson = {
     name: projectName,
     version: '0.1.0',
@@ -260,6 +276,31 @@ const createNextjsProject = async (
     path.resolve(projectPath, 'package.json'),
     JSON.stringify(packageJson, null, 2) + os.EOL
   );
+
+  if (options.multilingual) {
+    const moveThis = [
+      'confirmation',
+      'index.js',
+      '[...catalogue].js',
+      'checkout.js',
+      'login.js'
+    ];
+    await Promise.all(
+      moveThis.map(m =>
+        fs.move(
+          path.resolve(`src/pages/${m}`),
+          path.resolve(`src/pages/[language]/${m}`)
+        )
+      )
+    );
+
+    await fs.move(
+      path.resolve(`src/pages/_index-multilingual-redirect.js`),
+      path.resolve(`src/pages/index.js`)
+    );
+  } else {
+    await fs.remove(path.resolve(`src/pages/_index-multilingual-redirect.js`));
+  }
 
   // Install dependencies
   const useYarn = !flags.useNpm && shouldUseYarn();
