@@ -106,87 +106,86 @@ const nextjsTemplateQuestions = [
     ],
     when: answers => answers.options.find(opt => opt === 'customisePayment')
   },
-
-  // {
-  //   type: 'confirm',
-  //   name: 'configureTokens',
-  //   message:
-  //     'Configure tokens and API keys now? (You can configure these in your .env/.env.local file later)',
-  //   default:
-  //     (defaultOptions.react && defaultOptions.react.configureTokens) || true
-  // },
-  // {
-  //   type: 'input',
-  //   name: 'crystallizeAccessTokenId',
-  //   message:
-  //     'Crystallize Access Token ID (https://pim.crystallize.com/settings/access-tokens)',
-  //   default: 'crystallize',
-  //   when: answers =>
-  //     answers.configureTokens &&
-  //     answers.paymentMethods &&
-  //     answers.paymentMethods.find(method => method === 'stripe')
-  // },
-  // {
-  //   type: 'input',
-  //   name: 'crystallizeAccessTokenSecret',
-  //   message:
-  //     'Crystallize Access Token Secret (https://pim.crystallize.com/settings/access-tokens)',
-  //   default: 'crystallize',
-  //   when: answers =>
-  //     answers.configureTokens &&
-  //     answers.paymentMethods &&
-  //     answers.paymentMethods.find(method => method === 'stripe')
-  // },
-  // {
-  //   type: 'input',
-  //   name: 'stripePublishableKey',
-  //   message:
-  //     'Stripe Publishable Key (https://dashboard.stripe.com/test/apikeys)',
-  //   default: 'stripe',
-  //   when: answers =>
-  //     answers.configureTokens &&
-  //     answers.paymentMethods &&
-  //     answers.paymentMethods.find(method => method === 'stripe')
-  // },
-  // {
-  //   type: 'input',
-  //   name: 'stripeSecretKey',
-  //   message: 'Stripe Secret Key (https://dashboard.stripe.com/test/apikeys)',
-  //   default: 'stripe',
-  //   when: answers =>
-  //     answers.configureTokens &&
-  //     answers.paymentMethods &&
-  //     answers.paymentMethods.find(method => method === 'stripe')
-  // },
-  // {
-  //   type: 'input',
-  //   name: 'klarnaUsername',
-  //   message: 'Klarna Username (https://playground.eu.portal.klarna.com)',
-  //   default: 'klarna',
-  //   when: answers =>
-  //     answers.configureTokens &&
-  //     answers.paymentMethods &&
-  //     answers.paymentMethods.find(method => method === 'klarna')
-  // },
-  // {
-  //   type: 'input',
-  //   name: 'klarnaPassword',
-  //   message: 'Klarna Password (https://playground.eu.portal.klarna.com)',
-  //   default: 'klarna',
-  //   when: answers =>
-  //     answers.configureTokens &&
-  //     answers.paymentMethods &&
-  //     answers.paymentMethods.find(method => method === 'klarna')
-  // },
-  // {
-  //   type: 'input',
-  //   name: 'sendGridApiKey',
-  //   message: 'SendGrid API Key (https://app.sendgrid.com/settings/api_keys)',
-  //   default: 'sendgrid',
-  //   when: answers =>
-  //     answers.configureTokens &&
-  //     answers.options.find(option => option === 'useSendGrid')
-  // },
+  {
+    type: 'confirm',
+    name: 'configureTokens',
+    message:
+      'Configure tokens and API keys now? (You can configure these in your .env/.env.local file later)',
+    default:
+      (defaultOptions.react && defaultOptions.react.configureTokens) || true
+  },
+  {
+    type: 'input',
+    name: 'crystallizeAccessTokenId',
+    message:
+      'Crystallize Access Token ID (https://pim.crystallize.com/settings/access-tokens)',
+    default: 'crystallize',
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods &&
+      answers.paymentMethods.find(method => method === 'stripe')
+  },
+  {
+    type: 'input',
+    name: 'crystallizeAccessTokenSecret',
+    message:
+      'Crystallize Access Token Secret (https://pim.crystallize.com/settings/access-tokens)',
+    default: 'crystallize',
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods &&
+      answers.paymentMethods.find(method => method === 'stripe')
+  },
+  {
+    type: 'input',
+    name: 'stripePublishableKey',
+    message:
+      'Stripe Publishable Key (https://dashboard.stripe.com/test/apikeys)',
+    default: 'stripe',
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods &&
+      answers.paymentMethods.find(method => method === 'stripe')
+  },
+  {
+    type: 'input',
+    name: 'stripeSecretKey',
+    message: 'Stripe Secret Key (https://dashboard.stripe.com/test/apikeys)',
+    default: 'stripe',
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods &&
+      answers.paymentMethods.find(method => method === 'stripe')
+  },
+  {
+    type: 'input',
+    name: 'klarnaUsername',
+    message: 'Klarna Username (https://playground.eu.portal.klarna.com)',
+    default: 'klarna',
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods &&
+      answers.paymentMethods.find(method => method === 'klarna')
+  },
+  {
+    type: 'input',
+    name: 'klarnaPassword',
+    message: 'Klarna Password (https://playground.eu.portal.klarna.com)',
+    default: 'klarna',
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods &&
+      answers.paymentMethods.find(method => method === 'klarna')
+  },
+  {
+    type: 'input',
+    name: 'sendGridApiKey',
+    message: 'SendGrid API Key (https://app.sendgrid.com/settings/api_keys)',
+    default: 'sendgrid',
+    when: answers =>
+      answers.configureTokens &&
+      answers.options.find(option => option === 'useSendGrid')
+  },
   {
     type: 'confirm',
     name: 'saveDefaults',
@@ -218,7 +217,7 @@ const createNextjsProject = async (
 
   if (answers.saveDefaults) {
     logInfo('Saving default template preferences');
-    // logInfo('Note: This will not save any tokens or keys');
+    logInfo('Note: This will not save any tokens or keys');
     config.set('defaults.react', options);
   }
 
