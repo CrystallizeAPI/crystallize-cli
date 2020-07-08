@@ -120,10 +120,7 @@ const nextjsTemplateQuestions = [
     message:
       'Crystallize Access Token ID (https://pim.crystallize.com/settings/access-tokens)',
     default: 'crystallize',
-    when: answers =>
-      answers.configureTokens &&
-      answers.paymentMethods &&
-      answers.paymentMethods.find(method => method === 'stripe')
+    when: answers => answers.configureTokens
   },
   {
     type: 'input',
@@ -131,10 +128,7 @@ const nextjsTemplateQuestions = [
     message:
       'Crystallize Access Token Secret (https://pim.crystallize.com/settings/access-tokens)',
     default: 'crystallize',
-    when: answers =>
-      answers.configureTokens &&
-      answers.paymentMethods &&
-      answers.paymentMethods.find(method => method === 'stripe')
+    when: answers => answers.configureTokens
   },
   {
     type: 'input',
@@ -176,6 +170,46 @@ const nextjsTemplateQuestions = [
       answers.configureTokens &&
       answers.paymentMethods &&
       answers.paymentMethods.find(method => method === 'klarna')
+  },
+  {
+    type: 'input',
+    name: 'vippsClientId',
+    message: 'Vipps client id',
+    default: 'vipps-client-id',
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods &&
+      answers.paymentMethods.some(method => method === 'vipps')
+  },
+  {
+    type: 'input',
+    name: 'vippsClientSecret',
+    message: 'Vipps client secret',
+    default: 'vipps-client-secret',
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods &&
+      answers.paymentMethods.some(method => method === 'vipps')
+  },
+  {
+    type: 'input',
+    name: 'vippsMerchantSerial',
+    message: 'Vipps merchant serial',
+    default: 'vipps-merchant-serial',
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods &&
+      answers.paymentMethods.some(method => method === 'vipps')
+  },
+  {
+    type: 'input',
+    name: 'vippsSubKey',
+    message: 'Vipps subscription key',
+    default: 'vipps-sub-key',
+    when: answers =>
+      answers.configureTokens &&
+      answers.paymentMethods &&
+      answers.paymentMethods.some(method => method === 'vipps')
   },
   {
     type: 'input',
@@ -244,6 +278,17 @@ const createNextjsProject = async (
       answers.klarnaPassword || 'klarna';
   }
 
+  if (options.paymentMethods.vipps) {
+    templateOptions.paymentCredentials.vippsClientId =
+      answers.vippsClientId || 'vipps-client-id';
+    templateOptions.paymentCredentials.vippsClientSecret =
+      answers.vippsClientSecret || 'vipps-client-secret';
+    templateOptions.paymentCredentials.vippsMerchantSerial =
+      answers.vippsMerchantSerial || 'vipps-merchant-serial';
+    templateOptions.paymentCredentials.vippsSubKey =
+      answers.vippsSubKey || 'vipps-sub-key';
+  }
+
   if (options.useSendGrid) {
     templateOptions.sendGridApiKey = answers.sendGridApikey || 'sendgrid';
   }
@@ -288,23 +333,23 @@ const createNextjsProject = async (
       moveThis.map(m =>
         fs.move(
           path.resolve(`src/pages/${m}`),
-          path.resolve(`src/pages/[language]/${m}`)
+          path.resolve(`src/pages/[locale]/${m}`)
         )
       )
     );
 
     await fs.move(
-      path.resolve(`src/pages/_index-multilingual-redirect.js`),
+      path.resolve(`src/pages/_index.multilingual.redirect.js`),
       path.resolve(`src/pages/index.js`)
     );
   } else {
-    await fs.remove(path.resolve(`src/pages/_index-multilingual-redirect.js`));
+    await fs.remove(path.resolve(`src/pages/_index.multilingual.redirect.js`));
   }
 
   // Install dependencies
   const useYarn = !flags.useNpm && shouldUseYarn();
   installNodeDependencies(useYarn);
-
+  
   if (process.env.DEV) {
     // Link the package instead of npm install
     logDebug('Running "npm link @crystallize/react-scripts"');

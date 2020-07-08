@@ -42,9 +42,7 @@ const configureEnvironment = async (projectPath, options) => {
   logInfo('Configuring project environment');
 
   const envVars = {
-    NEXT_PUBLIC_CRYSTALLIZE_CATALOGUE_URL: `https://api.crystallize.com/${options.tenantId}/catalogue`,
-    CRYSTALLIZE_CORE_URL: `https://pim.crystallize.com/graph/core`,
-    CRYSTALLIZE_ORDERS_URL: `https://api.crystallize.com/${options.tenantId}/orders`,
+    NEXT_PUBLIC_CRYSTALLIZE_TENANT_IDENTIFIER: options.tenantId,
     JWT_SECRET: 'come-up-with-a-super-secret-token-here'
   };
 
@@ -53,11 +51,26 @@ const configureEnvironment = async (projectPath, options) => {
     CRYSTALLIZE_SECRET_TOKEN: options.crystallizeAccessTokenSecret
   };
 
-  envVars.NEXT_PUBLIC_CRYSTALLIZE_IS_MULTILINGUAL = options.multilingual
-    ? 'true'
-    : 'false';
-  envVars.NEXT_PUBLIC_CRYSTALLIZE_LANGUAGES =
-    options.multilingualLanguages || 'en';
+  const appConfig = {
+    locales: []
+  };
+
+  // Set payment methods
+  appConfig.paymentProviders = Object.keys(options.paymentMethods);
+
+  // Set locales
+  (options.multilingualLanguages || 'en')
+    .split(',')
+    .forEach(function addToConfig(lng, index) {
+      appConfig.locales.push({
+        ...(index === 0 && { isDefault: true }),
+        displayName: lng,
+        urlPrefix: lng,
+        appLanguage: 'en-US',
+        crystallizeCatalogueLanguage: lng,
+        defaultCurrency: 'USD'
+      });
+    });
 
   // include stripe credentials if stripe is selected
   if (options.paymentCredentials.stripeSecretKey) {
@@ -71,9 +84,25 @@ const configureEnvironment = async (projectPath, options) => {
     envLocalVars.KLARNA_PASSWORD = options.paymentCredentials.klarnaPassword;
   }
 
+  // Include vipps credentials if selected
+  if (options.paymentCredentials.vippsClientId) {
+    envLocalVars.VIPPS_CLIENT_ID = options.paymentCredentials.vippsClientId;
+    envLocalVars.VIPPS_CLIENT_SECRET =
+      options.paymentCredentials.vippsClientSecret;
+    envLocalVars.VIPPS_MERCHANT_SERIAL =
+      options.paymentCredentials.vippsMerchantSerial;
+    envLocalVars.VIPPS_SUB_KEY = options.paymentCredentials.vippsSubKey;
+  }
+
   if (options.sendGridApiKey) {
     envLocalVars.SENDGRID_API_KEY = options.sendGridApiKey;
   }
+
+  // Update app.config.json file
+  fs.writeFileSync(
+    path.resolve(projectPath, 'app.config.json'),
+    JSON.stringify(appConfig, null, 3)
+  );
 
   // Update .env file
   fs.writeFileSync(
@@ -91,45 +120,12 @@ const configureEnvironment = async (projectPath, options) => {
       .join(os.EOL) + os.EOL
   );
 
-  // Update vercel.json
-  const vercelJson = fs.readFileSync(
-    path.resolve(projectPath, 'vercel.json'),
-    'utf-8'
-  );
-  const vercelJsonObj = JSON.parse(vercelJson);
-  vercelJsonObj.env = {};
-
-  vercelJson.build = {
-    env: {
-      NEXT_PUBLIC_CRYSTALLIZE_TENANT_ID: options.tenantId
-    }
-  };
-
-  if (options.sendGridApiKey) {
-    vercelJsonObj.env.SENDGRID_API_KEY = '@sendgrid-api-key';
-  }
-
-  vercelJsonObj.env.CRYSTALLIZE_SECRET_TOKEN_ID =
-    '@crystallize-access-token-id';
-  vercelJsonObj.env.CRYSTALLIZE_SECRET_TOKEN =
-    '@crystallize-access-token-secret';
-
-  if (options.paymentCredentials.klarnaUsername) {
-    vercelJsonObj.env.KLARNA_USERNAME = '@klarna-username';
-    vercelJsonObj.env.KLARNA_PASSWORD = '@klarna-password';
-  }
-
-  if (options.paymentCredentials.stripeSecretKey) {
-    vercelJsonObj.env.STRIPE_SECRET_KEY = '@stripe-secret-key';
-    vercelJsonObj.build.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY =
-      '@stripe-publishable-key';
-  }
-
-  fs.writeFileSync(
-    path.resolve(projectPath, 'vercel.json'),
-    JSON.stringify(vercelJsonObj, null, 2) + os.EOL,
-    'utf-8'
-  );
+  debugger;
+  // Cleanup payment providers
+  require(path.resolve(
+    projectPath,
+    '_repo-utils/cleanup-payment-providers.js'
+  ));
 };
 
 module.exports = init;
