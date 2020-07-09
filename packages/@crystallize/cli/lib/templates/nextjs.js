@@ -349,7 +349,7 @@ const createNextjsProject = async (
   // Install dependencies
   const useYarn = !flags.useNpm && shouldUseYarn();
   installNodeDependencies(useYarn);
-  
+
   if (process.env.DEV) {
     // Link the package instead of npm install
     logDebug('Running "npm link @crystallize/react-scripts"');
@@ -392,6 +392,7 @@ const showInstructions = (projectPath, useYarn) => {
   );
 
   console.log();
+  console.log(`The app config is located at ${chalk.blue('app.config.json')}.`);
   console.log(
     `Environment variables can be configured in ${chalk.blue('.env')}.`
   );
