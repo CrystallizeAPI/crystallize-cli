@@ -65,7 +65,7 @@ const configureEnvironment = async (projectPath, options) => {
       appConfig.locales.push({
         ...(index === 0 && { isDefault: true }),
         displayName: lng,
-        urlPrefix: lng,
+        urlPrefix: options.multilingualLanguages ? lng : '',
         appLanguage: 'en-US',
         crystallizeCatalogueLanguage: lng,
         defaultCurrency: 'USD'
@@ -120,7 +120,6 @@ const configureEnvironment = async (projectPath, options) => {
       .join(os.EOL) + os.EOL
   );
 
-  debugger;
   // Cleanup payment providers
   require(path.resolve(
     projectPath,

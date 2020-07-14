@@ -27,7 +27,8 @@ const createGatsbyProject = async (
   projectName,
   projectPath,
   tenantId,
-  flags
+  flags,
+  multilingualLanguages
 ) => {
   const templateOptions = {
     tenantId
@@ -65,13 +66,33 @@ const createGatsbyProject = async (
   const useYarn = !flags.useNpm && shouldUseYarn();
   installNodeDependencies(useYarn);
 
+  const appConfig = {
+    locales: []
+  };
+
+  // Setup locales
+  appConfig.locales = (multilingualLanguages || 'en')
+    .split(',')
+    .map((lang, index) => ({
+      ...(index === 0 && { isDefault: true }),
+      displayName: lang,
+      urlPrefix: multilingualLanguages ? lang : '',
+      crystallizeCatalogueLanguage: lang,
+      appLanguage: 'en-US',
+      defaultCurrency: 'USD'
+    }));
+
+  // Store general app config
+  fs.writeFileSync(
+    path.resolve('app.config.json'),
+    JSON.stringify(appConfig, null, 2),
+    'utf-8'
+  );
+
   // Setup Crystallize config
   fs.writeFileSync(
     path.resolve('crystallize-config'),
-    [
-      'CRYSTALLIZE_API_BASE=https://api.crystallize.com',
-      `CRYSTALLIZE_TENANT_ID=${tenantId}`
-    ].join(os.EOL),
+    [`CRYSTALLIZE_TENANT_ID=${tenantId}`].join(os.EOL),
     'utf-8'
   );
 

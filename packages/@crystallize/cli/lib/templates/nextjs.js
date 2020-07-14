@@ -30,33 +30,10 @@ const arrayToObject = (array = []) =>
 
 const reduceOptions = answers => ({
   ...arrayToObject(answers.options),
-  paymentMethods: arrayToObject(answers.paymentMethods),
-  multilingual: answers.multilingual,
-  multilingualLanguages: answers.multilingualLanguages
+  paymentMethods: arrayToObject(answers.paymentMethods)
 });
 
 const nextjsTemplateQuestions = [
-  {
-    type: 'confirm',
-    message: 'Would you like to enable multiple languages?',
-    name: 'multilingual',
-    default:
-      (defaultOptions.react && defaultOptions.react.multilingual) || false
-  },
-  {
-    type: 'input',
-    name: 'multilingualLanguages',
-    message:
-      'Please provide your the languages you will support\n(The list of languages must match the language codes that you specify in Crystallize, e.g.: "en,de")',
-    default: 'en,de',
-    validate: function(input) {
-      if (!input || input.match(/;\|/)) {
-        return 'Please seperate the languages with comma (,). Example: "en,de"';
-      }
-      return true;
-    },
-    when: answers => answers.multilingual
-  },
   {
     type: 'checkbox',
     name: 'options',
@@ -244,7 +221,8 @@ const createNextjsProject = async (
   projectName,
   projectPath,
   tenantId,
-  flags
+  flags,
+  multilingualLanguages
 ) => {
   const answers = await inquirer.prompt(nextjsTemplateQuestions);
   const options = reduceOptions(answers);
@@ -261,6 +239,7 @@ const createNextjsProject = async (
     crystallizeAccessTokenSecret:
       answers.crystallizeAccessTokenSecret || 'crystallize',
     paymentCredentials: {},
+    multilingualLanguages,
     ...options
   };
 
@@ -321,7 +300,7 @@ const createNextjsProject = async (
     JSON.stringify(packageJson, null, 2) + os.EOL
   );
 
-  if (options.multilingual) {
+  if (multilingualLanguages) {
     const moveThis = [
       'confirmation',
       'index.js',

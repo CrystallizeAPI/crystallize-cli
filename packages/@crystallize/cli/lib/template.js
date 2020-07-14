@@ -46,6 +46,26 @@ const rootQuestions = [
     name: 'template',
     message: 'Which template would you like to use?',
     choices: templates
+  },
+  {
+    type: 'confirm',
+    message: 'Would you like to enable multiple languages?',
+    name: 'multilingual',
+    default: false
+  },
+  {
+    type: 'input',
+    name: 'multilingualLanguages',
+    message:
+      'Please provide your the languages you will support\n(The list of languages must match the language codes that you specify in Crystallize, e.g.: "en,de")',
+    default: 'en,de',
+    validate: function(input) {
+      if (!input || input.match(/;\|/)) {
+        return 'Please seperate the languages with comma (,). Example: "en,de"';
+      }
+      return true;
+    },
+    when: answers => answers.multilingual
   }
 ];
 
@@ -61,10 +81,24 @@ const createTemplateProject = async (projectName, projectPath, flags) => {
   const answers = await inquirer.prompt(rootQuestions);
   const tenantId = answers.tenantId || defaultTenantId;
   const template = templates.find(t => t.value === answers.template);
+  const multilingualLanguages = answers.multilingualLanguages || null;
+
   if (template.type === 'nextjs') {
-    await createNextjsProject(projectName, projectPath, tenantId, flags);
+    await createNextjsProject(
+      projectName,
+      projectPath,
+      tenantId,
+      flags,
+      multilingualLanguages
+    );
   } else if (template.type === 'gatsby') {
-    await createGatsbyProject(projectName, projectPath, tenantId, flags);
+    await createGatsbyProject(
+      projectName,
+      projectPath,
+      tenantId,
+      flags,
+      multilingualLanguages
+    );
   } else {
     logError(`Unknown template type: "${template.type}`);
     process.exit(1);
