@@ -269,7 +269,7 @@ const createNextjsProject = async (
   }
 
   if (options.useSendGrid) {
-    templateOptions.sendGridApiKey = answers.sendGridApikey || 'sendgrid';
+    templateOptions.sendGridApiKey = answers.sendGridApiKey || 'sendgrid';
   }
 
   cloneRepository(boilerplates['nextjs'], projectPath);
