@@ -303,7 +303,9 @@ const createNextjsProject = async (
   if (multilingualLanguages) {
     const moveThis = [
       'confirmation',
+      'products',
       'index.js',
+      'search.js',
       '[...catalogue].js',
       'checkout.js',
       'login.js'
