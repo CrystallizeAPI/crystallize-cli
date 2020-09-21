@@ -7,6 +7,7 @@ const produce = require('immer').default;
 
 const { steps } = importJsx('./steps');
 const { Select } = importJsx('./ui-modules/select');
+const { Input } = importJsx('./ui-modules/input');
 
 function App(globalOptions) {
 	const [stepIndex, setStepIndex] = React.useState(0);
@@ -60,35 +61,16 @@ function App(globalOptions) {
 	}
 
 	if (step) {
-		const { type, message, options } = step;
-
-		const messageProps = { ...globalOptions, answers, resolveStep };
-
-		let stepOutput;
-		if (type === 'select') {
-			stepOutput = (
-				<>
-					{message(messageProps)}
-					<Select
-						options={options}
-						onChange={(answer) => resolveStep(answer)}
-					/>
-				</>
-			);
-		} else if (type === 'input') {
-			stepOutput = message(messageProps);
-		} else {
-			stepOutput = message(messageProps);
-		}
+		const { render } = step;
 
 		return (
-			<>
+			<Box flexDirection="column" padding={1}>
 				{staticMessages.map((m, i) => (
 					<Box key={i}>{m}</Box>
 				))}
 				<Newline />
-				{stepOutput}
-			</>
+				{render({ ...globalOptions, answers, resolveStep })}
+			</Box>
 		);
 	}
 
