@@ -1,32 +1,59 @@
 {
-  "private": true,
-  "workspaces": [
-    "packages/@crystallize/*"
-  ],
+  "name": "cli",
+  "version": "3.0.0",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
-    "lerna": "lerna publish -m \":rocket: publish\"",
-    "lint": "eslint ./packages"
+    "test": "xo && ava"
+  },
+  "bin": {
+    "crystallize": "./index.js"
+  },
+  "files": [
+    "cli.js",
+    "ui.js"
+  ],
+  "dependencies": {
+    "degit": "^2.8.0",
+    "fs-extra": "^9.0.1",
+    "immer": "^7.0.9",
+    "import-jsx": "^4.0.0",
+    "ink": "^3.0.5",
+    "meow": "^7.1.1",
+    "os": "^0.1.1",
+    "react": "^16.13.1"
   },
   "devDependencies": {
-    "eslint": "^6.2.1",
-    "eslint-config-prettier": "^6.1.0",
-    "husky": "^3.0.4",
-    "lerna": "^3.16.4",
-    "lint-staged": "^9.2.3",
-    "prettier": "^1.18.2"
+    "@ava/babel": "^1.0.1",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/register": "^7.11.5",
+    "ava": "^3.12.1",
+    "chalk": "^4.1.0",
+    "eslint-config-xo-react": "^0.23.0",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "ink-testing-library": "^2.0.1",
+    "xo": "^0.33.1"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,md,css,html}": [
-      "prettier --single-quote --write",
-      "git add"
-    ],
-    "yarn.lock": [
-      "git rm --cached"
+  "ava": {
+    "babel": true,
+    "require": [
+      "@babel/register"
     ]
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "xo": {
+    "extends": "xo-react",
+    "rules": {
+      "react/prop-types": "off"
+    }
   }
 }
