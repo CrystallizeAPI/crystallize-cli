@@ -264,6 +264,17 @@ const steps = [
 					)}
 					<Box flexDirection="column" marginBottom={2}>
 						<Text>
+							<Text>
+								To start your project, navigate to the folder ({projectName})
+								and run{' '}
+							</Text>
+							<Newline />
+							<Text color="#f47f98">yarn dev</Text> or{' '}
+							<Text color="#f47f98">npm run dev</Text>
+						</Text>
+					</Box>
+					<Box flexDirection="column" marginBottom={2}>
+						<Text>
 							<Text color="#f47f98">Go fast and prosper!</Text>
 							<Newline />
 							<Text dimColor>The milliseconds are with you</Text>
