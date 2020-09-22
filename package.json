@@ -1,5 +1,5 @@
 {
-  "name": "cli",
+  "name": "@crystallize/cli",
   "version": "3.0.0",
   "license": "MIT",
   "engines": {
@@ -13,6 +13,10 @@
   "bin": {
     "crystallize": "./index.js"
   },
+  "files": [
+    "index.js",
+    "src"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "eslint src --fix",
