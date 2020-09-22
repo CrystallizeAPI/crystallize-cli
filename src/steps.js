@@ -238,7 +238,12 @@ const steps = [
 								<Text>
 									Configure tokens and secrets in the .env.local file:
 								</Text>
-								<Box flexDirection="column" borderStyle="round" paddingX={1}>
+								<Box
+									flexDirection="column"
+									borderStyle="round"
+									paddingX={1}
+									width={50}
+								>
 									<Text>
 										CRYSTALLIZE_SECRET_TOKEN_ID=
 										<Newline />
@@ -251,9 +256,9 @@ const steps = [
 							<Box flexDirection="column" marginBottom={2}>
 								<Text>
 									Deploying to Vercel? Read here on how to setup env values
+									<Newline />
+									https://vercel.com/blog/environment-variables-ui
 								</Text>
-								<Newline />
-								<Text>https://vercel.com/blog/environment-variables-ui</Text>
 							</Box>
 						</>
 					)}
