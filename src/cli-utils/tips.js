@@ -62,6 +62,7 @@ const tips = [
 				</Text>
 			));
 		}
+	// eslint-disable-next-line no-empty
 	} catch (err) {}
 })();
 

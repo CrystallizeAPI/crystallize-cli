@@ -87,6 +87,10 @@ function InitProject(allProps) {
 					stdio: flags.info ? 'inherit' : 'ignore',
 				},
 				async function (err) {
+					if (err) {
+						process.exit(1);
+					}
+
 					if (answers.nextjs) {
 						await require('./init-nextjs')(allProps);
 					} else if (answers.gatsby) {
@@ -97,7 +101,7 @@ function InitProject(allProps) {
 				}
 			);
 		}
-	}, []);
+	});
 
 	return (
 		<>

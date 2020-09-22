@@ -7,6 +7,7 @@
   },
   "scripts": {
     "test": "xo && ava",
+    "lint": "eslint src",
     "release": "standard-version"
   },
   "bin": {
@@ -16,6 +17,17 @@
     "cli.js",
     "ui.js"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "eslint src --fix",
+      "commit-msg": "commitlint -E  HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
@@ -24,6 +36,11 @@
     "@semantic-release/npm",
     "@semantic-release/git"
   ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "release": {
     "prepare": [
       "@semantic-release/changelog",
@@ -66,6 +83,7 @@
     "@semantic-release/release-notes-generator": "^9.0.1",
     "ava": "^3.12.1",
     "chalk": "^4.1.0",
+    "eslint": "^7.9.0",
     "eslint-config-xo-react": "^0.23.0",
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.1.2",

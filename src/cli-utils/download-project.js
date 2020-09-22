@@ -31,7 +31,7 @@ function DownloadProject({ answers, projectName, resolveStep, flags }) {
 				.then(() => resolveStep())
 				.catch((e) => console.log(e));
 		}
-	}, [projectName, resolveStep]);
+	}, [answers.boilerplate, flags.info, projectName, resolveStep]);
 
 	return (
 		<Box>

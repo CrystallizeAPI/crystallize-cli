@@ -2,7 +2,7 @@
 
 const React = require('react');
 const importJsx = require('import-jsx');
-const { Text, Box } = require('ink');
+const { Text } = require('ink');
 
 const Select = importJsx('../ui-modules/select');
 const MultiSelect = importJsx('../ui-modules/multi-select');
