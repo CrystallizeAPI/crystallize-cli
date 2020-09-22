@@ -1,3 +1,10 @@
+# [1.0.0-beta.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2020-09-22)
+
+
+### Bug Fixes
+
+* proper version ([6dd51e7](https://github.com/CrystallizeAPI/crystallize-cli/commit/6dd51e7bae4115c7877c425173c6c3b7ab968d74))
+
 # 1.0.0-beta.1 (2020-09-22)
 
 
