@@ -1,11 +1,14 @@
 const React = require('react');
-const { Text, useInput, Newline } = require('ink');
+const { Text, useInput, Box } = require('ink');
 
-function Select({ options, onChange }) {
-	const [selected, setSelected] = React.useState(0);
+function Select({ options, compact, onChange, initialSelected = 0 }) {
+	const [selected, setSelected] = React.useState(initialSelected);
+
 	useInput((input, key) => {
 		if (key.return) {
-			return onChange(options[selected]);
+			setSelected(0);
+			onChange(options[selected]);
+			return;
 		}
 
 		let newSel = selected;
@@ -24,17 +27,21 @@ function Select({ options, onChange }) {
 	});
 
 	return (
-		<>
-			<Newline />
+		<Box flexDirection="column">
 			{options.map((o, i) => (
-				<Text key={o.value} color={i === selected && 'green'}>
-					{o.message || o.label}
-				</Text>
+				<Box flexDirection="row" marginY={compact ? 0 : 1} key={o.value}>
+					<Box width={1} marginRight={2} alignItems="center">
+						<Text color="#f47f98">{i === selected ? '>' : ''}</Text>
+					</Box>
+					<Box>
+						<Text color={i === selected && '#f47f98'}>
+							{o.render || o.label}
+						</Text>
+					</Box>
+				</Box>
 			))}
-		</>
+		</Box>
 	);
 }
 
-module.exports = {
-	Select,
-};
+module.exports = Select;

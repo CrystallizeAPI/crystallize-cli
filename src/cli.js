@@ -32,7 +32,7 @@ const cli = meow(
 	}
 );
 
-const desiredProjectName = cli.input[0] || 'crystallize';
+const desiredProjectName = cli.input[0] || 'crystallize-app';
 
 // Determine project name and path
 let projectName = desiredProjectName;

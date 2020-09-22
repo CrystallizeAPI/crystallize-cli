@@ -4,33 +4,44 @@ const React = require('react');
 const fs = require('fs-extra');
 const path = require('path');
 const os = require('os');
-const { Text } = require('ink');
-const execSync = require('child_process').execSync;
+const { Text, Box } = require('ink');
+const exec = require('child_process').exec;
+// const Spinner = require('ink-spinner').default;
 
 let began = false;
 
 const feedbacks = [
-	'Downloading modules...',
-	'Still downloading modules...',
+	'Fetching the dependencies...',
+	'Unpacking...',
 	'Installing...',
 	'Preparing project...',
+	'Looking for car keys...',
+	'Huh, internet is slow today...',
+	'Wow, node_modules is getting big...',
 ];
 
-function InitProject({
-	answers,
-	projectName,
-	projectPath,
-	resolveStep,
-	shouldUseYarn,
-	flags,
-}) {
+function InitProject(allProps) {
+	const {
+		answers,
+		projectName,
+		projectPath,
+		resolveStep,
+		shouldUseYarn,
+		flags,
+	} = allProps;
 	const [feedbackIndex, setFeedbackIndex] = React.useState(0);
 
 	// Give different feedback messages
 	React.useEffect(() => {
 		const interval = setInterval(() => {
-			setFeedbackIndex((f) => f + 1);
-		}, 3000);
+			setFeedbackIndex((f) => {
+				let newI = f + 1;
+				if (newI === feedbacks.length) {
+					newI = 0;
+				}
+				return newI;
+			});
+		}, 15000);
 		return () => clearInterval(interval);
 	});
 
@@ -70,15 +81,34 @@ function InitProject({
 				JSON.stringify(packageJson, null, 2) + os.EOL
 			);
 
-			execSync(shouldUseYarn ? 'yarnpkg install' : 'npm install', {
-				stdio: flags.info ? 'inherit' : 'ignore',
-			});
+			exec(
+				shouldUseYarn ? 'yarnpkg install' : 'npm install',
+				{
+					stdio: flags.info ? 'inherit' : 'ignore',
+				},
+				async function (err) {
+					if (answers.nextjs) {
+						await require('./init-nextjs')(allProps);
+					} else if (answers.gatsby) {
+						await require('./init-gatsby')(allProps);
+					}
 
-			resolveStep();
+					resolveStep();
+				}
+			);
 		}
 	}, []);
 
-	return <Text>{feedbacks[feedbackIndex]}</Text>;
+	return (
+		<>
+			<Box>
+				{/* <Box marginRight={1}>
+					<Spinner type="dots" />
+				</Box> */}
+				<Text>{feedbacks[feedbackIndex]}</Text>
+			</Box>
+		</>
+	);
 }
 
 module.exports = {

@@ -2,7 +2,8 @@
 
 const React = require('react');
 const degit = require('degit');
-const { Text } = require('ink');
+const { Text, Box } = require('ink');
+// const Spinner = require('ink-spinner').default;
 
 const repos = {
 	'Next.js': 'crystallize-nextjs-boilerplate#main',
@@ -32,7 +33,14 @@ function DownloadProject({ answers, projectName, resolveStep, flags }) {
 		}
 	}, [projectName, resolveStep]);
 
-	return <Text>Downlading...</Text>;
+	return (
+		<Box>
+			{/* <Box marginRight={1}>
+				<Spinner type="dots" />
+			</Box> */}
+			<Text>Downloading the {answers.boilerplate} boilerplate...</Text>
+		</Box>
+	);
 }
 
 module.exports = {
