@@ -13,6 +13,7 @@
   "bin": {
     "crystallize": "./index.js"
   },
+  "main": "index.js",
   "files": [
     "index.js",
     "src"
