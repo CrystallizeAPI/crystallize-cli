@@ -255,7 +255,7 @@ const steps = [
 							</Box>
 							<Box flexDirection="column" marginBottom={2}>
 								<Text>
-									Deploying to Vercel? Read here on how to setup env values
+									Deploying to Vercel? Read here on how to setup env values:
 									<Newline />
 									https://vercel.com/blog/environment-variables-ui
 								</Text>
