@@ -8,7 +8,7 @@ var major = semver[0];
 
 if (major < 8) {
   console.error(
-    'You are running Node ' +
+    'You are running Node.js v' +
       currentNodeVersion +
       '.\n' +
       'Crystallize CLI requires Node 8 or higher. \n' +
