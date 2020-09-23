@@ -10,14 +10,10 @@
     "lint": "eslint src",
     "release": "standard-version"
   },
+  "main": "index.js",
   "bin": {
     "crystallize": "./index.js"
   },
-  "main": "index.js",
-  "files": [
-    "index.js",
-    "src"
-  ],
   "husky": {
     "hooks": {
       "pre-commit": "eslint src --fix",

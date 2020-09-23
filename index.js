@@ -1,1 +1,1 @@
-require('./src/cli');
+require('./src/cli.js');
