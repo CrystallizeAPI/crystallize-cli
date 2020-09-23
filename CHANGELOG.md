@@ -1,3 +1,27 @@
+# [3.0.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v2.6.1...v3.0.0) (2020-09-23)
+
+
+* Revamped (#11) ([c45e750](https://github.com/CrystallizeAPI/crystallize-cli/commit/c45e750377454abe5acd1b389f59460a21def6bd)), closes [#11](https://github.com/CrystallizeAPI/crystallize-cli/issues/11)
+
+
+### BREAKING CHANGES
+
+* blabla
+
+* chore(release): 3.0.0-beta.1 [skip ci]
+
+# [3.0.0-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v2.7.0-beta.4...v3.0.0-beta.1) (2020-09-23)
+
+### chore
+
+* typing ([d6596a1](https://github.com/CrystallizeAPI/crystallize-cli/commit/d6596a1e3f9e006b4eaf28e82a27651fe26a6b45))
+
+### BREAKING CHANGES
+
+* blabla
+
+Co-authored-by: semantic-release-bot <semantic-release-bot@martynus.net>
+
 # [3.0.0-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v2.7.0-beta.4...v3.0.0-beta.1) (2020-09-23)
 
 
