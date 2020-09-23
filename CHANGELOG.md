@@ -1,3 +1,10 @@
+# [2.7.0-beta.3](https://github.com/CrystallizeAPI/crystallize-cli/compare/v2.7.0-beta.2...v2.7.0-beta.3) (2020-09-23)
+
+
+### Bug Fixes
+
+* require node 8 ([9f31ed6](https://github.com/CrystallizeAPI/crystallize-cli/commit/9f31ed6520cf5499681b109125754d7835d4efbc))
+
 # [2.7.0-beta.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v2.7.0-beta.1...v2.7.0-beta.2) (2020-09-23)
 
 
