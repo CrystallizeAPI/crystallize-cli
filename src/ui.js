@@ -16,7 +16,7 @@ function App(globalOptions) {
 				<Text>
 					<Text underline>Crystallize Headless PIM</Text>
 					<Newline />
-					<Text>Hi there, let's make something awesome!</Text>
+					<Text>Hi you, let's make something awesome!</Text>
 				</Text>
 			</>
 		),
