@@ -1,3 +1,10 @@
+# [2.7.0-beta.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v2.7.0-beta.1...v2.7.0-beta.2) (2020-09-23)
+
+
+### Bug Fixes
+
+* remove uneeded files in package.json ([46e13b5](https://github.com/CrystallizeAPI/crystallize-cli/commit/46e13b54af076a34c6bc4b90e6755625633d9c01))
+
 # [2.7.0-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v2.6.1...v2.7.0-beta.1) (2020-09-23)
 
 
