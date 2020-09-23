@@ -1,3 +1,10 @@
+# [2.7.0-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v2.6.1...v2.7.0-beta.1) (2020-09-23)
+
+
+### Features
+
+* initial ([36bed0f](https://github.com/CrystallizeAPI/crystallize-cli/commit/36bed0fe4f447a1cde04410469f699dc09320125))
+
 # [1.0.0-beta.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2020-09-23)
 
 
