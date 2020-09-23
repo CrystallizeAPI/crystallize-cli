@@ -286,7 +286,7 @@ const steps = [
 								Want to get in touch with us? We would love to hear from you!
 							</Text>
 						</Box>
-						<Text>Reach us at: https://crystallize.com/#book-a-demo</Text>
+						<Text>Reach us at: https://crystallize.com/about#contact</Text>
 					</Box>
 				</Box>
 			);

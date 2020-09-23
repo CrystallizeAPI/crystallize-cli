@@ -12,12 +12,14 @@ let began = false;
 
 const feedbacks = [
 	'Fetching the dependencies...',
+	'Still fetching...',
 	'Unpacking...',
+	'Preparing files for install...',
 	'Installing...',
-	'Preparing project...',
+	'Still installing...',
+	'Wow, node_modules is getting big...',
 	'Looking for car keys...',
 	'Huh, internet is slow today...',
-	'Wow, node_modules is getting big...',
 ];
 
 function InitProject(allProps) {
@@ -33,16 +35,26 @@ function InitProject(allProps) {
 
 	// Give different feedback messages
 	React.useEffect(() => {
-		const interval = setInterval(() => {
+		let timeout;
+		let ms = 10000;
+
+		function changeFeedback() {
 			setFeedbackIndex((f) => {
 				let newI = f + 1;
 				if (newI === feedbacks.length) {
 					newI = 0;
 				}
+
 				return newI;
 			});
-		}, 15000);
-		return () => clearInterval(interval);
+
+			ms += 3000;
+			timeout = setTimeout(changeFeedback, ms);
+		}
+
+		timeout = setTimeout(changeFeedback, ms);
+
+		return () => clearTimeout(timeout);
 	});
 
 	// Install node deps
