@@ -1,3 +1,15 @@
+# [3.0.0-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v2.7.0-beta.4...v3.0.0-beta.1) (2020-09-23)
+
+
+### chore
+
+* typing ([d6596a1](https://github.com/CrystallizeAPI/crystallize-cli/commit/d6596a1e3f9e006b4eaf28e82a27651fe26a6b45))
+
+
+### BREAKING CHANGES
+
+* blabla
+
 # [2.7.0-beta.4](https://github.com/CrystallizeAPI/crystallize-cli/compare/v2.7.0-beta.3...v2.7.0-beta.4) (2020-09-23)
 
 
