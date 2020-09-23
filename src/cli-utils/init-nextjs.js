@@ -32,23 +32,29 @@ async function initNextJS({ answers, projectPath }) {
 		});
 	});
 
-	// include stripe credentials if stripe is selected
+	// Include Stripe credentials if stripe is selected
 	if (answers.paymentMethods.includes('stripe')) {
 		envLocalVars.STRIPE_SECRET_KEY = '';
 		envLocalVars.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY = '';
 	}
-	// include klarna credentials if klarna is selected
+
+	// Include Klarna credentials if klarna is selected
 	if (answers.paymentMethods.includes('klarna')) {
 		envLocalVars.KLARNA_USERNAME = '';
 		envLocalVars.KLARNA_PASSWORD = '';
 	}
 
-	// Include vipps credentials if selected
+	// Include Vipps credentials if selected
 	if (answers.paymentMethods.includes('vipps')) {
 		envLocalVars.VIPPS_CLIENT_ID = '';
 		envLocalVars.VIPPS_CLIENT_SECRET = '';
 		envLocalVars.VIPPS_MERCHANT_SERIAL = '';
 		envLocalVars.VIPPS_SUB_KEY = '';
+	}
+
+	// Include Mollie credentials if selected
+	if (answers.paymentMethods.includes('mollie')) {
+		envLocalVars.MOLLIE_API_KEY = '';
 	}
 
 	envLocalVars.SENDGRID_API_KEY = '';
