@@ -38,13 +38,6 @@ jobs:
         env:
           CI: true
 
-      # - name: Test
-      #   run: yarn test --ci --coverage --maxWorkers=2
-      #   env:
-      #     KLARNA_USERNAME: ${{ secrets.KLARNA_USERNAME }}
-      #     KLARNA_PASSWORD: ${{ secrets.KLARNA_PASSWORD }}
-      #     CI: true
-
       - name: Release
         run: npx semantic-release
         env:
