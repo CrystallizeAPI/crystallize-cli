@@ -1,32 +1,116 @@
 {
-  "private": true,
-  "workspaces": [
-    "packages/@crystallize/*"
-  ],
+  "name": "@crystallize/cli",
+  "version": "2.6.1",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
-    "lerna": "lerna publish -m \":rocket: publish\"",
-    "lint": "eslint ./packages"
+    "test": "xo && ava",
+    "lint": "eslint src",
+    "release": "standard-version"
   },
-  "devDependencies": {
-    "eslint": "^6.2.1",
-    "eslint-config-prettier": "^6.1.0",
-    "husky": "^3.0.4",
-    "lerna": "^3.16.4",
-    "lint-staged": "^9.2.3",
-    "prettier": "^1.18.2"
+  "bin": {
+    "crystallize": "./index.js"
   },
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "src"
+  ],
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "eslint src --fix",
+      "commit-msg": "commitlint -E  HUSKY_GIT_PARAMS"
     }
   },
-  "lint-staged": {
-    "*.{js,md,css,html}": [
-      "prettier --single-quote --write",
-      "git add"
-    ],
-    "yarn.lock": [
-      "git rm --cached"
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
     ]
+  },
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/github",
+    "@semantic-release/npm",
+    "@semantic-release/git"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "release": {
+    "prepare": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      {
+        "path": "@semantic-release/git",
+        "assets": [
+          "package.json",
+          "CHANGELOG.md"
+        ],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ]
+  },
+  "dependencies": {
+    "degit": "^2.8.0",
+    "fs-extra": "^9.0.1",
+    "immer": "^7.0.9",
+    "import-jsx": "^4.0.0",
+    "ink": "^3.0.5",
+    "ink-confirm-input": "^2.0.0",
+    "ink-link": "^2.0.0",
+    "ink-multi-select": "^1.1.2",
+    "ink-spinner": "^4.0.1",
+    "ink-text-input": "^4.0.1",
+    "meow": "^7.1.1",
+    "node-fetch": "^2.6.1",
+    "os": "^0.1.1",
+    "react": "^16.13.1"
+  },
+  "devDependencies": {
+    "@ava/babel": "^1.0.1",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/register": "^7.11.5",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/npm": "^7.0.6",
+    "@semantic-release/release-notes-generator": "^9.0.1",
+    "ava": "^3.12.1",
+    "chalk": "^4.1.0",
+    "eslint": "^7.9.0",
+    "eslint-config-xo-react": "^0.23.0",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "husky": "^4.3.0",
+    "ink-testing-library": "^2.0.1",
+    "standard-version": "^9.0.0",
+    "xo": "^0.33.1"
+  },
+  "ava": {
+    "babel": true,
+    "require": [
+      "@babel/register"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "xo": {
+    "extends": "xo-react",
+    "rules": {
+      "react/prop-types": "off"
+    }
   }
 }
