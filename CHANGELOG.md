@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.0.0...v3.0.1) (2020-09-23)
+
+
+### Bug Fixes
+
+* set mollie keys if chosen ([685acbe](https://github.com/CrystallizeAPI/crystallize-cli/commit/685acbe043500910bee4e59f92ed24cda31bcd3c))
+
 # [3.0.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v2.6.1...v3.0.0) (2020-09-23)
 
 
