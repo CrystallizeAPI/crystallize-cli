@@ -1,3 +1,10 @@
+## [3.0.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.0.1...v3.0.2) (2020-09-23)
+
+
+### Bug Fixes
+
+* updated readme ([9b6ad06](https://github.com/CrystallizeAPI/crystallize-cli/commit/9b6ad06a5aa3ffb3d9474e2d478197f24d2cba08))
+
 ## [3.0.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.0.0...v3.0.1) (2020-09-23)
 
 
