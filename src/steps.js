@@ -265,8 +265,8 @@ const steps = [
 					<Box flexDirection="column" marginBottom={2}>
 						<Text>
 							<Text>
-								To start your project, navigate to the folder ({projectName})
-								and run{' '}
+								To start your project, navigate to the folder (
+								<Text color="#f47f98">cd ./{projectName}</Text>) and run{' '}
 							</Text>
 							<Newline />
 							<Text color="#f47f98">yarn dev</Text> or{' '}
