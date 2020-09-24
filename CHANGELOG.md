@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.0.2...v3.1.0) (2020-09-24)
+
+
+### Features
+
+* highlight the install folder on end ([265c36b](https://github.com/CrystallizeAPI/crystallize-cli/commit/265c36b27a2a39ed301196ac99c3f627d5cf67ea))
+
 ## [3.0.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.0.1...v3.0.2) (2020-09-23)
 
 
