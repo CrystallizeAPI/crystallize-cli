@@ -1,3 +1,10 @@
+# [3.2.0-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.1.0...v3.2.0-beta.1) (2020-09-25)
+
+
+### Features
+
+* wip ([eec1284](https://github.com/CrystallizeAPI/crystallize-cli/commit/eec128436bce991d92de30b4c4af75402641d2a3))
+
 # [3.1.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.0.2...v3.1.0) (2020-09-24)
 
 
