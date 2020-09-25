@@ -1,3 +1,10 @@
+# [3.2.0-beta.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.2.0-beta.1...v3.2.0-beta.2) (2020-09-25)
+
+
+### Features
+
+* project install for magazine ([ef70be9](https://github.com/CrystallizeAPI/crystallize-cli/commit/ef70be9828205cd9123c1638770a1c9d98e3eb30))
+
 # [3.2.0-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.1.0...v3.2.0-beta.1) (2020-09-25)
 
 
