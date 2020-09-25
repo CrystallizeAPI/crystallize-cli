@@ -9,7 +9,9 @@ const steps = importJsx('./steps');
 
 function App(globalOptions) {
 	const [stepIndex, setStepIndex] = React.useState(0);
-	const [answers, setAnswers] = React.useState({});
+	const [answers, setAnswers] = React.useState({
+		defaultTenant: 'furniture',
+	});
 	const [staticMessages, setStaticMessages] = React.useState([
 		() => (
 			<>

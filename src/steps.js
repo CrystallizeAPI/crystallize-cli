@@ -13,8 +13,6 @@ const Tips = importJsx('./cli-utils/tips');
 
 const Select = importJsx('./ui-modules/select');
 
-const defaultTenant = 'furniture';
-
 const steps = [
 	{
 		render({ projectName, resolveStep }) {
@@ -26,41 +24,58 @@ const steps = [
 						options={[
 							{
 								label: 'Next.js',
+								value: 'nextjs',
 								render: (
 									<>
-										<Text>Next.js</Text>
+										<Text>Next.js - Complete ecommerce</Text>
 										<Newline />
 										<Text dimColor>React, SSG &amp; SSR, Checkout, λ API</Text>
 										<Newline />
 										<Text dimColor>✓ Our recommendation for an ecommerce</Text>
 									</>
 								),
-								value: 'nextjs',
 							},
 							{
-								label: 'Gatsby',
+								value: 'nextjs-content',
+								label: 'Next.js - Content',
 								render: (
 									<>
-										<Text>Gatsby</Text>
+										<Text>Next.js - Magazine example</Text>
 										<Newline />
 										<Text dimColor>React, SSG</Text>
 										<Newline />
 										<Text dimColor>
-											✓ Good choice for a blog and other static sites
+											Example of beautiful content presentation
 										</Text>
 									</>
 								),
+							},
+							{
+								label: 'Gatsby',
 								value: 'gatsby',
+								render: (
+									<>
+										<Text>Gatsby - Content and product listing</Text>
+										<Newline />
+										<Text dimColor>React, SSG</Text>
+										<Newline />
+										<Text dimColor>
+											Good choice for a blog and other static sites
+										</Text>
+									</>
+								),
 							},
 							{
 								label: 'React Native',
 								value: 'rn',
 								render: (
 									<>
-										<Text>React Native (beta)</Text>
+										<Text>
+											React Native <Text italic>(beta)</Text>
+										</Text>
 										<Newline />
 										<Text dimColor>
-											✓ Go the App way. Currently just support for iOS
+											Go the App way. Currently just support for iOS
 										</Text>
 									</>
 								),
@@ -73,6 +88,10 @@ const steps = [
 		answer({ answers, answer }) {
 			answers[answer.value] = {};
 			answers.boilerplate = answer.label;
+
+			if (answer.value === 'nextjs-content') {
+				answers.defaultTenant = 'voyage';
+			}
 		},
 		staticMessage(props) {
 			return (
@@ -85,7 +104,7 @@ const steps = [
 		},
 	},
 	{
-		render({ projectName, resolveStep }) {
+		render({ projectName, resolveStep, answers }) {
 			return (
 				<>
 					<Text>
@@ -100,10 +119,10 @@ const steps = [
 						onChange={(answer) => resolveStep(answer)}
 						options={[
 							{
-								value: 'furniture',
+								value: answers.defaultTenant,
 								render: (
 									<>
-										<Text>Our demo tenant ({defaultTenant})</Text>
+										<Text>Our demo tenant ({answers.defaultTenant})</Text>
 										<Newline />
 										<Text dimColor>Lot's of demo data here already</Text>
 									</>
@@ -127,14 +146,14 @@ const steps = [
 		},
 	},
 	{
-		render({ resolveStep }) {
+		render({ resolveStep, answers }) {
 			return (
 				<Box>
 					<Box marginRight={1}>
 						<Text>Enter your tenant identifier:</Text>
 					</Box>
 					<UncontrolledTextInput
-						placeholder={defaultTenant}
+						placeholder={answers.defaultTenant}
 						onSubmit={(query) => resolveStep(query)}
 					/>
 				</Box>
@@ -226,11 +245,15 @@ const steps = [
 		},
 	},
 	{
-		staticMessage({ projectName, answers }) {
+		staticMessage({ projectName, projectPath, answers }) {
 			return (
 				<Box flexDirection="column" marginTop={2}>
-					<Box flexDirection="column" marginBottom={2}>
-						<Text>✨ "{projectName}" is ready ✨</Text>
+					<Box flexDirection="column" marginBottom={2} width={400}>
+						<Text>
+							✨ "{projectName}" is ready ✨
+							<Newline />
+							<Text>{projectPath}</Text>
+						</Text>
 					</Box>
 					{answers.nextjs && (
 						<>
