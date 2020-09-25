@@ -52,14 +52,14 @@ do {
 /**
  * Determines whether yarn is installed.
  */
-const shouldUseYarn = () => {
+const shouldUseYarn = (function () {
 	try {
 		execSync('yarnpkg --version', { stdio: 'ignore' });
 		return true;
 	} catch (e) {
 		return false;
 	}
-};
+})();
 
 render(
 	React.createElement(ui, {
