@@ -6,6 +6,7 @@
     "node": ">=10"
   },
   "scripts": {
+    "dev": "node index.js",
     "test": "xo && ava",
     "lint": "eslint src",
     "release": "standard-version"
