@@ -1,6 +1,8 @@
 const React = require('react');
 const { Text, useInput, Box } = require('ink');
 
+const { highlightColor } = require('../shared');
+
 function Select({ options, compact, onChange, initialSelected = 0 }) {
 	const [selected, setSelected] = React.useState(initialSelected);
 
@@ -31,10 +33,10 @@ function Select({ options, compact, onChange, initialSelected = 0 }) {
 			{options.map((o, i) => (
 				<Box flexDirection="row" marginY={compact ? 0 : 1} key={o.value}>
 					<Box width={1} marginRight={2} alignItems="center">
-						<Text color="#f47f98">{i === selected ? '>' : ''}</Text>
+						<Text color={highlightColor}>{i === selected ? '>' : ''}</Text>
 					</Box>
 					<Box>
-						<Text color={i === selected && '#f47f98'}>
+						<Text color={i === selected && highlightColor}>
 							{o.render || o.label}
 						</Text>
 					</Box>

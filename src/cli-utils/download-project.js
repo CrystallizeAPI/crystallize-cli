@@ -8,7 +8,7 @@ const { Text, Box } = require('ink');
 
 const repos = {
 	'Next.js': 'crystallize-nextjs-boilerplate#main',
-	'Next.js - Content': 'next-with-crystallize-example#examples-crystallize',
+	'Next.js - Magazine': 'next-with-crystallize-example#examples-crystallize',
 	Gatsby: 'crystallize-gatsby-boilerplate#main',
 	'React Native': 'crystallize-react-native-boilerplate#master',
 };
@@ -37,7 +37,7 @@ function DownloadProject({
 			emitter
 				.clone(projectName)
 				.then(() => {
-					if (answers.boilerplate === 'Next.js - Content') {
+					if (answers.boilerplate === 'Next.js - Magazine') {
 						const tmpPath = `${projectPath}-${Date.now()}`;
 						fs.renameSync(projectPath, tmpPath);
 						fs.moveSync(
@@ -49,7 +49,7 @@ function DownloadProject({
 						});
 					}
 
-					resolveStep();
+					setTimeout(() => resolveStep(), 50);
 				})
 				.catch((e) => console.log(e));
 		}
