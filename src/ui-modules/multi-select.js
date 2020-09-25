@@ -1,6 +1,8 @@
 const React = require('react');
 const { Text, useInput, Box } = require('ink');
 
+const { highlightColor } = require('../shared');
+
 function MultiSelect({ options, compact, onChange }) {
 	const [selected, setSelected] = React.useState(
 		options.reduce((acc, item, index) => {
@@ -55,12 +57,12 @@ function MultiSelect({ options, compact, onChange }) {
 			{options.map((o, i) => (
 				<Box flexDirection="row" marginY={compact ? 0 : 1} key={o.value}>
 					<Box width={3} marginRight={2} alignItems="center">
-						<Text color={i === highlight && '#f47f98'}>
+						<Text color={i === highlight && highlightColor}>
 							{selected.includes(i) ? '[✓]' : '[ ]'}
 						</Text>
 					</Box>
 					<Box>
-						<Text color={i === highlight && '#f47f98'}>
+						<Text color={i === highlight && highlightColor}>
 							{o.render || o.label}
 						</Text>
 					</Box>

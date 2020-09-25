@@ -10,15 +10,18 @@ const { InitProject } = importJsx('./cli-utils/init-project');
 const GetPaymentMethods = importJsx('./cli-utils/get-payment-methods');
 const GetMultilingual = importJsx('./cli-utils/get-multilingual');
 const Tips = importJsx('./cli-utils/tips');
-
 const Select = importJsx('./ui-modules/select');
+const { highlightColor } = require('./shared');
 
 const steps = [
 	{
 		render({ projectName, resolveStep }) {
 			return (
 				<>
-					<Text>Please select a boilerplate for "{projectName}"</Text>
+					<Text>
+						Please select a boilerplate for{' '}
+						<Text color={highlightColor}>{projectName}</Text>
+					</Text>
 					<Select
 						onChange={(answer) => resolveStep(answer)}
 						options={[
@@ -36,8 +39,8 @@ const steps = [
 								),
 							},
 							{
-								value: 'nextjs-content',
-								label: 'Next.js - Content',
+								value: 'nextjs-magazine',
+								label: 'Next.js - Magazine',
 								render: (
 									<>
 										<Text>Next.js - Magazine example</Text>
@@ -89,7 +92,7 @@ const steps = [
 			answers[answer.value] = {};
 			answers.boilerplate = answer.label;
 
-			if (answer.value === 'nextjs-content') {
+			if (answer.value === 'nextjs-magazine') {
 				answers.defaultTenant = 'voyage';
 			}
 		},
@@ -97,8 +100,8 @@ const steps = [
 			return (
 				<Text>
 					<Newline />
-					All right, <Text color="#f47f98">{props.answers.boilerplate}</Text> it
-					is
+					All right,{' '}
+					<Text color={highlightColor}>{props.answers.boilerplate}</Text> it is
 				</Text>
 			);
 		},
@@ -171,7 +174,7 @@ const steps = [
 			return (
 				<Text>
 					Using Crystallize tenant{' '}
-					<Text color="#f47f98">{props.answers.tenant}</Text>
+					<Text color={highlightColor}>{props.answers.tenant}</Text>
 				</Text>
 			);
 		},
@@ -192,8 +195,8 @@ const steps = [
 			if (paymentMethods && paymentMethods.length > 0) {
 				return (
 					<Text>
-						With <Text color="#f47f98">{paymentMethods.join(', ')}</Text> for
-						payments
+						With <Text color={highlightColor}>{paymentMethods.join(', ')}</Text>{' '}
+						for payments
 					</Text>
 				);
 			}
@@ -216,7 +219,7 @@ const steps = [
 				return (
 					<Text>
 						In these languages:{' '}
-						<Text color="#f47f98">{multilingual.join(', ')}</Text>
+						<Text color={highlightColor}>{multilingual.join(', ')}</Text>
 					</Text>
 				);
 			}
@@ -289,16 +292,16 @@ const steps = [
 						<Text>
 							<Text>
 								To start your project, navigate to the folder (
-								<Text color="#f47f98">cd ./{projectName}</Text>) and run{' '}
+								<Text color={highlightColor}>cd ./{projectName}</Text>) and run{' '}
 							</Text>
 							<Newline />
-							<Text color="#f47f98">yarn dev</Text> or{' '}
-							<Text color="#f47f98">npm run dev</Text>
+							<Text color={highlightColor}>yarn dev</Text> or{' '}
+							<Text color={highlightColor}>npm run dev</Text>
 						</Text>
 					</Box>
 					<Box flexDirection="column" marginBottom={2}>
 						<Text>
-							<Text color="#f47f98">Go fast and prosper!</Text>
+							<Text color={highlightColor}>Go fast and prosper!</Text>
 							<Newline />
 							<Text dimColor>The milliseconds are with you</Text>
 						</Text>
