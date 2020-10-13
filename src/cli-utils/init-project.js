@@ -59,7 +59,11 @@ function InitProject(allProps) {
 
 	// Install node deps
 	React.useEffect(() => {
-		if (answers.gatsby || answers.nextjs || answers['nextjs-magazine']) {
+		if (
+			answers.gatsby ||
+			answers.nextjs ||
+			answers['nextjs-content-commerce']
+		) {
 			if (began) {
 				return;
 			}
@@ -107,8 +111,8 @@ function InitProject(allProps) {
 
 					if (answers.nextjs) {
 						await require('./init-nextjs')(allProps);
-					} else if (answers['nextjs-magazine']) {
-						await require('./init-nextjs-magazine')(allProps);
+					} else if (answers['nextjs-content-commerce']) {
+						await require('./init-nextjs-content-commerce')(allProps);
 					} else if (answers.gatsby) {
 						await require('./init-gatsby')(allProps);
 					}
