@@ -8,7 +8,7 @@ const { Text, Box } = require('ink');
 
 const repos = {
 	'Next.js': 'crystallize-nextjs-boilerplate#main',
-	'Next.js - Magazine': 'next-with-crystallize-example#examples-crystallize',
+	'Next.js - Content and commerce': 'content-commerce-boilerplate#main',
 	Gatsby: 'crystallize-gatsby-boilerplate#main',
 	'React Native': 'crystallize-react-native-boilerplate#master',
 };

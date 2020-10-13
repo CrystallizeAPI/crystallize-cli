@@ -39,16 +39,16 @@ const steps = [
 								),
 							},
 							{
-								value: 'nextjs-magazine',
-								label: 'Next.js - Magazine',
+								value: 'nextjs-content-commerce',
+								label: 'Next.js - Content and commerce',
 								render: (
 									<>
-										<Text>Next.js - Magazine example</Text>
+										<Text>Next.js - Content and commerce</Text>
 										<Newline />
 										<Text dimColor>React, SSG</Text>
 										<Newline />
 										<Text dimColor>
-											Example of beautiful content presentation
+											Beautiful commerce with longform storytelling
 										</Text>
 									</>
 								),
@@ -92,7 +92,7 @@ const steps = [
 			answers[answer.value] = {};
 			answers.boilerplate = answer.label;
 
-			if (answer.value === 'nextjs-magazine') {
+			if (answer.value === 'nextjs-content-commerce') {
 				answers.defaultTenant = 'voyage';
 			}
 		},
