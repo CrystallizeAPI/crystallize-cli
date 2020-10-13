@@ -2,16 +2,24 @@
 
 const React = require('react');
 const degit = require('degit');
+const fs = require('fs-extra');
 const { Text, Box } = require('ink');
 // const Spinner = require('ink-spinner').default;
 
 const repos = {
 	'Next.js': 'crystallize-nextjs-boilerplate#main',
+	'Next.js - Content and commerce': 'content-commerce-boilerplate#main',
 	Gatsby: 'crystallize-gatsby-boilerplate#main',
 	'React Native': 'crystallize-react-native-boilerplate#master',
 };
 
-function DownloadProject({ answers, projectName, resolveStep, flags }) {
+function DownloadProject({
+	answers,
+	projectName,
+	projectPath,
+	resolveStep,
+	flags,
+}) {
 	React.useEffect(() => {
 		if (projectName) {
 			const emitter = degit(`CrystallizeAPI/${repos[answers.boilerplate]}`, {
@@ -28,10 +36,24 @@ function DownloadProject({ answers, projectName, resolveStep, flags }) {
 
 			emitter
 				.clone(projectName)
-				.then(() => resolveStep())
+				.then(() => {
+					if (answers.boilerplate === 'Next.js - Magazine') {
+						const tmpPath = `${projectPath}-${Date.now()}`;
+						fs.renameSync(projectPath, tmpPath);
+						fs.moveSync(
+							`${tmpPath}/examples/commerce-crystallize`,
+							projectPath
+						);
+						fs.rmdirSync(tmpPath, {
+							recursive: true,
+						});
+					}
+
+					setTimeout(() => resolveStep(), 50);
+				})
 				.catch((e) => console.log(e));
 		}
-	}, [answers.boilerplate, flags.info, projectName, resolveStep]);
+	}, [answers.boilerplate, flags.info, projectName, projectPath, resolveStep]);
 
 	return (
 		<Box>

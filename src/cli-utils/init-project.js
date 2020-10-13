@@ -59,7 +59,11 @@ function InitProject(allProps) {
 
 	// Install node deps
 	React.useEffect(() => {
-		if (answers.gatsby || answers.nextjs) {
+		if (
+			answers.gatsby ||
+			answers.nextjs ||
+			answers['nextjs-content-commerce']
+		) {
 			if (began) {
 				return;
 			}
@@ -75,22 +79,24 @@ function InitProject(allProps) {
 				fs.readFileSync(path.resolve('package.json'), 'utf-8')
 			);
 
-			const packageJson = {
-				...oldPackageJson,
-				name: projectName,
-				version: '1.0.0',
-				private: true,
-				dependencies: {
-					...oldPackageJson.dependencies,
-				},
-				devDependencies: {
-					...oldPackageJson.devDependencies,
-				},
-			};
-
 			fs.writeFileSync(
 				path.resolve(projectPath, 'package.json'),
-				JSON.stringify(packageJson, null, 2) + os.EOL
+				JSON.stringify(
+					{
+						...oldPackageJson,
+						name: projectName,
+						version: '1.0.0',
+						private: true,
+						dependencies: {
+							...oldPackageJson.dependencies,
+						},
+						devDependencies: {
+							...oldPackageJson.devDependencies,
+						},
+					},
+					null,
+					2
+				) + os.EOL
 			);
 
 			exec(
@@ -105,13 +111,16 @@ function InitProject(allProps) {
 
 					if (answers.nextjs) {
 						await require('./init-nextjs')(allProps);
+					} else if (answers['nextjs-content-commerce']) {
+						await require('./init-nextjs-content-commerce')(allProps);
 					} else if (answers.gatsby) {
 						await require('./init-gatsby')(allProps);
 					}
-
 					resolveStep();
 				}
 			);
+		} else {
+			resolveStep();
 		}
 	});
 

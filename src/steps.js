@@ -10,57 +10,75 @@ const { InitProject } = importJsx('./cli-utils/init-project');
 const GetPaymentMethods = importJsx('./cli-utils/get-payment-methods');
 const GetMultilingual = importJsx('./cli-utils/get-multilingual');
 const Tips = importJsx('./cli-utils/tips');
-
 const Select = importJsx('./ui-modules/select');
-
-const defaultTenant = 'furniture';
+const { highlightColor } = require('./shared');
 
 const steps = [
 	{
 		render({ projectName, resolveStep }) {
 			return (
 				<>
-					<Text>Please select a boilerplate for "{projectName}"</Text>
+					<Text>
+						Please select a boilerplate for{' '}
+						<Text color={highlightColor}>{projectName}</Text>
+					</Text>
 					<Select
 						onChange={(answer) => resolveStep(answer)}
 						options={[
 							{
 								label: 'Next.js',
+								value: 'nextjs',
 								render: (
 									<>
-										<Text>Next.js</Text>
+										<Text>Next.js - Complete ecommerce</Text>
 										<Newline />
 										<Text dimColor>React, SSG &amp; SSR, Checkout, λ API</Text>
 										<Newline />
 										<Text dimColor>✓ Our recommendation for an ecommerce</Text>
 									</>
 								),
-								value: 'nextjs',
 							},
 							{
-								label: 'Gatsby',
+								value: 'nextjs-content-commerce',
+								label: 'Next.js - Content and commerce',
 								render: (
 									<>
-										<Text>Gatsby</Text>
+										<Text>Next.js - Content and commerce</Text>
 										<Newline />
 										<Text dimColor>React, SSG</Text>
 										<Newline />
 										<Text dimColor>
-											✓ Good choice for a blog and other static sites
+											Beautiful commerce with longform storytelling
 										</Text>
 									</>
 								),
+							},
+							{
+								label: 'Gatsby',
 								value: 'gatsby',
+								render: (
+									<>
+										<Text>Gatsby - Content and product listing</Text>
+										<Newline />
+										<Text dimColor>React, SSG</Text>
+										<Newline />
+										<Text dimColor>
+											Good choice for a blog and other static sites
+										</Text>
+									</>
+								),
 							},
 							{
 								label: 'React Native',
 								value: 'rn',
 								render: (
 									<>
-										<Text>React Native (beta)</Text>
+										<Text>
+											React Native <Text italic>(beta)</Text>
+										</Text>
 										<Newline />
 										<Text dimColor>
-											✓ Go the App way. Currently just support for iOS
+											Go the App way. Currently just support for iOS
 										</Text>
 									</>
 								),
@@ -73,23 +91,36 @@ const steps = [
 		answer({ answers, answer }) {
 			answers[answer.value] = {};
 			answers.boilerplate = answer.label;
+
+			if (answer.value === 'nextjs-content-commerce') {
+				answers.defaultTenant = 'voyage';
+			}
 		},
 		staticMessage(props) {
 			return (
 				<Text>
 					<Newline />
-					All right, <Text color="#f47f98">{props.answers.boilerplate}</Text> it
-					is
+					All right,{' '}
+					<Text color={highlightColor}>{props.answers.boilerplate}</Text> it is
 				</Text>
 			);
 		},
 	},
 	{
-		render({ projectName, resolveStep }) {
+		staticMessage({ projectName }) {
+			return (
+				<Text>
+					Using folder <Text color={highlightColor}>./{projectName}</Text>
+				</Text>
+			);
+		},
+	},
+	{
+		render({ resolveStep, answers }) {
 			return (
 				<>
 					<Text>
-						Please select the Crystallize Tenant to use for "{projectName}"
+						Please select a Crystallize tenant
 						<Newline />
 						<Text dimColor>
 							Don't have a tenant yet? Create one at
@@ -100,10 +131,10 @@ const steps = [
 						onChange={(answer) => resolveStep(answer)}
 						options={[
 							{
-								value: 'furniture',
+								value: answers.defaultTenant,
 								render: (
 									<>
-										<Text>Our demo tenant ({defaultTenant})</Text>
+										<Text>Our demo tenant ({answers.defaultTenant})</Text>
 										<Newline />
 										<Text dimColor>Lot's of demo data here already</Text>
 									</>
@@ -127,14 +158,14 @@ const steps = [
 		},
 	},
 	{
-		render({ resolveStep }) {
+		render({ resolveStep, answers }) {
 			return (
 				<Box>
 					<Box marginRight={1}>
 						<Text>Enter your tenant identifier:</Text>
 					</Box>
 					<UncontrolledTextInput
-						placeholder={defaultTenant}
+						placeholder={answers.defaultTenant}
 						onSubmit={(query) => resolveStep(query)}
 					/>
 				</Box>
@@ -152,7 +183,7 @@ const steps = [
 			return (
 				<Text>
 					Using Crystallize tenant{' '}
-					<Text color="#f47f98">{props.answers.tenant}</Text>
+					<Text color={highlightColor}>{props.answers.tenant}</Text>
 				</Text>
 			);
 		},
@@ -173,8 +204,8 @@ const steps = [
 			if (paymentMethods && paymentMethods.length > 0) {
 				return (
 					<Text>
-						With <Text color="#f47f98">{paymentMethods.join(', ')}</Text> for
-						payments
+						With <Text color={highlightColor}>{paymentMethods.join(', ')}</Text>{' '}
+						for payments
 					</Text>
 				);
 			}
@@ -197,7 +228,7 @@ const steps = [
 				return (
 					<Text>
 						In these languages:{' '}
-						<Text color="#f47f98">{multilingual.join(', ')}</Text>
+						<Text color={highlightColor}>{multilingual.join(', ')}</Text>
 					</Text>
 				);
 			}
@@ -226,11 +257,15 @@ const steps = [
 		},
 	},
 	{
-		staticMessage({ projectName, answers }) {
+		staticMessage({ projectName, projectPath, answers }) {
 			return (
 				<Box flexDirection="column" marginTop={2}>
-					<Box flexDirection="column" marginBottom={2}>
-						<Text>✨ "{projectName}" is ready ✨</Text>
+					<Box flexDirection="column" marginBottom={2} width={400}>
+						<Text>
+							✨ "{projectName}" is ready ✨
+							<Newline />
+							<Text>{projectPath}</Text>
+						</Text>
 					</Box>
 					{answers.nextjs && (
 						<>
@@ -266,16 +301,16 @@ const steps = [
 						<Text>
 							<Text>
 								To start your project, navigate to the folder (
-								<Text color="#f47f98">cd ./{projectName}</Text>) and run{' '}
+								<Text color={highlightColor}>cd ./{projectName}</Text>) and run{' '}
 							</Text>
 							<Newline />
-							<Text color="#f47f98">yarn dev</Text> or{' '}
-							<Text color="#f47f98">npm run dev</Text>
+							<Text color={highlightColor}>yarn dev</Text> or{' '}
+							<Text color={highlightColor}>npm run dev</Text>
 						</Text>
 					</Box>
 					<Box flexDirection="column" marginBottom={2}>
 						<Text>
-							<Text color="#f47f98">Go fast and prosper!</Text>
+							<Text color={highlightColor}>Go fast and prosper!</Text>
 							<Newline />
 							<Text dimColor>The milliseconds are with you</Text>
 						</Text>
