@@ -107,11 +107,20 @@ const steps = [
 		},
 	},
 	{
-		render({ projectName, resolveStep, answers }) {
+		staticMessage({ projectName }) {
+			return (
+				<Text>
+					Using folder <Text color={highlightColor}>./{projectName}</Text>
+				</Text>
+			);
+		},
+	},
+	{
+		render({ resolveStep, answers }) {
 			return (
 				<>
 					<Text>
-						Please select the Crystallize Tenant to use for "{projectName}"
+						Please select a Crystallize tenant
 						<Newline />
 						<Text dimColor>
 							Don't have a tenant yet? Create one at
