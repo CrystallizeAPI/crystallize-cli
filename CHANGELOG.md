@@ -1,3 +1,10 @@
+# [3.2.0-beta.3](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.2.0-beta.2...v3.2.0-beta.3) (2020-10-13)
+
+
+### Features
+
+* use new repo for content commerce ([30385b2](https://github.com/CrystallizeAPI/crystallize-cli/commit/30385b27c62ad55a90124a8ab9db7c8a0401a8dc))
+
 # [3.2.0-beta.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.2.0-beta.1...v3.2.0-beta.2) (2020-09-25)
 
 
