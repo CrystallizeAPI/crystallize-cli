@@ -110,7 +110,7 @@ const steps = [
 		staticMessage({ projectName }) {
 			return (
 				<Text>
-					Using folder <Text color={highlightColor}>./{projectName}</Text>
+					In folder <Text color={highlightColor}>./{projectName}</Text>
 				</Text>
 			);
 		},
@@ -209,6 +209,8 @@ const steps = [
 					</Text>
 				);
 			}
+
+			return <Text>With no payment methods</Text>;
 		},
 	},
 	{
@@ -232,6 +234,8 @@ const steps = [
 					</Text>
 				);
 			}
+
+			return <Text>In a single language</Text>;
 		},
 	},
 	{
