@@ -15,7 +15,7 @@ async function initGatsby({ answers, projectPath }) {
 			urlPrefix: answers.multilingual ? lng : '',
 			appLanguage: 'en-US',
 			crystallizeCatalogueLanguage: lng,
-			defaultCurrency: 'USD',
+			priceVariant: 'default',
 		});
 	});
 
