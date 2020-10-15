@@ -1,3 +1,10 @@
+# [3.2.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.1.1...v3.2.0) (2020-10-13)
+
+
+### Features
+
+* content commerce boilerplate ([3213380](https://github.com/CrystallizeAPI/crystallize-cli/commit/32133800aabf8bae7ae75a04fe3d4562dda3a330))
+
 ## [3.1.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.1.0...v3.1.1) (2020-09-25)
 
 
