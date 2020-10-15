@@ -1,3 +1,11 @@
+## [3.2.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.2.0...v3.2.1) (2020-10-15)
+
+
+### Bug Fixes
+
+* set priceVariant ([bd722e5](https://github.com/CrystallizeAPI/crystallize-cli/commit/bd722e50eb9541442445894ded979c72ef3b2cd2))
+* wording ([64da2d1](https://github.com/CrystallizeAPI/crystallize-cli/commit/64da2d1315404d21349de5c682d2fb89c5336d09))
+
 # [3.2.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.1.1...v3.2.0) (2020-10-13)
 
 
