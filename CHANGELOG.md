@@ -1,3 +1,10 @@
+## [3.3.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.3.0...v3.3.1) (2020-10-21)
+
+
+### Bug Fixes
+
+* app.config.json for the correct project ([7ffcbf8](https://github.com/CrystallizeAPI/crystallize-cli/commit/7ffcbf83af14996ba7452b7d9cd760767a9f0f37))
+
 # [3.3.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.2.1...v3.3.0) (2020-10-21)
 
 
