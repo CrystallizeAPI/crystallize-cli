@@ -294,6 +294,12 @@ const steps = [
 							</Box>
 							<Box flexDirection="column" marginBottom={2}>
 								<Text>
+									Configure the app language, price variant and such in{' '}
+									<Text color={highlightColor}>app.config.json</Text>
+								</Text>
+							</Box>
+							<Box flexDirection="column" marginBottom={2}>
+								<Text>
 									Deploying to Vercel? Read here on how to setup env values:
 									<Newline />
 									https://vercel.com/blog/environment-variables-ui
@@ -304,18 +310,13 @@ const steps = [
 					<Box flexDirection="column" marginBottom={2}>
 						<Text>
 							<Text>
-								To start your project, navigate to the folder (
-								<Text color={highlightColor}>cd ./{projectName}</Text>) and run{' '}
+								Now, navigate to the project and start the dev server:
 							</Text>
+							<Newline />
+							<Text color={highlightColor}>cd ./{projectName}</Text>
 							<Newline />
 							<Text color={highlightColor}>yarn dev</Text> or{' '}
 							<Text color={highlightColor}>npm run dev</Text>
-						</Text>
-					</Box>
-					<Box flexDirection="column" marginBottom={2}>
-						<Text>
-							Configure the app language, price variant and such in
-							<Text dimColor>app.config.json</Text>
 						</Text>
 					</Box>
 					<Box flexDirection="column" marginBottom={2}>
