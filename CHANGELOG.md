@@ -1,3 +1,10 @@
+# [3.3.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.2.1...v3.3.0) (2020-10-21)
+
+
+### Features
+
+* add app.config.json message ([c4e07eb](https://github.com/CrystallizeAPI/crystallize-cli/commit/c4e07ebed593d91e0424f27ec73ec8fcec85d1e6))
+
 ## [3.2.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.2.0...v3.2.1) (2020-10-15)
 
 
