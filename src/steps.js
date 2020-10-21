@@ -314,6 +314,12 @@ const steps = [
 					</Box>
 					<Box flexDirection="column" marginBottom={2}>
 						<Text>
+							Configure the app language, price variant and such in
+							<Text dimColor>app.config.json</Text>
+						</Text>
+					</Box>
+					<Box flexDirection="column" marginBottom={2}>
+						<Text>
 							<Text color={highlightColor}>Go fast and prosper!</Text>
 							<Newline />
 							<Text dimColor>The milliseconds are with you</Text>
