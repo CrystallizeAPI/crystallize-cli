@@ -21,16 +21,34 @@ async function initNextJS({ answers, projectPath }) {
 	appConfig.paymentProviders = answers.paymentMethods;
 
 	// Set locales
-	(answers.multilingual || ['en']).forEach(function addToConfig(lng, index) {
+	const locales = answers.multilingual || ['en'];
+	locales.forEach(function addToConfig(lng) {
 		appConfig.locales.push({
-			...(index === 0 && { isDefault: true }),
+			locale: lng,
 			displayName: lng,
-			urlPrefix: answers.multilingual ? lng : '',
 			appLanguage: 'en-US',
 			crystallizeCatalogueLanguage: lng,
 			priceVariant: 'default',
 		});
 	});
+
+	let nextJsConfigContent = fs.readFileSync(
+		path.resolve(projectPath, 'next.config.js'),
+		'utf-8'
+	);
+	nextJsConfigContent = nextJsConfigContent.replace(
+		`locales: ['en']`,
+		`locales: ${JSON.stringify(locales)}`
+	);
+	nextJsConfigContent = nextJsConfigContent.replace(
+		`defaultLocale: 'en'`,
+		`defaultLocale: '${locales[0]}'`
+	);
+	fs.writeFileSync(
+		path.resolve(projectPath, 'next.config.js'),
+		nextJsConfigContent,
+		'utf-8'
+	);
 
 	// Include Stripe credentials if stripe is selected
 	if (answers.paymentMethods.includes('stripe')) {
@@ -86,35 +104,6 @@ async function initNextJS({ answers, projectPath }) {
 		projectPath,
 		'_repo-utils/cleanup-payment-providers.js'
 	));
-
-	// Re-organize files for multilingual
-	if (answers.multilingual) {
-		const moveThis = [
-			'confirmation',
-			'index.js',
-			// 'search.js',
-			'[...catalogue].js',
-			'checkout.js',
-			'login.js',
-		];
-		await Promise.all(
-			moveThis.map((m) =>
-				fs.move(
-					path.resolve(projectPath, `src/pages/${m}`),
-					path.resolve(projectPath, `src/pages/[locale]/${m}`)
-				)
-			)
-		);
-
-		await fs.move(
-			path.resolve(projectPath, `src/pages/_index.multilingual.redirect.js`),
-			path.resolve(projectPath, `src/pages/index.js`)
-		);
-	} else {
-		await fs.remove(
-			path.resolve(projectPath, `src/pages/_index.multilingual.redirect.js`)
-		);
-	}
 }
 
 module.exports = initNextJS;
