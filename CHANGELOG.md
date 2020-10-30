@@ -1,3 +1,10 @@
+# [3.4.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.3.1...v3.4.0) (2020-10-30)
+
+
+### Features
+
+* new locale setup for NextJS ([905cd85](https://github.com/CrystallizeAPI/crystallize-cli/commit/905cd85898a2a96b193d581c86a0da50718a70cd))
+
 ## [3.3.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.3.0...v3.3.1) (2020-10-21)
 
 
