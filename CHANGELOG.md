@@ -1,3 +1,10 @@
+## [3.4.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.4.0...v3.4.1) (2020-11-03)
+
+
+### Bug Fixes
+
+* normalise project name ([685b2fd](https://github.com/CrystallizeAPI/crystallize-cli/commit/685b2fd851084e67a0bbd8a6ea1417dee689d56f))
+
 # [3.4.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.3.1...v3.4.0) (2020-10-30)
 
 
