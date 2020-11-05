@@ -1,3 +1,10 @@
+## [3.4.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.4.1...v3.4.2) (2020-11-04)
+
+
+### Bug Fixes
+
+* gatsby env vars fix ([c398470](https://github.com/CrystallizeAPI/crystallize-cli/commit/c39847011211def47a97363b17fb7f6fce12d5ec))
+
 ## [3.4.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.4.0...v3.4.1) (2020-11-03)
 
 
