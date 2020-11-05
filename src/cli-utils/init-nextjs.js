@@ -28,7 +28,7 @@ async function initNextJS({ answers, projectPath }) {
 			displayName: lng,
 			appLanguage: 'en-US',
 			crystallizeCatalogueLanguage: lng,
-			priceVariant: 'default',
+			crystallizePriceVariant: 'default',
 		});
 	});
 
