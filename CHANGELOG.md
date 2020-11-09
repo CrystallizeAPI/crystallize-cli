@@ -1,3 +1,10 @@
+## [3.4.3](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.4.2...v3.4.3) (2020-11-05)
+
+
+### Bug Fixes
+
+* use new prop name for priceVariant in Next.JS ([14e45b6](https://github.com/CrystallizeAPI/crystallize-cli/commit/14e45b6c0273965fba4026ce0d6827de4de53d34))
+
 ## [3.4.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.4.1...v3.4.2) (2020-11-04)
 
 
