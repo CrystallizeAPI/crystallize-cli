@@ -1,3 +1,10 @@
+## [3.4.4](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.4.3...v3.4.4) (2020-11-09)
+
+
+### Bug Fixes
+
+* gatsby now uses .env file ([adcba1a](https://github.com/CrystallizeAPI/crystallize-cli/commit/adcba1a30bbd69ba8c0518e35dadb8c17264cb7c))
+
 ## [3.4.3](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.4.2...v3.4.3) (2020-11-05)
 
 
