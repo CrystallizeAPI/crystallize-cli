@@ -27,7 +27,7 @@ async function initGatsby({ answers, projectPath }) {
 
 	// Setup Crystallize config
 	fs.writeFileSync(
-		path.resolve(projectPath, 'crystallize-config'),
+		path.resolve(projectPath, '.env'),
 		[`GATSBY_CRYSTALLIZE_TENANT_ID=${answers.tenant}`].join(os.EOL),
 		'utf-8'
 	);
