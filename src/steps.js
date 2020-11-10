@@ -63,7 +63,7 @@ const steps = [
 										<Text dimColor>React, SSG</Text>
 										<Newline />
 										<Text dimColor>
-											Good choice for a blog and other static sites
+											Good choice for a static site. Only Static Site Generation (SSG), but lightning fast.
 										</Text>
 									</>
 								),
@@ -235,7 +235,11 @@ const steps = [
 				);
 			}
 
-			return <Text>In a single language</Text>;
+			return (
+				<Text>
+					In a <Text color={highlightColor}>single language</Text>
+				</Text>
+			);
 		},
 	},
 	{
