@@ -243,6 +243,7 @@ const steps = [
 		},
 	},
 	{
+		name: 'download',
 		render(props) {
 			return (
 				<>
