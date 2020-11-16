@@ -1,3 +1,11 @@
+# [3.5.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.4.4...v3.5.0) (2020-11-16)
+
+
+### Features
+
+* better wording and desc ([702294a](https://github.com/CrystallizeAPI/crystallize-cli/commit/702294abc7c76b98cb9aa1caffce39746e8a9dd4))
+* updated deps ([555dee2](https://github.com/CrystallizeAPI/crystallize-cli/commit/555dee2f75e0105cb845b8b4c819a654c6d2baae))
+
 ## [3.4.4](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.4.3...v3.4.4) (2020-11-09)
 
 
