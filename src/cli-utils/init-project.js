@@ -62,6 +62,7 @@ function InitProject(allProps) {
 		if (
 			answers.gatsby ||
 			answers.nextjs ||
+			answers.nuxtjs ||
 			answers['nextjs-content-commerce']
 		) {
 			if (began) {
@@ -115,6 +116,8 @@ function InitProject(allProps) {
 						await require('./init-nextjs-content-commerce')(allProps);
 					} else if (answers.gatsby) {
 						await require('./init-gatsby')(allProps);
+					} else if (answers.nuxtjs) {
+						await require('./init-nuxtjs')(allProps);
 					}
 					resolveStep();
 				}

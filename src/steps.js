@@ -60,10 +60,27 @@ const steps = [
 									<>
 										<Text>Gatsby - Content and product listing</Text>
 										<Newline />
-										<Text dimColor>React, SSG</Text>
+										<Text dimColor>React, SSG + SPA</Text>
 										<Newline />
 										<Text dimColor>
-											Good choice for a static site. Only Static Site Generation (SSG), but lightning fast.
+											Good choice for a static site. Only Static Site Generation
+											(SSG), but lightning fast.
+										</Text>
+									</>
+								),
+							},
+							{
+								label: 'Nuxt.js',
+								value: 'nuxtjs',
+								render: (
+									<>
+										<Text>Nuxt.JS - Content and product listing</Text>
+										<Newline />
+										<Text dimColor>Vue.JS, SSG + SPA</Text>
+										<Newline />
+										<Text dimColor>
+											Good choice for a static site. Only Static Site Generation
+											(SSG), but lightning fast.
 										</Text>
 									</>
 								),
