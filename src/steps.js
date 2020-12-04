@@ -74,9 +74,9 @@ const steps = [
 								value: 'nuxtjs',
 								render: (
 									<>
-										<Text>Nuxt.JS - Content and product listing</Text>
+										<Text>Nuxt.js - Content and product listing</Text>
 										<Newline />
-										<Text dimColor>Vue.JS, SSG + SPA</Text>
+										<Text dimColor>Vue, SSG + SPA</Text>
 										<Newline />
 										<Text dimColor>
 											Good choice for a static site. Only Static Site Generation
@@ -283,7 +283,7 @@ const steps = [
 		},
 	},
 	{
-		staticMessage({ projectName, projectPath, answers }) {
+		staticMessage({ projectName, projectPath, answers, shouldUseYarn }) {
 			return (
 				<Box flexDirection="column" marginTop={2}>
 					<Box flexDirection="column" marginBottom={2} width={400}>
@@ -337,8 +337,9 @@ const steps = [
 							<Newline />
 							<Text color={highlightColor}>cd ./{projectName}</Text>
 							<Newline />
-							<Text color={highlightColor}>yarn dev</Text> or{' '}
-							<Text color={highlightColor}>npm run dev</Text>
+							<Text color={highlightColor}>
+								{shouldUseYarn ? 'yarn dev' : 'npm run dev'}
+							</Text>
 						</Text>
 					</Box>
 					<Box flexDirection="column" marginBottom={2}>
