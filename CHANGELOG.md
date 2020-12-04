@@ -1,3 +1,10 @@
+# [3.6.0-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.5.1...v3.6.0-beta.1) (2020-12-04)
+
+
+### Features
+
+* nuxt ([2ad2e5c](https://github.com/CrystallizeAPI/crystallize-cli/commit/2ad2e5c59f9c9fc7e2f78c56374dfb6ad3298ea3))
+
 ## [3.5.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.5.0...v3.5.1) (2020-11-16)
 
 
