@@ -1,0 +1,46 @@
+const fs = require('fs-extra');
+const path = require('path');
+const os = require('os');
+
+async function initNuxtJS({ answers, projectPath }) {
+	try {
+		const envVars = {
+			CRYSTALLIZE_TENANT_IDENTIFIER: answers.tenant,
+		};
+
+		// Set locale
+		const lng = answers.locale || 'en';
+
+		// Update app.config.json file
+		fs.writeFileSync(
+			path.resolve(projectPath, 'app.config.json'),
+			JSON.stringify(
+				{
+					locale: {
+						locale: lng,
+						displayName: lng,
+						appLanguage: 'en-US',
+						crystallizeCatalogueLanguage: lng,
+						crystallizePriceVariant: 'default',
+					},
+				},
+				null,
+				3
+			)
+		);
+
+		// Update .env file
+		fs.writeFileSync(
+			path.resolve(projectPath, '.env'),
+			Object.keys(envVars)
+				.map((key) => `${key}=${envVars[key]}`)
+				.join(os.EOL) + os.EOL
+		);
+	} catch (error) {
+		console.log(error);
+	}
+
+	console.log('HEY!');
+}
+
+module.exports = initNuxtJS;

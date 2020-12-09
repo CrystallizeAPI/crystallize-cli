@@ -60,10 +60,27 @@ const steps = [
 									<>
 										<Text>Gatsby - Content and product listing</Text>
 										<Newline />
-										<Text dimColor>React, SSG</Text>
+										<Text dimColor>React, SSG + SPA</Text>
 										<Newline />
 										<Text dimColor>
-											Good choice for a static site. Only Static Site Generation (SSG), but lightning fast.
+											Good choice for a static site. Only Static Site Generation
+											(SSG), but lightning fast.
+										</Text>
+									</>
+								),
+							},
+							{
+								label: 'Nuxt.js',
+								value: 'nuxtjs',
+								render: (
+									<>
+										<Text>Nuxt.js - Content and product listing</Text>
+										<Newline />
+										<Text dimColor>Vue, SSG + SPA</Text>
+										<Newline />
+										<Text dimColor>
+											Good choice for a static site. Only Static Site Generation
+											(SSG), but lightning fast.
 										</Text>
 									</>
 								),
@@ -266,7 +283,7 @@ const steps = [
 		},
 	},
 	{
-		staticMessage({ projectName, projectPath, answers }) {
+		staticMessage({ projectName, projectPath, answers, shouldUseYarn }) {
 			return (
 				<Box flexDirection="column" marginTop={2}>
 					<Box flexDirection="column" marginBottom={2} width={400}>
@@ -320,8 +337,9 @@ const steps = [
 							<Newline />
 							<Text color={highlightColor}>cd ./{projectName}</Text>
 							<Newline />
-							<Text color={highlightColor}>yarn dev</Text> or{' '}
-							<Text color={highlightColor}>npm run dev</Text>
+							<Text color={highlightColor}>
+								{shouldUseYarn ? 'yarn dev' : 'npm run dev'}
+							</Text>
 						</Text>
 					</Box>
 					<Box flexDirection="column" marginBottom={2}>
