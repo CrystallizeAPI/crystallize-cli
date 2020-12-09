@@ -1,3 +1,10 @@
+# [3.7.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.6.0...v3.7.0) (2020-12-09)
+
+
+### Features
+
+* handle .gitignore ([4fb2870](https://github.com/CrystallizeAPI/crystallize-cli/commit/4fb287024677dd4d790ff9f68eb725ed3f1f793b))
+
 # [3.6.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.5.1...v3.6.0) (2020-12-09)
 
 
