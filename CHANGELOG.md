@@ -1,3 +1,15 @@
+# [3.6.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.5.1...v3.6.0) (2020-12-09)
+
+
+### Bug Fixes
+
+* proper name for nuxt.js ([ffce78e](https://github.com/CrystallizeAPI/crystallize-cli/commit/ffce78ea942c2d428b56a9175a350e6f44e826f6))
+
+
+### Features
+
+* nuxt ([2ad2e5c](https://github.com/CrystallizeAPI/crystallize-cli/commit/2ad2e5c59f9c9fc7e2f78c56374dfb6ad3298ea3))
+
 # [3.6.0-beta.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.6.0-beta.1...v3.6.0-beta.2) (2020-12-04)
 
 
