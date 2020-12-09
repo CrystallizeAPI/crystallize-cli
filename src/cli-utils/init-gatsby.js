@@ -31,6 +31,16 @@ async function initGatsby({ answers, projectPath }) {
 		[`GATSBY_CRYSTALLIZE_TENANT_ID=${answers.tenant}`].join(os.EOL),
 		'utf-8'
 	);
+
+	// Add a sensible .gitignore
+	fs.writeFileSync(
+		path.resolve(projectPath, '.gitignore'),
+		`${require('./default-gitignore')}
+
+# gatsby files
+.cache/
+public`
+	);
 }
 
 module.exports = initGatsby;

@@ -2,7 +2,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const os = require('os');
 
-function initNextJSMagazine({ answers, projectPath }) {
+function initNextJSContentCommerce({ answers, projectPath }) {
 	const envVars = {
 		NEXT_PUBLIC_CRYSTALLIZE_TENANT_IDENTIFIER: answers.tenant,
 	};
@@ -14,6 +14,15 @@ function initNextJSMagazine({ answers, projectPath }) {
 			.map((key) => `${key}=${envVars[key]}`)
 			.join(os.EOL) + os.EOL
 	);
+
+	// Add a sensible .gitignore
+	fs.writeFileSync(
+		path.resolve(projectPath, '.gitignore'),
+		`${require('./default-gitignore')}
+
+# Next build output
+.next`
+	);
 }
 
-module.exports = initNextJSMagazine;
+module.exports = initNextJSContentCommerce;

@@ -104,6 +104,15 @@ async function initNextJS({ answers, projectPath }) {
 		projectPath,
 		'_repo-utils/cleanup-payment-providers.js'
 	));
+
+	// Add a sensible .gitignore
+	fs.writeFileSync(
+		path.resolve(projectPath, '.gitignore'),
+		`${require('./default-gitignore')}
+
+# Next build output
+.next`
+	);
 }
 
 module.exports = initNextJS;

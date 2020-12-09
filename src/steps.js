@@ -78,10 +78,7 @@ const steps = [
 										<Newline />
 										<Text dimColor>Vue, SSG + SPA</Text>
 										<Newline />
-										<Text dimColor>
-											Good choice for a static site. Only Static Site Generation
-											(SSG), but lightning fast.
-										</Text>
+										<Text dimColor>For the Vue fans out there</Text>
 									</>
 								),
 							},

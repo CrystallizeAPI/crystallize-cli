@@ -36,6 +36,21 @@ async function initNuxtJS({ answers, projectPath }) {
 				.map((key) => `${key}=${envVars[key]}`)
 				.join(os.EOL) + os.EOL
 		);
+
+		// Add a sensible .gitignore
+		fs.writeFileSync(
+			path.resolve(projectPath, '.gitignore'),
+			`${require('./default-gitignore')}
+
+# nuxt.js build output
+.nuxt
+
+# Nuxt generate
+dist
+
+# vuepress build output
+.vuepress/dist`
+		);
 	} catch (error) {
 		console.log(error);
 	}
