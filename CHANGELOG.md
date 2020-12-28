@@ -1,3 +1,10 @@
+## [3.7.1-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.7.0...v3.7.1-beta.1) (2020-12-28)
+
+
+### Bug Fixes
+
+* replace degit with gittar ([b958f39](https://github.com/CrystallizeAPI/crystallize-cli/commit/b958f397b6d233eb0f24e0da38caa275288be69e))
+
 # [3.7.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.6.0...v3.7.0) (2020-12-09)
 
 
