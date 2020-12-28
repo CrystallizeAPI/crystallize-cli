@@ -1,6 +1,6 @@
 {
   "name": "@crystallize/cli",
-  "version": "3.7.0",
+  "version": "3.7.1-beta.2",
   "license": "MIT",
   "engines": {
     "node": ">=10"
@@ -54,8 +54,8 @@
     ]
   },
   "dependencies": {
-    "degit": "^2.8.0",
     "fs-extra": "^9.0.1",
+    "gittar": "^0.1.1",
     "immer": "^7.0.9",
     "import-jsx": "^4.0.0",
     "ink": "^3.0.8",
