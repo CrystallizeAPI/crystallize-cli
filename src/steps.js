@@ -224,7 +224,11 @@ const steps = [
 				);
 			}
 
-			return <Text>With no payment methods</Text>;
+			return (
+				<Text>
+					With <Text color={highlightColor}>no payment methods</Text>
+				</Text>
+			);
 		},
 	},
 	{
