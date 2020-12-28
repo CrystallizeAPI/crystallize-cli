@@ -1,3 +1,10 @@
+## [3.7.1-beta.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.7.1-beta.1...v3.7.1-beta.2) (2020-12-28)
+
+
+### Bug Fixes
+
+* highlighting for no payment choice ([f05b00b](https://github.com/CrystallizeAPI/crystallize-cli/commit/f05b00b6851bad549108ee0c55b9094753875e83))
+
 ## [3.7.1-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.7.0...v3.7.1-beta.1) (2020-12-28)
 
 
