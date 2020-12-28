@@ -1,7 +1,7 @@
 'use strict';
 
 const React = require('react');
-const degit = require('degit');
+const gittar = require('gittar');
 const { Text, Box } = require('ink');
 // const Spinner = require('ink-spinner').default;
 
@@ -22,22 +22,17 @@ function DownloadProject({
 }) {
 	React.useEffect(() => {
 		if (projectName) {
-			const emitter = degit(`CrystallizeAPI/${repos[answers.boilerplate]}`, {
-				cache: false,
-				force: true,
-				verbose: true,
+			const repo = `CrystallizeAPI/${repos[answers.boilerplate]}`;
+
+			gittar.fetch(repo).then((a) => {
+				if (flags.info) {
+					console.log(a);
+				}
+
+				gittar.extract(repo, projectPath);
+
+				setTimeout(resolveStep, 2000);
 			});
-
-			if (flags.info) {
-				emitter.on('info', (info) => {
-					console.log(info.message);
-				});
-			}
-
-			emitter
-				.clone(projectName)
-				.then(resolveStep)
-				.catch((e) => console.log(e));
 		}
 	}, [answers.boilerplate, flags.info, projectName, projectPath, resolveStep]);
 
