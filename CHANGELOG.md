@@ -1,3 +1,10 @@
+## [3.7.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.7.1...v3.7.2) (2020-12-28)
+
+
+### Bug Fixes
+
+* runtime and strict mode for all files ([f5bae54](https://github.com/CrystallizeAPI/crystallize-cli/commit/f5bae54320e7ae58c746c0820e2c09e16b671329))
+
 ## [3.7.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.7.0...v3.7.1) (2020-12-28)
 
 
