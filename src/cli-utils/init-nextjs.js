@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 const fs = require('fs-extra');
 const path = require('path');
 const os = require('os');

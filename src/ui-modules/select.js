@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 const React = require('react');
 const { Text, useInput, Box } = require('ink');
 

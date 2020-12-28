@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 const fetch = require('node-fetch');
 
 async function simplyFetchFromGraph({ query, variables }) {

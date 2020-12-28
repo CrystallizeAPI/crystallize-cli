@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 'use strict';
 
 const React = require('react');
@@ -62,7 +63,7 @@ const tips = [
 				</Text>
 			));
 		}
-	// eslint-disable-next-line no-empty
+		// eslint-disable-next-line no-empty
 	} catch (err) {}
 })();
 
