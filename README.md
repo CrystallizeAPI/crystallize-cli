@@ -9,7 +9,7 @@ Bootstrap an app running on the [headless ecommerce][1] and GraphQL based
 
 You'll need the following installed to use Crystallize CLI:
 
-- [Node.js][7] (>=8)
+- [Node.js][7] (>=12)
 
 To create a new app using Crystallize, simply run the following command:
 

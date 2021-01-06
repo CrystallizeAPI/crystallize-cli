@@ -1,3 +1,10 @@
+## [3.7.3](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.7.2...v3.7.3) (2021-01-05)
+
+
+### Bug Fixes
+
+* bump minimum node version to 12 ([601f26b](https://github.com/CrystallizeAPI/crystallize-cli/commit/601f26b157339734c5e1f1e6503c0c9bd64a7d5e))
+
 ## [3.7.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.7.1...v3.7.2) (2020-12-28)
 
 
