@@ -7,7 +7,8 @@ const os = require('os');
 
 async function initNextJS({ answers, projectPath }) {
 	const envVars = {
-		NEXT_PUBLIC_CRYSTALLIZE_TENANT_IDENTIFIER: answers.tenant
+		NEXT_PUBLIC_CRYSTALLIZE_TENANT_IDENTIFIER: answers.tenant,
+		NEXT_PUBLIC_SERVICE_API_URL: answers.serviceAPIURL,
 	};
 
 	const envLocalVars = {
