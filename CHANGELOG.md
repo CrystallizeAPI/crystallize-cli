@@ -1,3 +1,10 @@
+# [3.8.0-beta.3](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.8.0-beta.2...v3.8.0-beta.3) (2021-01-27)
+
+
+### Bug Fixes
+
+* nextjs init no longer has payment setup ([b30c1ef](https://github.com/CrystallizeAPI/crystallize-cli/commit/b30c1ef629c7f43e0822e4dc3b4a08c97a618b31))
+
 # [3.8.0-beta.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.8.0-beta.1...v3.8.0-beta.2) (2021-01-27)
 
 
