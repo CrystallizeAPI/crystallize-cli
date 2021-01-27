@@ -1,3 +1,10 @@
+# [3.8.0-beta.5](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.8.0-beta.4...v3.8.0-beta.5) (2021-01-27)
+
+
+### Bug Fixes
+
+* set service api url ([06be4c8](https://github.com/CrystallizeAPI/crystallize-cli/commit/06be4c8e158100a93a2c22b9e72c8d34b94ccdb7))
+
 # [3.8.0-beta.4](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.8.0-beta.3...v3.8.0-beta.4) (2021-01-27)
 
 
