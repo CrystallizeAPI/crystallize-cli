@@ -7,8 +7,7 @@ const os = require('os');
 
 async function initNextJS({ answers, projectPath }) {
 	const envVars = {
-		NEXT_PUBLIC_CRYSTALLIZE_TENANT_IDENTIFIER: answers.tenant,
-		JWT_SECRET: 'come-up-with-a-super-secret-token-here',
+		NEXT_PUBLIC_CRYSTALLIZE_TENANT_IDENTIFIER: answers.tenant
 	};
 
 	const envLocalVars = {
