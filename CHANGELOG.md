@@ -1,3 +1,10 @@
+# [3.8.0-beta.4](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.8.0-beta.3...v3.8.0-beta.4) (2021-01-27)
+
+
+### Bug Fixes
+
+* no jwt token for nextjs ([1c3bd4a](https://github.com/CrystallizeAPI/crystallize-cli/commit/1c3bd4a4a1959ed004fe2a258adfbbf47157324b))
+
 # [3.8.0-beta.3](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.8.0-beta.2...v3.8.0-beta.3) (2021-01-27)
 
 
