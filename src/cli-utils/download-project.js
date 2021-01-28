@@ -4,7 +4,6 @@
 const React = require('react');
 const gittar = require('gittar');
 const { Text, Box } = require('ink');
-// const Spinner = require('ink-spinner').default;
 
 const repos = {
 	'Next.js': 'crystallize-nextjs-boilerplate#main',
@@ -12,6 +11,7 @@ const repos = {
 	Gatsby: 'crystallize-gatsby-boilerplate#main',
 	'Nuxt.js': 'crystallize-nuxtjs-boilerplate#main',
 	'React Native': 'crystallize-react-native-boilerplate#master',
+	'Service API': 'service-api-boilerplate#main',
 };
 
 function DownloadProject({
@@ -39,9 +39,6 @@ function DownloadProject({
 
 	return (
 		<Box>
-			{/* <Box marginRight={1}>
-				<Spinner type="dots" />
-			</Box> */}
 			<Text>Downloading the {answers.boilerplate} boilerplate...</Text>
 		</Box>
 	);

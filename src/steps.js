@@ -8,7 +8,7 @@ const { UncontrolledTextInput } = require('ink-text-input');
 
 const { DownloadProject } = importJsx('./cli-utils/download-project');
 const { InitProject } = importJsx('./cli-utils/init-project');
-const GetPaymentMethods = importJsx('./cli-utils/get-payment-methods');
+// const GetPaymentMethods = importJsx('./cli-utils/get-payment-methods');
 const GetMultilingual = importJsx('./cli-utils/get-multilingual');
 const Tips = importJsx('./cli-utils/tips');
 const Select = importJsx('./ui-modules/select');
@@ -33,7 +33,7 @@ const steps = [
 									<>
 										<Text>Next.js - Complete ecommerce</Text>
 										<Newline />
-										<Text dimColor>React, SSG &amp; SSR, Checkout, λ API</Text>
+										<Text dimColor>React, SSG &amp; SSR, Checkout</Text>
 										<Newline />
 										<Text dimColor>✓ Our recommendation for an ecommerce</Text>
 									</>
@@ -94,6 +94,22 @@ const steps = [
 										<Newline />
 										<Text dimColor>
 											Go the App way. Currently just support for iOS
+										</Text>
+									</>
+								),
+							},
+							{
+								label: 'Service API',
+								value: 'service-api',
+								render: (
+									<>
+										<Text>Service API - Backend for any frontend</Text>
+										<Newline />
+										<Text dimColor>Node.js - Vercel (AWS, GCP++ to come)</Text>
+										<Newline />
+										<Text dimColor>
+											User authentication, basket and checkout management,
+											webhooks ++
 										</Text>
 									</>
 								),
@@ -203,35 +219,35 @@ const steps = [
 			);
 		},
 	},
-	{
-		render({ resolveStep }) {
-			return <GetPaymentMethods onChange={(answer) => resolveStep(answer)} />;
-		},
-		when({ answers }) {
-			return answers.nextjs;
-		},
-		answer({ answers, answer }) {
-			answers.paymentMethods = answer;
-		},
-		staticMessage({ answers }) {
-			const { paymentMethods } = answers;
+	// {
+	// 	render({ resolveStep }) {
+	// 		return <GetPaymentMethods onChange={(answer) => resolveStep(answer)} />;
+	// 	},
+	// 	when({ answers }) {
+	// 		return answers.serviceAPI;
+	// 	},
+	// 	answer({ answers, answer }) {
+	// 		answers.paymentMethods = answer;
+	// 	},
+	// 	staticMessage({ answers }) {
+	// 		const { paymentMethods } = answers;
 
-			if (paymentMethods && paymentMethods.length > 0) {
-				return (
-					<Text>
-						With <Text color={highlightColor}>{paymentMethods.join(', ')}</Text>{' '}
-						for payments
-					</Text>
-				);
-			}
+	// 		if (paymentMethods && paymentMethods.length > 0) {
+	// 			return (
+	// 				<Text>
+	// 					With <Text color={highlightColor}>{paymentMethods.join(', ')}</Text>{' '}
+	// 					for payments
+	// 				</Text>
+	// 			);
+	// 		}
 
-			return (
-				<Text>
-					With <Text color={highlightColor}>no payment methods</Text>
-				</Text>
-			);
-		},
-	},
+	// 		return (
+	// 			<Text>
+	// 				With <Text color={highlightColor}>no payment methods</Text>
+	// 			</Text>
+	// 		);
+	// 	},
+	// },
 	{
 		render({ resolveStep }) {
 			return <GetMultilingual onChange={(answer) => resolveStep(answer)} />;
@@ -295,7 +311,7 @@ const steps = [
 							<Text>{projectPath}</Text>
 						</Text>
 					</Box>
-					{answers.nextjs && (
+					{answers.serviceAPI && (
 						<>
 							<Box flexDirection="column" marginBottom={1}>
 								<Text>

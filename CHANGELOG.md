@@ -1,3 +1,50 @@
+# [3.8.0-beta.6](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.8.0-beta.5...v3.8.0-beta.6) (2021-01-28)
+
+
+### Bug Fixes
+
+* update immer and add .gitignore for service api ([8bd8a75](https://github.com/CrystallizeAPI/crystallize-cli/commit/8bd8a753579a848c2e8b67b832048e427dabbe00))
+
+
+### Features
+
+* target correct nextjs branch ([0c6d2c7](https://github.com/CrystallizeAPI/crystallize-cli/commit/0c6d2c78233b5388f9f6cfdb93731ea0fbc2303c))
+
+# [3.8.0-beta.5](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.8.0-beta.4...v3.8.0-beta.5) (2021-01-27)
+
+
+### Bug Fixes
+
+* set service api url ([06be4c8](https://github.com/CrystallizeAPI/crystallize-cli/commit/06be4c8e158100a93a2c22b9e72c8d34b94ccdb7))
+
+# [3.8.0-beta.4](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.8.0-beta.3...v3.8.0-beta.4) (2021-01-27)
+
+
+### Bug Fixes
+
+* no jwt token for nextjs ([1c3bd4a](https://github.com/CrystallizeAPI/crystallize-cli/commit/1c3bd4a4a1959ed004fe2a258adfbbf47157324b))
+
+# [3.8.0-beta.3](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.8.0-beta.2...v3.8.0-beta.3) (2021-01-27)
+
+
+### Bug Fixes
+
+* nextjs init no longer has payment setup ([b30c1ef](https://github.com/CrystallizeAPI/crystallize-cli/commit/b30c1ef629c7f43e0822e4dc3b4a08c97a618b31))
+
+# [3.8.0-beta.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.8.0-beta.1...v3.8.0-beta.2) (2021-01-27)
+
+
+### Features
+
+* use beta nextjs boiler ([3b9f741](https://github.com/CrystallizeAPI/crystallize-cli/commit/3b9f7411da41ed56728f51c3b658a94da0537f4b))
+
+# [3.8.0-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.7.4...v3.8.0-beta.1) (2021-01-27)
+
+
+### Features
+
+* service api ([5c4d054](https://github.com/CrystallizeAPI/crystallize-cli/commit/5c4d05446771cef276bc9de10f26f8fe208c8c34))
+
 ## [3.7.4](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.7.3...v3.7.4) (2021-01-06)
 
 
