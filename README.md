@@ -28,8 +28,11 @@ your needs.
 
 Current templates include:
 
-- Next.js + React
-- Gatsby + React
+- Complete Ecommerce (Next.js + React)
+- Content & Commerce (Next.js + React)
+- Gatsby (React)
+- Nuxt (Vue.js)
+- Service API (Node.js)
 - React Native (beta)
 
 ## Contributing
