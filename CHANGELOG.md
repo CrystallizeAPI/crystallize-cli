@@ -1,3 +1,15 @@
+# [3.8.0-beta.6](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.8.0-beta.5...v3.8.0-beta.6) (2021-01-28)
+
+
+### Bug Fixes
+
+* update immer and add .gitignore for service api ([8bd8a75](https://github.com/CrystallizeAPI/crystallize-cli/commit/8bd8a753579a848c2e8b67b832048e427dabbe00))
+
+
+### Features
+
+* target correct nextjs branch ([0c6d2c7](https://github.com/CrystallizeAPI/crystallize-cli/commit/0c6d2c78233b5388f9f6cfdb93731ea0fbc2303c))
+
 # [3.8.0-beta.5](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.8.0-beta.4...v3.8.0-beta.5) (2021-01-27)
 
 
