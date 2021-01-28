@@ -60,72 +60,81 @@ function InitProject(allProps) {
 
 	// Install node deps
 	React.useEffect(() => {
-		if (
-			answers.gatsby ||
-			answers.nextjs ||
-			answers.nuxtjs ||
-			answers['nextjs-content-commerce']
-		) {
-			if (began) {
-				return;
-			}
-
-			began = true;
-
-			// Navigate to the new folder
-			process.chdir(projectPath);
-
-			fs.removeSync(path.resolve('package-lock.json'));
-			fs.removeSync(path.resolve('yarn.lock'));
-			const oldPackageJson = JSON.parse(
-				fs.readFileSync(path.resolve('package.json'), 'utf-8')
-			);
-
-			fs.writeFileSync(
-				path.resolve(projectPath, 'package.json'),
-				JSON.stringify(
-					{
-						...oldPackageJson,
-						name: projectName,
-						version: '1.0.0',
-						private: true,
-						dependencies: {
-							...oldPackageJson.dependencies,
-						},
-						devDependencies: {
-							...oldPackageJson.devDependencies,
-						},
-					},
-					null,
-					2
-				) + os.EOL
-			);
-
-			exec(
-				shouldUseYarn ? 'yarnpkg install' : 'npm install',
-				{
-					stdio: flags.info ? 'inherit' : 'ignore',
-				},
-				async function (err) {
-					if (err) {
-						process.exit(1);
-					}
-
-					if (answers.nextjs) {
-						await require('./init-nextjs')(allProps);
-					} else if (answers['nextjs-content-commerce']) {
-						await require('./init-nextjs-content-commerce')(allProps);
-					} else if (answers.gatsby) {
-						await require('./init-gatsby')(allProps);
-					} else if (answers.nuxtjs) {
-						await require('./init-nuxtjs')(allProps);
-					}
-					resolveStep();
+		async function go() {
+			if (
+				answers.gatsby ||
+				answers.nextjs ||
+				answers.nuxtjs ||
+				answers['nextjs-content-commerce'] ||
+				answers['service-api']
+			) {
+				if (began) {
+					return;
 				}
-			);
-		} else {
-			resolveStep();
+
+				began = true;
+
+				if (answers['service-api']) {
+					await require('./init-service-api')(allProps);
+				}
+
+				// Navigate to the new folder
+				process.chdir(projectPath);
+
+				// Remove any lock files
+				fs.removeSync(path.resolve('package-lock.json'));
+				fs.removeSync(path.resolve('yarn.lock'));
+
+				// Update the package.json with proper name
+				const oldPackageJson = JSON.parse(
+					fs.readFileSync(path.resolve('package.json'), 'utf-8')
+				);
+
+				if (answers['service-api']) {
+					delete oldPackageJson.scripts['dev:boilerplate'];
+				}
+
+				fs.writeFileSync(
+					path.resolve(projectPath, 'package.json'),
+					JSON.stringify(
+						{
+							...oldPackageJson,
+							name: projectName,
+							version: '1.0.0',
+							private: true,
+						},
+						null,
+						2
+					) + os.EOL
+				);
+
+				exec(
+					shouldUseYarn ? 'yarnpkg install' : 'npm install',
+					{
+						stdio: flags.info ? 'inherit' : 'ignore',
+					},
+					async function (err) {
+						if (err) {
+							process.exit(1);
+						}
+
+						if (answers.nextjs) {
+							await require('./init-nextjs')(allProps);
+						} else if (answers['nextjs-content-commerce']) {
+							await require('./init-nextjs-content-commerce')(allProps);
+						} else if (answers.gatsby) {
+							await require('./init-gatsby')(allProps);
+						} else if (answers.nuxtjs) {
+							await require('./init-nuxtjs')(allProps);
+						}
+						resolveStep();
+					}
+				);
+			} else {
+				resolveStep();
+			}
 		}
+		go();
 	});
 
 	return (
