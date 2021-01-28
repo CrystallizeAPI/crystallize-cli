@@ -25,15 +25,19 @@ function DownloadProject({
 		if (projectName) {
 			const repo = `CrystallizeAPI/${repos[answers.boilerplate]}`;
 
-			gittar.fetch(repo).then((a) => {
-				if (flags.info) {
-					console.log(a);
-				}
+			gittar
+				.fetch(repo, {
+					force: true,
+				})
+				.then((a) => {
+					if (flags.info) {
+						console.log(a);
+					}
 
-				gittar.extract(repo, projectPath);
+					gittar.extract(repo, projectPath);
 
-				setTimeout(resolveStep, 2000);
-			});
+					setTimeout(resolveStep, 2000);
+				});
 		}
 	}, [answers.boilerplate, flags.info, projectName, projectPath, resolveStep]);
 
