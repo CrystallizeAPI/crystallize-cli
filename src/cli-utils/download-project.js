@@ -6,7 +6,7 @@ const gittar = require('gittar');
 const { Text, Box } = require('ink');
 
 const repos = {
-	'Next.js': 'crystallize-nextjs-boilerplate#using-service-api',
+	'Next.js': 'crystallize-nextjs-boilerplate#main',
 	'Next.js - Content and commerce': 'content-commerce-boilerplate#main',
 	Gatsby: 'crystallize-gatsby-boilerplate#main',
 	'Nuxt.js': 'crystallize-nuxtjs-boilerplate#main',
