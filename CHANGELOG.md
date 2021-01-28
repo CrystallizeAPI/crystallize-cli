@@ -1,3 +1,10 @@
+# [3.8.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.7.4...v3.8.0) (2021-01-28)
+
+
+### Features
+
+* updated readme ([74f311d](https://github.com/CrystallizeAPI/crystallize-cli/commit/74f311d3cf9895b8846484127111ad9ca49e4ea0))
+
 # [3.8.0-beta.6](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.8.0-beta.5...v3.8.0-beta.6) (2021-01-28)
 
 
