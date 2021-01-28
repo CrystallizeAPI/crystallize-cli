@@ -82,6 +82,12 @@ async function initServiceAPI({ answers, projectPath }) {
 			.map((key) => `${key}=${envLocalVars[key]}`)
 			.join(os.EOL) + os.EOL
 	);
+
+	// Add a sensible .gitignore
+	fs.writeFileSync(
+		path.resolve(projectPath, '.gitignore'),
+		require('./default-gitignore')
+	);
 }
 
 module.exports = initServiceAPI;
