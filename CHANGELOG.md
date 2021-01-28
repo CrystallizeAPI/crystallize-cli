@@ -1,3 +1,10 @@
+## [3.8.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.8.0...v3.8.1) (2021-01-28)
+
+
+### Bug Fixes
+
+* try to get the latest project version ([601a4ee](https://github.com/CrystallizeAPI/crystallize-cli/commit/601a4eedcc37ae2f79b65edc4663bc3a8bca52f3))
+
 # [3.8.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.7.4...v3.8.0) (2021-01-28)
 
 
