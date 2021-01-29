@@ -278,6 +278,70 @@ const steps = [
 		},
 	},
 	{
+		render({ resolveStep, answers }) {
+			return (
+				<>
+					<Text>
+						Please provide the Service API URI
+						<Newline />
+						<Text dimColor>
+							What is the Service API?
+							https://www.youtube.com/watch?v=Dx-9eqp_MFk
+						</Text>
+					</Text>
+					<Select
+						onChange={(answer) => resolveStep(answer)}
+						options={[
+							{
+								value: answers.defaultServiceAPIURL,
+								render: (
+									<>
+										<Text>Our demo API ({answers.defaultServiceAPIURL})</Text>
+									</>
+								),
+							},
+							{
+								value: '[use-own-service-api]',
+								render: (
+									<>
+										<Text>A different Service API</Text>
+									</>
+								),
+							},
+						]}
+					/>
+				</>
+			);
+		},
+		answer({ answers, answer }) {
+			answers.serviceAPIURL = answer.value;
+		},
+		when({ answers }) {
+			return answers.nextjs;
+		},
+	},
+	{
+		render({ resolveStep, answers }) {
+			return (
+				<Box>
+					<Box marginRight={1}>
+						<Text>Enter the URI to your Service API:</Text>
+					</Box>
+					<UncontrolledTextInput
+						placeholder={answers.defaultServiceAPIURL}
+						onSubmit={(query) => resolveStep(query)}
+					/>
+				</Box>
+			);
+		},
+		answer({ answers, answer }) {
+			answers.serviceAPIURL = answer;
+		},
+		when({ answers }) {
+			return answers.serviceAPIURL === '[use-own-service-api]';
+		},
+	},
+	{
 		name: 'download',
 		render(props) {
 			return (

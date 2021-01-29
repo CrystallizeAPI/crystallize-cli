@@ -14,7 +14,7 @@ function App(globalOptions) {
 	const [stepIndex, setStepIndex] = React.useState(0);
 	const [answers, setAnswers] = React.useState({
 		defaultTenant: 'furniture',
-		serviceAPIURL: 'https://service-api-demo.superfast.shop/api/graphql',
+		defaultServiceAPIURL: 'https://service-api-demo.superfast.shop/api/graphql',
 	});
 	const [staticMessages, setStaticMessages] = React.useState([
 		() => (
