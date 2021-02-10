@@ -471,7 +471,7 @@ const steps = [
 									<Text>
 										CRYSTALLIZE_ACCESS_TOKEN_ID=
 										<Newline />
-										CRYSTALLIZE_ACCESS_TOKEN=
+										CRYSTALLIZE_ACCESS_TOKEN_SECRET=
 										<Newline />
 										...and so on
 									</Text>

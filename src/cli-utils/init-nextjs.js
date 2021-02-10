@@ -13,7 +13,7 @@ async function initNextJS({ answers, projectPath }) {
 
 	const envLocalVars = {
 		CRYSTALLIZE_ACCESS_TOKEN_ID: '',
-		CRYSTALLIZE_ACCESS_TOKEN: '',
+		CRYSTALLIZE_ACCESS_TOKEN_SECRET: '',
 	};
 
 	const appConfig = {

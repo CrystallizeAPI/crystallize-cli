@@ -14,7 +14,7 @@ async function initServiceAPI({ answers, projectPath }) {
 		JWT_SECRET: 'super-secret-jwt-token',
 		EMAIL_FROM: 'example@crystallize.com',
 		CRYSTALLIZE_ACCESS_TOKEN_ID: '',
-		CRYSTALLIZE_ACCESS_TOKEN: '',
+		CRYSTALLIZE_ACCESS_TOKEN_SECRET: '',
 		KLARNA_PASSWORD: '',
 		KLARNA_USERNAME: '',
 		STRIPE_SECRET_KEY: '',
