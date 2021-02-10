@@ -86,13 +86,13 @@ function App(globalOptions) {
 			nextAnswers = produce({ answers, answer }, step.answer).answers;
 		}
 
+		if (nextAnswers) {
+			setAnswers(nextAnswers);
+		}
+
 		// Collect any static message from the answer
 		if (step.staticMessage) {
 			staticMessages.push(step.staticMessage);
-		}
-
-		if (nextAnswers) {
-			setAnswers(nextAnswers);
 		}
 
 		let nextStepIndex = getNextStepIndex();

@@ -297,6 +297,11 @@ const steps = [
 								render: (
 									<>
 										<Text>Our demo API ({answers.defaultServiceAPIURL})</Text>
+										<Newline />
+										<Text dimColor>
+											User authentication, basket and checkout using the
+											furniture tenant
+										</Text>
 									</>
 								),
 							},
@@ -304,7 +309,7 @@ const steps = [
 								value: '[use-own-service-api]',
 								render: (
 									<>
-										<Text>A different Service API</Text>
+										<Text>My own Service API</Text>
 									</>
 								),
 							},
@@ -339,6 +344,23 @@ const steps = [
 		},
 		when({ answers }) {
 			return answers.serviceAPIURL === '[use-own-service-api]';
+		},
+	},
+	{
+		staticMessage({ answers }) {
+			if (answers.serviceAPIURL === answers.defaultServiceAPIURL) {
+				return (
+					<Text>
+						With the <Text color={highlightColor}>demo Service API</Text>
+					</Text>
+				);
+			}
+			return (
+				<Text>
+					With Service API URI:{' '}
+					<Text color={highlightColor}>{answers.serviceAPIURL}</Text>
+				</Text>
+			);
 		},
 	},
 	{
