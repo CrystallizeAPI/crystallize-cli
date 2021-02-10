@@ -13,8 +13,8 @@ async function initServiceAPI({ answers, projectPath }) {
 	const envLocalVars = {
 		JWT_SECRET: 'super-secret-jwt-token',
 		EMAIL_FROM: 'example@crystallize.com',
-		CRYSTALLIZE_SECRET_TOKEN: '',
-		CRYSTALLIZE_SECRET_TOKEN_ID: '',
+		CRYSTALLIZE_ACCESS_TOKEN_ID: '',
+		CRYSTALLIZE_ACCESS_TOKEN: '',
 		KLARNA_PASSWORD: '',
 		KLARNA_USERNAME: '',
 		STRIPE_SECRET_KEY: '',

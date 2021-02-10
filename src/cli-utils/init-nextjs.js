@@ -12,8 +12,8 @@ async function initNextJS({ answers, projectPath }) {
 	};
 
 	const envLocalVars = {
-		CRYSTALLIZE_SECRET_TOKEN_ID: '',
-		CRYSTALLIZE_SECRET_TOKEN: '',
+		CRYSTALLIZE_ACCESS_TOKEN_ID: '',
+		CRYSTALLIZE_ACCESS_TOKEN: '',
 	};
 
 	const appConfig = {

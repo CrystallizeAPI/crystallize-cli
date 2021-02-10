@@ -469,9 +469,9 @@ const steps = [
 									width={50}
 								>
 									<Text>
-										CRYSTALLIZE_SECRET_TOKEN_ID=
+										CRYSTALLIZE_ACCESS_TOKEN_ID=
 										<Newline />
-										CRYSTALLIZE_SECRET_TOKEN=
+										CRYSTALLIZE_ACCESS_TOKEN=
 										<Newline />
 										...and so on
 									</Text>
