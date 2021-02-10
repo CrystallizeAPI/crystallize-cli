@@ -1,3 +1,10 @@
+## [3.10.3](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.10.2...v3.10.3) (2021-02-10)
+
+
+### Bug Fixes
+
+* correction of crystallize access token names ([c15b283](https://github.com/CrystallizeAPI/crystallize-cli/commit/c15b283d27934d2b6ebde50ee8a169acbc0ddddd))
+
 ## [3.10.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.10.1...v3.10.2) (2021-02-10)
 
 
