@@ -1,3 +1,10 @@
+# [3.9.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.8.1...v3.9.0) (2021-01-29)
+
+
+### Features
+
+* ask for service api ([2d4b7d4](https://github.com/CrystallizeAPI/crystallize-cli/commit/2d4b7d48e3b7d64b77963d423888298637823578))
+
 ## [3.8.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.8.0...v3.8.1) (2021-01-28)
 
 
