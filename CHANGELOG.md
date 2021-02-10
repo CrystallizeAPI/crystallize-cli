@@ -1,3 +1,10 @@
+## [3.10.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.10.1...v3.10.2) (2021-02-10)
+
+
+### Bug Fixes
+
+* correct name for crystallize access tokens ([71cc149](https://github.com/CrystallizeAPI/crystallize-cli/commit/71cc149d4652538b0df9b0370e8f8519d6acad55))
+
 ## [3.10.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.10.0...v3.10.1) (2021-02-10)
 
 
