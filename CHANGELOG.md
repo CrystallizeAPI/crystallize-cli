@@ -1,3 +1,11 @@
+# [3.10.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.9.0...v3.10.0) (2021-02-10)
+
+
+### Features
+
+* serverless aws for service api ([788c8c1](https://github.com/CrystallizeAPI/crystallize-cli/commit/788c8c1890824c846b135751313c0e15d40fdf1c))
+* show service api choice ([dc5b76f](https://github.com/CrystallizeAPI/crystallize-cli/commit/dc5b76f63c9b6bf2125ee52db204e1d8941e2b6c))
+
 # [3.9.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.8.1...v3.9.0) (2021-01-29)
 
 
