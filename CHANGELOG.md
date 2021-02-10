@@ -1,3 +1,10 @@
+## [3.10.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.10.0...v3.10.1) (2021-02-10)
+
+
+### Bug Fixes
+
+* node 15 now works ([1801270](https://github.com/CrystallizeAPI/crystallize-cli/commit/1801270768e6d17bc1dab80442b7fdb6fb0192d3))
+
 # [3.10.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.9.0...v3.10.0) (2021-02-10)
 
 
