@@ -84,6 +84,20 @@ const steps = [
 								),
 							},
 							{
+								label: 'Service API',
+								value: 'service-api',
+								render: (
+									<>
+										<Text>Service API - Backend for any of the frontends</Text>
+										<Newline />
+										<Text dimColor>
+											User authentication, basket and checkout management,
+											webhooks ++
+										</Text>
+									</>
+								),
+							},
+							{
 								label: 'React Native',
 								value: 'rn',
 								render: (
@@ -94,22 +108,6 @@ const steps = [
 										<Newline />
 										<Text dimColor>
 											Go the App way. Currently just support for iOS
-										</Text>
-									</>
-								),
-							},
-							{
-								label: 'Service API',
-								value: 'service-api',
-								render: (
-									<>
-										<Text>Service API - Backend for any frontend</Text>
-										<Newline />
-										<Text dimColor>Node.js - Vercel (AWS, GCP++ to come)</Text>
-										<Newline />
-										<Text dimColor>
-											User authentication, basket and checkout management,
-											webhooks ++
 										</Text>
 									</>
 								),
@@ -133,6 +131,63 @@ const steps = [
 					<Newline />
 					All right,{' '}
 					<Text color={highlightColor}>{props.answers.boilerplate}</Text> it is
+				</Text>
+			);
+		},
+	},
+	{
+		render({ resolveStep }) {
+			return (
+				<>
+					<Text>Which platform do you want to host it on?</Text>
+					<Select
+						onChange={(answer) => resolveStep(answer)}
+						options={[
+							{
+								value: 'serverless-aws',
+								label: 'Serverless (AWS)',
+								render: (
+									<>
+										<Text>Serverless (AWS)</Text>
+										<Newline />
+										<Text dimColor>Using the serverless framework</Text>
+										<Newline />
+										<Text dimColor>https://www.serverless.com/</Text>
+									</>
+								),
+							},
+							{
+								value: 'vercel',
+								label: 'Serverless (Vercel)',
+								render: (
+									<>
+										<Text>Serverless (Vercel)</Text>
+										<Newline />
+										<Text dimColor>Using Vercel cloud functions</Text>
+										<Newline />
+										<Text dimColor>
+											https://vercel.com/docs/serverless-functions/introduction
+										</Text>
+									</>
+								),
+							},
+						]}
+					/>
+				</>
+			);
+		},
+		when({ answers }) {
+			return answers['service-api'];
+		},
+		answer({ answers, answer }) {
+			answers.serviceAPIPlatform = answer.value;
+			answers.serviceAPIPlatformLabel = answer.label;
+		},
+		staticMessage({ answers }) {
+			return (
+				<Text>
+					On{' '}
+					<Text color={highlightColor}>{answers.serviceAPIPlatformLabel}</Text>
 				</Text>
 			);
 		},
@@ -219,6 +274,7 @@ const steps = [
 			);
 		},
 	},
+
 	// {
 	// 	render({ resolveStep }) {
 	// 		return <GetPaymentMethods onChange={(answer) => resolveStep(answer)} />;
@@ -347,6 +403,9 @@ const steps = [
 		},
 	},
 	{
+		when({ answers }) {
+			return answers.nextjs;
+		},
 		staticMessage({ answers }) {
 			if (answers.serviceAPIURL === answers.defaultServiceAPIURL) {
 				return (
@@ -397,7 +456,7 @@ const steps = [
 							<Text>{projectPath}</Text>
 						</Text>
 					</Box>
-					{answers.serviceAPI && (
+					{answers['service-api'] && (
 						<>
 							<Box flexDirection="column" marginBottom={1}>
 								<Text>
@@ -424,13 +483,15 @@ const steps = [
 									<Text color={highlightColor}>app.config.json</Text>
 								</Text>
 							</Box>
-							<Box flexDirection="column" marginBottom={2}>
-								<Text>
-									Deploying to Vercel? Read here on how to setup env values:
-									<Newline />
-									https://vercel.com/blog/environment-variables-ui
-								</Text>
-							</Box>
+							{answers.serviceAPIPlatform === 'vercel' && (
+								<Box flexDirection="column" marginBottom={2}>
+									<Text>
+										Read here on how to setup Vercel env values:
+										<Newline />
+										https://vercel.com/blog/environment-variables-ui
+									</Text>
+								</Box>
+							)}
 						</>
 					)}
 					<Box flexDirection="column" marginBottom={2}>

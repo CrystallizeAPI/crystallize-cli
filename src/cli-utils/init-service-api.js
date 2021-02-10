@@ -28,9 +28,20 @@ async function initServiceAPI({ answers, projectPath }) {
 		SERVICE_CALLBACK_HOST: '',
 	};
 
+	const platformPath = {
+		vercel: 'platform-templates/vercel',
+		'serverless-aws': 'platform-templates/serverless-aws',
+	}[answers.serviceAPIPlatform];
+
+	if (!platformPath) {
+		throw new Error(
+			`Can't determine platformPath for "${answers.serviceAPIPlatform}"`
+		);
+	}
+
 	// Copy the selected platform template up to root
 	fs.copySync(
-		path.resolve(projectPath, 'platform-templates/vercel'),
+		path.resolve(projectPath, platformPath),
 		path.resolve(projectPath, '.'),
 		{ overwrite: true, recursive: true }
 	);

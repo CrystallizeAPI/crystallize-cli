@@ -6,6 +6,13 @@ const { Text, useInput, Box } = require('ink');
 
 const { highlightColor } = require('../shared');
 
+/**
+ * Due to terminals not always being that large, we need
+ * to cap the max amount of options to display to a low
+ * number.
+ */
+const maxOptionsToDisplay = 3;
+
 function Select({ options, compact, onChange, initialSelected = 0 }) {
 	const [selected, setSelected] = React.useState(initialSelected);
 
@@ -31,15 +38,27 @@ function Select({ options, compact, onChange, initialSelected = 0 }) {
 		setSelected(newSel);
 	});
 
+	let optionsToDisplay = options.slice(
+		selected - 1,
+		selected - 1 + maxOptionsToDisplay
+	);
+	if (selected === 0) {
+		optionsToDisplay = options.slice(0, maxOptionsToDisplay);
+	} else if (selected === options.length - 1) {
+		optionsToDisplay = options.slice(-maxOptionsToDisplay);
+	}
+
 	return (
 		<Box flexDirection="column">
-			{options.map((o, i) => (
+			{optionsToDisplay.map((o) => (
 				<Box flexDirection="row" marginY={compact ? 0 : 1} key={o.value}>
 					<Box width={1} marginRight={2} alignItems="center">
-						<Text color={highlightColor}>{i === selected ? '>' : ''}</Text>
+						<Text color={highlightColor}>
+							{options[selected].value === o.value ? '>' : ''}
+						</Text>
 					</Box>
 					<Box>
-						<Text color={i === selected && highlightColor}>
+						<Text color={options[selected].value === o.value && highlightColor}>
 							{o.render || o.label}
 						</Text>
 					</Box>
