@@ -36,6 +36,8 @@ const steps = [
 										<Text dimColor>React, SSG &amp; SSR, Checkout</Text>
 										<Newline />
 										<Text dimColor>✓ Our recommendation for an ecommerce</Text>
+										<Newline />
+										<Text dimColor>Demo: https://next.superfast.shop/</Text>
 									</>
 								),
 							},
@@ -51,6 +53,8 @@ const steps = [
 										<Text dimColor>
 											Beautiful commerce with longform storytelling
 										</Text>
+										<Newline />
+										<Text dimColor>Demo: https://content-commerce-boilerplate.vercel.app/</Text>
 									</>
 								),
 							},
@@ -67,6 +71,8 @@ const steps = [
 											Good choice for a static site. Only Static Site Generation
 											(SSG), but lightning fast.
 										</Text>
+										<Newline />
+										<Text dimColor>Demo: https://content-commerce-boilerplate.vercel.app/</Text>
 									</>
 								),
 							},
@@ -80,6 +86,8 @@ const steps = [
 										<Text dimColor>Vue, SSG + SPA</Text>
 										<Newline />
 										<Text dimColor>For the Vue fans out there</Text>
+										<Newline />
+										<Text dimColor>Demo: https://nuxt.superfast.shop/</Text>
 									</>
 								),
 							},
