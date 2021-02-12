@@ -1,3 +1,10 @@
+# [3.11.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.10.3...v3.11.0) (2021-02-12)
+
+
+### Features
+
+* included boilerplat demo links ([ca91cd7](https://github.com/CrystallizeAPI/crystallize-cli/commit/ca91cd738345e90f25a2787656413931ed2f3d23))
+
 ## [3.10.3](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.10.2...v3.10.3) (2021-02-10)
 
 
