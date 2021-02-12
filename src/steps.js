@@ -72,7 +72,7 @@ const steps = [
 											(SSG), but lightning fast.
 										</Text>
 										<Newline />
-										<Text dimColor>Demo: https://content-commerce-boilerplate.vercel.app/</Text>
+										<Text dimColor>Demo: https://crystallize-gatsby-boilerplate.vercel.app/</Text>
 									</>
 								),
 							},
