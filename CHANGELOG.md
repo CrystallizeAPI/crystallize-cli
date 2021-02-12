@@ -1,3 +1,11 @@
+## [3.11.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.11.0...v3.11.1) (2021-02-12)
+
+
+### Bug Fixes
+
+* typo on contributing.md ([a2880af](https://github.com/CrystallizeAPI/crystallize-cli/commit/a2880af519d757c53d8a148b97f8626e83de944b))
+* update gatsby boilerplate demo link ([f1ee172](https://github.com/CrystallizeAPI/crystallize-cli/commit/f1ee172c7d8f0e5c2fbece07abd43afb193e1e55))
+
 # [3.11.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.10.3...v3.11.0) (2021-02-12)
 
 
