@@ -14,7 +14,7 @@ the `--boilerplate, -b` flag is provided, the user will be taken through the
 
 ## Local Development
 
-1. Cone the repo with
+1. Clone the repo with
    `git clone https://github.com/CrystallizeAPI/crystallize-cli.git`.
 2. Run `yarn` to install any required dependencies.
 3. Run `npm link`. Running `crystallize` in your terminal should now reference
