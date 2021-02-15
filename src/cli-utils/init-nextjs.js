@@ -11,11 +11,6 @@ async function initNextJS({ answers, projectPath }) {
 		NEXT_PUBLIC_SERVICE_API_URL: answers.serviceAPIURL,
 	};
 
-	const envLocalVars = {
-		CRYSTALLIZE_ACCESS_TOKEN_ID: '',
-		CRYSTALLIZE_ACCESS_TOKEN_SECRET: '',
-	};
-
 	const appConfig = {
 		locales: [],
 	};
@@ -61,14 +56,6 @@ async function initNextJS({ answers, projectPath }) {
 		path.resolve(projectPath, '.env'),
 		Object.keys(envVars)
 			.map((key) => `${key}=${envVars[key]}`)
-			.join(os.EOL) + os.EOL
-	);
-
-	// Update .env.local file
-	fs.writeFileSync(
-		path.resolve(projectPath, '.env.local'),
-		Object.keys(envLocalVars)
-			.map((key) => `${key}=${envLocalVars[key]}`)
 			.join(os.EOL) + os.EOL
 	);
 
