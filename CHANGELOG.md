@@ -1,3 +1,10 @@
+## [3.11.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.11.1...v3.11.2) (2021-02-15)
+
+
+### Bug Fixes
+
+* no crystallize tokens for nextjs boiler ([6993c00](https://github.com/CrystallizeAPI/crystallize-cli/commit/6993c0022a0d76f9dec3cd42d360d4499b480aee))
+
 ## [3.11.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.11.0...v3.11.1) (2021-02-12)
 
 
