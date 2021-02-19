@@ -1,3 +1,10 @@
+# [3.12.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.11.2...v3.12.0) (2021-02-19)
+
+
+### Features
+
+* .env.local.example for service api ([9a27c61](https://github.com/CrystallizeAPI/crystallize-cli/commit/9a27c61ca1c3f31bfb7a5c7aad9124090d25fe0b))
+
 ## [3.11.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.11.1...v3.11.2) (2021-02-15)
 
 
