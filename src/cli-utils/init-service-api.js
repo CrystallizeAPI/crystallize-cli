@@ -94,6 +94,27 @@ async function initServiceAPI({ answers, projectPath }) {
 			.join(os.EOL) + os.EOL
 	);
 
+	// Example file of all config options
+	fs.writeFileSync(
+		path.resolve(projectPath, '.env.local.example'),
+		`EMAIL_FROM=
+CRYSTALLIZE_SECRET_TOKEN_ID=
+CRYSTALLIZE_SECRET_TOKEN_SECRET=
+JWT_SECRET=
+KLARNA_PASSWORD=
+KLARNA_USERNAME=
+STRIPE_SECRET_KEY=
+STRIPE_PUBLISHABLE_KEY=
+VIPPS_CLIENT_ID=
+VIPPS_CLIENT_SECRET=
+VIPPS_MERCHANT_SERIAL=
+VIPPS_SUB_KEY=
+SENDGRID_API_KEY=
+MOLLIE_API_KEY=
+SERVICE_CALLBACK_HOST=
+`
+	);
+
 	// Add a sensible .gitignore
 	fs.writeFileSync(
 		path.resolve(projectPath, '.gitignore'),
