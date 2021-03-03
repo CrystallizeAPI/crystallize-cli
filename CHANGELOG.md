@@ -1,3 +1,10 @@
+## [3.12.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.12.0...v3.12.1) (2021-03-03)
+
+
+### Bug Fixes
+
+* remove isDefault from gatsby locale settings ([d1193b7](https://github.com/CrystallizeAPI/crystallize-cli/commit/d1193b7b6d41181c5f1f4b26de2a8dbde86e8852))
+
 # [3.12.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.11.2...v3.12.0) (2021-02-19)
 
 
