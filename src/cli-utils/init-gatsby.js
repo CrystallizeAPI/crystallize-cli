@@ -11,9 +11,8 @@ async function initGatsby({ answers, projectPath }) {
 	};
 
 	// Set locales
-	(answers.multilingual || ['en']).forEach(function addToConfig(lng, index) {
+	(answers.multilingual || ['en']).forEach(function addToConfig(lng) {
 		appConfig.locales.push({
-			...(index === 0 && { isDefault: true }),
 			locale: lng,
 			displayName: lng,
 			urlPrefix: answers.multilingual ? lng : '',
