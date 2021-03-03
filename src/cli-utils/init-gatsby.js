@@ -14,11 +14,12 @@ async function initGatsby({ answers, projectPath }) {
 	(answers.multilingual || ['en']).forEach(function addToConfig(lng, index) {
 		appConfig.locales.push({
 			...(index === 0 && { isDefault: true }),
+			locale: lng,
 			displayName: lng,
 			urlPrefix: answers.multilingual ? lng : '',
 			appLanguage: 'en-US',
 			crystallizeCatalogueLanguage: lng,
-			priceVariant: 'default',
+			crystallizePriceVariant: 'default',
 		});
 	});
 
