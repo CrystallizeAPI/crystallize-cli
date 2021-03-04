@@ -1,3 +1,10 @@
+# [3.13.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.12.1...v3.13.0) (2021-03-04)
+
+
+### Features
+
+* service api question for gatsby ([90ec560](https://github.com/CrystallizeAPI/crystallize-cli/commit/90ec560ec16cc43030a36ed50825002c9dc7efd2))
+
 ## [3.12.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.12.0...v3.12.1) (2021-03-03)
 
 
