@@ -31,11 +31,13 @@ const steps = [
 								value: 'nextjs',
 								render: (
 									<>
-										<Text>Next.js - Complete ecommerce</Text>
+										<Text>Next.js</Text>
 										<Newline />
-										<Text dimColor>React, SSG &amp; SSR, Checkout</Text>
+										<Text dimColor>Complete hybrid SSG/SPA/SSR ecommerce</Text>
 										<Newline />
-										<Text dimColor>✓ Our recommendation for an ecommerce</Text>
+										<Text dimColor>
+											React, SSG &amp; SSR, Ecommerce with basket &amp; checkout
+										</Text>
 										<Newline />
 										<Text dimColor>Demo: https://next.superfast.shop/</Text>
 									</>
@@ -54,7 +56,9 @@ const steps = [
 											Beautiful commerce with longform storytelling
 										</Text>
 										<Newline />
-										<Text dimColor>Demo: https://content-commerce-boilerplate.vercel.app/</Text>
+										<Text dimColor>
+											Demo: https://content-commerce-boilerplate.vercel.app/
+										</Text>
 									</>
 								),
 							},
@@ -63,16 +67,19 @@ const steps = [
 								value: 'gatsby',
 								render: (
 									<>
-										<Text>Gatsby - Content and product listing</Text>
-										<Newline />
-										<Text dimColor>React, SSG + SPA</Text>
+										<Text>Gatsby</Text>
 										<Newline />
 										<Text dimColor>
-											Good choice for a static site. Only Static Site Generation
-											(SSG), but lightning fast.
+											React, SSG + SPA, Ecommerce with basket
 										</Text>
 										<Newline />
-										<Text dimColor>Demo: https://crystallize-gatsby-boilerplate.vercel.app/</Text>
+										<Text dimColor>
+											Static Site Generation (SSG) on steroids!
+										</Text>
+										<Newline />
+										<Text dimColor>
+											Demo: https://crystallize-gatsby-boilerplate.vercel.app/
+										</Text>
 									</>
 								),
 							},
@@ -386,7 +393,7 @@ const steps = [
 			answers.serviceAPIURL = answer.value;
 		},
 		when({ answers }) {
-			return answers.nextjs;
+			return answers.nextjs || answers.gatsby;
 		},
 	},
 	{
@@ -412,7 +419,7 @@ const steps = [
 	},
 	{
 		when({ answers }) {
-			return answers.nextjs;
+			return answers.nextjs || answers.gatsby;
 		},
 		staticMessage({ answers }) {
 			if (answers.serviceAPIURL === answers.defaultServiceAPIURL) {
