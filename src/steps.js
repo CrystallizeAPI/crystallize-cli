@@ -117,9 +117,7 @@ const steps = [
 								value: 'rn',
 								render: (
 									<>
-										<Text>
-											React Native <Text italic>(beta)</Text>
-										</Text>
+										<Text>React Native</Text>
 										<Newline />
 										<Text dimColor>
 											Go the App way. Currently just support for iOS

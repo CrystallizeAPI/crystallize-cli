@@ -10,7 +10,7 @@ const repos = {
 	'Next.js - Content and commerce': 'content-commerce-boilerplate#main',
 	Gatsby: 'crystallize-gatsby-boilerplate#main',
 	'Nuxt.js': 'crystallize-nuxtjs-boilerplate#main',
-	'React Native': 'crystallize-react-native-boilerplate#master',
+	'React Native': 'crystallize-react-native-boilerplate#main',
 	'Service API': 'service-api-boilerplate#main',
 };
 
