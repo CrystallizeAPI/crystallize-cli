@@ -1,3 +1,10 @@
+## [3.14.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.14.0...v3.14.1) (2021-03-25)
+
+
+### Bug Fixes
+
+* set .env for react native ([d380632](https://github.com/CrystallizeAPI/crystallize-cli/commit/d380632a29701a9b331233a920ca75fa15048972))
+
 # [3.14.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.13.0...v3.14.0) (2021-03-25)
 
 
