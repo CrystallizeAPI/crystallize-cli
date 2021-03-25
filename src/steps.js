@@ -27,8 +27,8 @@ const steps = [
 						onChange={(answer) => resolveStep(answer)}
 						options={[
 							{
-								label: 'Next.js',
 								value: 'nextjs',
+								label: 'Next.js',
 								render: (
 									<>
 										<Text>Next.js</Text>
@@ -63,8 +63,8 @@ const steps = [
 								),
 							},
 							{
-								label: 'Gatsby',
 								value: 'gatsby',
+								label: 'Gatsby',
 								render: (
 									<>
 										<Text>Gatsby</Text>
@@ -99,8 +99,8 @@ const steps = [
 								),
 							},
 							{
-								label: 'Service API',
 								value: 'service-api',
+								label: 'Service API',
 								render: (
 									<>
 										<Text>Service API - Backend for any of the frontends</Text>
@@ -113,8 +113,8 @@ const steps = [
 								),
 							},
 							{
-								label: 'React Native',
 								value: 'rn',
+								label: 'React Native',
 								render: (
 									<>
 										<Text>React Native</Text>
@@ -436,7 +436,6 @@ const steps = [
 		},
 	},
 	{
-		name: 'download',
 		render(props) {
 			return (
 				<>
