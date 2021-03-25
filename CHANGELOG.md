@@ -1,3 +1,10 @@
+# [3.14.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.13.0...v3.14.0) (2021-03-25)
+
+
+### Features
+
+* cli react native update ([c3dbfb1](https://github.com/CrystallizeAPI/crystallize-cli/commit/c3dbfb12b84a1bea27e3525d0d694327599a04a7))
+
 # [3.14.0-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.13.0...v3.14.0-beta.1) (2021-03-24)
 
 
