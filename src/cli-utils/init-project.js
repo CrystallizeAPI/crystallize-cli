@@ -119,6 +119,8 @@ function InitProject(allProps) {
 						await require('./init-gatsby')(allProps);
 					} else if (answers.nuxtjs) {
 						await require('./init-nuxtjs')(allProps);
+					} else if (answers.rn) {
+						await require('./init-rn')(allProps);
 					}
 					resolveStep();
 				}

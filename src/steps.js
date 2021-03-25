@@ -391,7 +391,7 @@ const steps = [
 			answers.serviceAPIURL = answer.value;
 		},
 		when({ answers }) {
-			return answers.nextjs || answers.gatsby;
+			return answers.nextjs || answers.gatsby || answers.rn;
 		},
 	},
 	{
