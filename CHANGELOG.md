@@ -1,3 +1,10 @@
+# [3.15.0-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.14.1...v3.15.0-beta.1) (2021-04-21)
+
+
+### Features
+
+* service api for nuxt ([66315d1](https://github.com/CrystallizeAPI/crystallize-cli/commit/66315d183448661810356fc69024e4c91864adf8))
+
 ## [3.14.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.14.0...v3.14.1) (2021-03-25)
 
 
