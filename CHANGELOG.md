@@ -1,3 +1,9 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [3.15.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.15.0-beta.1...v3.15.0) (2021-04-21)
+
 # [3.15.0-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.14.1...v3.15.0-beta.1) (2021-04-21)
 
 
