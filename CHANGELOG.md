@@ -1,3 +1,10 @@
+# [3.16.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.15.0...v3.16.0) (2021-04-21)
+
+
+### Features
+
+* force new deploy ([522d308](https://github.com/CrystallizeAPI/crystallize-cli/commit/522d30804b157d4d64075466480722d8743845c0))
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
