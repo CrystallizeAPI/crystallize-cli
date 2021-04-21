@@ -101,6 +101,18 @@ function InitProject(allProps) {
 				) + os.EOL
 			);
 
+			if (answers.nextjs) {
+				await require('./init-nextjs')(allProps);
+			} else if (answers['nextjs-content-commerce']) {
+				await require('./init-nextjs-content-commerce')(allProps);
+			} else if (answers.gatsby) {
+				await require('./init-gatsby')(allProps);
+			} else if (answers.nuxtjs) {
+				await require('./init-nuxtjs')(allProps);
+			} else if (answers.rn) {
+				await require('./init-rn')(allProps);
+			}
+
 			exec(
 				shouldUseYarn ? 'yarnpkg install' : 'npm install',
 				{
@@ -111,17 +123,6 @@ function InitProject(allProps) {
 						process.exit(1);
 					}
 
-					if (answers.nextjs) {
-						await require('./init-nextjs')(allProps);
-					} else if (answers['nextjs-content-commerce']) {
-						await require('./init-nextjs-content-commerce')(allProps);
-					} else if (answers.gatsby) {
-						await require('./init-gatsby')(allProps);
-					} else if (answers.nuxtjs) {
-						await require('./init-nuxtjs')(allProps);
-					} else if (answers.rn) {
-						await require('./init-rn')(allProps);
-					}
 					resolveStep();
 				}
 			);

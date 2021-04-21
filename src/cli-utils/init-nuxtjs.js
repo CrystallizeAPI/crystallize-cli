@@ -9,6 +9,8 @@ async function initNuxtJS({ answers, projectPath }) {
 	try {
 		const envVars = {
 			CRYSTALLIZE_TENANT_IDENTIFIER: answers.tenant,
+			SERVICE_API_URL: answers.serviceAPIURL,
+			SITE_URL: '<https://your-public-site-domain>',
 		};
 
 		// Set locale
@@ -57,8 +59,6 @@ dist
 	} catch (error) {
 		console.log(error);
 	}
-
-	console.log('HEY!');
 }
 
 module.exports = initNuxtJS;
