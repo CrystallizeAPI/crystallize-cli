@@ -16,7 +16,7 @@ async function initNuxtJS({ answers, projectPath }) {
 		// Set locale
 		const lng = answers.locale || 'en';
 
-		// Update app.config.json file
+		// Update app.config.json file.
 		fs.writeFileSync(
 			path.resolve(projectPath, 'app.config.json'),
 			JSON.stringify(
