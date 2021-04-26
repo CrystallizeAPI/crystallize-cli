@@ -84,7 +84,7 @@ const steps = [
 								),
 							},
 							{
-								label: 'Nuxt.js',
+								label: 'Nuxt.js - Content and product listing',
 								value: 'nuxtjs',
 								render: (
 									<>
@@ -100,7 +100,7 @@ const steps = [
 							},
 							{
 								value: 'service-api',
-								label: 'Service API',
+								label: 'Service API - Backend for any of the frontends',
 								render: (
 									<>
 										<Text>Service API - Backend for any of the frontends</Text>

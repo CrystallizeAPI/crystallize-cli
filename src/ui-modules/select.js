@@ -2,7 +2,7 @@
 'use strict';
 
 const React = require('react');
-const { Text, useInput, Box } = require('ink');
+const { Text, useInput, Box, Newline } = require('ink');
 
 const { highlightColor } = require('../shared');
 
@@ -48,6 +48,14 @@ function Select({ options, compact, onChange, initialSelected = 0 }) {
 		optionsToDisplay = options.slice(-maxOptionsToDisplay);
 	}
 
+	let overflowItem = null;
+	let lastDisplayedIndex = options.findIndex(
+		(o) => o === optionsToDisplay[optionsToDisplay.length - 1]
+	);
+	if (lastDisplayedIndex < options.length - 1) {
+		overflowItem = options[lastDisplayedIndex + 1];
+	}
+
 	return (
 		<Box flexDirection="column">
 			{optionsToDisplay.map((o) => (
@@ -64,6 +72,15 @@ function Select({ options, compact, onChange, initialSelected = 0 }) {
 					</Box>
 				</Box>
 			))}
+			{overflowItem && (
+				<Box marginLeft={3} flexDirection="row">
+					<Text>
+						{overflowItem.label}
+						<Newline />
+						...
+					</Text>
+				</Box>
+			)}
 		</Box>
 	);
 }

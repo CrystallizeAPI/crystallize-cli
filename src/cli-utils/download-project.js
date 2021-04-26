@@ -9,9 +9,11 @@ const repos = {
 	'Next.js': 'crystallize-nextjs-boilerplate#main',
 	'Next.js - Content and commerce': 'content-commerce-boilerplate#main',
 	Gatsby: 'crystallize-gatsby-boilerplate#main',
-	'Nuxt.js': 'crystallize-nuxtjs-boilerplate#main',
+	'Nuxt.js - Content and product listing':
+		'crystallize-nuxtjs-boilerplate#main',
 	'React Native': 'crystallize-react-native-boilerplate#main',
-	'Service API': 'service-api-boilerplate#main',
+	'Service API - Backend for any of the frontends':
+		'service-api-boilerplate#main',
 };
 
 function DownloadProject({
