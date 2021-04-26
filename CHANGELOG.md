@@ -1,3 +1,10 @@
+# [3.17.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.16.0...v3.17.0) (2021-04-26)
+
+
+### Features
+
+* show overflow for select ([ee4e0c0](https://github.com/CrystallizeAPI/crystallize-cli/commit/ee4e0c0e89a468aa20d2d465f23f8e9c8124e9a4))
+
 # [3.16.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.15.0...v3.16.0) (2021-04-21)
 
 
