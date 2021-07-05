@@ -157,6 +157,15 @@ const steps = [
 						onChange={(answer) => resolveStep(answer)}
 						options={[
 							{
+								value: 'cloudflare',
+								label: 'Cloudflare',
+								render: (
+									<>
+										<Text>Cloudlare Worker</Text>
+									</>
+								),
+							},
+							{
 								value: 'serverless-aws',
 								label: 'Serverless (AWS)',
 								render: (

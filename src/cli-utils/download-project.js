@@ -13,7 +13,7 @@ const repos = {
 		'crystallize-nuxtjs-boilerplate#main',
 	'React Native': 'crystallize-react-native-boilerplate#main',
 	'Service API - Backend for any of the frontends':
-		'service-api-boilerplate#main',
+		'service-api-boilerplate#with-cloudflare',
 };
 
 function DownloadProject({

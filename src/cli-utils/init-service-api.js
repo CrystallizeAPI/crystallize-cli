@@ -31,6 +31,7 @@ async function initServiceAPI({ answers, projectPath }) {
 	const platformPath = {
 		vercel: 'platform-templates/vercel',
 		'serverless-aws': 'platform-templates/serverless-aws',
+		cloudflare: 'platform-templates/cloudflare',
 	}[answers.serviceAPIPlatform];
 
 	if (!platformPath) {
