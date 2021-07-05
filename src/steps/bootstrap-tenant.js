@@ -7,53 +7,53 @@ const { Text, Newline, Box } = require('ink');
 
 const Select = importJsx('../ui-modules/select');
 
-const stepBootstrapTenant = [
-	{
-		when({ answers }) {
-			return !answers['service-api'];
-		},
-		render({ resolveStep }) {
-			return (
-				<>
-					<Box flexDirection="column">
-						<Text>
-							Would you like to bootstrap your tenant with example data?
-							<Newline />
-							<Text dimColor>
-								This would add shapes, topics, languages, price variants
-							</Text>
-						</Text>
-						<Select
-							onChange={(answer) => resolveStep(answer)}
-							options={[
-								{
-									value: 'no',
-									render: (
-										<>
-											<Text>No thanks</Text>
-										</>
-									),
-								},
-								{
-									value: 'yes',
-									render: (
-										<>
-											<Text>Yes, please</Text>
-										</>
-									),
-								},
-							]}
-						/>
-					</Box>
-				</>
-			);
-		},
-		answer({ answers, answer }) {
-			answers.bootstrapTenant = answer;
-		},
+const askIfBootstrapTenant = {
+	when({ answers }) {
+		return !answers['service-api'];
 	},
+	render({ resolveStep }) {
+		return (
+			<>
+				<Box flexDirection="column">
+					<Text>
+						Would you like to bootstrap your tenant with example data?
+						<Newline />
+						<Text dimColor>This would add shapes, items, topics and more</Text>
+					</Text>
+					<Select
+						onChange={(answer) => resolveStep(answer.value)}
+						options={[
+							{
+								value: 'no',
+								render: (
+									<>
+										<Text>No thanks</Text>
+									</>
+								),
+							},
+							{
+								value: 'yes',
+								render: (
+									<>
+										<Text>Yes, please</Text>
+									</>
+								),
+							},
+						]}
+					/>
+				</Box>
+			</>
+		);
+	},
+	answer({ answers, answer }) {
+		answers.bootstrapTenant = answer;
+	},
+};
+
+const bootstrapExampleTenant = [
 	{
 		when({ answers }) {
+			// console.log('answers.bootstrapTenant', answers.bootstrapTenant);
 			return answers.bootstrapTenant === 'yes';
 		},
 		render({ resolveStep }) {
@@ -71,11 +71,12 @@ const stepBootstrapTenant = [
 											<Text>
 												furniture
 												<Newline />
-												Example implementation: http://furniture.superfast.shop
+												Our often used furniture tenant with products, topics,
+												grids in multiple languages
 												<Newline />
 												<Text dimColor>
-													Our often used furniture tenant with products, topics,
-													grids in multiple languages
+													Example implementation:
+													https://furniture.superfast.shop
 												</Text>
 											</Text>
 										</>
@@ -88,10 +89,10 @@ const stepBootstrapTenant = [
 											<Text>
 												voyage
 												<Newline />
-												Example implementation: http://voyage.superfast.shop
+												Content heavy tenant with a story driven ecommerce
 												<Newline />
 												<Text dimColor>
-													Content heavy tenant with a story driven ecommerce
+													Example implementation: https://voyage.superfast.shop
 												</Text>
 											</Text>
 										</>
@@ -109,4 +110,6 @@ const stepBootstrapTenant = [
 	},
 ];
 
-module.exports = { stepBootstrapTenant };
+module.exports = {
+	stepBootstrapTenant: [askIfBootstrapTenant, ...bootstrapExampleTenant],
+};
