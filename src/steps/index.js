@@ -274,6 +274,7 @@ const steps = [
 		},
 		answer({ answers, answer }) {
 			answers.tenant = answer;
+			answers.useOwnTenant = true;
 		},
 		when({ answers }) {
 			return answers.tenant === '[use-own-tenant]';
