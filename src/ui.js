@@ -15,6 +15,7 @@ function App(globalOptions) {
 	const [answers, setAnswers] = React.useState({
 		defaultTenant: 'furniture',
 		defaultServiceAPIURL: 'https://service-api-demo.superfast.shop/api/graphql',
+		bootstrapTenant: 'no',
 	});
 	const [staticMessages, setStaticMessages] = React.useState([
 		() => (

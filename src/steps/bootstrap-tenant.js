@@ -1,58 +1,15 @@
 #!/usr/bin/env node
 'use strict';
 
+const fs = require('fs-extra');
 const React = require('react');
 const importJsx = require('import-jsx');
 const { Text, Newline, Box } = require('ink');
-const { UncontrolledTextInput } = require('ink-text-input');
+const { Bootstrapper, EVENT_NAMES } = require('@crystallize/import-utilities');
 
 const Select = importJsx('../ui-modules/select');
-
-function GetAccessKeys({ onChange }) {
-	const [id, setId] = React.useState('');
-	const [secret, setSecret] = React.useState('');
-
-	React.useEffect(() => {
-		if (id && secret) {
-			onChange({ id, secret });
-		}
-	}, [id, secret, onChange]);
-
-	return (
-		<>
-			<Box flexDirection="column">
-				<Text>
-					Please provide Access Keys to bootstrap the tenant
-					<Newline />
-					<Text dimColor>
-						Learn about access keys:
-						https://crystallize.com/learn/developer-guides/access-tokens
-					</Text>
-				</Text>
-
-				{!id ? (
-					<>
-						<Text>Access Key ID: </Text>
-						<UncontrolledTextInput
-							key="access-key-id"
-							placeholder="access-key-id"
-							onSubmit={(val) => setId(val)}
-						/>
-					</>
-				) : (
-					<>
-						<Text>Access Key Secret: </Text>
-						<UncontrolledTextInput
-							key="access-key-secret"
-							placeholder="access-key-secret"
-							onSubmit={(val) => setSecret(val)}
-						/>
-					</>
-				)}
-			</Box>
-		</>
-	);
-}
+const { highlightColor } = require('../shared');
+const { GetAccessTokens } = importJsx('./access-tokens');
 
 const askIfBootstrapTenant = {
 	when({ answers }) {
@@ -72,19 +29,11 @@ const askIfBootstrapTenant = {
 						options={[
 							{
 								value: 'no',
-								render: (
-									<>
-										<Text>No thanks</Text>
-									</>
-								),
+								render: <Text>No thanks</Text>,
 							},
 							{
 								value: 'yes',
-								render: (
-									<>
-										<Text>Yes, please</Text>
-									</>
-								),
+								render: <Text>Yes, please</Text>,
 							},
 						]}
 					/>
@@ -153,22 +102,58 @@ const bootstrapExampleTenant = [
 		answer({ answers, answer }) {
 			answers.bootstrapTenant = answer;
 		},
+		staticMessage({ answers }) {
+			return (
+				<Text>
+					Bootstrapped with example tenant{' '}
+					<Text color={highlightColor}>{answers.bootstrapTenant}</Text>
+				</Text>
+			);
+		},
 	},
 	{
 		when({ answers }) {
 			return answers.bootstrapTenant !== 'no';
 		},
 		render({ resolveStep }) {
-			return <GetAccessKeys onChange={(keys) => resolveStep(keys)} />;
+			return <GetAccessTokens onDone={(tokens) => resolveStep(tokens)} />;
 		},
 		answer({ answers, answer }) {
 			answers.ACCESS_TOKEN_ID = answer.id;
 			answers.ACCESS_TOKEN_SECRET = answer.secret;
-			console.log(JSON.stringify(answers, null, 1));
 		},
 	},
 ];
 
+function bootstrapTenant({ answers }) {
+	return new Promise((resolve) => {
+		try {
+			const spec = fs.readFileSync(
+				`../steps/specs/${answers.bootstrapTenant}.json`,
+				'utf-8'
+			);
+			if (spec) {
+				const bootstrapper = new Bootstrapper();
+
+				bootstrapper.setAccessToken(
+					answers.ACCESS_TOKEN_ID,
+					answers.ACCESS_TOKEN_SECRET
+				);
+
+				bootstrapper.setTenantIdentifier(answers.tenant);
+
+				bootstrapper.start();
+
+				bootstrapper.on(EVENT_NAMES.DONE, resolve);
+			}
+		} catch (e) {
+			console.log(e);
+			resolve();
+		}
+	});
+}
+
 module.exports = {
+	bootstrapTenant,
 	stepBootstrapTenant: [askIfBootstrapTenant, ...bootstrapExampleTenant],
 };

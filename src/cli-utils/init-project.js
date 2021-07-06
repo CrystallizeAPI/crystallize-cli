@@ -7,17 +7,19 @@ const path = require('path');
 const os = require('os');
 const { Text, Box } = require('ink');
 const exec = require('child_process').exec;
-// const Spinner = require('ink-spinner').default;
+
+const { bootstrapTenant } = require('../steps/bootstrap-tenant');
 
 let began = false;
 
-const feedbacks = [
+const feedbacksBase = [
 	'Fetching the dependencies...',
 	'Still fetching...',
 	'Unpacking...',
 	'Preparing files for install...',
 	'Installing...',
 	'Still installing...',
+	'Daydreaming...',
 	'Growing that node_modules...',
 	'Looking for car keys...',
 	'Looking for the car...',
@@ -34,6 +36,24 @@ function InitProject(allProps) {
 	} = allProps;
 	const [feedbackIndex, setFeedbackIndex] = React.useState(0);
 
+	const feedbacks = [...feedbacksBase];
+
+	if (answers.bootstrapTenant !== 'no') {
+		feedbacks.push(
+			'Bootstrapping tenant...',
+			'Populating shapes...',
+			'Adding topics...',
+			'Creating grids...',
+			'Adding items...',
+			'Publishing...',
+			'Populating shapes...',
+			'Adding topics...',
+			'Creating grids...',
+			'Adding items...',
+			'Publishing...'
+		);
+	}
+
 	// Give different feedback messages
 	React.useEffect(() => {
 		let timeout;
@@ -49,7 +69,7 @@ function InitProject(allProps) {
 				return newI;
 			});
 
-			ms += 3000;
+			ms *= 1.3;
 			timeout = setTimeout(changeFeedback, ms);
 		}
 
@@ -113,6 +133,12 @@ function InitProject(allProps) {
 				await require('./init-rn')(allProps);
 			}
 
+			// Kick of the bootstrapping of the tenant
+			let bootstrapWork = new Promise.resolve();
+			if (answers.bootstrapTenant !== 'no') {
+				bootstrapWork = bootstrapTenant({ answers });
+			}
+
 			exec(
 				shouldUseYarn ? 'yarnpkg install' : 'npm install',
 				{
@@ -122,6 +148,8 @@ function InitProject(allProps) {
 					if (err) {
 						process.exit(1);
 					}
+
+					await bootstrapWork;
 
 					resolveStep();
 				}

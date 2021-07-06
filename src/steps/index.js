@@ -290,7 +290,6 @@ const steps = [
 			);
 		},
 	},
-	...stepBootstrapTenant,
 
 	// {
 	// 	render({ resolveStep }) {
@@ -321,6 +320,8 @@ const steps = [
 	// 		);
 	// 	},
 	// },
+	...stepBootstrapTenant,
+
 	{
 		render({ resolveStep }) {
 			return <GetMultilingual onChange={(answer) => resolveStep(answer)} />;
