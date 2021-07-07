@@ -7,8 +7,9 @@ const path = require('path');
 const os = require('os');
 const { Text, Box } = require('ink');
 const exec = require('child_process').exec;
+const importJsx = require('import-jsx');
 
-const { bootstrapTenant } = require('../steps/bootstrap-tenant');
+const { bootstrapTenant } = importJsx('../steps/bootstrap-tenant');
 
 let began = false;
 

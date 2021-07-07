@@ -7,22 +7,73 @@ const { Text, Newline, Box } = require('ink');
 const { UncontrolledTextInput } = require('ink-text-input');
 
 const Select = importJsx('../ui-modules/select');
-
 const { config, CONF_ACCESS_TOKENS } = require('../config');
+const { createAPICaller } = require('../cli-utils/fetch-from-crystallize');
+const { highlightColor } = require('../shared');
+
+async function verifyTokens({ id, secret }) {
+	const callPIM = createAPICaller('https://pim.crystallize.com/graphql', {
+		headers: {
+			'X-Crystallize-Access-Token-Id': id,
+			'X-Crystallize-Access-Token-Secret': secret,
+		},
+	});
+	try {
+		await callPIM({
+			query: `
+						{
+							me {
+								id
+							}
+						}
+					`,
+		});
+
+		return true;
+	} catch (e) {
+		return false;
+	}
+}
 
 function GetAccessTokens({ onDone }) {
-	const existingConfig = React.useRef(config.get(CONF_ACCESS_TOKENS));
+	const existingTokens = React.useRef(config.get(CONF_ACCESS_TOKENS));
+	const [verifiedExistingTokens, setVerifiedExistingTokens] = React.useState(
+		false
+	);
 	const [askForTokens, setAskForTokens] = React.useState(false);
 
-	if (!askForTokens && existingConfig.current) {
-		console.log('existingConfig.current', existingConfig.current);
+	React.useEffect(() => {
+		async function verifyExistingTokens() {
+			const verified = await verifyTokens(existingTokens.current);
+			if (!verified) {
+				config.delete(CONF_ACCESS_TOKENS);
+				existingTokens.current = null;
+			}
+			setVerifiedExistingTokens(true);
+		}
+
+		if (existingTokens.current && !verifiedExistingTokens) {
+			verifyExistingTokens();
+		}
+	});
+
+	if (existingTokens.current && !verifiedExistingTokens) {
+		return (
+			<Box>
+				<Text>Verifying existing Crystallize Access Tokens...</Text>
+			</Box>
+		);
+	}
+
+	if (!askForTokens && existingTokens.current) {
 		return (
 			<Box flexDirection="column" key="access-tokens-found-existing">
 				<Text>Found existing Crystallize Access Tokens. Want to use it?</Text>
 				<Select
 					onChange={(answer) => {
 						if (answer.value === 'yes') {
-							onDone(existingConfig.current);
+							console.log(existingTokens.current);
+							onDone(existingTokens.current);
 						} else {
 							if (answer.value === 'remove') {
 								config.delete(CONF_ACCESS_TOKENS);
@@ -57,15 +108,29 @@ function GetAccessTokens({ onDone }) {
 function AskForAccessTokens({ onDone }) {
 	const [id, setId] = React.useState('');
 	const [secret, setSecret] = React.useState('');
-	const [isDone, setIsDone] = React.useState(false);
+	const [gotValidKeys, setGotValidKeys] = React.useState(false);
+	const [invalidKeys, setInvalidKeys] = React.useState(false);
 
 	React.useEffect(() => {
-		if (isDone) {
-			onDone({ id, secret });
-		}
-	}, [isDone, onDone, id, secret]);
+		async function verify() {
+			const valid = await verifyTokens({ id, secret });
 
-	if (id && secret) {
+			if (valid) {
+				setInvalidKeys(false);
+				setGotValidKeys(true);
+			} else {
+				setInvalidKeys(true);
+				setId('');
+				setSecret('');
+			}
+		}
+
+		if (id && secret) {
+			verify();
+		}
+	}, [id, secret, gotValidKeys]);
+
+	if (gotValidKeys) {
 		return (
 			<Box flexDirection="column">
 				<Text>Would you like to save the access tokens for future use?</Text>
@@ -76,7 +141,10 @@ function AskForAccessTokens({ onDone }) {
 						} else {
 							config.delete(CONF_ACCESS_TOKENS);
 						}
-						setIsDone(true);
+						onDone({
+							id,
+							secret,
+						});
 					}}
 					options={[
 						{
@@ -94,36 +162,48 @@ function AskForAccessTokens({ onDone }) {
 	}
 
 	return (
-		<Box flexDirection="column">
-			<Text>
-				Please provide Crystallize Access Tokens to bootstrap the tenant
-				<Newline />
-				<Text dimColor>
-					Learn about access tokens:
-					https://crystallize.com/learn/developer-guides/access-tokens
+		<>
+			<Box flexDirection="column" marginBottom={1}>
+				<Text>
+					Please provide Access Tokens to bootstrap the tenant
+					<Newline />
+					<Text dimColor>
+						Learn about access tokens:
+						https://crystallize.com/learn/developer-guides/access-tokens
+					</Text>
 				</Text>
-			</Text>
-
-			{!id ? (
-				<>
-					<Text>Access Key ID: </Text>
-					<UncontrolledTextInput
-						key="access-key-id"
-						placeholder="access-key-id"
-						onSubmit={(val) => setId(val)}
-					/>
-				</>
-			) : (
-				<>
-					<Text>Access Key Secret: </Text>
-					<UncontrolledTextInput
-						key="access-key-secret"
-						placeholder="access-key-secret"
-						onSubmit={(val) => setSecret(val)}
-					/>
-				</>
+			</Box>
+			{invalidKeys && (
+				<Box flexDirection="column" marginBottom={1}>
+					<Text color={highlightColor}>
+						⚠️ Invalid tokens supplied. Please try again ⚠️
+					</Text>
+				</Box>
 			)}
-		</Box>
+			<Box flexDirection="column">
+				{!id ? (
+					<>
+						<Text>Access Token ID: </Text>
+						<UncontrolledTextInput
+							key="access-token-id"
+							placeholder="access-token-id"
+							mask="*"
+							onSubmit={(val) => setId(val)}
+						/>
+					</>
+				) : (
+					<>
+						<Text>Access Token Secret: </Text>
+						<UncontrolledTextInput
+							key="access-token-secret"
+							placeholder="access-token-secret"
+							mask="*"
+							onSubmit={(val) => setSecret(val)}
+						/>
+					</>
+				)}
+			</Box>
+		</>
 	);
 }
 

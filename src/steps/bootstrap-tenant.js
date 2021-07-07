@@ -5,11 +5,81 @@ const fs = require('fs-extra');
 const React = require('react');
 const importJsx = require('import-jsx');
 const { Text, Newline, Box } = require('ink');
+const { UncontrolledTextInput } = require('ink-text-input');
 const { Bootstrapper, EVENT_NAMES } = require('@crystallize/import-utilities');
 
+const { createAPICaller } = require('../cli-utils/fetch-from-crystallize');
 const Select = importJsx('../ui-modules/select');
 const { highlightColor } = require('../shared');
 const { GetAccessTokens } = importJsx('./access-tokens');
+
+function EnsureTenantAccess({ answers, onDone }) {
+	const [checking, setChecking] = React.useState(true);
+	const [tenant, setTenant] = React.useState(answers.tenant);
+
+	const callPIM = React.useMemo(
+		() =>
+			createAPICaller('https://pim.crystallize.com/graphql', {
+				headers: {
+					'X-Crystallize-Access-Token-Id': answers.ACCESS_TOKEN_ID,
+					'X-Crystallize-Access-Token-Secret': answers.ACCESS_TOKEN_SECRET,
+				},
+			}),
+		[answers.ACCESS_TOKEN_ID, answers.ACCESS_TOKEN_SECRET]
+	);
+
+	React.useEffect(() => {
+		(async function check() {
+			setChecking(true);
+
+			const r = await callPIM({
+				query: `
+					{
+						me {
+							tenants {
+								tenant {
+									identifier
+								}
+							}
+						}
+					}
+				`,
+			});
+
+			const tenants = r.data.me.tenants.map((t) => t.tenant.identifier);
+			if (tenants.includes(tenant)) {
+				onDone(tenant);
+			} else {
+				setChecking(false);
+			}
+		})();
+	}, [tenant, callPIM, onDone]);
+
+	if (checking) {
+		return (
+			<Box>
+				<Text>Checking access to tenant "{tenant}"...</Text>
+			</Box>
+		);
+	}
+
+	return (
+		<>
+			<Box>
+				<Text>You have no access to tenant "{tenant}"</Text>
+			</Box>
+			<Box>
+				<Box marginRight={1}>
+					<Text>Enter the identifier to a tenant that you have access to:</Text>
+				</Box>
+				<UncontrolledTextInput
+					placeholder={tenant}
+					onSubmit={(tenant) => setTenant(tenant)}
+				/>
+			</Box>
+		</>
+	);
+}
 
 const askIfBootstrapTenant = {
 	when({ answers }) {
@@ -23,6 +93,11 @@ const askIfBootstrapTenant = {
 						Would you like to bootstrap your tenant with example data?
 						<Newline />
 						<Text dimColor>This would add shapes, items, topics and more</Text>
+						<Newline />
+						<Text dimColor>
+							⚠️ Warning: it will take a few minutes and use your bandwidth to
+							upload data to your tenant
+						</Text>
 					</Text>
 					<Select
 						onChange={(answer) => resolveStep(answer.value)}
@@ -33,7 +108,7 @@ const askIfBootstrapTenant = {
 							},
 							{
 								value: 'yes',
-								render: <Text>Yes, please</Text>,
+								render: <Text>Yes please</Text>,
 							},
 						]}
 					/>
@@ -121,6 +196,17 @@ const bootstrapExampleTenant = [
 		answer({ answers, answer }) {
 			answers.ACCESS_TOKEN_ID = answer.id;
 			answers.ACCESS_TOKEN_SECRET = answer.secret;
+		},
+	},
+	{
+		when({ answers }) {
+			return answers.bootstrapTenant !== 'no';
+		},
+		render({ answers, resolveStep }) {
+			return <EnsureTenantAccess onDone={resolveStep} answers={answers} />;
+		},
+		answer({ answers, answer }) {
+			answers.tenant = answer;
 		},
 	},
 ];

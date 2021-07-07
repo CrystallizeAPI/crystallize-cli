@@ -4,7 +4,9 @@
 const React = require('react');
 const { Text, Box, Newline } = require('ink');
 
-const { simplyFetchFromGraph } = require('./fetch-from-crystallize');
+const {
+	callCrystallizeMarketingCatalogue,
+} = require('./fetch-from-crystallize');
 
 const tips = [
 	() => (
@@ -20,7 +22,7 @@ const tips = [
 	try {
 		const {
 			data: { blog, comic },
-		} = await simplyFetchFromGraph({
+		} = await callCrystallizeMarketingCatalogue({
 			query: `
 			{
 				blog: catalogue(path: "/blog") {
