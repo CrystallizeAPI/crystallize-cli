@@ -9,7 +9,7 @@ const { Text, Box } = require('ink');
 const exec = require('child_process').exec;
 const importJsx = require('import-jsx');
 
-const { bootstrapTenant } = importJsx('../journeys/bootstrap-tenant');
+const { bootstrapTenant } = importJsx('../journeys/_shared/bootstrap-tenant');
 
 let began = false;
 
