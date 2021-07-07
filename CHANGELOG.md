@@ -1,3 +1,10 @@
+# [3.18.0-beta.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.18.0-beta.1...v3.18.0-beta.2) (2021-07-07)
+
+
+### Bug Fixes
+
+* bugfixes ([249022c](https://github.com/CrystallizeAPI/crystallize-cli/commit/249022c24233c9fe37a38e7fa8cfb37b06bd7d97))
+
 # [3.18.0-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.17.0...v3.18.0-beta.1) (2021-07-07)
 
 
