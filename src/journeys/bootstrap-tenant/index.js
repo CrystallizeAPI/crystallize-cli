@@ -14,7 +14,13 @@ const { stepsBootstrapExampleTenant } = importJsx(
 );
 
 function RunBootstrapper({ answers, onDone }) {
-	const [status, setStatus] = React.useState('Initiating...');
+	const [shapesDone, setShapesDone] = React.useState(false);
+	const [priceVariantsDone, setPriceVariantsDone] = React.useState(false);
+	const [languagesDone, setLanguagesDone] = React.useState(false);
+	const [vatTypesDone, setVatTypesDone] = React.useState(false);
+	const [topicsDone, setTopicsDone] = React.useState(false);
+	const [itemsDone, setItemsDone] = React.useState(false);
+	const [gridsDone, setGridsDone] = React.useState(false);
 
 	React.useEffect(() => {
 		(async function go() {
@@ -24,7 +30,24 @@ function RunBootstrapper({ answers, onDone }) {
 				id: answers.ACCESS_TOKEN_ID,
 				secret: answers.ACCESS_TOKEN_SECRET,
 				onUpdate(a) {
-					setStatus(`Bootstrapping ${a.toLowerCase()}...`);
+					if (a.done) {
+						switch (a.done) {
+							case 'shapes':
+								return setShapesDone(true);
+							case 'priceVariants':
+								return setPriceVariantsDone(true);
+							case 'languages':
+								return setLanguagesDone(true);
+							case 'vatTypes':
+								return setVatTypesDone(true);
+							case 'topics':
+								return setTopicsDone(true);
+							case 'items':
+								return setItemsDone(true);
+							case 'grids':
+								return setGridsDone(true);
+						}
+					}
 				},
 			});
 			onDone();
@@ -32,7 +55,25 @@ function RunBootstrapper({ answers, onDone }) {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	return <Text>{status}</Text>;
+	return (
+		<Box>
+			<Text>
+				Shapes {shapesDone ? '✔︎' : '...'}
+				<Newline />
+				Price Variants {priceVariantsDone ? '✔︎' : '...'}
+				<Newline />
+				Languages {languagesDone ? '✔︎' : '...'}
+				<Newline />
+				Vat Types {vatTypesDone ? '✔︎' : '...'}
+				<Newline />
+				Topics {topicsDone ? '✔︎' : '...'}
+				<Newline />
+				Items {itemsDone ? '✔︎' : '...'}
+				<Newline />
+				Grids {gridsDone ? '✔︎' : '...'}
+			</Text>
+		</Box>
+	);
 }
 
 const steps = [
@@ -74,13 +115,18 @@ const steps = [
 				</>
 			);
 		},
+		answer({ answers, answer }) {
+			answers.bootstrapDuration = answer.duration;
+		},
 	},
 	{
 		staticMessage({ answers }) {
 			return (
 				<Text>
 					✨ <Text color={highlightColor}>{answers.tenant}</Text> is
-					bootstrapped with {answers.bootstrapTenant} example data
+					bootstrapped with {answers.bootstrapTenant} example data.
+					<Newline />
+					Duration: {answers.bootstrapDuration}
 				</Text>
 			);
 		},

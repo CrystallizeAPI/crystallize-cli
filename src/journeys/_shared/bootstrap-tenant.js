@@ -3,7 +3,13 @@ const path = require('path');
 
 const { Bootstrapper, EVENT_NAMES } = require('@crystallize/import-utilities');
 
-function bootstrapTenant({ tenant, tenantSpec, id, secret, onUpdate }) {
+function bootstrapTenant({
+	tenant,
+	tenantSpec,
+	id,
+	secret,
+	onUpdate = () => {},
+}) {
 	return new Promise((resolve) => {
 		try {
 			const spec = JSON.parse(
@@ -23,26 +29,26 @@ function bootstrapTenant({ tenant, tenantSpec, id, secret, onUpdate }) {
 
 				bootstrapper.start();
 
-				bootstrapper.on(EVENT_NAMES.SHAPES_UPDATE, function () {
-					onUpdate(`Shapes`);
+				bootstrapper.on(EVENT_NAMES.SHAPES_DONE, function () {
+					onUpdate({ done: 'shapes' });
 				});
-				bootstrapper.on(EVENT_NAMES.PRICE_VARIANTS_UPDATE, function () {
-					onUpdate(`Price variants`);
+				bootstrapper.on(EVENT_NAMES.PRICE_VARIANTS_DONE, function () {
+					onUpdate({ done: `priceVariants` });
 				});
-				bootstrapper.on(EVENT_NAMES.LANGUAGES_UPDATE, function () {
-					onUpdate(`Languages`);
+				bootstrapper.on(EVENT_NAMES.LANGUAGES_DONE, function () {
+					onUpdate({ done: `languages` });
 				});
-				bootstrapper.on(EVENT_NAMES.VAT_TYPES_UPDATE, function () {
-					onUpdate(`Vat types`);
+				bootstrapper.on(EVENT_NAMES.VAT_TYPES_DONE, function () {
+					onUpdate({ done: `vatTypes` });
 				});
-				bootstrapper.on(EVENT_NAMES.TOPICS_UPDATE, function () {
-					onUpdate(`Topics`);
+				bootstrapper.on(EVENT_NAMES.TOPICS_DONE, function () {
+					onUpdate({ done: 'topics' });
 				});
-				bootstrapper.on(EVENT_NAMES.ITEMS_UPDATE, function () {
-					onUpdate(`Items`);
+				bootstrapper.on(EVENT_NAMES.ITEMS_DONE, function () {
+					onUpdate({ done: 'items' });
 				});
-				bootstrapper.on(EVENT_NAMES.GRIDS_UPDATE, function () {
-					onUpdate(`Grids`);
+				bootstrapper.on(EVENT_NAMES.GRIDS_DONE, function () {
+					onUpdate({ done: 'grids' });
 				});
 
 				bootstrapper.on(EVENT_NAMES.DONE, resolve);
