@@ -1,3 +1,10 @@
+# [3.18.0-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.17.0...v3.18.0-beta.1) (2021-07-07)
+
+
+### Features
+
+* first working version of bootstrapper ([b3f1cb4](https://github.com/CrystallizeAPI/crystallize-cli/commit/b3f1cb4aa5b24ea6ebadfad1b5435716e7316d50))
+
 # [3.17.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.16.0...v3.17.0) (2021-04-26)
 
 
