@@ -44,6 +44,9 @@ function bootstrapTenant({
 				bootstrapper.on(EVENT_NAMES.TOPICS_DONE, function () {
 					onUpdate({ done: 'topics' });
 				});
+				bootstrapper.on(EVENT_NAMES.ITEMS_UPDATE, function () {
+					onUpdate({ items: 'processed' });
+				});
 				bootstrapper.on(EVENT_NAMES.ITEMS_DONE, function () {
 					onUpdate({ done: 'items' });
 				});

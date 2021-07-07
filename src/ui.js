@@ -17,8 +17,15 @@ function App({ journey, ...globalOptions }) {
 	]);
 
 	const { steps } = journey;
-
 	let step = steps[stepIndex];
+
+	React.useEffect(() => {
+		if (stepIndex === -1) {
+			setTimeout(() => {
+				process.exit(0);
+			}, 1000);
+		}
+	}, [stepIndex]);
 
 	/**
 	 * If we cannot receive user input, we will just defer to the

@@ -20,17 +20,20 @@ function RunBootstrapper({ answers, onDone }) {
 	const [vatTypesDone, setVatTypesDone] = React.useState(false);
 	const [topicsDone, setTopicsDone] = React.useState(false);
 	const [itemsDone, setItemsDone] = React.useState(false);
+	const [itemsCount, setItemsCount] = React.useState(0);
 	const [gridsDone, setGridsDone] = React.useState(false);
 
 	React.useEffect(() => {
 		(async function go() {
-			await bootstrapTenant({
+			const result = await bootstrapTenant({
 				tenant: answers.tenant,
 				tenantSpec: answers.bootstrapTenant,
 				id: answers.ACCESS_TOKEN_ID,
 				secret: answers.ACCESS_TOKEN_SECRET,
 				onUpdate(a) {
-					if (a.done) {
+					if (a.items) {
+						setItemsCount((c) => c + 1);
+					} else if (a.done) {
 						switch (a.done) {
 							case 'shapes':
 								return setShapesDone(true);
@@ -50,7 +53,7 @@ function RunBootstrapper({ answers, onDone }) {
 					}
 				},
 			});
-			onDone();
+			onDone(result);
 		})();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
@@ -58,17 +61,22 @@ function RunBootstrapper({ answers, onDone }) {
 	return (
 		<Box>
 			<Text>
+				Languages {languagesDone ? '✔︎' : '...'}
+				<Newline />
 				Shapes {shapesDone ? '✔︎' : '...'}
 				<Newline />
 				Price Variants {priceVariantsDone ? '✔︎' : '...'}
-				<Newline />
-				Languages {languagesDone ? '✔︎' : '...'}
 				<Newline />
 				Vat Types {vatTypesDone ? '✔︎' : '...'}
 				<Newline />
 				Topics {topicsDone ? '✔︎' : '...'}
 				<Newline />
-				Items {itemsDone ? '✔︎' : '...'}
+				Items{' '}
+				{itemsDone
+					? '✔︎'
+					: itemsCount === 0
+					? '...'
+					: `(${itemsCount} processed)...`}
 				<Newline />
 				Grids {gridsDone ? '✔︎' : '...'}
 			</Text>
@@ -116,18 +124,26 @@ const steps = [
 			);
 		},
 		answer({ answers, answer }) {
-			answers.bootstrapDuration = answer.duration;
+			if (answer) {
+				answers.bootstrapDuration = answer.duration;
+			}
 		},
 	},
 	{
 		staticMessage({ answers }) {
 			return (
-				<Text>
-					✨ <Text color={highlightColor}>{answers.tenant}</Text> is
-					bootstrapped with {answers.bootstrapTenant} example data.
-					<Newline />
-					Duration: {answers.bootstrapDuration}
-				</Text>
+				<Box marginY={1}>
+					<Text>
+						✨ <Text color={highlightColor}>{answers.tenant}</Text> is
+						bootstrapped with {answers.bootstrapTenant} example data.
+						{answers.bootstrapDuration && (
+							<>
+								<Newline />
+								Duration: {answers.bootstrapDuration}
+							</>
+						)}
+					</Text>
+				</Box>
 			);
 		},
 	},
@@ -145,8 +161,8 @@ const welcomeMessage = (
 			<Text>Let's bootstrap a tenant</Text>
 			<Newline />
 			<Text dimColor>
-				⚠️ Warning: this will change change the tenant and use your bandwidth to
-				upload data to the tenant
+				⚠️ Warning: this will alter the tenant and use your bandwidth to upload
+				data to the tenant
 			</Text>
 		</Text>
 	</>
