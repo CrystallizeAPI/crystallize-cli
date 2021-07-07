@@ -93,8 +93,8 @@ const askIfBootstrapTenant = {
 						<Text dimColor>This would add shapes, items, topics and more</Text>
 						<Newline />
 						<Text dimColor>
-							⚠️ Warning: it will take a few minutes and use your bandwidth to
-							upload data to your tenant
+							⚠️ Warning: this will change change the tenant and use your
+							bandwidth to upload data to the tenant
 						</Text>
 					</Text>
 					<Select

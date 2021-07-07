@@ -135,7 +135,7 @@ function InitProject(allProps) {
 			}
 
 			// Kick of the bootstrapping of the tenant
-			let bootstrapWork = new Promise.resolve();
+			let bootstrapWork = Promise.resolve();
 			if (answers.bootstrapTenant !== 'no') {
 				bootstrapWork = bootstrapTenant({
 					tenant: answers.tenant,

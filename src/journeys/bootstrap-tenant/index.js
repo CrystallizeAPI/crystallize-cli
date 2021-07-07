@@ -99,8 +99,8 @@ const welcomeMessage = (
 			<Text>Let's bootstrap a tenant</Text>
 			<Newline />
 			<Text dimColor>
-				⚠️ Warning: it will take a few minutes and use your bandwidth to upload
-				data to your tenant
+				⚠️ Warning: this will change change the tenant and use your bandwidth to
+				upload data to the tenant
 			</Text>
 		</Text>
 	</>
