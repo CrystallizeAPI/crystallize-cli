@@ -6,10 +6,10 @@ const importJsx = require('import-jsx');
 const { Text, Newline, Box } = require('ink');
 const { UncontrolledTextInput } = require('ink-text-input');
 
-const Select = importJsx('../ui-modules/select');
-const { config, CONF_ACCESS_TOKENS } = require('../config');
-const { createAPICaller } = require('../cli-utils/fetch-from-crystallize');
-const { highlightColor } = require('../shared');
+const Select = importJsx('../../ui-modules/select');
+const { config, CONF_ACCESS_TOKENS } = require('../../config');
+const { createAPICaller } = require('../../cli-utils/fetch-from-crystallize');
+const { highlightColor } = require('../../shared');
 
 async function verifyTokens({ id, secret }) {
 	const callPIM = createAPICaller('https://pim.crystallize.com/graphql', {
@@ -70,9 +70,9 @@ function GetAccessTokens({ onDone }) {
 			<Box flexDirection="column" key="access-tokens-found-existing">
 				<Text>Found existing Crystallize Access Tokens. Want to use it?</Text>
 				<Select
+					compact
 					onChange={(answer) => {
 						if (answer.value === 'yes') {
-							console.log(existingTokens.current);
 							onDone(existingTokens.current);
 						} else {
 							if (answer.value === 'remove') {
@@ -135,6 +135,7 @@ function AskForAccessTokens({ onDone }) {
 			<Box flexDirection="column">
 				<Text>Would you like to save the access tokens for future use?</Text>
 				<Select
+					compact
 					onChange={(answer) => {
 						if (answer.value === 'yes') {
 							config.set(CONF_ACCESS_TOKENS, { id, secret });

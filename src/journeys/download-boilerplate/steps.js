@@ -6,15 +6,17 @@ const { Text, Newline, Box } = require('ink');
 const importJsx = require('import-jsx');
 const { UncontrolledTextInput } = require('ink-text-input');
 
-const { highlightColor } = require('../shared');
+const { highlightColor } = require('../../shared');
 
-const { DownloadProject } = importJsx('../cli-utils/download-project');
-const { InitProject } = importJsx('../cli-utils/init-project');
-// const GetPaymentMethods = importJsx('../cli-utils/get-payment-methods');
-const GetMultilingual = importJsx('../cli-utils/get-multilingual');
-const Tips = importJsx('../cli-utils/tips');
-const Select = importJsx('../ui-modules/select');
-const { stepBootstrapTenant } = importJsx('./bootstrap-tenant');
+const { DownloadProject } = importJsx('../../cli-utils/download-project');
+const { InitProject } = importJsx('../../cli-utils/init-project');
+// const GetPaymentMethods = importJsx('../../cli-utils/get-payment-methods');
+const GetMultilingual = importJsx('../../cli-utils/get-multilingual');
+const Tips = importJsx('../../cli-utils/tips');
+const Select = importJsx('../../ui-modules/select');
+const { stepBootstrapTenant } = importJsx(
+	'../_shared/step-bootstrap-tenant.js'
+);
 
 const steps = [
 	{

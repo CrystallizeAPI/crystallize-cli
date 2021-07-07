@@ -17,16 +17,17 @@ const cli = meow(
 		$ @crystallize/cli <project-name>
 
 	Options
-		--info, --i Outputs each step info
+		--bootstrap-tenant, -b Bootstrap tenant
 
 	Examples
 	  $ @crystallize/cli my-ecommerce
+		$ @crystallize/cli --bootstrap-tenant
 `,
 	{
 		flags: {
-			info: {
+			bootstrapTenant: {
 				type: 'boolean',
-				alias: 'i',
+				alias: 'b',
 			},
 		},
 	}
@@ -64,11 +65,20 @@ const shouldUseYarn = (function () {
 	}
 })();
 
+// Determine the journey
+let journey;
+if (cli.flags.bootstrapTenant) {
+	journey = importJsx('./journeys/bootstrap-tenant');
+} else {
+	journey = importJsx('./journeys/download-boilerplate');
+}
+
 render(
 	React.createElement(ui, {
 		flags: cli.flags,
 		projectName,
 		projectPath,
 		shouldUseYarn,
+		journey,
 	})
 );

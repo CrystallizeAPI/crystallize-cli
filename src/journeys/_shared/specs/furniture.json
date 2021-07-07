@@ -9796,6 +9796,453 @@
     ]
    }
   },
-  null
+  {
+   "name": "_assets",
+   "cataloguePath": "/assets",
+   "shape": "default-folder",
+   "components": {
+    "brief": {
+     "json": [
+      {
+       "kind": "block",
+       "type": "paragraph",
+       "metadata": {},
+       "children": []
+      }
+     ]
+    },
+    "body": []
+   },
+   "children": [
+    {
+     "name": "_electronics-collection",
+     "cataloguePath": "/assets/electronics-collection",
+     "shape": "collection",
+     "components": {
+      "title": "This is all the electronics stuff that we have",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Some content here"
+          }
+         ]
+        }
+       ]
+      },
+      "content": {
+       "items": [
+        {
+         "cataloguePath": "/shop/electronics/black-wireless-mouse"
+        },
+        {
+         "cataloguePath": "/shop/electronics/red-headset"
+        },
+        {
+         "cataloguePath": "/shop/electronics/crystall-iz-camera"
+        },
+        {
+         "cataloguePath": "/shop/electronics/black-floor-lamp"
+        },
+        {
+         "cataloguePath": "/shop/electronics/simple-sound-system"
+        },
+        {
+         "cataloguePath": "/shop/electronics/black-smartwatch"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "name": "_plant-grid",
+     "cataloguePath": "/assets/plant-grid-1",
+     "shape": "collection",
+     "components": {
+      "title": "I got plants this week",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "I'm really quite simple. I plant flowers and watch them grow... I stay at home and watch the river flow."
+          }
+         ]
+        }
+       ]
+      },
+      "content": {
+       "grid": {}
+      }
+     }
+    },
+    {
+     "name": "furniture-grid",
+     "cataloguePath": "/assets/furniture-grid",
+     "shape": "grid-collection",
+     "components": {
+      "title": "Selected furniture",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "A piece of furniture designed to accommodate one sitting or reclining person, providing support for the back and often the arms and typically standing on four legs."
+          }
+         ]
+        }
+       ]
+      },
+      "grid-collection": {}
+     }
+    },
+    {
+     "name": "plant-collection",
+     "cataloguePath": "/assets/plant-collection",
+     "shape": "item-collection",
+     "components": {
+      "title": "To plant a garden is to believe in tomorrow",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Green plants obtain most of their energy from sunlight via photosynthesis by primary chloroplasts that are derived from endosymbiosis with cyanobacteria."
+          }
+         ]
+        }
+       ]
+      },
+      "items": [
+       {
+        "cataloguePath": "/shop/plants/alocasia"
+       },
+       {
+        "cataloguePath": "/shop/plants/sansevieria-laurentii"
+       },
+       {
+        "cataloguePath": "/shop/plants/ficus-lyrata"
+       },
+       {
+        "cataloguePath": "/shop/plants/calathea"
+       },
+       {
+        "cataloguePath": "/shop/plants/golden-pothos"
+       },
+       {
+        "cataloguePath": "/shop/plants/monstera-deliciosa"
+       },
+       {
+        "cataloguePath": "/shop/plants/ficus-tineke"
+       }
+      ]
+     }
+    },
+    {
+     "name": "kitchen-collection",
+     "cataloguePath": "/assets/kitchen-collection",
+     "shape": "item-collection",
+     "components": {
+      "title": "This is all the electronics stuff that we have",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Some content here"
+          }
+         ]
+        }
+       ]
+      },
+      "items": [
+       {
+        "cataloguePath": "/shop/electronics/bowl-lamp-black"
+       },
+       {
+        "cataloguePath": "/shop/electronics/minimal-floor-lamp"
+       },
+       {
+        "cataloguePath": "/shop/electronics/black-floor-lamp"
+       },
+       {
+        "cataloguePath": "/shop/electronics/crystall-iz-camera"
+       },
+       {
+        "cataloguePath": "/shop/electronics/red-headset"
+       },
+       {
+        "cataloguePath": "/shop/electronics/black-smartwatch"
+       }
+      ]
+     }
+    },
+    {
+     "name": "frontpage-featured-products",
+     "cataloguePath": "/assets/frontpage-featured-products",
+     "shape": "grid-collection",
+     "components": {
+      "title": "Just arrived",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Everyday we get new arrivals from new aspiring designer."
+          }
+         ]
+        }
+       ]
+      },
+      "grid-collection": {}
+     }
+    },
+    {
+     "name": "frontpage-grid",
+     "cataloguePath": "/assets/frontpage-grid",
+     "shape": "grid-collection",
+     "components": {
+      "title": "My grid brings all the boys to the yard",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "A selection of good stuff"
+          }
+         ]
+        }
+       ]
+      },
+      "grid-collection": {}
+     }
+    },
+    {
+     "name": "chairs-collection",
+     "cataloguePath": "/assets/chairs-collection",
+     "shape": "item-collection",
+     "components": {
+      "title": "My milkshape brings all the boys to the yard",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "A piece of furniture designed to accommodate one sitting or reclining person, providing support for the back and often the arms and typically standing on four legs."
+          }
+         ]
+        }
+       ]
+      },
+      "items": [
+       {
+        "cataloguePath": "/shop/chairs/big-bowl-lounge-chair"
+       },
+       {
+        "cataloguePath": "/shop/chairs/simple-bar-stool"
+       },
+       {
+        "cataloguePath": "/shop/chairs/minimalistic-chair"
+       },
+       {
+        "cataloguePath": "/shop/chairs/funky-yellow-chair"
+       },
+       {
+        "cataloguePath": "/shop/sofas/arbour-eco"
+       },
+       {
+        "cataloguePath": "/shop/chairs/bubblegum-lounge-chair"
+       }
+      ]
+     }
+    },
+    {
+     "name": "plant-grid",
+     "cataloguePath": "/assets/plant-grid",
+     "shape": "grid-collection",
+     "components": {
+      "title": "I got plants this week",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "I'm really quite simple. I plant flowers and watch them grow... I stay at home and watch the river flow."
+          }
+         ]
+        }
+       ]
+      },
+      "grid-collection": {}
+     }
+    },
+    {
+     "name": "latest-inspirational-articles",
+     "cataloguePath": "/assets/latest-inspirational-articles",
+     "shape": "item-collection",
+     "components": {
+      "title": "Latest inspirational stories",
+      "items": [
+       {
+        "cataloguePath": "/stories/color-is-back"
+       },
+       {
+        "cataloguePath": "/stories/retro-colors"
+       },
+       {
+        "cataloguePath": "/stories/top-interior-trends-for-2020"
+       },
+       {
+        "cataloguePath": "/stories/use-your-houseplants-as-decor"
+       }
+      ]
+     }
+    },
+    {
+     "name": "poster-collection",
+     "cataloguePath": "/assets/poster-collection",
+     "shape": "item-collection",
+     "components": {
+      "title": "Most popular posters",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "See our top sellers and steal someones style, or get inspired and create your own. Its your safe space."
+          }
+         ]
+        }
+       ]
+      },
+      "items": [
+       {
+        "cataloguePath": "/shop/posters/nature-is-perfect"
+       },
+       {
+        "cataloguePath": "/shop/posters/time-flies"
+       },
+       {
+        "cataloguePath": "/shop/posters/adventurous"
+       },
+       {
+        "cataloguePath": "/shop/posters/ladybug"
+       },
+       {
+        "cataloguePath": "/shop/posters/island-pig"
+       },
+       {
+        "cataloguePath": "/shop/posters/green-birds"
+       },
+       {
+        "cataloguePath": "/shop/posters/snaky-road"
+       },
+       {
+        "cataloguePath": "/shop/posters/empty-streets"
+       },
+       {
+        "cataloguePath": "/shop/posters/still-lake"
+       }
+      ]
+     }
+    },
+    {
+     "name": "posters-banner",
+     "cataloguePath": "/assets/posters-banner",
+     "shape": "banner",
+     "components": {
+      "title": "Color your livingroom rad",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Dont be a "
+          },
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "negative ",
+           "type": "emphasized"
+          },
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "person, add some colors to your life. Check our collection of posters."
+          }
+         ]
+        }
+       ]
+      },
+      "link": "/shop/posters",
+      "link-text": "See all posters",
+      "image": [
+       {
+        "src": "https://media.crystallize.com/furniture/20/12/21/1/color-your-livingroom-rad.jpg",
+        "altText": null,
+        "caption": null
+       }
+      ],
+      "add-text-as-overlay": true
+     }
+    }
+   ]
+  }
  ]
 }

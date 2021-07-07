@@ -54,7 +54,7 @@ async function furniture() {
   spec.items = [itemShop, itemStories, itemAbout, itemFrontpage, itemAssets];
 
   writeFileSync(
-    resolve(__dirname, `./src/steps/specs/furniture.json`),
+    resolve(__dirname, `./src/journeys/_shared/specs/furniture.json`),
     JSON.stringify(spec, null, 1),
     'utf-8'
   );
@@ -65,10 +65,8 @@ async function furniture() {
 async function voyage() {
   const spec = await getFullSpec('voyage');
 
-  // Delete unneeded stuff
-
   writeFileSync(
-    resolve(__dirname, `./src/steps/specs/voyage.json`),
+    resolve(__dirname, `./src/journeys/_shared/specs/voyage.json`),
     JSON.stringify(spec, null, 1),
     'utf-8'
   );

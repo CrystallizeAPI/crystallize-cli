@@ -1,17 +1,15 @@
 #!/usr/bin/env node
 'use strict';
 
-const fs = require('fs-extra');
 const React = require('react');
 const importJsx = require('import-jsx');
 const { Text, Newline, Box } = require('ink');
 const { UncontrolledTextInput } = require('ink-text-input');
-const { Bootstrapper, EVENT_NAMES } = require('@crystallize/import-utilities');
 
-const { createAPICaller } = require('../cli-utils/fetch-from-crystallize');
-const Select = importJsx('../ui-modules/select');
-const { highlightColor } = require('../shared');
-const { GetAccessTokens } = importJsx('./access-tokens');
+const { createAPICaller } = require('../../cli-utils/fetch-from-crystallize');
+const Select = importJsx('../../ui-modules/select');
+const { highlightColor } = require('../../shared');
+const { GetAccessTokens } = importJsx('./step-access-tokens');
 
 function EnsureTenantAccess({ answers, onDone }) {
 	const [checking, setChecking] = React.useState(true);
@@ -121,7 +119,7 @@ const askIfBootstrapTenant = {
 	},
 };
 
-const bootstrapExampleTenant = [
+const stepsBootstrapExampleTenant = [
 	{
 		when({ answers }) {
 			return answers.bootstrapTenant === 'yes';
@@ -211,35 +209,7 @@ const bootstrapExampleTenant = [
 	},
 ];
 
-function bootstrapTenant({ answers }) {
-	return new Promise((resolve) => {
-		try {
-			const spec = fs.readFileSync(
-				`../steps/specs/${answers.bootstrapTenant}.json`,
-				'utf-8'
-			);
-			if (spec) {
-				const bootstrapper = new Bootstrapper();
-
-				bootstrapper.setAccessToken(
-					answers.ACCESS_TOKEN_ID,
-					answers.ACCESS_TOKEN_SECRET
-				);
-
-				bootstrapper.setTenantIdentifier(answers.tenant);
-
-				bootstrapper.start();
-
-				bootstrapper.on(EVENT_NAMES.DONE, resolve);
-			}
-		} catch (e) {
-			console.log(e);
-			resolve();
-		}
-	});
-}
-
 module.exports = {
-	bootstrapTenant,
-	stepBootstrapTenant: [askIfBootstrapTenant, ...bootstrapExampleTenant],
+	stepsBootstrapExampleTenant,
+	stepBootstrapTenant: [askIfBootstrapTenant, ...stepsBootstrapExampleTenant],
 };

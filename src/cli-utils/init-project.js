@@ -9,7 +9,7 @@ const { Text, Box } = require('ink');
 const exec = require('child_process').exec;
 const importJsx = require('import-jsx');
 
-const { bootstrapTenant } = importJsx('../steps/bootstrap-tenant');
+const { bootstrapTenant } = importJsx('../journeys/bootstrap-tenant');
 
 let began = false;
 
@@ -137,7 +137,12 @@ function InitProject(allProps) {
 			// Kick of the bootstrapping of the tenant
 			let bootstrapWork = new Promise.resolve();
 			if (answers.bootstrapTenant !== 'no') {
-				bootstrapWork = bootstrapTenant({ answers });
+				bootstrapWork = bootstrapTenant({
+					tenant: answers.tenant,
+					tenantSpec: answers.bootstrapTenant,
+					id: answers.ACCESS_TOKEN_ID,
+					secret: answers.ACCESS_TOKEN_SECRET,
+				});
 			}
 
 			exec(
