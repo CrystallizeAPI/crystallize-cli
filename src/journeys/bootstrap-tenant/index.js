@@ -71,14 +71,14 @@ function RunBootstrapper({ answers, onDone }) {
 				<Newline />
 				Topics {topicsDone ? '✔︎' : '...'}
 				<Newline />
+				Grids {gridsDone ? '✔︎' : '...'}
+				<Newline />
 				Items{' '}
 				{itemsDone
 					? '✔︎'
 					: itemsCount === 0
 					? '...'
 					: `(${itemsCount} processed)...`}
-				<Newline />
-				Grids {gridsDone ? '✔︎' : '...'}
 			</Text>
 		</Box>
 	);
