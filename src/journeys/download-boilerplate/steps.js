@@ -239,7 +239,7 @@ const steps = [
 									<>
 										<Text>Our demo tenant ({answers.defaultTenant})</Text>
 										<Newline />
-										<Text dimColor>Lot's of demo data here already</Text>
+										<Text dimColor>Lots of demo data here already</Text>
 									</>
 								),
 							},
