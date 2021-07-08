@@ -111,7 +111,7 @@ const askIfBootstrapTenant = {
 			<>
 				<Box flexDirection="column">
 					<Text>
-						Would you like to bootstrap your tenant with example data?
+						Would you like to bootstrap your tenant with example data? (BETA)
 						<Newline />
 						<Text dimColor>This would add shapes, items, topics and more</Text>
 					</Text>

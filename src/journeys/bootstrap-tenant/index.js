@@ -158,7 +158,7 @@ const welcomeMessage = (
 		<Text>
 			<Text underline>Crystallize Headless PIM</Text>
 			<Newline />
-			<Text>Let's bootstrap a tenant</Text>
+			<Text>Let's bootstrap a tenant (BETA)</Text>
 		</Text>
 		<ShowBootstrapWarning />
 	</>
