@@ -26,6 +26,12 @@ template and preferences you want to use.
 npx @crystallize/cli --bootstrap-tenant
 ```
 
+or
+
+```sh
+npx @crystallize/cli -b
+```
+
 This will bootstrap an existing tenant with example data.
 
 ### Templates
