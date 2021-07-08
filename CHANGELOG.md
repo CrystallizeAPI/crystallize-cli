@@ -1,3 +1,10 @@
+# [3.18.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.17.0...v3.18.0) (2021-07-08)
+
+
+### Features
+
+* show shortcut to bootstrap tenant ([a1422f9](https://github.com/CrystallizeAPI/crystallize-cli/commit/a1422f91cbedb8983bdc07377f1db938dcdd4fee))
+
 # [3.18.0-beta.10](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.18.0-beta.9...v3.18.0-beta.10) (2021-07-08)
 
 
