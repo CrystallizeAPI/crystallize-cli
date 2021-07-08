@@ -11,6 +11,29 @@ const Select = importJsx('../../ui-modules/select');
 const { highlightColor } = require('../../shared');
 const { GetAccessTokens } = importJsx('./step-access-tokens');
 
+function ShowBootstrapWarning() {
+	return (
+		<Box marginTop={1} flexDirection="column">
+			<Box>
+				<Box marginRight={1}>
+					<Text>⚠️</Text>
+				</Box>
+				<Box>
+					<Text>
+						<Text underline>Warning</Text>: this will
+					</Text>
+				</Box>
+			</Box>
+			<Text>
+				- Alter your tenant
+				<Newline />
+				- Use your bandwidth to upload data
+				<Newline />- Use the API count metric for your tenant
+			</Text>
+		</Box>
+	);
+}
+
 function EnsureTenantAccess({ answers, onDone }) {
 	const [checking, setChecking] = React.useState(true);
 	const [tenant, setTenant] = React.useState(answers.tenant);
@@ -91,12 +114,8 @@ const askIfBootstrapTenant = {
 						Would you like to bootstrap your tenant with example data?
 						<Newline />
 						<Text dimColor>This would add shapes, items, topics and more</Text>
-						<Newline />
-						<Text dimColor>
-							⚠️ Warning: this will alter the tenant and use your bandwidth to
-							upload data to the tenant
-						</Text>
 					</Text>
+					<ShowBootstrapWarning />
 					<Select
 						onChange={(answer) => resolveStep(answer.value)}
 						options={[
@@ -210,6 +229,7 @@ const stepsBootstrapExampleTenant = [
 ];
 
 module.exports = {
+	ShowBootstrapWarning,
 	stepsBootstrapExampleTenant,
 	stepBootstrapTenant: [askIfBootstrapTenant, ...stepsBootstrapExampleTenant],
 };

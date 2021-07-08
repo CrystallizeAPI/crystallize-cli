@@ -9,7 +9,7 @@ const { UncontrolledTextInput } = require('ink-text-input');
 const { highlightColor } = require('../../shared');
 const Tips = importJsx('../../cli-utils/tips');
 const { bootstrapTenant } = require('../_shared/bootstrap-tenant');
-const { stepsBootstrapExampleTenant } = importJsx(
+const { stepsBootstrapExampleTenant, ShowBootstrapWarning } = importJsx(
 	'../_shared/step-bootstrap-tenant'
 );
 
@@ -159,12 +159,8 @@ const welcomeMessage = (
 			<Text underline>Crystallize Headless PIM</Text>
 			<Newline />
 			<Text>Let's bootstrap a tenant</Text>
-			<Newline />
-			<Text dimColor>
-				⚠️ Warning: this will alter the tenant and use your bandwidth to upload
-				data to the tenant
-			</Text>
 		</Text>
+		<ShowBootstrapWarning />
 	</>
 );
 
