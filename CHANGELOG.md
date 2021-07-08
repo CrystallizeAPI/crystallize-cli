@@ -1,3 +1,10 @@
+## [3.18.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.18.0...v3.18.1) (2021-07-08)
+
+
+### Bug Fixes
+
+* typo ([3a52fc4](https://github.com/CrystallizeAPI/crystallize-cli/commit/3a52fc42cd67cb75f0dedf74c1943e8089a3fc8a))
+
 # [3.18.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.17.0...v3.18.0) (2021-07-08)
 
 
