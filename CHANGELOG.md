@@ -1,3 +1,10 @@
+# [3.18.0-beta.9](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.18.0-beta.8...v3.18.0-beta.9) (2021-07-08)
+
+
+### Bug Fixes
+
+* mark bootstrapping as beta ([dec68f5](https://github.com/CrystallizeAPI/crystallize-cli/commit/dec68f519c36b7ce7fa2e3f47c79f68277df3692))
+
 # [3.18.0-beta.8](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.18.0-beta.7...v3.18.0-beta.8) (2021-07-08)
 
 
