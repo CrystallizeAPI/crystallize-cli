@@ -273,6 +273,7 @@
  ],
  "grids": [
   {
+   "id": "5f6c7e9033ed22001d27982c",
    "name": "Frontpage",
    "rows": [
     {
@@ -375,6 +376,7 @@
    ]
   },
   {
+   "id": "5fc0e84faf1eeb62fdf38b53",
    "name": "Stories",
    "rows": [
     {
@@ -422,92 +424,11 @@
      ]
     }
    ]
-  },
-  {
-   "name": "Fagmobler grid",
-   "rows": [
-    {
-     "columns": [
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 2
-       },
-       "item": {
-        "cataloguePath": "/stories/bees"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 2,
-        "colspan": 2
-       },
-       "item": {
-        "cataloguePath": "/stories/the-farm-life"
-       }
-      }
-     ]
-    },
-    {
-     "columns": [
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": {
-        "cataloguePath": "/shop/hiking-jacket-orange"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": {
-        "cataloguePath": "/shop/adventure-cup"
-       }
-      }
-     ]
-    },
-    {
-     "columns": [
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 2
-       },
-       "item": {
-        "cataloguePath": "/stories/coffee-from-seed-to-cup"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": {
-        "cataloguePath": "/shop/chocolate-bar"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": {
-        "cataloguePath": "/shop/red-travel-mug"
-       }
-      }
-     ]
-    }
-   ]
   }
  ],
  "items": [
   {
    "name": "Stories",
-   "cataloguePath": "/stories",
    "shape": "5f6c770133ed22001d2797ec",
    "components": {
     "title": "Great stories happen to those who can tell them",
@@ -544,7 +465,6 @@
    "children": [
     {
      "name": "She moves us",
-     "cataloguePath": "/stories/she-moves-us",
      "shape": "5f6c77a133ed22001d2797f0",
      "components": {
       "title": "She moves us",
@@ -719,7 +639,6 @@
     },
     {
      "name": "Bees",
-     "cataloguePath": "/stories/bees",
      "shape": "5f6c77a133ed22001d2797f0",
      "components": {
       "is-exclusive": true,
@@ -780,7 +699,6 @@
     },
     {
      "name": "The farm life",
-     "cataloguePath": "/stories/the-farm-life",
      "shape": "5f6c77a133ed22001d2797f0",
      "components": {
       "title": "The farm life",
@@ -962,7 +880,6 @@
     },
     {
      "name": "The story of movement",
-     "cataloguePath": "/stories/the-story-of-movement",
      "shape": "5f6c77a133ed22001d2797f0",
      "components": {
       "is-exclusive": true,
@@ -1269,7 +1186,6 @@
     },
     {
      "name": "Aurora Borealis",
-     "cataloguePath": "/stories/aurora-borealis",
      "shape": "5f6c77a133ed22001d2797f0",
      "components": {
       "title": "Aurora borealis",
@@ -1623,7 +1539,6 @@
     },
     {
      "name": "Swiss Chocolate",
-     "cataloguePath": "/stories/swiss-chocolate",
      "shape": "5f6c77a133ed22001d2797f0",
      "components": {
       "title": "Swiss chocolate",
@@ -1907,7 +1822,6 @@
     },
     {
      "name": "Iceland Adventure",
-     "cataloguePath": "/stories/iceland-adventure",
      "shape": "5f6c77a133ed22001d2797f0",
      "components": {
       "title": "Iceland Adventure",
@@ -2297,7 +2211,6 @@
     },
     {
      "name": "Coffee from seed to cup",
-     "cataloguePath": "/stories/coffee-from-seed-to-cup",
      "shape": "5f6c77a133ed22001d2797f0",
      "components": {
       "is-exclusive": true,
@@ -2614,7 +2527,6 @@
     },
     {
      "name": "Spicy hot coffee",
-     "cataloguePath": "/stories/spicy-hot-coffee",
      "shape": "5f6c77a133ed22001d2797f0",
      "components": {
       "is-exclusive": true,
@@ -2678,7 +2590,6 @@
   },
   {
    "name": "Shop",
-   "cataloguePath": "/shop",
    "shape": "5f6c770133ed22001d2797ec",
    "components": {
     "title": "Cinderella is proof that a new pair of shoes can change your life"
@@ -2686,7 +2597,6 @@
    "children": [
     {
      "name": "Hiking Jacket Orange",
-     "cataloguePath": "/shop/hiking-jacket-orange",
      "shape": "5f6c770133ed22001d2797ed",
      "components": {
       "summary": {
@@ -2844,7 +2754,6 @@
     },
     {
      "name": "Hiking Jacket",
-     "cataloguePath": "/shop/hiking-jacket",
      "shape": "5f6c770133ed22001d2797ed",
      "components": {
       "summary": {
@@ -2972,7 +2881,6 @@
     },
     {
      "name": "Adventure cup",
-     "cataloguePath": "/shop/adventure-cup",
      "shape": "5f6c770133ed22001d2797ed",
      "components": {},
      "vatType": "No Tax",
@@ -2997,7 +2905,6 @@
     },
     {
      "name": "Tent",
-     "cataloguePath": "/shop/tent",
      "shape": "5f6c770133ed22001d2797ed",
      "components": {},
      "vatType": "No Tax",
@@ -3070,7 +2977,6 @@
     },
     {
      "name": "Water Bottle",
-     "cataloguePath": "/shop/water-bottle",
      "shape": "5f6c770133ed22001d2797ed",
      "components": {},
      "vatType": "No Tax",
@@ -3095,7 +3001,6 @@
     },
     {
      "name": "Compass",
-     "cataloguePath": "/shop/compass",
      "shape": "5f6c770133ed22001d2797ed",
      "components": {},
      "vatType": "No Tax",
@@ -3120,7 +3025,6 @@
     },
     {
      "name": "Dog Carrier",
-     "cataloguePath": "/shop/dog-carrier",
      "shape": "5f6c770133ed22001d2797ed",
      "components": {},
      "vatType": "No Tax",
@@ -3145,7 +3049,6 @@
     },
     {
      "name": "Red Windbreaker",
-     "cataloguePath": "/shop/red-windbreaker",
      "shape": "5f6c770133ed22001d2797ed",
      "components": {
       "features": [
@@ -3198,7 +3101,6 @@
     },
     {
      "name": "Red Travel Mug",
-     "cataloguePath": "/shop/red-travel-mug",
      "shape": "5f6c770133ed22001d2797ed",
      "components": {
       "summary": {
@@ -3326,7 +3228,6 @@
     },
     {
      "name": "Chocolate bar",
-     "cataloguePath": "/shop/chocolate-bar",
      "shape": "5f6c770133ed22001d2797ed",
      "components": {},
      "vatType": "No Tax",
@@ -3351,7 +3252,6 @@
     },
     {
      "name": "Mayze Luxe Women's Sneakers",
-     "cataloguePath": "/shop/mayze-luxe-womens-sneakers",
      "shape": "5f6c770133ed22001d2797ed",
      "components": {
       "summary": {
@@ -3438,7 +3338,6 @@
     },
     {
      "name": "Mayze Women's Sneakers",
-     "cataloguePath": "/shop/mayze-womens-sneakers",
      "shape": "5f6c770133ed22001d2797ed",
      "components": {
       "summary": {
@@ -3527,7 +3426,6 @@
   },
   {
    "name": "Blog",
-   "cataloguePath": "/blog",
    "shape": "5f6c770133ed22001d2797ec",
    "components": {
     "title": "Blog",
@@ -3546,7 +3444,6 @@
    "children": [
     {
      "name": "Voyage a digital journey",
-     "cataloguePath": "/blog/voyage-a-digital-journey",
      "shape": "5f6c770133ed22001d2797ee",
      "components": {
       "title": "Voyage Magazine is a digital journey",
@@ -3605,7 +3502,6 @@
   },
   {
    "name": "About",
-   "cataloguePath": "/about",
    "shape": "5f6c770133ed22001d2797ec",
    "components": {
     "brief": {
@@ -3668,13 +3564,11 @@
   },
   {
    "name": "Authors",
-   "cataloguePath": "/authors",
    "shape": "5f6c770133ed22001d2797ec",
    "components": {},
    "children": [
     {
      "name": "Jane Doe",
-     "cataloguePath": "/authors/jane-doe",
      "shape": "5f6d99cc33ed22001d2798af",
      "components": {
       "name": "Jane Doe",
@@ -3691,7 +3585,6 @@
     },
     {
      "name": "John Doe",
-     "cataloguePath": "/authors/john-doe",
      "shape": "5f6d99cc33ed22001d2798af",
      "components": {
       "name": "John Doe",

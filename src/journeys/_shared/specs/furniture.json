@@ -716,6 +716,7 @@
  ],
  "grids": [
   {
+   "id": "5ea19e7aba5038001c0180b6",
    "name": "Featured",
    "rows": [
     {
@@ -857,6 +858,7 @@
    ]
   },
   {
+   "id": "5ec103e8786746001c3c1cf3",
    "name": "Magazine",
    "rows": [
     {
@@ -950,6 +952,7 @@
    ]
   },
   {
+   "id": "5f1a87ec0ae5bb001c7f69a6",
    "name": "App featured",
    "rows": [
     {
@@ -1047,6 +1050,7 @@
    ]
   },
   {
+   "id": "5f2a874643f8b7001c759d50",
    "name": "Fancy grid",
    "rows": [
     {
@@ -1096,6 +1100,7 @@
    ]
   },
   {
+   "id": "5f328c8aceefcf001c3023b2",
    "name": "Supergrid",
    "rows": [
     {
@@ -1167,6 +1172,7 @@
    ]
   },
   {
+   "id": "5ff319487af25ba006fcdaed",
    "name": "Featured posters",
    "rows": [
     {
@@ -1197,6 +1203,7 @@
    ]
   },
   {
+   "id": "6013bf79c5d44700078c1401",
    "name": "Plant Grid",
    "rows": [
     {
@@ -1308,6 +1315,7 @@
    ]
   },
   {
+   "id": "6013ca39c5d44700078c1463",
    "name": "Furniture grid",
    "rows": [
     {
@@ -1357,6 +1365,7 @@
    ]
   },
   {
+   "id": "6061b006b4897a0008afc72f",
    "name": "Nine grid test black friday",
    "rows": [
     {
@@ -1509,6 +1518,7 @@
    ]
   },
   {
+   "id": "607fbe182b57c2000717e2f7",
    "name": "Spring featured",
    "rows": [
     {
@@ -1568,6 +1578,7 @@
    ]
   },
   {
+   "id": "60896103ec8cfa00096ebf73",
    "name": "Foo test",
    "rows": [
     {
@@ -1629,7 +1640,6 @@
  "items": [
   {
    "name": "Shop",
-   "cataloguePath": "/shop",
    "shape": "default-folder",
    "components": {
     "category-icon": [
@@ -1671,7 +1681,6 @@
    "children": [
     {
      "name": "Plants",
-     "cataloguePath": "/shop/plants",
      "shape": "default-folder",
      "components": {
       "title": "Plants",
@@ -1714,7 +1723,6 @@
      "children": [
       {
        "name": "Monstera Deliciosa ",
-       "cataloguePath": "/shop/plants/monstera-deliciosa",
        "shape": "default-product",
        "components": {
         "summary": {
@@ -1918,7 +1926,6 @@
       },
       {
        "name": "Golden Pothos",
-       "cataloguePath": "/shop/plants/golden-pothos",
        "shape": "default-product",
        "components": {
         "summary": {
@@ -2291,7 +2298,6 @@
       },
       {
        "name": "Calathea",
-       "cataloguePath": "/shop/plants/calathea",
        "shape": "default-product",
        "components": {
         "summary": {
@@ -2422,7 +2428,6 @@
       },
       {
        "name": "Ficus Tineke",
-       "cataloguePath": "/shop/plants/ficus-tineke",
        "shape": "default-product",
        "components": {
         "summary": {
@@ -2788,7 +2793,6 @@
       },
       {
        "name": "Alocasia",
-       "cataloguePath": "/shop/plants/alocasia",
        "shape": "default-product",
        "components": {
         "summary": {
@@ -2940,7 +2944,6 @@
       },
       {
        "name": "Sansevieria Laurentii",
-       "cataloguePath": "/shop/plants/sansevieria-laurentii",
        "shape": "default-product",
        "components": {
         "summary": {
@@ -3108,7 +3111,6 @@
       },
       {
        "name": "Ficus Lyrata",
-       "cataloguePath": "/shop/plants/ficus-lyrata",
        "shape": "default-product",
        "components": {
         "summary": {
@@ -3595,7 +3597,6 @@
     },
     {
      "name": "Chairs",
-     "cataloguePath": "/shop/chairs",
      "shape": "default-folder",
      "components": {
       "category-icon": [
@@ -3640,7 +3641,6 @@
      "children": [
       {
        "name": "Funky Yellow Chair",
-       "cataloguePath": "/shop/chairs/funky-yellow-chair",
        "shape": "default-product",
        "components": {
         "summary": {
@@ -3727,7 +3727,6 @@
       },
       {
        "name": "Simple Bar Stool",
-       "cataloguePath": "/shop/chairs/simple-bar-stool",
        "shape": "default-product",
        "components": {
         "summary": {
@@ -3815,7 +3814,6 @@
       },
       {
        "name": "The Citrus Chair",
-       "cataloguePath": "/shop/chairs/the-citrus-chair",
        "shape": "default-product",
        "components": {
         "summary": {
@@ -3901,7 +3899,6 @@
       },
       {
        "name": "Minimalistic Chair",
-       "cataloguePath": "/shop/chairs/minimalistic-chair",
        "shape": "default-product",
        "components": {
         "summary": {
@@ -3987,7 +3984,6 @@
       },
       {
        "name": "Green Leather Chair",
-       "cataloguePath": "/shop/chairs/green-leather-chair",
        "shape": "default-product",
        "components": {
         "summary": {
@@ -4067,7 +4063,6 @@
       },
       {
        "name": "Bubblegum Lounge Chair",
-       "cataloguePath": "/shop/chairs/bubblegum-lounge-chair",
        "shape": "default-product",
        "components": {
         "summary": {
@@ -4154,7 +4149,6 @@
       },
       {
        "name": "Vibrant Office Chair",
-       "cataloguePath": "/shop/chairs/vibrant-office-chair",
        "shape": "default-product",
        "components": {
         "summary": {
@@ -4283,7 +4277,6 @@
       },
       {
        "name": "Red Bar Stool",
-       "cataloguePath": "/shop/chairs/red-bar-stool",
        "shape": "default-product",
        "components": {
         "summary": {
@@ -4370,7 +4363,6 @@
       },
       {
        "name": "Big Bowl Lounge Chair",
-       "cataloguePath": "/shop/chairs/big-bowl-lounge-chair",
        "shape": "default-product",
        "components": {
         "summary": {
@@ -4518,7 +4510,6 @@
       },
       {
        "name": "Stressmore rough chair",
-       "cataloguePath": "/shop/chairs/stressmore-rough-chair",
        "shape": "default-product",
        "components": {
         "summary": {
@@ -4578,7 +4569,6 @@
   },
   {
    "name": "Stories",
-   "cataloguePath": "/stories",
    "shape": "default-folder",
    "components": {
     "category-icon": [
@@ -4617,7 +4607,6 @@
    "children": [
     {
      "name": "Use your houseplants as decor",
-     "cataloguePath": "/stories/use-your-houseplants-as-decor",
      "shape": "default-article",
      "components": {
       "title": "Use your houseplants as decor",
@@ -5109,7 +5098,6 @@
     },
     {
      "name": "How to choose the right rug",
-     "cataloguePath": "/stories/how-to-choose-the-right-rug",
      "shape": "default-article",
      "components": {
       "title": "How to Choose the Right Rug",
@@ -5451,7 +5439,6 @@
     },
     {
      "name": "Color is Back",
-     "cataloguePath": "/stories/color-is-back",
      "shape": "default-article",
      "components": {
       "title": "Color is Back",
@@ -5561,7 +5548,6 @@
     },
     {
      "name": "Retro Colors",
-     "cataloguePath": "/stories/retro-colors",
      "shape": "default-article",
      "components": {
       "title": "Retro Colors",
@@ -5715,7 +5701,6 @@
     },
     {
      "name": "Bathroom Trends for 2020",
-     "cataloguePath": "/stories/bathroom-trends-for-2020",
      "shape": "default-article",
      "components": {
       "title": "Bathroom Trends for 2020",
@@ -6055,7 +6040,6 @@
     },
     {
      "name": "Top Interior Trends for 2020",
-     "cataloguePath": "/stories/top-interior-trends-for-2020",
      "shape": "default-article",
      "components": {
       "title": "Top Interior Trends for 2020",
@@ -9601,7 +9585,6 @@
   },
   {
    "name": "About",
-   "cataloguePath": "/about",
    "shape": "default-folder",
    "components": {
     "title": "About",
@@ -9766,7 +9749,6 @@
   },
   {
    "name": "_frontpage-2021",
-   "cataloguePath": "/frontpage-2021",
    "shape": "default-folder",
    "components": {
     "brief": {
@@ -9798,7 +9780,6 @@
   },
   {
    "name": "_assets",
-   "cataloguePath": "/assets",
    "shape": "default-folder",
    "components": {
     "brief": {
@@ -9816,7 +9797,6 @@
    "children": [
     {
      "name": "_electronics-collection",
-     "cataloguePath": "/assets/electronics-collection",
      "shape": "collection",
      "components": {
       "title": "This is all the electronics stuff that we have",
@@ -9862,7 +9842,6 @@
     },
     {
      "name": "_plant-grid",
-     "cataloguePath": "/assets/plant-grid-1",
      "shape": "collection",
      "components": {
       "title": "I got plants this week",
@@ -9883,13 +9862,16 @@
        ]
       },
       "content": {
-       "grid": {}
+       "grid": [
+        {
+         "name": "Plant Grid"
+        }
+       ]
       }
      }
     },
     {
      "name": "furniture-grid",
-     "cataloguePath": "/assets/furniture-grid",
      "shape": "grid-collection",
      "components": {
       "title": "Selected furniture",
@@ -9909,12 +9891,15 @@
         }
        ]
       },
-      "grid-collection": {}
+      "grid-collection": [
+       {
+        "name": "Furniture grid"
+       }
+      ]
      }
     },
     {
      "name": "plant-collection",
-     "cataloguePath": "/assets/plant-collection",
      "shape": "item-collection",
      "components": {
       "title": "To plant a garden is to believe in tomorrow",
@@ -9961,7 +9946,6 @@
     },
     {
      "name": "kitchen-collection",
-     "cataloguePath": "/assets/kitchen-collection",
      "shape": "item-collection",
      "components": {
       "title": "This is all the electronics stuff that we have",
@@ -10005,7 +9989,6 @@
     },
     {
      "name": "frontpage-featured-products",
-     "cataloguePath": "/assets/frontpage-featured-products",
      "shape": "grid-collection",
      "components": {
       "title": "Just arrived",
@@ -10025,12 +10008,15 @@
         }
        ]
       },
-      "grid-collection": {}
+      "grid-collection": [
+       {
+        "name": "Featured posters"
+       }
+      ]
      }
     },
     {
      "name": "frontpage-grid",
-     "cataloguePath": "/assets/frontpage-grid",
      "shape": "grid-collection",
      "components": {
       "title": "My grid brings all the boys to the yard",
@@ -10049,13 +10035,11 @@
          ]
         }
        ]
-      },
-      "grid-collection": {}
+      }
      }
     },
     {
      "name": "chairs-collection",
-     "cataloguePath": "/assets/chairs-collection",
      "shape": "item-collection",
      "components": {
       "title": "My milkshape brings all the boys to the yard",
@@ -10099,7 +10083,6 @@
     },
     {
      "name": "plant-grid",
-     "cataloguePath": "/assets/plant-grid",
      "shape": "grid-collection",
      "components": {
       "title": "I got plants this week",
@@ -10119,12 +10102,15 @@
         }
        ]
       },
-      "grid-collection": {}
+      "grid-collection": [
+       {
+        "name": "Plant Grid"
+       }
+      ]
      }
     },
     {
      "name": "latest-inspirational-articles",
-     "cataloguePath": "/assets/latest-inspirational-articles",
      "shape": "item-collection",
      "components": {
       "title": "Latest inspirational stories",
@@ -10146,7 +10132,6 @@
     },
     {
      "name": "poster-collection",
-     "cataloguePath": "/assets/poster-collection",
      "shape": "item-collection",
      "components": {
       "title": "Most popular posters",
@@ -10199,7 +10184,6 @@
     },
     {
      "name": "posters-banner",
-     "cataloguePath": "/assets/posters-banner",
      "shape": "banner",
      "components": {
       "title": "Color your livingroom rad",

@@ -35,6 +35,14 @@ function getFullSpec(tenantIdentifier) {
   });
 }
 
+function removeItemCataloguePath(item) {
+  delete item.cataloguePath;
+
+  if (item.children) {
+    item.children.forEach(removeItemCataloguePath);
+  }
+}
+
 async function furniture() {
   const spec = await getFullSpec('furniture');
 
@@ -53,6 +61,9 @@ async function furniture() {
 
   spec.items = [itemShop, itemStories, itemAbout, itemFrontpage, itemAssets];
 
+  // Remove references as we do not want to update existing items
+  spec.items.forEach(removeItemCataloguePath);
+
   writeFileSync(
     resolve(__dirname, `./src/journeys/_shared/specs/furniture.json`),
     JSON.stringify(spec, null, 1),
@@ -64,6 +75,9 @@ async function furniture() {
 
 async function voyage() {
   const spec = await getFullSpec('voyage');
+
+  // Remove references as we do not want to update existing items
+  spec.items.forEach(removeItemCataloguePath);
 
   writeFileSync(
     resolve(__dirname, `./src/journeys/_shared/specs/voyage.json`),
