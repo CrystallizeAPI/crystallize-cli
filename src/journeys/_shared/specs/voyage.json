@@ -1,0 +1,3605 @@
+{
+ "languages": [
+  {
+   "code": "en",
+   "name": "English",
+   "isDefault": true
+  }
+ ],
+ "vatTypes": [
+  {
+   "name": "No Tax",
+   "percent": 0
+  }
+ ],
+ "priceVariants": [
+  {
+   "identifier": "default",
+   "name": "Default",
+   "currency": "EUR"
+  },
+  {
+   "identifier": "sales",
+   "name": "Sales",
+   "currency": "EUR"
+  }
+ ],
+ "topicMaps": [],
+ "shapes": [
+  {
+   "name": "Folder",
+   "id": "5f6c770133ed22001d2797ec",
+   "identifier": "5f6c770133ed22001d2797ec",
+   "type": "folder",
+   "components": [
+    {
+     "id": "title",
+     "name": "Title",
+     "type": "singleLine",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "brief",
+     "name": "Breif",
+     "type": "richText",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "hero-image",
+     "name": "Hero image",
+     "type": "images",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "hero-video",
+     "name": "Hero video",
+     "type": "videos",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "body",
+     "name": "Body",
+     "type": "paragraphCollection",
+     "description": null,
+     "config": null
+    }
+   ]
+  },
+  {
+   "name": "Product",
+   "id": "5f6c770133ed22001d2797ed",
+   "identifier": "5f6c770133ed22001d2797ed",
+   "type": "product",
+   "components": [
+    {
+     "id": "summary",
+     "name": "Summary",
+     "type": "richText",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "features",
+     "name": "Features",
+     "type": "propertiesTable",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "description",
+     "name": "Description",
+     "type": "paragraphCollection",
+     "description": null,
+     "config": null
+    }
+   ]
+  },
+  {
+   "name": "Blog post",
+   "id": "5f6c770133ed22001d2797ee",
+   "identifier": "5f6c770133ed22001d2797ee",
+   "type": "document",
+   "components": [
+    {
+     "id": "title",
+     "name": "Title",
+     "type": "singleLine",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "byline",
+     "name": "Byline",
+     "type": "itemRelations",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "image",
+     "name": "Image",
+     "type": "images",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "intro",
+     "name": "Intro",
+     "type": "richText",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "body",
+     "name": "Body",
+     "type": "paragraphCollection",
+     "description": null,
+     "config": null
+    }
+   ]
+  },
+  {
+   "name": "Story",
+   "id": "5f6c77a133ed22001d2797f0",
+   "identifier": "5f6c77a133ed22001d2797f0",
+   "type": "document",
+   "components": [
+    {
+     "id": "is-exclusive",
+     "name": "Is exclusive",
+     "type": "boolean",
+     "description": "Is this story an exclusive story for members only?",
+     "config": null
+    },
+    {
+     "id": "title",
+     "name": "Title",
+     "type": "singleLine",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "byline",
+     "name": "Byline",
+     "type": "itemRelations",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "hero",
+     "name": "Hero",
+     "type": "images",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "hero-video",
+     "name": "Hero video",
+     "type": "videos",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "intro",
+     "name": "Intro",
+     "type": "richText",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "story",
+     "name": "Story",
+     "type": "paragraphCollection",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "featured-products",
+     "name": "Featured products",
+     "type": "itemRelations",
+     "description": null,
+     "config": null
+    }
+   ]
+  },
+  {
+   "name": "Authors",
+   "id": "5f6d99cc33ed22001d2798af",
+   "identifier": "5f6d99cc33ed22001d2798af",
+   "type": "document",
+   "components": [
+    {
+     "id": "name",
+     "name": "Name",
+     "type": "singleLine",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "picture",
+     "name": "Picture",
+     "type": "images",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "email",
+     "name": "Email",
+     "type": "singleLine",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "role",
+     "name": "Role",
+     "type": "singleLine",
+     "description": null,
+     "config": null
+    }
+   ]
+  },
+  {
+   "name": "Chapter",
+   "id": "60116d1f18f31430706e26ba",
+   "identifier": "60116d1f18f31430706e26ba",
+   "type": "folder",
+   "components": [
+    {
+     "id": "title",
+     "name": "Title",
+     "type": "singleLine",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "brief",
+     "name": "Brief",
+     "type": "richText",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "chapter-image",
+     "name": "Chapter image",
+     "type": "images",
+     "description": null,
+     "config": null
+    }
+   ]
+  }
+ ],
+ "grids": [
+  {
+   "id": "5f6c7e9033ed22001d27982c",
+   "name": "Frontpage",
+   "rows": [
+    {
+     "columns": [
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 4
+       },
+       "item": {
+        "cataloguePath": "/stories/bees"
+       }
+      }
+     ]
+    },
+    {
+     "columns": [
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 1
+       },
+       "item": {
+        "cataloguePath": "/shop/hiking-jacket"
+       }
+      },
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 1
+       },
+       "item": {
+        "cataloguePath": "/shop/hiking-jacket-orange"
+       }
+      },
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 1
+       },
+       "item": {
+        "cataloguePath": "/shop/chocolate-bar"
+       }
+      },
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 1
+       },
+       "item": {
+        "cataloguePath": "/shop/adventure-cup"
+       }
+      }
+     ]
+    },
+    {
+     "columns": [
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 2
+       },
+       "item": {
+        "cataloguePath": "/stories/iceland-adventure"
+       }
+      },
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 2
+       },
+       "item": {
+        "cataloguePath": "/stories/aurora-borealis"
+       }
+      }
+     ]
+    },
+    {
+     "columns": [
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 2
+       },
+       "item": {
+        "cataloguePath": "/stories/bees"
+       }
+      },
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 2
+       },
+       "item": {
+        "cataloguePath": "/stories/the-farm-life"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5fc0e84faf1eeb62fdf38b53",
+   "name": "Stories",
+   "rows": [
+    {
+     "columns": [
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 2
+       },
+       "item": {
+        "cataloguePath": "/stories/aurora-borealis"
+       }
+      },
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 1
+       },
+       "item": {
+        "cataloguePath": "/stories/iceland-adventure"
+       }
+      }
+     ]
+    },
+    {
+     "columns": [
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 1
+       },
+       "item": {
+        "cataloguePath": "/stories/coffee-from-seed-to-cup"
+       }
+      },
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 2
+       },
+       "item": {
+        "cataloguePath": "/stories/swiss-chocolate"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "items": [
+  {
+   "name": "Stories",
+   "shape": "5f6c770133ed22001d2797ec",
+   "components": {
+    "title": "Great stories happen to those who can tell them",
+    "brief": {
+     "json": [
+      {
+       "kind": "block",
+       "type": "paragraph",
+       "metadata": {},
+       "children": [
+        {
+         "kind": "inline",
+         "metadata": {},
+         "textContent": "Define your own"
+        }
+       ]
+      }
+     ]
+    },
+    "hero-video": [
+     {
+      "src": "https://media.crystallize.com/voyage/20/10/2/1/coverr-07-20-friends-at-sunset-25-5167/cmaf/coverr-07-20-friends-at-sunset-25-5167.m3u8",
+      "title": "Storytelling video",
+      "thumbnails": [
+       {
+        "src": "https://media.crystallize.com/voyage/20/10/29/2/story-video.jpg",
+        "altText": "Storytelling video",
+        "caption": null
+       }
+      ]
+     }
+    ]
+   },
+   "children": [
+    {
+     "name": "She moves us",
+     "shape": "5f6c77a133ed22001d2797f0",
+     "components": {
+      "title": "She moves us",
+      "hero": [
+       {
+        "src": "https://media.crystallize.com/voyage/21/5/19/2/header_m21.png",
+        "altText": null,
+        "caption": null
+       }
+      ],
+      "intro": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "SHE MOVES US is a communications platform where PUMA celebrates women who move together to achieve and connect – through sport, culture and values."
+          }
+         ]
+        }
+       ]
+      },
+      "story": [
+       {
+        "title": "MANIFESTO",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "The PUMA Woman is a force to be reckoned with."
+            },
+            {
+             "kind": "inline",
+             "type": "line-break"
+            },
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Her philosophy: Keep moving."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "title": "She moves us.",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "She inspires the women around her to get active and get with the movement – and they inspire her right back.It’s her crew that brings her joy and meaning – and when they win, she wins too."
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "metadata": {},
+           "type": "unordered-list",
+           "children": [
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Moving the needle."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Moving the conversation."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Moving her community."
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/21/5/19/3/m18.png",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "We partner with women win to promote gender equality in sports",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Through the partnership with Women Win,"
+            },
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": " we aim to increase the visibility of female athletes and sports role models",
+             "type": "strong"
+            },
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": " and support initiatives that tear down obstacles to girls’ and women’s access to sports. Women Win was started in 2006 as a global women’s fund dedicated to advancing girls’ "
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/21/5/19/4/m18_womenwn.png",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       }
+      ],
+      "featured-products": [
+       {
+        "cataloguePath": "/shop/mayze-womens-sneakers"
+       },
+       {
+        "cataloguePath": "/shop/mayze-luxe-womens-sneakers"
+       }
+      ]
+     }
+    },
+    {
+     "name": "Bees",
+     "shape": "5f6c77a133ed22001d2797f0",
+     "components": {
+      "is-exclusive": true,
+      "title": "Bees",
+      "byline": [
+       {
+        "cataloguePath": "/authors/jane-doe"
+       }
+      ],
+      "hero": [
+       {
+        "src": "https://media.crystallize.com/voyage/21/4/29/9/boba-jaglicic-mkk_9x42sbg-unsplash.jpg",
+        "altText": "Bees",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ],
+      "intro": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Buzzz."
+          }
+         ]
+        }
+       ]
+      },
+      "story": [
+       {
+        "title": "Honey",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ]
+     }
+    },
+    {
+     "name": "The farm life",
+     "shape": "5f6c77a133ed22001d2797f0",
+     "components": {
+      "title": "The farm life",
+      "byline": [
+       {
+        "cataloguePath": "/authors/jane-doe"
+       },
+       {
+        "cataloguePath": "/authors/john-doe"
+       }
+      ],
+      "hero": [
+       {
+        "src": "https://media.crystallize.com/voyage/21/4/29/4/ambitious-creative-co-rick-barrett-x5hfsput8uu-unsplash.jpg",
+        "altText": "Sheep",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ],
+      "intro": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Dreaming of life on a farm? Here is how you can achieve the dream."
+          }
+         ]
+        }
+       ]
+      },
+      "story": [
+       {
+        "title": "Sheep",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Sheep on the farm."
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "metadata": {},
+           "type": "unordered-list",
+           "children": [
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Make your own wool"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Knit socks"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Knit sweaters"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "title": "More sheep",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Sheep over cars."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/21/4/29/6/tobias-tullius-2dbnrariqag-unsplash.jpg",
+          "altText": "Sheep and cars",
+          "caption": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": []
+            }
+           ]
+          }
+         }
+        ]
+       },
+       {
+        "title": "And cows",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Must have cows."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/21/4/29/7/skull-kat-m7fi58_df5k-unsplash.jpg",
+          "altText": "Cow",
+          "caption": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": []
+            }
+           ]
+          }
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "name": "The story of movement",
+     "shape": "5f6c77a133ed22001d2797f0",
+     "components": {
+      "is-exclusive": true,
+      "title": "The story of movement",
+      "byline": [
+       {
+        "cataloguePath": "/authors/jane-doe"
+       },
+       {
+        "cataloguePath": "/authors/john-doe"
+       }
+      ],
+      "hero": [
+       {
+        "src": "https://media.crystallize.com/voyage/21/1/28/1/drone.jpg",
+        "altText": null,
+        "caption": null
+       }
+      ],
+      "hero-video": [
+       {
+        "src": "https://media.crystallize.com/voyage/21/1/25/1/drone-car/cmaf/drone-car.m3u8",
+        "title": "Drone screenshot",
+        "thumbnails": [
+         {
+          "src": "https://media.crystallize.com/voyage/21/1/25/2/drone-screenshot.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       }
+      ],
+      "intro": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "The journey begins… "
+          }
+         ]
+        }
+       ]
+      },
+      "story": [
+       {
+        "title": "Climbing those hills",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Climbing hills with a beautiful ride."
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "metadata": {},
+           "type": "unordered-list",
+           "children": [
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Adventure"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Fast"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Comfortable"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Travel"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/21/1/25/3/mercedes-hill-climb.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Travel in comfort",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "With the aircon set just so. 20C."
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "metadata": {},
+           "type": "unordered-list",
+           "children": [
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Future of travel"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Comfort"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/21/1/25/4/comfortable-place.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "And speed",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Just the right speed."
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "metadata": {},
+           "type": "unordered-list",
+           "children": [
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "electric"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "or"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "combustion"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "title": "Discover",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Get out there."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "title": "Get new perspectives",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Get out there and get a new perspective."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "featured-products": [
+       {
+        "cataloguePath": "/shop/compass"
+       },
+       {
+        "cataloguePath": "/shop/red-travel-mug"
+       },
+       {
+        "cataloguePath": "/shop/chocolate-bar"
+       },
+       {
+        "cataloguePath": "/shop/adventure-cup"
+       }
+      ]
+     }
+    },
+    {
+     "name": "Aurora Borealis",
+     "shape": "5f6c77a133ed22001d2797f0",
+     "components": {
+      "title": "Aurora borealis",
+      "byline": [
+       {
+        "cataloguePath": "/authors/jane-doe"
+       },
+       {
+        "cataloguePath": "/authors/john-doe"
+       }
+      ],
+      "hero": [
+       {
+        "src": "https://media.crystallize.com/voyage/20/10/5/10/aurora-borealis2.jpg",
+        "altText": "Aurora borealis and a beautiful waterfall",
+        "caption": null
+       }
+      ],
+      "intro": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Learn more about the spectacular aurora borealis.."
+          }
+         ]
+        }
+       ]
+      },
+      "story": [
+       {
+        "title": "What are they?",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Aurora Borealis, also known as northern lights have been occurring since the dawn of time. They are always there, even when it is too bright for us to see them. But what are they? "
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/10/5/13/aurora-borealis9.jpg",
+          "altText": "Green aurora borealis.",
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "How they appear",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Northern lights are caused by charged particles from the sun interacting with Earth's upper atmosphere at a very high speed. "
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "metadata": {},
+           "type": "unordered-list",
+           "children": [
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Charged particles"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Earth's upper atmosphere"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "High speed"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/10/5/19/aurora-borealis11.jpg",
+          "altText": "Green aurora borealis in the background of a lake.",
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "A more in-depth explanation ",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "The sun is continually pushing out electrically charged particles that travel at 300 and 500 km per second in every direction. Some of these particles leak through the Earth’s magnetic field and are funnelled towards the Earth’s magnetic North and South poles. When the particles from the sun interact with the atoms and molecules high up in the atmosphere, they become exhilarated. Which creates aurora ovals (glowing rings of auroral emission) around the North and South magnetic poles."
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "metadata": {},
+           "type": "unordered-list",
+           "children": [
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Electrically charged particles from the sun"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Earth’s magnetic field"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Aurora ovals"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/10/5/20/aurora-borealis12.jpg",
+          "altText": "Green aurora borealis and snow.",
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Why different colours?",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "The Earth’s atmosphere consists of different atoms like nitrogen and oxygen. These atoms are what causes the colours we can see in the Northern lights. The atoms become exhilarated at different levels in the atmosphere. Green is the most common colour, whereas purple and red are more rare."
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "metadata": {},
+           "type": "unordered-list",
+           "children": [
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Different atoms in the atmosphere"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Green"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Red and purple"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/10/5/18/aurora-borealis10.jpg",
+          "altText": "Green aurora borealis and sunset in the background of a lake.",
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Where can they be seen?",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Your best chance of seeing the northern lights is by being either under or close to the aurora ovals. The further north you travel, the more likely you are to see them. Some of the best places to see the northern lights are Svalbard and northern Norway."
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "metadata": {},
+           "type": "unordered-list",
+           "children": [
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Aurora ovals"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Svalbard"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Northern Norway"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/10/5/21/aurora-borealis13.jpg",
+          "altText": "Green, blue and purple aurora borealis.",
+          "caption": null
+         }
+        ]
+       }
+      ],
+      "featured-products": [
+       {
+        "cataloguePath": "/shop/hiking-jacket-orange"
+       },
+       {
+        "cataloguePath": "/shop/hiking-jacket"
+       },
+       {
+        "cataloguePath": "/shop/adventure-cup"
+       }
+      ]
+     }
+    },
+    {
+     "name": "Swiss Chocolate",
+     "shape": "5f6c77a133ed22001d2797f0",
+     "components": {
+      "title": "Swiss chocolate",
+      "byline": [
+       {
+        "cataloguePath": "/authors/jane-doe"
+       },
+       {
+        "cataloguePath": "/authors/john-doe"
+       }
+      ],
+      "hero": [
+       {
+        "src": "https://media.crystallize.com/voyage/20/10/8/19/switzerland-nature.jpg",
+        "altText": null,
+        "caption": null
+       }
+      ],
+      "intro": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Swiss chocolates are world-famous. Brands like Cailler, Toblerone, Nestlé and are Lindt featured in shops all over the globe. Want to learn more?"
+          }
+         ]
+        }
+       ]
+      },
+      "story": [
+       {
+        "title": "Cailler",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Cailler is Switzerlands oldest chocolate company, founded by François-Louis Cailler in 1819."
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "metadata": {},
+           "type": "unordered-list",
+           "children": [
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Oldest"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "François-Louis "
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "1819"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/10/8/18/swiss-chocolate7.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Nestlé",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Nestlé was initially focusing on baby formula, but after joining forces with Milkmaid in 1905, the first Nestlé chocolate was made. They continued with developing more chocolate in the 20th century. "
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "metadata": {},
+           "type": "unordered-list",
+           "children": [
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Baby formula"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Milkmaid, 1905"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "20th century"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/10/5/7/swiss-chocolate8.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Lindt & Sprungli",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Lindt & Sprüngli, more commonly known as just Lindt are famous for their truffles and chocolate bars."
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "metadata": {},
+           "type": "unordered-list",
+           "children": [
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Lindt"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Truffles"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Chocolate bars"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/10/5/8/swiss-chocolate11.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Toblerone",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "textContent": ""
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/10/5/22/swiss-chocolate9.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       }
+      ],
+      "featured-products": [
+       {
+        "cataloguePath": "/shop/hiking-jacket-orange"
+       },
+       {
+        "cataloguePath": "/shop/hiking-jacket"
+       },
+       {
+        "cataloguePath": "/shop/water-bottle"
+       }
+      ]
+     }
+    },
+    {
+     "name": "Iceland Adventure",
+     "shape": "5f6c77a133ed22001d2797f0",
+     "components": {
+      "title": "Iceland Adventure",
+      "byline": [
+       {
+        "cataloguePath": "/authors/john-doe"
+       },
+       {
+        "cataloguePath": "/authors/jane-doe"
+       }
+      ],
+      "hero": [
+       {
+        "src": "https://media.crystallize.com/voyage/20/9/25/3/geysir-thumbnail-hero.jpg",
+        "altText": null,
+        "caption": null
+       }
+      ],
+      "hero-video": [
+       {
+        "src": "https://media.crystallize.com/voyage/20/10/15/5/geysir-iceland/cmaf/geysir-iceland.m3u8",
+        "title": "Iceland hot spring",
+        "thumbnails": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/10/19/1/geysir.jpg",
+          "altText": "Geysir about to erupt",
+          "caption": null
+         }
+        ]
+       }
+      ],
+      "intro": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Icelands spectacular nature."
+          }
+         ]
+        }
+       ]
+      },
+      "story": [
+       {
+        "title": "Aurora Borealis Iceland",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Beautiful Aurora Borealis."
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "metadata": {},
+           "type": "unordered-list",
+           "children": [
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Colorful"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Bright"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Blue"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/25/4/aurora-borealis-iceland.jpg",
+          "altText": "Aurora Borealis ",
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Seljalandsfoss Waterfall, Iceland",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Idyllic landscape with a waterfall. Idyllic landscape with a waterfall. Idyllic landscape with a waterfall. Idyllic landscape with a waterfall."
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Idyllic landscape with a waterfall. Idyllic landscape with a waterfall. Idyllic landscape with a waterfall. Idyllic landscape with a waterfall."
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "metadata": {},
+           "type": "unordered-list",
+           "children": [
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Colorful"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Bright"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Blue"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/25/5/seljalandsfoss-waterfall.jpg",
+          "altText": "Seljalandsfoss",
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Goðafoss Waterfall, Iceland",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Waterfall of the Gods."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/25/6/godafoss.jpg",
+          "altText": "Goðafoss",
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Jökulsárlón, Iceland",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Jökulsárlón glaciers."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/25/7/jokulsarlon.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Westfjords Region, Iceland",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Lupines in Iceland."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/25/8/westfjords-region-iceland.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Iceberg",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Iceberg not Carlsberg,  not Spielberg, not Jarlsberg. The ice."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "title": "Iceland horse",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Grazing horses in Iceland"
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/25/9/iceland-horse.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Hofskirkja, Iceland",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Hofskirkja, Iceland."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/25/10/hofskirkja.jpg",
+          "altText": "Hofskirkja",
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Blue Lagoon, Iceland",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Blue Lagoon hot springs Iceland"
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/25/11/blue-lagoon.jpg",
+          "altText": "Blue Lagoon, Iceland",
+          "caption": null
+         }
+        ]
+       }
+      ],
+      "featured-products": [
+       {
+        "cataloguePath": "/shop/chocolate-bar"
+       },
+       {
+        "cataloguePath": "/shop/hiking-jacket-orange"
+       },
+       {
+        "cataloguePath": "/shop/hiking-jacket"
+       }
+      ]
+     }
+    },
+    {
+     "name": "Coffee from seed to cup",
+     "shape": "5f6c77a133ed22001d2797f0",
+     "components": {
+      "is-exclusive": true,
+      "title": "Coffee from seed to cup",
+      "byline": [
+       {
+        "cataloguePath": "/authors/john-doe"
+       },
+       {
+        "cataloguePath": "/authors/jane-doe"
+       }
+      ],
+      "hero": [
+       {
+        "src": "https://media.crystallize.com/voyage/20/9/24/1/coffee-fruit.jpg",
+        "altText": "Coffee fruit",
+        "caption": null
+       }
+      ],
+      "intro": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "… the story behind a good brew."
+          }
+         ]
+        }
+       ]
+      },
+      "story": [
+       {
+        "title": "Coffee seeds",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "A coffee seed germinates in anything from 2 1/2 months to 6 months."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/24/2/coffee-sprouts.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Green coffee fruit",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "It can take 3-5 years for a new coffee plant to flower and grow fruits."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/24/3/coffee-growing-twice-a-year-harvest.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Harvesting ripe coffee fuits",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Once ripe it is time to harvest the fruits."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/24/4/coffee-fruit-ripening.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Coffee fruits",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Ripe coffee fruit. The beans are the seeds inside the fruit. They need to be fermented or seperated before the beans can be dried."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/24/5/coffee-harvesting.jpg",
+          "altText": null,
+          "caption": null
+         },
+         {
+          "src": "https://media.crystallize.com/voyage/20/10/27/1/coffe-cup.jpg",
+          "altText": null,
+          "caption": null
+         },
+         {
+          "src": "https://media.crystallize.com/voyage/20/10/27/1/coffe-latte.jpg",
+          "altText": null,
+          "caption": null
+         },
+         {
+          "src": "https://media.crystallize.com/voyage/20/10/27/1/coffe-mood.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Drying coffee beans",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Coffee beans are dried after they have been separated from the fruit."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/24/6/coffee-beans-drying.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Green beans",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "The dried green beans can be stored in 6-9 months before they should be roasted."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/24/7/coffee-green-bean.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Roasting the beans",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "After the beans are roasted they need to be cooled as quickly as possible. Here beans are cooled in a Giesen W6 Roaster."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/24/8/coffee-roasting.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Grinding coffee",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "There are several ways to grind your coffee beans depending on your brew method. Here you see an espresso grind. The finest grind."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/24/9/coffee-grinding.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Enjoy your freshly brewed coffee",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Now it is time to enjoy. Here a cup of hand brew coffee. All in all a journey that can take over 5 years from a seed is planted."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/24/10/hand-brewed-coffee.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       }
+      ],
+      "featured-products": [
+       {
+        "cataloguePath": "/shop/adventure-cup"
+       },
+       {
+        "cataloguePath": "/shop/chocolate-bar"
+       },
+       {
+        "cataloguePath": "/shop/hiking-jacket-orange"
+       },
+       {
+        "cataloguePath": "/shop/hiking-jacket"
+       },
+       {
+        "cataloguePath": "/shop/water-bottle"
+       },
+       {
+        "cataloguePath": "/shop/dog-carrier"
+       },
+       {
+        "cataloguePath": "/shop/tent"
+       },
+       {
+        "cataloguePath": "/shop/red-travel-mug"
+       }
+      ]
+     }
+    },
+    {
+     "name": "Spicy hot coffee",
+     "shape": "5f6c77a133ed22001d2797f0",
+     "components": {
+      "is-exclusive": true,
+      "title": "Spicy hot coffee",
+      "byline": [
+       {
+        "cataloguePath": "/authors/jane-doe"
+       },
+       {
+        "cataloguePath": "/authors/john-doe"
+       }
+      ],
+      "hero": [
+       {
+        "src": "https://media.crystallize.com/voyage/21/4/29/14/ante-samarzija-lsmu0ruhuok-unsplash.jpg",
+        "altText": null,
+        "caption": null
+       }
+      ],
+      "intro": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Tssssssshh. It’s HOT"
+          }
+         ]
+        }
+       ]
+      },
+      "story": [
+       {
+        "title": "Exclusive content: Hot hot hot",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/21/5/1/1/zach-lezniewicz-6bhaileqsls-unsplash.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "name": "Shop",
+   "shape": "5f6c770133ed22001d2797ec",
+   "components": {
+    "title": "Cinderella is proof that a new pair of shoes can change your life"
+   },
+   "children": [
+    {
+     "name": "Hiking Jacket Orange",
+     "shape": "5f6c770133ed22001d2797ed",
+     "components": {
+      "summary": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Warm, breathable, windproof and water-resistant. Made out of 100% recycled plastic. Made for dedicated hikers. Fair trade Certified™ sewn."
+          }
+         ]
+        }
+       ]
+      },
+      "features": [
+       {
+        "title": "Overview",
+        "properties": {
+         "100% Recycled material": "The jacket is made out of 100% breathable, recycled material. ",
+         "Adjustable hood": "Two-way-adjustable hood."
+        }
+       },
+       {
+        "title": "Specifications",
+        "properties": {
+         "Made in": "Vietnam",
+         "Fabric": "100% recycled plastic",
+         "Weight": "357g"
+        }
+       }
+      ],
+      "description": [
+       {
+        "title": "Weatherproof",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a augue at justo luctus euismod at posuere augue. Suspendisse bibendum metus auctor erat iaculis, id fringilla mi feugiat. Quisque diam sem, tempor aliquam lobortis sit amet, commodo nec dui. Nulla nec lorem nibh. Sed venenatis metus sed tortor finibus, vitae faucibus elit varius."
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "metadata": {},
+           "type": "unordered-list",
+           "children": [
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Water resistant"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Windproof"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Warm"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/10/8/2/hiking-jacket.jpg",
+          "altText": null,
+          "caption": null
+         },
+         {
+          "src": "https://media.crystallize.com/voyage/20/10/8/3/hiking-jacket3.jpg",
+          "altText": null,
+          "caption": null
+         },
+         {
+          "src": "https://media.crystallize.com/voyage/20/10/8/4/hiking-jacket4.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Get out in nature",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "textContent": ""
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ]
+     },
+     "vatType": "No Tax",
+     "variants": [
+      {
+       "name": "New variation",
+       "sku": "hiking-jacket-1141075",
+       "price": 150,
+       "isDefault": true,
+       "attributes": {},
+       "externalReference": null,
+       "stock": 47,
+       "images": [
+        {
+         "src": "https://media.crystallize.com/voyage/20/10/8/1/hiking-jacket2.jpg",
+         "altText": null,
+         "caption": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Hiking Jacket",
+     "shape": "5f6c770133ed22001d2797ed",
+     "components": {
+      "summary": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "type": "line-break"
+          },
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Simple and unpretentious, our trusted Torrentshell 3L Jacket uses 3-layer H2No™ Performance Standard technology for exceptional waterproof/breathable performance, all-day comfort and long-lasting waterproof durability. Fair Trade Certified™ sewn."
+          }
+         ]
+        }
+       ]
+      },
+      "features": [
+       {
+        "title": "Overview",
+        "properties": {
+         "100% Recycled Waterproof/Breathable Face Fabric": "3-layer waterproof/breathable H2No™ Performance Standard shell provides the highest levels of comfort and performance, long-term waterproof durability; Fair Trade Certified™ sewn",
+         "Adjustable Hood": "Two-way-adjustable hood with a laminated visor rolls down and stows with a simplified cord-and-hook design",
+         "Microfleece-Lined Neck": "Microfleece-lined neck provides comfort and protects with a waterproof/breathable barrier",
+         "Center-Front Zipper": "Snag-free center-front zipper with external and internal storm flaps and zipper-garage chin guard",
+         "Pocket Features": "Two zippered handwarmer pockets and venting pit zips; all with welted exterior storm flaps and DWR (durable water repellent)-treated zippers",
+         "Hook-and-Loop Closures": "Self-fabric hook-and-loop cuff closures and an adjustable drawcord hem seal out precipitation",
+         "Self-Stuffs into Pocket": "Jacket self-stuffs into left handwarmer pocket with carabiner clip-in loo",
+         "": ""
+        }
+       },
+       {
+        "title": "Specifications",
+        "properties": {
+         "Country of Origin": "Made in Vietnam.",
+         "Weight": "354 g",
+         "Fabric": " H2No™ Performance Standard shell"
+        }
+       }
+      ],
+      "description": [
+       {
+        "title": "No time to wait, strap your boots and get out there",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/21/2/15/1/austin-ban-juhaywuaaoq-unsplash.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Sed quia non numquam eius modi tempora incidunt",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat"
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/21/2/15/2/holly-mandarich-7mrxw_o7eo4-unsplash.jpg",
+          "altText": null,
+          "caption": null
+         },
+         {
+          "src": "https://media.crystallize.com/voyage/21/2/15/2/joel-jasmin-forestbird-znol1m6md_k-unsplash.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       }
+      ]
+     },
+     "vatType": "No Tax",
+     "variants": [
+      {
+       "name": "Hiking jacket green",
+       "sku": "a-unique-sku-1601975975643",
+       "price": 140,
+       "isDefault": true,
+       "attributes": {},
+       "externalReference": null,
+       "stock": 50,
+       "images": [
+        {
+         "src": "https://media.crystallize.com/voyage/20/10/15/2/hiking-jacket.jpg",
+         "altText": null,
+         "caption": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Adventure cup",
+     "shape": "5f6c770133ed22001d2797ed",
+     "components": {},
+     "vatType": "No Tax",
+     "variants": [
+      {
+       "name": "Adventure cup",
+       "sku": "adventure-cup",
+       "price": 19,
+       "isDefault": true,
+       "attributes": {},
+       "externalReference": null,
+       "stock": 10,
+       "images": [
+        {
+         "src": "https://media.crystallize.com/voyage/20/9/24/12/adventure-cup.jpg",
+         "altText": null,
+         "caption": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Tent",
+     "shape": "5f6c770133ed22001d2797ed",
+     "components": {},
+     "vatType": "No Tax",
+     "variants": [
+      {
+       "name": "New variation",
+       "sku": "green-tent-4623",
+       "price": 279,
+       "isDefault": true,
+       "attributes": {},
+       "externalReference": null,
+       "stock": 30,
+       "images": [
+        {
+         "src": "https://media.crystallize.com/voyage/20/10/8/15/green-tent.jpg",
+         "altText": null,
+         "caption": null
+        }
+       ]
+      },
+      {
+       "name": "Variation name",
+       "sku": "blue-tent-4624",
+       "price": 279,
+       "isDefault": false,
+       "attributes": {},
+       "externalReference": null,
+       "stock": 30,
+       "images": [
+        {
+         "src": "https://media.crystallize.com/voyage/20/10/8/14/blue-tent.jpg",
+         "altText": null,
+         "caption": null
+        }
+       ]
+      },
+      {
+       "name": "Variation name",
+       "sku": "orange-tent-4625",
+       "price": 279,
+       "isDefault": false,
+       "attributes": {},
+       "externalReference": null,
+       "stock": 30,
+       "images": [
+        {
+         "src": "https://media.crystallize.com/voyage/20/10/8/16/orange-tent.jpg",
+         "altText": null,
+         "caption": null
+        }
+       ]
+      },
+      {
+       "name": "Variation name",
+       "sku": "yellow-tent-4626",
+       "price": 270,
+       "isDefault": false,
+       "attributes": {},
+       "externalReference": null,
+       "stock": 30,
+       "images": [
+        {
+         "src": "https://media.crystallize.com/voyage/20/10/8/17/yellow-tent.jpg",
+         "altText": null,
+         "caption": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Water Bottle",
+     "shape": "5f6c770133ed22001d2797ed",
+     "components": {},
+     "vatType": "No Tax",
+     "variants": [
+      {
+       "name": "New variation",
+       "sku": "your-sku-1602169095467",
+       "price": 123,
+       "isDefault": true,
+       "attributes": {},
+       "externalReference": null,
+       "stock": 0,
+       "images": [
+        {
+         "src": "https://media.crystallize.com/voyage/20/10/8/13/water-bottle.jpg",
+         "altText": null,
+         "caption": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Compass",
+     "shape": "5f6c770133ed22001d2797ed",
+     "components": {},
+     "vatType": "No Tax",
+     "variants": [
+      {
+       "name": "New variation",
+       "sku": "green-compass-7465412",
+       "price": 29,
+       "isDefault": true,
+       "attributes": {},
+       "externalReference": null,
+       "stock": 47,
+       "images": [
+        {
+         "src": "https://media.crystallize.com/voyage/20/10/8/12/green-compass.jpg",
+         "altText": null,
+         "caption": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Dog Carrier",
+     "shape": "5f6c770133ed22001d2797ed",
+     "components": {},
+     "vatType": "No Tax",
+     "variants": [
+      {
+       "name": "New variation",
+       "sku": "dog-carrier-423710",
+       "price": 89,
+       "isDefault": true,
+       "attributes": {},
+       "externalReference": null,
+       "stock": 34,
+       "images": [
+        {
+         "src": "https://media.crystallize.com/voyage/20/10/8/11/dog-carrier.jpg",
+         "altText": null,
+         "caption": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Red Windbreaker",
+     "shape": "5f6c770133ed22001d2797ed",
+     "components": {
+      "features": [
+       {
+        "title": "",
+        "properties": {
+         "": ""
+        }
+       }
+      ],
+      "description": [
+       {
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "textContent": ""
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ]
+     },
+     "vatType": "No Tax",
+     "variants": [
+      {
+       "name": "New variation",
+       "sku": "red-windbreaker-237864267",
+       "price": 129,
+       "isDefault": true,
+       "attributes": {},
+       "externalReference": null,
+       "stock": 29,
+       "images": [
+        {
+         "src": "https://media.crystallize.com/voyage/20/10/15/1/red-windbreaker.jpeg",
+         "altText": null,
+         "caption": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Red Travel Mug",
+     "shape": "5f6c770133ed22001d2797ed",
+     "components": {
+      "summary": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "The perfect hiking companion. Can hold hot or cold beverages. "
+          }
+         ]
+        }
+       ]
+      },
+      "features": [
+       {
+        "title": "Overview",
+        "properties": {
+         "Capacity": "200ml",
+         "Dimensions": "W85 x H110mm",
+         "Care instructions": "Dishwasher-safe. Do not put in a microwave, oven, freezer or hot plate."
+        }
+       }
+      ],
+      "description": [
+       {
+        "title": "Get out there",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a augue at justo luctus euismod at posuere augue. Suspendisse bibendum metus auctor erat iaculis, id fringilla mi feugiat. Quisque diam sem, tempor aliquam lobortis sit amet, commodo nec dui. Nulla nec lorem nibh. Sed venenatis metus sed tortor finibus, vitae faucibus elit varius. Pellentesque mollis neque mi, quis convallis nunc sollicitudin eu. Curabitur non interdum lacus. Mauris euismod, nunc sit amet fringilla efficitur, risus urna placerat justo, sit amet eleifend lacus dolor id felis."
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "metadata": {},
+           "type": "unordered-list",
+           "children": [
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Explore"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Learn"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Enjoy"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/10/8/7/hiking-in-the-cold.jpg",
+          "altText": null,
+          "caption": null
+         },
+         {
+          "src": "https://media.crystallize.com/voyage/20/10/8/8/red-travel-mug2.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       }
+      ]
+     },
+     "vatType": "No Tax",
+     "variants": [
+      {
+       "name": "New variation",
+       "sku": "red-travel-mug-43683",
+       "price": 9,
+       "isDefault": true,
+       "attributes": {},
+       "externalReference": null,
+       "stock": 78,
+       "images": [
+        {
+         "src": "https://media.crystallize.com/voyage/20/10/8/5/red-travel-mug3.jpg",
+         "altText": null,
+         "caption": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Chocolate bar",
+     "shape": "5f6c770133ed22001d2797ed",
+     "components": {},
+     "vatType": "No Tax",
+     "variants": [
+      {
+       "name": "New variation",
+       "sku": "chocolate",
+       "price": 12,
+       "isDefault": true,
+       "attributes": {},
+       "externalReference": null,
+       "stock": 2,
+       "images": [
+        {
+         "src": "https://media.crystallize.com/voyage/20/9/25/13/chocolate.jpg",
+         "altText": null,
+         "caption": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Mayze Luxe Women's Sneakers",
+     "shape": "5f6c770133ed22001d2797ed",
+     "components": {
+      "summary": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Elevate your style with Mayze. This stand-out silhouette is bold and edgy, with a stacked sole and dynamic, layered tooling…"
+          }
+         ]
+        }
+       ]
+      },
+      "features": [
+       {
+        "title": "Details",
+        "properties": {
+         "Material": "Premium suede upper with nubuck overlays",
+         "Lacing": "Full lace closure",
+         "Midsole": "Stacked platform midsole with textured tooling",
+         "Outsole": "Rubber outsole for durable grip and traction",
+         "Tip": "PUMA Formstrip overlay at sides"
+        }
+       }
+      ],
+      "description": [
+       {
+        "title": "PRODUCT STORY",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Elevate your style with Mayze. This stand-out silhouette is bold and edgy, with a stacked sole and dynamic, layered tooling."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/21/5/19/9/mayze-luxe-womens-sneakers-2.jpeg",
+          "altText": null,
+          "caption": null
+         },
+         {
+          "src": "https://media.crystallize.com/voyage/21/5/19/9/mayze-luxe-womens-sneakers-1.jpeg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       }
+      ]
+     },
+     "vatType": "No Tax",
+     "variants": [
+      {
+       "name": "Mayze Luxe Women's Sneakers",
+       "sku": "mayze-luxe-women's-sneakers-1621409746532",
+       "price": 90,
+       "isDefault": true,
+       "attributes": {},
+       "externalReference": null,
+       "stock": 20,
+       "images": [
+        {
+         "src": "https://media.crystallize.com/voyage/21/5/19/8/mayze-luxe-womens-sneakers.jpeg",
+         "altText": null,
+         "caption": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Mayze Women's Sneakers",
+     "shape": "5f6c770133ed22001d2797ed",
+     "components": {
+      "summary": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Get ready to find your style in Mayze. We made this one for the hype girls, the street enthusiasts, the trend mavens. This stand-out silhouette takes design inspiration straig..."
+          }
+         ]
+        }
+       ]
+      },
+      "features": [
+       {
+        "title": "Details",
+        "properties": {
+         "Material": "Leather upper with suede and synthetic overlays",
+         "Lacing": "Full lace closure",
+         "Midsole": "Platform rubber midsole with textured tooling",
+         "Outsole": "Rubber outsole provides durable grip and traction",
+         "Tip": "Suede PUMA Formstrip overlay at sides"
+        }
+       }
+      ],
+      "description": [
+       {
+        "title": "PRODUCT STORY",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Get ready to find your style in Mayze. We made this one for the hype girls, the street enthusiasts, the trend mavens. This stand-out silhouette takes design inspiration straight from the streets, with a stacked sole and contrasting rubber tooling for an edgy, layered look."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/21/5/19/7/mayze-womens-sneakers-6.jpeg",
+          "altText": null,
+          "caption": null
+         },
+         {
+          "src": "https://media.crystallize.com/voyage/21/5/19/7/mayze-womens-sneakers-5.jpeg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       }
+      ]
+     },
+     "vatType": "No Tax",
+     "variants": [
+      {
+       "name": "Mayze Women's Sneakers",
+       "sku": "mayze-women's-sneakers-1621409280948",
+       "price": 90,
+       "isDefault": true,
+       "attributes": {},
+       "externalReference": null,
+       "stock": 0,
+       "images": [
+        {
+         "src": "https://media.crystallize.com/voyage/21/5/19/5/mayze-womens-sneakers.jpeg",
+         "altText": null,
+         "caption": null
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Blog",
+   "shape": "5f6c770133ed22001d2797ec",
+   "components": {
+    "title": "Blog",
+    "brief": {
+     "json": [
+      {
+       "kind": "block",
+       "type": "paragraph",
+       "metadata": {},
+       "children": []
+      }
+     ]
+    },
+    "body": []
+   },
+   "children": [
+    {
+     "name": "Voyage a digital journey",
+     "shape": "5f6c770133ed22001d2797ee",
+     "components": {
+      "title": "Voyage Magazine is a digital journey",
+      "byline": [
+       {
+        "cataloguePath": "/authors/john-doe"
+       }
+      ],
+      "image": [
+       {
+        "src": "https://media.crystallize.com/voyage/20/9/24/11/coffee-sprouts.jpg",
+        "altText": null,
+        "caption": null
+       }
+      ],
+      "intro": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Welcome to Voyage. A digital journey magazine. Here you find inspirational stories from around the globe. Join us for a on inspirational online journey."
+          }
+         ]
+        }
+       ]
+      },
+      "body": [
+       {
+        "title": "Blogs and stories",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "You find blogs and long form stories in addition to some selected products on Voyage."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "name": "About",
+   "shape": "5f6c770133ed22001d2797ec",
+   "components": {
+    "brief": {
+     "json": [
+      {
+       "kind": "block",
+       "type": "paragraph",
+       "metadata": {},
+       "children": [
+        {
+         "kind": "inline",
+         "metadata": {},
+         "textContent": "Demo shop & magazine showcasing "
+        },
+        {
+         "kind": "inline",
+         "type": "link",
+         "metadata": {
+          "href": "https://crystallize.com/"
+         },
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Crystallize",
+           "type": "strong"
+          }
+         ]
+        },
+        {
+         "kind": "inline",
+         "metadata": {},
+         "textContent": " to power an online furniture magazine + webshop using the "
+        },
+        {
+         "kind": "inline",
+         "type": "link",
+         "metadata": {
+          "href": "https://crystallize.com/learn/open-source/boilerplates/react-nextjs"
+         },
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "open source JAMStack eCommerce boilerplate",
+           "type": "strong"
+          }
+         ]
+        },
+        {
+         "kind": "inline",
+         "metadata": {},
+         "textContent": "."
+        }
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "name": "Authors",
+   "shape": "5f6c770133ed22001d2797ec",
+   "components": {},
+   "children": [
+    {
+     "name": "Jane Doe",
+     "shape": "5f6d99cc33ed22001d2798af",
+     "components": {
+      "name": "Jane Doe",
+      "picture": [
+       {
+        "src": "https://media.crystallize.com/voyage/20/9/25/12/jane-doe-photographer.jpg",
+        "altText": null,
+        "caption": null
+       }
+      ],
+      "email": "jane@example.com",
+      "role": "Photographer"
+     }
+    },
+    {
+     "name": "John Doe",
+     "shape": "5f6d99cc33ed22001d2798af",
+     "components": {
+      "name": "John Doe",
+      "picture": [
+       {
+        "src": "https://media.crystallize.com/voyage/20/9/25/1/john-doe-journalist.jpg",
+        "altText": "John Doe",
+        "caption": null
+       }
+      ],
+      "email": "john@example.com",
+      "role": "Journalist"
+     }
+    }
+   ]
+  }
+ ]
+}

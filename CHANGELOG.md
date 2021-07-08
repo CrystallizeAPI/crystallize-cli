@@ -1,3 +1,73 @@
+# [3.18.0-beta.10](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.18.0-beta.9...v3.18.0-beta.10) (2021-07-08)
+
+
+### Bug Fixes
+
+* updated readme ([78abd8f](https://github.com/CrystallizeAPI/crystallize-cli/commit/78abd8f376e60c835a47de9557add6210e018c1f))
+
+# [3.18.0-beta.9](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.18.0-beta.8...v3.18.0-beta.9) (2021-07-08)
+
+
+### Bug Fixes
+
+* mark bootstrapping as beta ([dec68f5](https://github.com/CrystallizeAPI/crystallize-cli/commit/dec68f519c36b7ce7fa2e3f47c79f68277df3692))
+
+# [3.18.0-beta.8](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.18.0-beta.7...v3.18.0-beta.8) (2021-07-08)
+
+
+### Features
+
+* better warning for bootstrapping ([c29abd0](https://github.com/CrystallizeAPI/crystallize-cli/commit/c29abd0922bba9c66d403bcaaa70136a717c79d0))
+
+# [3.18.0-beta.7](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.18.0-beta.6...v3.18.0-beta.7) (2021-07-08)
+
+
+### Bug Fixes
+
+* reorder feedback ([a8df13e](https://github.com/CrystallizeAPI/crystallize-cli/commit/a8df13ecf3e7587e6a97d9cfdac9942ae9c8fce4))
+
+# [3.18.0-beta.6](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.18.0-beta.5...v3.18.0-beta.6) (2021-07-08)
+
+
+### Bug Fixes
+
+* cleanup ([ac96fe8](https://github.com/CrystallizeAPI/crystallize-cli/commit/ac96fe8ffffcaae6c3ad1457f1a8c5f781605b96))
+
+# [3.18.0-beta.5](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.18.0-beta.4...v3.18.0-beta.5) (2021-07-07)
+
+
+### Bug Fixes
+
+* bugfixes ([7a51eb3](https://github.com/CrystallizeAPI/crystallize-cli/commit/7a51eb31e0469cd4467d9e0bab0a88ba4d9496b8))
+
+# [3.18.0-beta.4](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.18.0-beta.3...v3.18.0-beta.4) (2021-07-07)
+
+
+### Features
+
+* more feedback ([a4cc51b](https://github.com/CrystallizeAPI/crystallize-cli/commit/a4cc51b5309f176820bb4bc8e61e5db8daa62257))
+
+# [3.18.0-beta.3](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.18.0-beta.2...v3.18.0-beta.3) (2021-07-07)
+
+
+### Bug Fixes
+
+* bugfix ([9bef08f](https://github.com/CrystallizeAPI/crystallize-cli/commit/9bef08fd1ea811a1e1c0024b51b31b197564ce30))
+
+# [3.18.0-beta.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.18.0-beta.1...v3.18.0-beta.2) (2021-07-07)
+
+
+### Bug Fixes
+
+* bugfixes ([249022c](https://github.com/CrystallizeAPI/crystallize-cli/commit/249022c24233c9fe37a38e7fa8cfb37b06bd7d97))
+
+# [3.18.0-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.17.0...v3.18.0-beta.1) (2021-07-07)
+
+
+### Features
+
+* first working version of bootstrapper ([b3f1cb4](https://github.com/CrystallizeAPI/crystallize-cli/commit/b3f1cb4aa5b24ea6ebadfad1b5435716e7316d50))
+
 # [3.17.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.16.0...v3.17.0) (2021-04-26)
 
 

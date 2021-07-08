@@ -2,8 +2,8 @@
 
 [![Build Status](https://travis-ci.org/CrystallizeAPI/crystallize-cli.svg?branch=master)](https://travis-ci.org/CrystallizeAPI/crystallize-cli)
 
-Bootstrap an app running on the [headless ecommerce][1] and GraphQL based
-[Product Information Management][2] service [Crystallize][3].
+Bootstrap an app or tenant running on the [headless ecommerce][1] and GraphQL
+based [Product Information Management][2] service [Crystallize][3].
 
 ## Usage
 
@@ -19,6 +19,14 @@ npx @crystallize/cli <project-name>
 
 This will walk you through creating a project, allowing you to choose which
 template and preferences you want to use.
+
+### Bootstrapping a tenant (BETA)
+
+```sh
+npx @crystallize/cli --bootstrap-tenant
+```
+
+This will bootstrap an existing tenant with example data.
 
 ### Templates
 

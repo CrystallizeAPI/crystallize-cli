@@ -2,65 +2,59 @@
 'use strict';
 
 const React = require('react');
-const importJsx = require('import-jsx');
 const { Box, Text, Newline, useStdin } = require('ink');
 const produce = require('immer').default;
 
-const steps = importJsx('./steps');
 const { highlightColor } = require('./shared');
 
-function App(globalOptions) {
+function App({ journey, ...globalOptions }) {
 	const { isRawModeSupported } = useStdin();
 	const [stepIndex, setStepIndex] = React.useState(0);
-	const [answers, setAnswers] = React.useState({
-		defaultTenant: 'furniture',
-		defaultServiceAPIURL: 'https://service-api-demo.superfast.shop/api/graphql',
-	});
+
+	const [answers, setAnswers] = React.useState(journey.baseAnswers);
 	const [staticMessages, setStaticMessages] = React.useState([
-		() => (
-			<>
-				<Text>
-					<Text underline>Crystallize Headless PIM</Text>
-					<Newline />
-					<Text>Hi you, let's make something awesome!</Text>
-				</Text>
-			</>
-		),
+		() => journey.welcomeMessage,
 	]);
 
+	const { steps } = journey;
 	let step = steps[stepIndex];
+
+	React.useEffect(() => {
+		if (stepIndex === -1) {
+			setTimeout(() => {
+				process.exit(0);
+			}, 1000);
+		}
+	}, [stepIndex]);
 
 	/**
 	 * If we cannot receive user input, we will just defer to the
 	 * Next.JS boilerplate with standard settings
 	 */
 	if (!isRawModeSupported) {
-		if (stepIndex === 0) {
-			const newIndex = steps.findIndex((s) => s.name === 'download');
-			setStepIndex(newIndex);
-			setAnswers({
-				nextjs: true,
-				boilerplate: 'Next.js',
-				tenant: answers.defaultTenant,
-				paymentMethods: ['stripe'],
-				multilingual: ['en'],
-			});
-			setStaticMessages((messages) => [
-				...messages,
-				() => (
-					<Text>
-						Using boilerplate <Text color={highlightColor}>Next.js</Text>
-					</Text>
-				),
-				() => (
-					<Text>
-						In folder{' '}
-						<Text color={highlightColor}>./{globalOptions.projectName}</Text>
-					</Text>
-				),
-			]);
-			return null;
-		}
+		const newIndex = steps.findIndex((s) => s.name === 'download');
+		setStepIndex(newIndex);
+		setAnswers({
+			nextjs: true,
+			boilerplate: 'Next.js',
+			tenant: answers.defaultTenant,
+			multilingual: ['en'],
+		});
+		setStaticMessages((messages) => [
+			...messages,
+			() => (
+				<Text>
+					Using boilerplate <Text color={highlightColor}>Next.js</Text>
+				</Text>
+			),
+			() => (
+				<Text>
+					In folder{' '}
+					<Text color={highlightColor}>./{globalOptions.projectName}</Text>
+				</Text>
+			),
+		]);
+		return null;
 	}
 
 	function resolveStep(answer) {
