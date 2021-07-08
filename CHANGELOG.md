@@ -1,3 +1,10 @@
+# [3.18.0-beta.7](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.18.0-beta.6...v3.18.0-beta.7) (2021-07-08)
+
+
+### Bug Fixes
+
+* reorder feedback ([a8df13e](https://github.com/CrystallizeAPI/crystallize-cli/commit/a8df13ecf3e7587e6a97d9cfdac9942ae9c8fce4))
+
 # [3.18.0-beta.6](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.18.0-beta.5...v3.18.0-beta.6) (2021-07-08)
 
 
