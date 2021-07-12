@@ -13,15 +13,58 @@ const { stepsBootstrapExampleTenant, ShowBootstrapWarning } = importJsx(
 	'../_shared/step-bootstrap-tenant'
 );
 
+function progressText(progress) {
+	const arr = [];
+	arr.length = 20;
+	arr.fill('-');
+
+	const filled = [];
+	filled.length = parseInt(progress * 20, 10);
+	filled.fill('=');
+	arr.splice(0, filled.length, ...filled);
+
+	return `[${arr.join('')}]`;
+}
+
+const areaIdToName = new Map();
+areaIdToName.set('media', 'Media');
+areaIdToName.set('shapes', 'Shapes');
+areaIdToName.set('grids', 'Grids');
+areaIdToName.set('items', 'Items');
+areaIdToName.set('languages', 'Languages');
+areaIdToName.set('priceVariants', 'Price variants');
+areaIdToName.set('vatTypes', 'VAT types');
+areaIdToName.set('topicMaps', 'Topic maps');
+
+function AreaStatus({ id, progress, warnings }) {
+	const name = areaIdToName.get(id) || id;
+
+	return (
+		<>
+			<Box flexDirection="column">
+				<Text>
+					{progressText(progress)} |{' '}
+					{parseInt(progress * 100)
+						.toString()
+						.padStart('3')}
+					% | {name}
+				</Text>
+			</Box>
+			{warnings
+				? warnings.map((warn, index) => (
+						<Box key={index} marginLeft={1}>
+							<Text>
+								⚠ {warn.message} ({warn.code})
+							</Text>
+						</Box>
+				  ))
+				: null}
+		</>
+	);
+}
+
 function RunBootstrapper({ answers, onDone }) {
-	const [shapesDone, setShapesDone] = React.useState(false);
-	const [priceVariantsDone, setPriceVariantsDone] = React.useState(false);
-	const [languagesDone, setLanguagesDone] = React.useState(false);
-	const [vatTypesDone, setVatTypesDone] = React.useState(false);
-	const [topicsDone, setTopicsDone] = React.useState(false);
-	const [itemsDone, setItemsDone] = React.useState(false);
-	const [itemsCount, setItemsCount] = React.useState(0);
-	const [gridsDone, setGridsDone] = React.useState(false);
+	const [status, setStatus] = React.useState(null);
 
 	React.useEffect(() => {
 		(async function go() {
@@ -30,27 +73,8 @@ function RunBootstrapper({ answers, onDone }) {
 				tenantSpec: answers.bootstrapTenant,
 				id: answers.ACCESS_TOKEN_ID,
 				secret: answers.ACCESS_TOKEN_SECRET,
-				onUpdate(a) {
-					if (a.items) {
-						setItemsCount((c) => c + 1);
-					} else if (a.done) {
-						switch (a.done) {
-							case 'shapes':
-								return setShapesDone(true);
-							case 'priceVariants':
-								return setPriceVariantsDone(true);
-							case 'languages':
-								return setLanguagesDone(true);
-							case 'vatTypes':
-								return setVatTypesDone(true);
-							case 'topics':
-								return setTopicsDone(true);
-							case 'items':
-								return setItemsDone(true);
-							case 'grids':
-								return setGridsDone(true);
-						}
-					}
+				onUpdate(status) {
+					setStatus(status);
 				},
 			});
 			onDone(result);
@@ -58,29 +82,21 @@ function RunBootstrapper({ answers, onDone }) {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
+	if (!status) {
+		return null;
+	}
+
+	const keys = Object.keys(status);
+	const dynamicStatuses = keys.filter((k) => !['media', 'items'].includes(k));
+
 	return (
-		<Box>
-			<Text>
-				Languages {languagesDone ? '✔︎' : '...'}
-				<Newline />
-				Shapes {shapesDone ? '✔︎' : '...'}
-				<Newline />
-				Price Variants {priceVariantsDone ? '✔︎' : '...'}
-				<Newline />
-				Vat Types {vatTypesDone ? '✔︎' : '...'}
-				<Newline />
-				Topics {topicsDone ? '✔︎' : '...'}
-				<Newline />
-				Grids {gridsDone ? '✔︎' : '...'}
-				<Newline />
-				Items{' '}
-				{itemsDone
-					? '✔︎'
-					: itemsCount === 0
-					? '...'
-					: `(${itemsCount} processed)...`}
-			</Text>
-		</Box>
+		<>
+			{dynamicStatuses.map((area) => (
+				<AreaStatus key={area} id={area} {...status[area]} />
+			))}
+			<AreaStatus id="media" {...status.media} />
+			<AreaStatus id="items" {...status.items} />
+		</>
 	);
 }
 

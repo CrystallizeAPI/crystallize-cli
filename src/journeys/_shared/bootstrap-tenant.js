@@ -29,31 +29,7 @@ function bootstrapTenant({
 
 				bootstrapper.start();
 
-				bootstrapper.on(EVENT_NAMES.SHAPES_DONE, function () {
-					onUpdate({ done: 'shapes' });
-				});
-				bootstrapper.on(EVENT_NAMES.PRICE_VARIANTS_DONE, function () {
-					onUpdate({ done: `priceVariants` });
-				});
-				bootstrapper.on(EVENT_NAMES.LANGUAGES_DONE, function () {
-					onUpdate({ done: `languages` });
-				});
-				bootstrapper.on(EVENT_NAMES.VAT_TYPES_DONE, function () {
-					onUpdate({ done: `vatTypes` });
-				});
-				bootstrapper.on(EVENT_NAMES.TOPICS_DONE, function () {
-					onUpdate({ done: 'topics' });
-				});
-				bootstrapper.on(EVENT_NAMES.ITEMS_UPDATE, function () {
-					onUpdate({ items: 'processed' });
-				});
-				bootstrapper.on(EVENT_NAMES.ITEMS_DONE, function () {
-					onUpdate({ done: 'items' });
-				});
-				bootstrapper.on(EVENT_NAMES.GRIDS_DONE, function () {
-					onUpdate({ done: 'grids' });
-				});
-
+				bootstrapper.on(EVENT_NAMES.STATUS_UPDATE, onUpdate);
 				bootstrapper.on(EVENT_NAMES.DONE, resolve);
 			}
 		} catch (e) {
