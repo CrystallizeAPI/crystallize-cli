@@ -1,3 +1,11 @@
+# [3.19.0-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.18.1...v3.19.0-beta.1) (2021-07-13)
+
+
+### Features
+
+* better feedback [skip release] ([1474b9f](https://github.com/CrystallizeAPI/crystallize-cli/commit/1474b9ffce0596edb0f042d4b3f2d954deb1ea30))
+* proper feedback on bootstrapping ([9dee8d0](https://github.com/CrystallizeAPI/crystallize-cli/commit/9dee8d02e9ae87679da755b9b469985681ea09c6))
+
 ## [3.18.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.18.0...v3.18.1) (2021-07-08)
 
 
