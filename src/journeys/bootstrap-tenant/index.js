@@ -8,90 +8,19 @@ const { UncontrolledTextInput } = require('ink-text-input');
 
 const { highlightColor } = require('../../shared');
 const Tips = importJsx('../../cli-utils/tips');
-const { bootstrapTenant } = require('../_shared/bootstrap-tenant');
-const { stepsBootstrapExampleTenant, ShowBootstrapWarning } = importJsx(
-	'../_shared/step-bootstrap-tenant'
-);
 
-function RunBootstrapper({ answers, onDone }) {
-	const [shapesDone, setShapesDone] = React.useState(false);
-	const [priceVariantsDone, setPriceVariantsDone] = React.useState(false);
-	const [languagesDone, setLanguagesDone] = React.useState(false);
-	const [vatTypesDone, setVatTypesDone] = React.useState(false);
-	const [topicsDone, setTopicsDone] = React.useState(false);
-	const [itemsDone, setItemsDone] = React.useState(false);
-	const [itemsCount, setItemsCount] = React.useState(0);
-	const [gridsDone, setGridsDone] = React.useState(false);
-
-	React.useEffect(() => {
-		(async function go() {
-			const result = await bootstrapTenant({
-				tenant: answers.tenant,
-				tenantSpec: answers.bootstrapTenant,
-				id: answers.ACCESS_TOKEN_ID,
-				secret: answers.ACCESS_TOKEN_SECRET,
-				onUpdate(a) {
-					if (a.items) {
-						setItemsCount((c) => c + 1);
-					} else if (a.done) {
-						switch (a.done) {
-							case 'shapes':
-								return setShapesDone(true);
-							case 'priceVariants':
-								return setPriceVariantsDone(true);
-							case 'languages':
-								return setLanguagesDone(true);
-							case 'vatTypes':
-								return setVatTypesDone(true);
-							case 'topics':
-								return setTopicsDone(true);
-							case 'items':
-								return setItemsDone(true);
-							case 'grids':
-								return setGridsDone(true);
-						}
-					}
-				},
-			});
-			onDone(result);
-		})();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
-
-	return (
-		<Box>
-			<Text>
-				Languages {languagesDone ? '✔︎' : '...'}
-				<Newline />
-				Shapes {shapesDone ? '✔︎' : '...'}
-				<Newline />
-				Price Variants {priceVariantsDone ? '✔︎' : '...'}
-				<Newline />
-				Vat Types {vatTypesDone ? '✔︎' : '...'}
-				<Newline />
-				Topics {topicsDone ? '✔︎' : '...'}
-				<Newline />
-				Grids {gridsDone ? '✔︎' : '...'}
-				<Newline />
-				Items{' '}
-				{itemsDone
-					? '✔︎'
-					: itemsCount === 0
-					? '...'
-					: `(${itemsCount} processed)...`}
-			</Text>
-		</Box>
-	);
-}
+const {
+	stepsBootstrapExampleTenant,
+	BootstrapWarning,
+	RunBootstrapper,
+} = importJsx('../_shared/step-bootstrap-tenant');
 
 const steps = [
 	{
 		render({ resolveStep }) {
 			return (
-				<Box>
-					<Box marginRight={1}>
-						<Text>Which tenant would you like to bootstrap?</Text>
-					</Box>
+				<Box flexDirection="column">
+					<Text>Enter the tenant identifier you want to bootstrap</Text>
 					<UncontrolledTextInput
 						placeholder="my-tenant-identifier"
 						onSubmit={resolveStep}
@@ -154,14 +83,14 @@ const baseAnswers = {
 };
 
 const welcomeMessage = (
-	<>
+	<Box flexDirection="column">
 		<Text>
 			<Text underline>Crystallize Headless PIM</Text>
 			<Newline />
 			<Text>Let's bootstrap a tenant (BETA)</Text>
 		</Text>
-		<ShowBootstrapWarning />
-	</>
+		<BootstrapWarning />
+	</Box>
 );
 
 module.exports = {
