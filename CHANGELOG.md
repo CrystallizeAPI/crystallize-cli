@@ -1,3 +1,10 @@
+# [3.19.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.18.1...v3.19.0) (2021-07-13)
+
+
+### Features
+
+* show how to get help ([86e0b5f](https://github.com/CrystallizeAPI/crystallize-cli/commit/86e0b5fe33cca766f5a8d1560c2ca6680c061175))
+
 # [3.19.0-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.18.1...v3.19.0-beta.1) (2021-07-13)
 
 
