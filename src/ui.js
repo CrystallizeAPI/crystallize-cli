@@ -2,7 +2,7 @@
 'use strict';
 
 const React = require('react');
-const { Box, Text, Newline, useStdin } = require('ink');
+const { Box, Text, useStdin } = require('ink');
 const produce = require('immer').default;
 
 const { highlightColor } = require('./shared');
@@ -102,12 +102,14 @@ function App({ journey, ...globalOptions }) {
 
 		return (
 			<Box flexDirection="column" padding={1}>
-				{staticMessages.map((m, i) => (
-					<Box key={i} flexDirection="column">
-						{m({ ...globalOptions, answers })}
-					</Box>
-				))}
-				<Newline />
+				<Box flexDirection="column" marginBottom={1}>
+					{staticMessages.map((m, i) => (
+						<Box key={i} flexDirection="column">
+							{m({ ...globalOptions, answers })}
+						</Box>
+					))}
+				</Box>
+
 				{render({ ...globalOptions, answers, resolveStep })}
 			</Box>
 		);

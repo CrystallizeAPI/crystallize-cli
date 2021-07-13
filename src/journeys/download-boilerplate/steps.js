@@ -14,9 +14,40 @@ const { InitProject } = importJsx('../../cli-utils/init-project');
 const GetMultilingual = importJsx('../../cli-utils/get-multilingual');
 const Tips = importJsx('../../cli-utils/tips');
 const Select = importJsx('../../ui-modules/select');
-const { stepBootstrapTenant } = importJsx(
+const { stepBootstrapTenant, RunBootstrapper } = importJsx(
 	'../_shared/step-bootstrap-tenant.js'
 );
+
+function InstallDepsAndBootstrap(props) {
+	const [initDone, setInitDone] = React.useState(false);
+	const [bootstrappingDone, setBootstrappingDone] = React.useState(
+		props.answers.bootstrapTenant === 'no'
+	);
+
+	React.useEffect(() => {
+		if (initDone && bootstrappingDone) {
+			props.resolveStep();
+		}
+	}, [initDone, bootstrappingDone, props]);
+
+	return (
+		<>
+			{!initDone && <InitProject {...props} onDone={() => setInitDone(true)} />}
+			{props.answers.bootstrapTenant !== 'no' && (
+				<Box flexDirection="column" marginBottom={1}>
+					<Box marginBottom={1}>
+						<Text>Bootstrapping {props.anwsers.tenant}</Text>
+					</Box>
+					<RunBootstrapper
+						{...props}
+						onDone={() => setBootstrappingDone(true)}
+					/>
+				</Box>
+			)}
+			<Tips />
+		</>
+	);
+}
 
 const steps = [
 	{
@@ -43,7 +74,9 @@ const steps = [
 											React, SSG &amp; SSR, Ecommerce with basket &amp; checkout
 										</Text>
 										<Newline />
-										<Text dimColor>Demo: https://next.superfast.shop/</Text>
+										<Text dimColor>
+											Demo: https://furniture.superfast.shop/
+										</Text>
 									</>
 								),
 							},
@@ -60,9 +93,7 @@ const steps = [
 											Beautiful commerce with longform storytelling
 										</Text>
 										<Newline />
-										<Text dimColor>
-											Demo: https://content-commerce-boilerplate.vercel.app/
-										</Text>
+										<Text dimColor>Demo: https://story.superfast.shop/</Text>
 									</>
 								),
 							},
@@ -455,13 +486,7 @@ const steps = [
 	},
 	{
 		render(props) {
-			return (
-				<>
-					<InitProject {...props} />
-					<Newline />
-					<Tips />
-				</>
-			);
+			return <InstallDepsAndBootstrap {...props} />;
 		},
 	},
 	{

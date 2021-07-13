@@ -5,11 +5,8 @@ const React = require('react');
 const fs = require('fs-extra');
 const path = require('path');
 const os = require('os');
-const { Text, Box } = require('ink');
+const { Box, Text } = require('ink');
 const exec = require('child_process').exec;
-const importJsx = require('import-jsx');
-
-const { bootstrapTenant } = importJsx('../journeys/_shared/bootstrap-tenant');
 
 let began = false;
 
@@ -26,15 +23,15 @@ const feedbacksBase = [
 	'Looking for the car...',
 ];
 
-function InitProject(allProps) {
+function InitProject(props) {
 	const {
 		answers,
 		projectName,
 		projectPath,
-		resolveStep,
+		onDone,
 		shouldUseYarn,
 		flags,
-	} = allProps;
+	} = props;
 	const [feedbackIndex, setFeedbackIndex] = React.useState(0);
 
 	const feedbacks = [...feedbacksBase];
@@ -89,7 +86,7 @@ function InitProject(allProps) {
 			began = true;
 
 			if (answers['service-api']) {
-				await require('./init-service-api')(allProps);
+				await require('./init-service-api')(props);
 			}
 
 			// Navigate to the new folder
@@ -123,26 +120,15 @@ function InitProject(allProps) {
 			);
 
 			if (answers.nextjs) {
-				await require('./init-nextjs')(allProps);
+				await require('./init-nextjs')(props);
 			} else if (answers['nextjs-content-commerce']) {
-				await require('./init-nextjs-content-commerce')(allProps);
+				await require('./init-nextjs-content-commerce')(props);
 			} else if (answers.gatsby) {
-				await require('./init-gatsby')(allProps);
+				await require('./init-gatsby')(props);
 			} else if (answers.nuxtjs) {
-				await require('./init-nuxtjs')(allProps);
+				await require('./init-nuxtjs')(props);
 			} else if (answers.rn) {
-				await require('./init-rn')(allProps);
-			}
-
-			// Kick of the bootstrapping of the tenant
-			let bootstrapWork = Promise.resolve();
-			if (answers.bootstrapTenant !== 'no') {
-				bootstrapWork = bootstrapTenant({
-					tenant: answers.tenant,
-					tenantSpec: answers.bootstrapTenant,
-					id: answers.ACCESS_TOKEN_ID,
-					secret: answers.ACCESS_TOKEN_SECRET,
-				});
+				await require('./init-rn')(props);
 			}
 
 			exec(
@@ -155,9 +141,7 @@ function InitProject(allProps) {
 						process.exit(1);
 					}
 
-					await bootstrapWork;
-
-					resolveStep();
+					onDone();
 				}
 			);
 		}
@@ -165,14 +149,9 @@ function InitProject(allProps) {
 	});
 
 	return (
-		<>
-			<Box>
-				{/* <Box marginRight={1}>
-					<Spinner type="dots" />
-				</Box> */}
-				<Text>{feedbacks[feedbackIndex]}</Text>
-			</Box>
-		</>
+		<Box marginBottom={1}>
+			<Text>{feedbacks[feedbackIndex]}</Text>
+		</Box>
 	);
 }
 
