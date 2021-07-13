@@ -20,6 +20,12 @@ npx @crystallize/cli <project-name>
 This will walk you through creating a project, allowing you to choose which
 template and preferences you want to use.
 
+### Show help
+
+```sh
+npx @crystallize/cli --help
+```
+
 ### Bootstrapping a tenant (BETA)
 
 ```sh
