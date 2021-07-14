@@ -1,3 +1,10 @@
+## [3.19.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.19.0...v3.19.1) (2021-07-14)
+
+
+### Bug Fixes
+
+* typo and new furniture spec ([ac95700](https://github.com/CrystallizeAPI/crystallize-cli/commit/ac957008525a656b324ecc66e57a7963ed930abe))
+
 # [3.19.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.18.1...v3.19.0) (2021-07-13)
 
 
