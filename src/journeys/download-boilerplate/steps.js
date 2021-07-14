@@ -36,7 +36,7 @@ function InstallDepsAndBootstrap(props) {
 			{props.answers.bootstrapTenant !== 'no' && (
 				<Box flexDirection="column" marginBottom={1}>
 					<Box marginBottom={1}>
-						<Text>Bootstrapping {props.anwsers.tenant}</Text>
+						<Text>Bootstrapping {props.answers.tenant}</Text>
 					</Box>
 					<RunBootstrapper
 						{...props}

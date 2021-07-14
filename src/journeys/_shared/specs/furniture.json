@@ -138,12 +138,6 @@
       },
       {
        "name": "Outerwear"
-      },
-      {
-       "name": "Clothing"
-      },
-      {
-       "name": "Outerwear"
       }
      ]
     }
@@ -205,21 +199,7 @@
      ]
     },
     {
-     "name": "Wool"
-    },
-    {
      "name": "Linen"
-    },
-    {
-     "name": "Cotton",
-     "children": [
-      {
-       "name": "Organic Cotton"
-      },
-      {
-       "name": "Egyptian Cotton"
-      }
-     ]
     },
     {
      "name": "Wool",
@@ -228,9 +208,6 @@
        "name": "Merino Wool"
       }
      ]
-    },
-    {
-     "name": "Linen"
     },
     {
      "name": "Leather"
@@ -3640,7 +3617,7 @@
      },
      "children": [
       {
-       "name": "Funky Yellow Chair",
+       "name": "Black Chair",
        "shape": "default-product",
        "components": {
         "summary": {
@@ -3653,7 +3630,7 @@
             {
              "kind": "inline",
              "metadata": {},
-             "textContent": "This funky yellow chair is a unique piece. It has a simple design, but the bright yellow color keeps it from being boring. It gives off a playful and sophisticated vibe."
+             "textContent": "A simple yet stylish piece of furniture. It fits into any style and has a comfortable seat."
             }
            ]
           }
@@ -3661,24 +3638,17 @@
         },
         "specs": [
          {
-          "title": "Dimensions ",
+          "title": "Dimensions",
           "properties": {
-           "Width": "40cm",
-           "Height": "70cm",
-           "Depth": "40cm"
-          }
-         },
-         {
-          "title": "Materials",
-          "properties": {
-           "Chair": "Recycled Plastic",
-           "Feet": "Stainless Steel"
+           "Width": "50 cm",
+           "Height": "90 sm",
+           "Depth": "40 cm"
           }
          }
         ],
         "description": [
          {
-          "title": "Funky yellow chair",
+          "title": "Black Chair",
           "body": {
            "json": [
             {
@@ -3689,7 +3659,355 @@
               {
                "kind": "inline",
                "metadata": {},
-               "textContent": "The funky yellow chair has a fun and simple design. It has a sleek shape, but the bright yellow color keeps it from being boring. You can put the chair in any given space."
+               "textContent": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus."
+              }
+             ]
+            }
+           ]
+          }
+         }
+        ]
+       },
+       "vatType": "Standard",
+       "variants": [
+        {
+         "name": "Chair",
+         "sku": "chair-1625667436521",
+         "price": 78,
+         "isDefault": true,
+         "attributes": {},
+         "externalReference": null,
+         "stock": 51,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/21/7/7/18/simple-black-chair.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Classic Lounge Chair",
+       "shape": "default-product",
+       "components": {
+        "summary": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "A lounge chair with a classic design. Place it in your living room, bedroom or hallway for a comfortable seating."
+            }
+           ]
+          }
+         ]
+        },
+        "specs": [
+         {
+          "title": "Dimensions",
+          "properties": {
+           "Width": "50 cm",
+           "Height": "130 cm",
+           "Depth": "60 cm"
+          }
+         }
+        ],
+        "description": [
+         {
+          "title": "Classic Lounge Chair",
+          "body": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum."
+              }
+             ]
+            }
+           ]
+          }
+         }
+        ]
+       },
+       "vatType": "Standard",
+       "variants": [
+        {
+         "name": "Classic Lounge Chair",
+         "sku": "classic-lounge-chair-1625667418490",
+         "price": 229,
+         "isDefault": true,
+         "attributes": {},
+         "externalReference": null,
+         "stock": 47,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/21/7/7/17/lounge-chair.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "White Lounge Chair",
+       "shape": "default-product",
+       "components": {
+        "summary": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Sleek and elegant. Perfect for when you want a place to sit in an open environment, but still talk to the people around you. "
+            }
+           ]
+          }
+         ]
+        },
+        "specs": [
+         {
+          "title": "Dimensions",
+          "properties": {
+           "Width": "80 cm",
+           "Height": "90 cm",
+           "Depth": "50 cm"
+          }
+         }
+        ],
+        "description": [
+         {
+          "title": "White Lounge Chair",
+          "body": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem."
+              }
+             ]
+            }
+           ]
+          }
+         }
+        ]
+       },
+       "vatType": "Standard",
+       "variants": [
+        {
+         "name": "Chair",
+         "sku": "chair-1625667180481",
+         "price": 79,
+         "isDefault": true,
+         "attributes": {},
+         "externalReference": null,
+         "stock": 12,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/21/7/7/16/lounge-chair-white.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "White Chair",
+       "shape": "default-product",
+       "components": {
+        "summary": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "A simple design for when you want a minimalist feel."
+            }
+           ]
+          }
+         ]
+        },
+        "specs": [
+         {
+          "title": "Dimensions",
+          "properties": {
+           "Width": "50 cm",
+           "Height": "110 cm",
+           "Depth": "40 cm"
+          }
+         }
+        ],
+        "description": [
+         {
+          "title": "White Chair",
+          "body": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus."
               }
              ]
             }
@@ -3697,27 +4015,358 @@
           },
           "images": [
            {
-            "src": "https://media.crystallize.com/furniture/20/7/21/35/funky-yellow-chair-on-street.jpg",
-            "altText": "Funky yellow chair",
+            "src": "https://media.crystallize.com/furniture/21/7/7/20/white-chair2.jpg",
+            "altText": null,
+            "caption": null
+           },
+           {
+            "src": "https://media.crystallize.com/furniture/21/7/7/21/white-chair3.jpg",
+            "altText": null,
             "caption": null
            }
           ]
          }
         ]
        },
-       "vatType": "No Tax",
+       "vatType": "Standard",
        "variants": [
         {
-         "name": "New variation",
-         "sku": "funky-yellow-chair-194763 ",
-         "price": 59,
+         "name": "Chair",
+         "sku": "chair-1625667162618",
+         "price": 49,
          "isDefault": true,
          "attributes": {},
          "externalReference": null,
-         "stock": 30,
+         "stock": 35,
          "images": [
           {
-           "src": "https://media.crystallize.com/furniture/20/12/16/1/funky-yellow-chair-on-street.jpg",
+           "src": "https://media.crystallize.com/furniture/21/7/7/15/white-chair.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Bamboo Chair",
+       "shape": "default-product",
+       "components": {
+        "summary": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "A relaxed and comfortable seating for when you want to wind down and read a book in peace."
+            }
+           ]
+          }
+         ]
+        },
+        "specs": [
+         {
+          "title": "Dimensions",
+          "properties": {
+           "Width": "70 cm",
+           "Height": "90 cm",
+           "Depth": "60 cm"
+          }
+         }
+        ],
+        "description": [
+         {
+          "title": "Bamboo Chair",
+          "body": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem."
+              }
+             ]
+            }
+           ]
+          }
+         }
+        ]
+       },
+       "vatType": "Standard",
+       "variants": [
+        {
+         "name": "Chair",
+         "sku": "chair-1625667132935",
+         "price": 79,
+         "isDefault": true,
+         "attributes": {},
+         "externalReference": null,
+         "stock": 28,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/21/7/7/14/bohemian-chair.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "White Simple Chair",
+       "shape": "default-product",
+       "components": {
+        "summary": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "This chair is simple and takes up little space. It is perfect for your extra guests."
+            }
+           ]
+          }
+         ]
+        },
+        "specs": [
+         {
+          "title": "Dimensions",
+          "properties": {
+           "Width": "50 cm",
+           "Height": "90 cm",
+           "Depth": "40 cm"
+          }
+         }
+        ],
+        "description": [
+         {
+          "title": "White Simple Chair",
+          "body": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus."
+              }
+             ]
+            }
+           ]
+          },
+          "images": [
+           {
+            "src": "https://media.crystallize.com/furniture/21/7/7/19/simple-white-chair2.jpg",
+            "altText": null,
+            "caption": null
+           }
+          ]
+         }
+        ]
+       },
+       "vatType": "Standard",
+       "variants": [
+        {
+         "name": "White Simple Chair",
+         "sku": "white-simple-chair-1625667085122",
+         "price": 49,
+         "isDefault": true,
+         "attributes": {},
+         "externalReference": null,
+         "stock": 34,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/21/7/7/13/simple-white-chair.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Red Lounge Chair",
+       "shape": "default-product",
+       "components": {
+        "summary": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "With an inviting design, this chair is perfect for a soft and relaxed place to sit."
+            }
+           ]
+          }
+         ]
+        },
+        "specs": [
+         {
+          "title": "Dimensions",
+          "properties": {
+           "Width": "60 cm",
+           "Height": "70 cm",
+           "Depth": "70 cm"
+          }
+         }
+        ],
+        "description": [
+         {
+          "title": "Red Lounge Chair",
+          "body": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus."
+              }
+             ]
+            }
+           ]
+          },
+          "images": [
+           {
+            "src": "https://media.crystallize.com/furniture/21/7/7/22/red-lounge-chair2.jpg",
+            "altText": null,
+            "caption": null
+           }
+          ]
+         }
+        ]
+       },
+       "vatType": "Standard",
+       "variants": [
+        {
+         "name": "Red Lounge Chair",
+         "sku": "red-lounge-chair-1625667046883",
+         "price": 129,
+         "isDefault": true,
+         "attributes": {},
+         "externalReference": null,
+         "stock": 28,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/21/7/7/11/red-lounge-chair.jpg",
            "altText": null,
            "caption": null
           }
@@ -3805,91 +4454,6 @@
          "images": [
           {
            "src": "https://media.crystallize.com/furniture/21/1/7/1/black-simple-bar-stool.jpg",
-           "altText": null,
-           "caption": null
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "name": "The Citrus Chair",
-       "shape": "default-product",
-       "components": {
-        "summary": {
-         "json": [
-          {
-           "kind": "block",
-           "type": "paragraph",
-           "metadata": {},
-           "children": [
-            {
-             "kind": "inline",
-             "metadata": {},
-             "textContent": "The citrus chair has a bright orange color and simple lines to give a clean, yet bold look."
-            }
-           ]
-          }
-         ]
-        },
-        "specs": [
-         {
-          "title": "Dimensions ",
-          "properties": {
-           "Widt": "50cm",
-           "Height": "80cm",
-           "Depth": "50cm"
-          }
-         },
-         {
-          "title": "Materials",
-          "properties": {
-           "Chair": "Recycled Plastic "
-          }
-         }
-        ],
-        "description": [
-         {
-          "title": "The citrus chair",
-          "body": {
-           "json": [
-            {
-             "kind": "block",
-             "type": "paragraph",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "The citrus chair has a clean and bold look. Its shape is sleek, ut the bright orange color makes sure that it doesn’t go unnoticed. It is made out of recycled plastic bottles."
-              }
-             ]
-            }
-           ]
-          },
-          "images": [
-           {
-            "src": "https://media.crystallize.com/furniture/20/7/21/5/sleek-citrus-chair.jpg",
-            "altText": "Bright orange chair",
-            "caption": null
-           }
-          ]
-         }
-        ]
-       },
-       "vatType": "No Tax",
-       "variants": [
-        {
-         "name": null,
-         "sku": "citrus-chair-183829",
-         "price": 59,
-         "isDefault": true,
-         "attributes": {},
-         "externalReference": null,
-         "stock": 39,
-         "images": [
-          {
-           "src": "https://media.crystallize.com/furniture/21/1/7/2/sleek-citrus-chair.jpg",
            "altText": null,
            "caption": null
           }
@@ -4054,306 +4618,6 @@
          "images": [
           {
            "src": "https://media.crystallize.com/furniture/20/3/9/9/dennis-cortes-_veirrxwpoq-unsplash.jpg",
-           "altText": null,
-           "caption": null
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "name": "Bubblegum Lounge Chair",
-       "shape": "default-product",
-       "components": {
-        "summary": {
-         "json": [
-          {
-           "kind": "block",
-           "type": "paragraph",
-           "metadata": {},
-           "children": [
-            {
-             "kind": "inline",
-             "metadata": {},
-             "textContent": "This is a playful and comfortable chair. it is made by a Scandinavian designer."
-            }
-           ]
-          }
-         ]
-        },
-        "specs": [
-         {
-          "title": "Dimensions ",
-          "properties": {
-           "Width": "60cm",
-           "Height": "50cm",
-           "Depth": "60cm"
-          }
-         },
-         {
-          "title": "Materials",
-          "properties": {
-           "Fabric": "Merino Wool",
-           "Chair legs": "Wood"
-          }
-         }
-        ],
-        "description": [
-         {
-          "title": "Bubblegum lounge chair",
-          "body": {
-           "json": [
-            {
-             "kind": "block",
-             "type": "paragraph",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "The bubblegum lounge chair is a playful and fun chair. it is comfortable to sit in."
-              }
-             ]
-            }
-           ]
-          },
-          "images": [
-           {
-            "src": "https://media.crystallize.com/furniture/20/6/15/3/bubblegum-lounge-chair-with-balloons.jpg",
-            "altText": "A pink lounge chair with blue balloons in background",
-            "caption": null
-           }
-          ]
-         }
-        ]
-       },
-       "vatType": "No Tax",
-       "variants": [
-        {
-         "name": "New variation",
-         "sku": "bubblegum-lounge-62074",
-         "price": 189,
-         "isDefault": true,
-         "attributes": {},
-         "externalReference": null,
-         "stock": 67,
-         "images": [
-          {
-           "src": "https://media.crystallize.com/furniture/21/1/7/4/bubblegum-lounge-chair-with-balloons.jpg",
-           "altText": null,
-           "caption": null
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "name": "Vibrant Office Chair",
-       "shape": "default-product",
-       "components": {
-        "summary": {
-         "json": [
-          {
-           "kind": "block",
-           "type": "paragraph",
-           "metadata": {},
-           "children": [
-            {
-             "kind": "inline",
-             "metadata": {},
-             "textContent": "A beautiful wool chair that comes in multiple vibrant colours."
-            }
-           ]
-          }
-         ]
-        },
-        "specs": [
-         {
-          "title": "Dimensions ",
-          "properties": {
-           "Widt": "60cm",
-           "Height": "120cm",
-           "Depth": "60cm"
-          }
-         },
-         {
-          "title": "Materials",
-          "properties": {
-           "Fabric": "Wool",
-           "The Foot": "Stainless Steel"
-          }
-         }
-        ],
-        "description": [
-         {
-          "title": "The Vibrant Office Chair",
-          "body": {
-           "json": [
-            {
-             "kind": "block",
-             "type": "paragraph",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "The Vibrant Office Chair is the perfect piece of furniture if you are looking for something that will give your space a pop of colour and personality. The office chair is a centrepiece itself and can be put into any space. It works great both at home, at your work office or in a waiting room just to mention a few examples. The Vibrant Office Chair is for anyone and everyone who just wants to express themselves or their workplace. "
-              }
-             ]
-            }
-           ]
-          },
-          "images": [
-           {
-            "src": "https://media.crystallize.com/furniture/20/6/11/13/vibrant-office-chair.jpg",
-            "altText": null,
-            "caption": null
-           },
-           {
-            "src": "https://media.crystallize.com/furniture/20/6/11/14/vibrant-office-chair-closeup.jpg",
-            "altText": null,
-            "caption": null
-           }
-          ]
-         }
-        ]
-       },
-       "vatType": "No Tax",
-       "variants": [
-        {
-         "name": "Pacific Blue",
-         "sku": "vibrant-office-chair-pacific-blue-159",
-         "price": 989,
-         "isDefault": true,
-         "attributes": {},
-         "externalReference": null,
-         "stock": 178,
-         "images": [
-          {
-           "src": "https://media.crystallize.com/furniture/21/1/7/5/vibrant-office-chair.jpg",
-           "altText": null,
-           "caption": null
-          },
-          {
-           "src": "https://media.crystallize.com/furniture/20/6/12/42/vibrant-office-chair-pacific-blue.png",
-           "altText": "A blue office chair",
-           "caption": null
-          }
-         ]
-        },
-        {
-         "name": "Red Violet",
-         "sku": "vibrant-office-chair-red-violet-158",
-         "price": 989,
-         "isDefault": false,
-         "attributes": {},
-         "externalReference": null,
-         "stock": 124,
-         "images": [
-          {
-           "src": "https://media.crystallize.com/furniture/20/6/11/15/vibrant-office-chair-red-violet.png",
-           "altText": null,
-           "caption": null
-          }
-         ]
-        },
-        {
-         "name": "Dust",
-         "sku": "vibrant-office-chair-dust-157",
-         "price": 989,
-         "isDefault": false,
-         "attributes": {},
-         "externalReference": null,
-         "stock": 249,
-         "images": [
-          {
-           "src": "https://media.crystallize.com/furniture/20/6/11/16/vibrant-office-chair-dust.png",
-           "altText": null,
-           "caption": null
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "name": "Red Bar Stool",
-       "shape": "default-product",
-       "components": {
-        "summary": {
-         "json": [
-          {
-           "kind": "block",
-           "type": "paragraph",
-           "metadata": {},
-           "children": [
-            {
-             "kind": "inline",
-             "metadata": {},
-             "textContent": "The red bar stool comes in a vibrant red color and has a sleek design."
-            }
-           ]
-          }
-         ]
-        },
-        "description": [
-         {
-          "title": "Red bar stool",
-          "body": {
-           "json": [
-            {
-             "kind": "block",
-             "type": "paragraph",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "The red bar stool is designed by a famous Norwegian designer called Pål Løvfalli. He is known for his minimal, but practical designs. This sleek chair will work great in any given space. You can use it in your kitchen or in a bar. Either way, the bright red color will certainly give your space a pop of color."
-              }
-             ]
-            }
-           ]
-          },
-          "images": [
-           {
-            "src": "https://media.crystallize.com/furniture/20/6/17/2/red-bar-stool.jpg",
-            "altText": null,
-            "caption": null
-           }
-          ]
-         }
-        ],
-        "specs": [
-         {
-          "title": "Dimensions ",
-          "properties": {
-           "Width": "50cm",
-           "Height": "70cm",
-           "Depth": "50cm"
-          }
-         },
-         {
-          "title": "Materials",
-          "properties": {
-           "Body": "Recycled Plastic",
-           "Chair legs": "Stainless steel"
-          }
-         }
-        ]
-       },
-       "vatType": "No Tax",
-       "variants": [
-        {
-         "name": "New variation",
-         "sku": "red-stool",
-         "price": 78,
-         "isDefault": true,
-         "attributes": {},
-         "externalReference": null,
-         "stock": 15,
-         "images": [
-          {
-           "src": "https://media.crystallize.com/furniture/20/6/17/3/bright-red-bar-stool.png",
            "altText": null,
            "caption": null
           }
@@ -9819,22 +10083,7 @@
       "content": {
        "items": [
         {
-         "cataloguePath": "/shop/electronics/black-wireless-mouse"
-        },
-        {
-         "cataloguePath": "/shop/electronics/red-headset"
-        },
-        {
          "cataloguePath": "/shop/electronics/crystall-iz-camera"
-        },
-        {
-         "cataloguePath": "/shop/electronics/black-floor-lamp"
-        },
-        {
-         "cataloguePath": "/shop/electronics/simple-sound-system"
-        },
-        {
-         "cataloguePath": "/shop/electronics/black-smartwatch"
         }
        ]
       }
@@ -9967,22 +10216,7 @@
       },
       "items": [
        {
-        "cataloguePath": "/shop/electronics/bowl-lamp-black"
-       },
-       {
-        "cataloguePath": "/shop/electronics/minimal-floor-lamp"
-       },
-       {
-        "cataloguePath": "/shop/electronics/black-floor-lamp"
-       },
-       {
         "cataloguePath": "/shop/electronics/crystall-iz-camera"
-       },
-       {
-        "cataloguePath": "/shop/electronics/red-headset"
-       },
-       {
-        "cataloguePath": "/shop/electronics/black-smartwatch"
        }
       ]
      }
@@ -10070,13 +10304,7 @@
         "cataloguePath": "/shop/chairs/minimalistic-chair"
        },
        {
-        "cataloguePath": "/shop/chairs/funky-yellow-chair"
-       },
-       {
         "cataloguePath": "/shop/sofas/arbour-eco"
-       },
-       {
-        "cataloguePath": "/shop/chairs/bubblegum-lounge-chair"
        }
       ]
      }
