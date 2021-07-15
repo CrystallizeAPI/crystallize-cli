@@ -100,50 +100,6 @@
    ]
   },
   {
-   "name": "Apparel",
-   "children": [
-    {
-     "name": "Men",
-     "children": [
-      {
-       "name": "Shirt"
-      },
-      {
-       "name": "Pants"
-      },
-      {
-       "name": "Shoes"
-      }
-     ]
-    },
-    {
-     "name": "Women",
-     "children": [
-      {
-       "name": "Tops"
-      },
-      {
-       "name": "Dresses"
-      },
-      {
-       "name": "Skirts"
-      }
-     ]
-    },
-    {
-     "name": "Baby",
-     "children": [
-      {
-       "name": "Clothing"
-      },
-      {
-       "name": "Outerwear"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "name": "Color",
    "children": [
     {
@@ -179,8 +135,34 @@
       },
       {
        "name": "Maroon"
+      },
+      {
+       "name": "Violet"
       }
      ]
+    },
+    {
+     "name": "White"
+    },
+    {
+     "name": "Orange"
+    },
+    {
+     "name": "Brown",
+     "children": [
+      {
+       "name": "Dark brown"
+      }
+     ]
+    },
+    {
+     "name": "Black"
+    },
+    {
+     "name": "Yellow"
+    },
+    {
+     "name": "Gray"
     }
    ]
   },
@@ -211,6 +193,32 @@
     },
     {
      "name": "Leather"
+    }
+   ]
+  },
+  {
+   "name": "Material",
+   "children": [
+    {
+     "name": "Wood"
+    },
+    {
+     "name": "Metal"
+    },
+    {
+     "name": "Porcelain"
+    },
+    {
+     "name": "Glass"
+    },
+    {
+     "name": "Ceramic"
+    },
+    {
+     "name": "Stone"
+    },
+    {
+     "name": "Plastic"
     }
    ]
   }
@@ -805,7 +813,7 @@
         "colspan": 2
        },
        "item": {
-        "cataloguePath": "/shop/electronics/crystall-iz-camera"
+        "cataloguePath": "/shop/electronics/black-camera"
        }
       },
       {
@@ -3704,6 +3712,10 @@
          }
         ]
        },
+       "topics": [
+        "Color/Black",
+        "Material/Wood"
+       ],
        "vatType": "Standard",
        "variants": [
         {
@@ -3812,6 +3824,12 @@
          }
         ]
        },
+       "topics": [
+        "Color/Black",
+        "Color/Brown",
+        "Material/Wood",
+        "Fabric/Leather"
+       ],
        "vatType": "Standard",
        "variants": [
         {
@@ -3908,6 +3926,12 @@
          }
         ]
        },
+       "topics": [
+        "Material/Wood",
+        "Color/White",
+        "Color/Orange",
+        "Fabric/Leather"
+       ],
        "vatType": "Standard",
        "variants": [
         {
@@ -4028,6 +4052,14 @@
          }
         ]
        },
+       "topics": [
+        "Material/Metal",
+        "Material/Wood",
+        "Material/Plastic",
+        "Color/Orange",
+        "Color/Black",
+        "Color/White"
+       ],
        "vatType": "Standard",
        "variants": [
         {
@@ -4124,6 +4156,10 @@
          }
         ]
        },
+       "topics": [
+        "Material/Wood",
+        "Color/Orange"
+       ],
        "vatType": "Standard",
        "variants": [
         {
@@ -4239,6 +4275,10 @@
          }
         ]
        },
+       "topics": [
+        "Color/White",
+        "Material/Wood"
+       ],
        "vatType": "Standard",
        "variants": [
         {
@@ -4252,6 +4292,129 @@
          "images": [
           {
            "src": "https://media.crystallize.com/furniture/21/7/7/13/simple-white-chair.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Red Chair",
+       "shape": "default-product",
+       "components": {
+        "summary": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "A bright and fun design for those who want a more playful style."
+            }
+           ]
+          }
+         ]
+        },
+        "specs": [
+         {
+          "title": "Dimensions",
+          "properties": {
+           "Width": "90 cm",
+           "Height": "112 cm",
+           "Depth": "60 cm"
+          }
+         }
+        ],
+        "description": [
+         {
+          "title": "Red Chair",
+          "body": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a."
+              }
+             ]
+            }
+           ]
+          }
+         }
+        ]
+       },
+       "topics": [
+        "Color/Red"
+       ],
+       "vatType": "Standard",
+       "variants": [
+        {
+         "name": "Red Chair",
+         "sku": "red-chair-1625667067037",
+         "price": 219,
+         "isDefault": true,
+         "attributes": {},
+         "externalReference": null,
+         "stock": 49,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/21/7/7/12/red-chair.jpg",
            "altText": null,
            "caption": null
           }
@@ -4354,6 +4517,9 @@
          }
         ]
        },
+       "topics": [
+        "Color/Red"
+       ],
        "vatType": "Standard",
        "variants": [
         {
@@ -4367,6 +4533,98 @@
          "images": [
           {
            "src": "https://media.crystallize.com/furniture/21/7/7/11/red-lounge-chair.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Funky Yellow Chair",
+       "shape": "default-product",
+       "components": {
+        "summary": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "This funky yellow chair is a unique piece. It has a simple design, but the bright yellow color keeps it from being boring. It gives off a playful and sophisticated vibe."
+            }
+           ]
+          }
+         ]
+        },
+        "specs": [
+         {
+          "title": "Dimensions ",
+          "properties": {
+           "Width": "40cm",
+           "Height": "70cm",
+           "Depth": "40cm"
+          }
+         },
+         {
+          "title": "Materials",
+          "properties": {
+           "Chair": "Recycled Plastic",
+           "Feet": "Stainless Steel"
+          }
+         }
+        ],
+        "description": [
+         {
+          "title": "Funky yellow chair",
+          "body": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "The funky yellow chair has a fun and simple design. It has a sleek shape, but the bright yellow color keeps it from being boring. You can put the chair in any given space."
+              }
+             ]
+            }
+           ]
+          },
+          "images": [
+           {
+            "src": "https://media.crystallize.com/furniture/20/7/21/35/funky-yellow-chair-on-street.jpg",
+            "altText": "Funky yellow chair",
+            "caption": null
+           }
+          ]
+         }
+        ]
+       },
+       "topics": [
+        "Color/Yellow",
+        "Color/Black",
+        "Material/Metal",
+        "Material/Plastic"
+       ],
+       "vatType": "No Tax",
+       "variants": [
+        {
+         "name": "New variation",
+         "sku": "funky-yellow-chair-194763 ",
+         "price": 59,
+         "isDefault": true,
+         "attributes": {},
+         "externalReference": null,
+         "stock": 30,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/20/12/16/1/funky-yellow-chair-on-street.jpg",
            "altText": null,
            "caption": null
           }
@@ -4441,6 +4699,16 @@
          }
         ]
        },
+       "topics": [
+        "Specials/Eco friendly",
+        "Specials/Campaign",
+        "Specials/New arrival",
+        "Color/Black",
+        "Color/Orange",
+        "Material/Metal",
+        "Material/Wood",
+        "Material/Plastic"
+       ],
        "vatType": "No Tax",
        "variants": [
         {
@@ -4454,6 +4722,95 @@
          "images": [
           {
            "src": "https://media.crystallize.com/furniture/21/1/7/1/black-simple-bar-stool.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "The Citrus Chair",
+       "shape": "default-product",
+       "components": {
+        "summary": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "The citrus chair has a bright orange color and simple lines to give a clean, yet bold look."
+            }
+           ]
+          }
+         ]
+        },
+        "specs": [
+         {
+          "title": "Dimensions ",
+          "properties": {
+           "Widt": "50cm",
+           "Height": "80cm",
+           "Depth": "50cm"
+          }
+         },
+         {
+          "title": "Materials",
+          "properties": {
+           "Chair": "Recycled Plastic "
+          }
+         }
+        ],
+        "description": [
+         {
+          "title": "The citrus chair",
+          "body": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "The citrus chair has a clean and bold look. Its shape is sleek, ut the bright orange color makes sure that it doesn’t go unnoticed. It is made out of recycled plastic bottles."
+              }
+             ]
+            }
+           ]
+          },
+          "images": [
+           {
+            "src": "https://media.crystallize.com/furniture/20/7/21/5/sleek-citrus-chair.jpg",
+            "altText": "Bright orange chair",
+            "caption": null
+           }
+          ]
+         }
+        ]
+       },
+       "topics": [
+        "Material/Plastic",
+        "Color/Orange"
+       ],
+       "vatType": "No Tax",
+       "variants": [
+        {
+         "name": null,
+         "sku": "citrus-chair-183829",
+         "price": 59,
+         "isDefault": true,
+         "attributes": {},
+         "externalReference": null,
+         "stock": 39,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/21/1/7/2/sleek-citrus-chair.jpg",
            "altText": null,
            "caption": null
           }
@@ -4526,6 +4883,12 @@
          }
         ]
        },
+       "topics": [
+        "Color/Red",
+        "Color/Black",
+        "Material/Metal",
+        "Material/Wood"
+       ],
        "vatType": "No Tax",
        "variants": [
         {
@@ -4603,8 +4966,20 @@
            ]
           }
          }
-        ]
+        ],
+        "featured": {
+         "featured-grid": [
+          {
+           "name": "Furniture grid"
+          }
+         ]
+        }
        },
+       "topics": [
+        "Fabric/Leather",
+        "Color/Green/Light Green",
+        "Material/Wood"
+       ],
        "vatType": "No Tax",
        "variants": [
         {
@@ -4618,6 +4993,339 @@
          "images": [
           {
            "src": "https://media.crystallize.com/furniture/20/3/9/9/dennis-cortes-_veirrxwpoq-unsplash.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Bubblegum Lounge Chair",
+       "shape": "default-product",
+       "components": {
+        "summary": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "This is a playful and comfortable chair. it is made by a Scandinavian designer."
+            }
+           ]
+          }
+         ]
+        },
+        "specs": [
+         {
+          "title": "Dimensions ",
+          "properties": {
+           "Width": "60cm",
+           "Height": "50cm",
+           "Depth": "60cm"
+          }
+         },
+         {
+          "title": "Materials",
+          "properties": {
+           "Fabric": "Merino Wool",
+           "Chair legs": "Wood"
+          }
+         }
+        ],
+        "description": [
+         {
+          "title": "Bubblegum lounge chair",
+          "body": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "The bubblegum lounge chair is a playful and fun chair. it is comfortable to sit in."
+              }
+             ]
+            }
+           ]
+          },
+          "images": [
+           {
+            "src": "https://media.crystallize.com/furniture/20/6/15/3/bubblegum-lounge-chair-with-balloons.jpg",
+            "altText": "A pink lounge chair with blue balloons in background",
+            "caption": null
+           }
+          ]
+         }
+        ]
+       },
+       "topics": [
+        "Color/Black",
+        "Color/Red/Pink",
+        "Material/Wood"
+       ],
+       "vatType": "No Tax",
+       "variants": [
+        {
+         "name": "New variation",
+         "sku": "bubblegum-lounge-62074",
+         "price": 189,
+         "isDefault": true,
+         "attributes": {},
+         "externalReference": null,
+         "stock": 67,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/21/1/7/4/bubblegum-lounge-chair-with-balloons.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Vibrant Office Chair",
+       "shape": "default-product",
+       "components": {
+        "summary": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "A beautiful wool chair that comes in multiple vibrant colours."
+            }
+           ]
+          }
+         ]
+        },
+        "specs": [
+         {
+          "title": "Dimensions ",
+          "properties": {
+           "Widt": "60cm",
+           "Height": "120cm",
+           "Depth": "60cm"
+          }
+         },
+         {
+          "title": "Materials",
+          "properties": {
+           "Fabric": "Wool",
+           "The Foot": "Stainless Steel"
+          }
+         }
+        ],
+        "description": [
+         {
+          "title": "The Vibrant Office Chair",
+          "body": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "The Vibrant Office Chair is the perfect piece of furniture if you are looking for something that will give your space a pop of colour and personality. The office chair is a centrepiece itself and can be put into any space. It works great both at home, at your work office or in a waiting room just to mention a few examples. The Vibrant Office Chair is for anyone and everyone who just wants to express themselves or their workplace. "
+              }
+             ]
+            }
+           ]
+          },
+          "images": [
+           {
+            "src": "https://media.crystallize.com/furniture/20/6/11/13/vibrant-office-chair.jpg",
+            "altText": null,
+            "caption": null
+           },
+           {
+            "src": "https://media.crystallize.com/furniture/20/6/11/14/vibrant-office-chair-closeup.jpg",
+            "altText": null,
+            "caption": null
+           }
+          ]
+         }
+        ]
+       },
+       "topics": [
+        "Color/Blue",
+        "Color/Black",
+        "Color/Red/Violet",
+        "Color/Gray"
+       ],
+       "vatType": "No Tax",
+       "variants": [
+        {
+         "name": "Pacific Blue",
+         "sku": "vibrant-office-chair-pacific-blue-159",
+         "price": 989,
+         "isDefault": true,
+         "attributes": {},
+         "externalReference": null,
+         "stock": 178,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/21/1/7/5/vibrant-office-chair.jpg",
+           "altText": null,
+           "caption": null
+          },
+          {
+           "src": "https://media.crystallize.com/furniture/20/6/12/42/vibrant-office-chair-pacific-blue.png",
+           "altText": "A blue office chair",
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "Red Violet",
+         "sku": "vibrant-office-chair-red-violet-158",
+         "price": 989,
+         "isDefault": false,
+         "attributes": {},
+         "externalReference": null,
+         "stock": 124,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/20/6/11/15/vibrant-office-chair-red-violet.png",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "Dust",
+         "sku": "vibrant-office-chair-dust-157",
+         "price": 989,
+         "isDefault": false,
+         "attributes": {},
+         "externalReference": null,
+         "stock": 249,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/20/6/11/16/vibrant-office-chair-dust.png",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Red Bar Stool",
+       "shape": "default-product",
+       "components": {
+        "summary": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "The red bar stool comes in a vibrant red color and has a sleek design."
+            }
+           ]
+          }
+         ]
+        },
+        "specs": [
+         {
+          "title": "Dimensions ",
+          "properties": {
+           "Width": "50cm",
+           "Height": "70cm",
+           "Depth": "50cm"
+          }
+         },
+         {
+          "title": "Materials",
+          "properties": {
+           "Body": "Recycled Plastic",
+           "Chair legs": "Stainless steel"
+          }
+         }
+        ],
+        "description": [
+         {
+          "title": "Red bar stool",
+          "body": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "The red bar stool is designed by a famous Norwegian designer called Pål Løvfalli. He is known for his minimal, but practical designs. This sleek chair will work great in any given space. You can use it in your kitchen or in a bar. Either way, the bright red color will certainly give your space a pop of color."
+              }
+             ]
+            }
+           ]
+          },
+          "images": [
+           {
+            "src": "https://media.crystallize.com/furniture/20/6/17/2/red-bar-stool.jpg",
+            "altText": null,
+            "caption": null
+           }
+          ]
+         }
+        ]
+       },
+       "topics": [
+        "Color/Red",
+        "Color/Black",
+        "Material/Plastic",
+        "Material/Metal"
+       ],
+       "vatType": "No Tax",
+       "variants": [
+        {
+         "name": "New variation",
+         "sku": "red-stool",
+         "price": 78,
+         "isDefault": true,
+         "attributes": {},
+         "externalReference": null,
+         "stock": 10,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/20/6/17/3/bright-red-bar-stool.png",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": null,
+         "sku": "a-unique-sku-1603280870180",
+         "price": 78,
+         "isDefault": false,
+         "attributes": {},
+         "externalReference": null,
+         "stock": 10,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/20/6/17/3/bright-red-bar-stool.png",
            "altText": null,
            "caption": null
           }
@@ -4720,6 +5428,11 @@
          }
         ]
        },
+       "topics": [
+        "Color/Green/Dark Green",
+        "Material/Wood",
+        "Color/Orange"
+       ],
        "vatType": "Standard",
        "variants": [
         {
@@ -4807,6 +5520,11 @@
         },
         "description": []
        },
+       "topics": [
+        "Color/Gray",
+        "Color/Orange",
+        "Material/Wood"
+       ],
        "vatType": "No Tax",
        "variants": [
         {
@@ -10083,7 +10801,7 @@
       "content": {
        "items": [
         {
-         "cataloguePath": "/shop/electronics/crystall-iz-camera"
+         "cataloguePath": "/shop/electronics/black-camera"
         }
        ]
       }
@@ -10216,7 +10934,7 @@
       },
       "items": [
        {
-        "cataloguePath": "/shop/electronics/crystall-iz-camera"
+        "cataloguePath": "/shop/electronics/black-camera"
        }
       ]
      }
@@ -10304,7 +11022,13 @@
         "cataloguePath": "/shop/chairs/minimalistic-chair"
        },
        {
+        "cataloguePath": "/shop/chairs/funky-yellow-chair"
+       },
+       {
         "cataloguePath": "/shop/sofas/arbour-eco"
+       },
+       {
+        "cataloguePath": "/shop/chairs/bubblegum-lounge-chair"
        }
       ]
      }
