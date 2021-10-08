@@ -1,3 +1,10 @@
+## [3.20.1-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.0...v3.20.1-beta.1) (2021-10-08)
+
+
+### Bug Fixes
+
+* update deps ([ee5a5a4](https://github.com/CrystallizeAPI/crystallize-cli/commit/ee5a5a4266df6492be753bdc94e203c1d322b295))
+
 # [3.20.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.19.1...v3.20.0) (2021-07-15)
 
 
