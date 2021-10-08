@@ -25,16 +25,16 @@ jobs:
         uses: actions/cache@v2
         with:
           path: node_modules
-          key: nodeModules-${{ hashFiles('**/yarn.lock') }}
+          key: nodeModules-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             nodeModules-
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: npm ci
         env:
           CI: true
 
       - name: Lint
-        run: yarn lint
+        run: npm run lint
         env:
           CI: true
 
