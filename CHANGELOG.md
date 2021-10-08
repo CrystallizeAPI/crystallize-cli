@@ -1,3 +1,10 @@
+## [3.20.1-beta.3](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.2...v3.20.1-beta.3) (2021-10-08)
+
+
+### Bug Fixes
+
+* use npm in ci ([8cf78c7](https://github.com/CrystallizeAPI/crystallize-cli/commit/8cf78c7614f314fa53a58d3d75b5285b16aee69f))
+
 ## [3.20.1-beta.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.1...v3.20.1-beta.2) (2021-10-08)
 
 
