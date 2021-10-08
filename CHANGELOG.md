@@ -1,3 +1,10 @@
+## [3.20.1-beta.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.1...v3.20.1-beta.2) (2021-10-08)
+
+
+### Bug Fixes
+
+* latest compatible react version ([e4709ff](https://github.com/CrystallizeAPI/crystallize-cli/commit/e4709ffd288aaf11f94b3ab36d2ddbb85a79d8cc))
+
 ## [3.20.1-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.0...v3.20.1-beta.1) (2021-10-08)
 
 
