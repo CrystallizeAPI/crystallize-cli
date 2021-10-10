@@ -1,6 +1,6 @@
 {
   "name": "@crystallize/cli",
-  "version": "3.20.0",
+  "version": "3.20.1-beta.10",
   "license": "MIT",
   "engines": {
     "node": ">=12"
@@ -54,25 +54,24 @@
     ]
   },
   "dependencies": {
-    "@crystallize/import-utilities": "^0.23.0",
+    "@crystallize/import-utilities": "^0.39.0",
     "conf": "^10.0.1",
     "fs-extra": "^9.0.1",
     "gittar": "^0.1.1",
-    "immer": "^8.0.1",
+    "immer": "^9.0.6",
     "import-jsx": "^4.0.0",
-    "ink": "^3.0.8",
+    "ink": "^3.2.0",
     "ink-link": "^2.0.0",
-    "ink-text-input": "^4.0.1",
     "meow": "^7.1.1",
     "node-fetch": "^2.6.1",
     "os": "^0.1.1",
-    "react": "^16.13.1"
+    "react": "^17.0.2"
   },
   "devDependencies": {
     "@ava/babel": "^1.0.1",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4",
-    "@babel/register": "^7.11.5",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/register": "^7.15.3",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@semantic-release/changelog": "^5.0.1",
@@ -81,11 +80,11 @@
     "@semantic-release/npm": "^7.0.6",
     "@semantic-release/release-notes-generator": "^9.0.1",
     "ava": "^3.12.1",
-    "chalk": "^4.1.0",
+    "chalk": "^4.1.2",
     "eslint": "^7.9.0",
     "eslint-config-xo-react": "^0.23.0",
     "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-react-hooks": "^4.1.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^4.3.0",
     "ink-testing-library": "^2.0.1",
     "standard-version": "^9.0.0",

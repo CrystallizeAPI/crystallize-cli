@@ -1,3 +1,73 @@
+## [3.20.1-beta.10](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.9...v3.20.1-beta.10) (2021-10-10)
+
+
+### Bug Fixes
+
+* use own module ([e215f34](https://github.com/CrystallizeAPI/crystallize-cli/commit/e215f34d0880f81b0a830e77fdbf55abe44ed494))
+
+## [3.20.1-beta.9](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.8...v3.20.1-beta.9) (2021-10-10)
+
+
+### Bug Fixes
+
+* use gh package ([2fc9ccd](https://github.com/CrystallizeAPI/crystallize-cli/commit/2fc9ccd3b4340cae471130fd322406e33bab06db))
+
+## [3.20.1-beta.8](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.7...v3.20.1-beta.8) (2021-10-10)
+
+
+### Bug Fixes
+
+* import ([36677ef](https://github.com/CrystallizeAPI/crystallize-cli/commit/36677ef63400fea93b9ef9e08d49ca9128045367))
+
+## [3.20.1-beta.7](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.6...v3.20.1-beta.7) (2021-10-10)
+
+
+### Bug Fixes
+
+* import jsx ([9e5d8ee](https://github.com/CrystallizeAPI/crystallize-cli/commit/9e5d8eea57da595c9b26d45d6d8547eaf6c06c93))
+
+## [3.20.1-beta.6](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.5...v3.20.1-beta.6) (2021-10-10)
+
+
+### Bug Fixes
+
+* pull in ink-text-input ([b18665d](https://github.com/CrystallizeAPI/crystallize-cli/commit/b18665df9e6b004b6009343d433f2f04925bf00e))
+
+## [3.20.1-beta.5](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.4...v3.20.1-beta.5) (2021-10-10)
+
+
+### Bug Fixes
+
+* use forked ink-text-input ([01c5ad2](https://github.com/CrystallizeAPI/crystallize-cli/commit/01c5ad2ee4ba18cd3961607da804f8966d6d05b8))
+
+## [3.20.1-beta.4](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.3...v3.20.1-beta.4) (2021-10-08)
+
+
+### Bug Fixes
+
+* node 16 in ci ([bc8a4c2](https://github.com/CrystallizeAPI/crystallize-cli/commit/bc8a4c2c0b8ddd8395998e36911982a50b9393a1))
+
+## [3.20.1-beta.3](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.2...v3.20.1-beta.3) (2021-10-08)
+
+
+### Bug Fixes
+
+* use npm in ci ([8cf78c7](https://github.com/CrystallizeAPI/crystallize-cli/commit/8cf78c7614f314fa53a58d3d75b5285b16aee69f))
+
+## [3.20.1-beta.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.1...v3.20.1-beta.2) (2021-10-08)
+
+
+### Bug Fixes
+
+* latest compatible react version ([e4709ff](https://github.com/CrystallizeAPI/crystallize-cli/commit/e4709ffd288aaf11f94b3ab36d2ddbb85a79d8cc))
+
+## [3.20.1-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.0...v3.20.1-beta.1) (2021-10-08)
+
+
+### Bug Fixes
+
+* update deps ([ee5a5a4](https://github.com/CrystallizeAPI/crystallize-cli/commit/ee5a5a4266df6492be753bdc94e203c1d322b295))
+
 # [3.20.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.19.1...v3.20.0) (2021-07-15)
 
 
