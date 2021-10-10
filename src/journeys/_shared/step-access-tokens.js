@@ -4,8 +4,8 @@
 const React = require('react');
 const importJsx = require('import-jsx');
 const { Text, Newline, Box } = require('ink');
-const { UncontrolledTextInput } = require('ink-text-input');
 
+const { UncontrolledTextInput } = importJsx('../../ui-modules/ink-text-input');
 const Select = importJsx('../../ui-modules/select');
 const { config, CONF_ACCESS_TOKENS } = require('../../config');
 const { createAPICaller } = require('../../cli-utils/fetch-from-crystallize');
