@@ -1,3 +1,10 @@
+## [3.20.1-beta.7](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.6...v3.20.1-beta.7) (2021-10-10)
+
+
+### Bug Fixes
+
+* import jsx ([9e5d8ee](https://github.com/CrystallizeAPI/crystallize-cli/commit/9e5d8eea57da595c9b26d45d6d8547eaf6c06c93))
+
 ## [3.20.1-beta.6](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.5...v3.20.1-beta.6) (2021-10-10)
 
 
