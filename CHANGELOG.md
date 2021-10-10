@@ -1,3 +1,10 @@
+## [3.20.1-beta.10](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.9...v3.20.1-beta.10) (2021-10-10)
+
+
+### Bug Fixes
+
+* use own module ([e215f34](https://github.com/CrystallizeAPI/crystallize-cli/commit/e215f34d0880f81b0a830e77fdbf55abe44ed494))
+
 ## [3.20.1-beta.9](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.8...v3.20.1-beta.9) (2021-10-10)
 
 
