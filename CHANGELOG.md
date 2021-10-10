@@ -1,3 +1,10 @@
+## [3.20.1-beta.9](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.8...v3.20.1-beta.9) (2021-10-10)
+
+
+### Bug Fixes
+
+* use gh package ([2fc9ccd](https://github.com/CrystallizeAPI/crystallize-cli/commit/2fc9ccd3b4340cae471130fd322406e33bab06db))
+
 ## [3.20.1-beta.8](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.7...v3.20.1-beta.8) (2021-10-10)
 
 
