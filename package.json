@@ -1,6 +1,6 @@
 {
   "name": "@crystallize/cli",
-  "version": "3.20.1-beta.7",
+  "version": "3.20.1-beta.8",
   "license": "MIT",
   "engines": {
     "node": ">=12"

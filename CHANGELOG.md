@@ -1,3 +1,10 @@
+## [3.20.1-beta.8](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.7...v3.20.1-beta.8) (2021-10-10)
+
+
+### Bug Fixes
+
+* import ([36677ef](https://github.com/CrystallizeAPI/crystallize-cli/commit/36677ef63400fea93b9ef9e08d49ca9128045367))
+
 ## [3.20.1-beta.7](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.6...v3.20.1-beta.7) (2021-10-10)
 
 
