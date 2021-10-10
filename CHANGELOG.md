@@ -1,3 +1,10 @@
+## [3.20.1-beta.5](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.4...v3.20.1-beta.5) (2021-10-10)
+
+
+### Bug Fixes
+
+* use forked ink-text-input ([01c5ad2](https://github.com/CrystallizeAPI/crystallize-cli/commit/01c5ad2ee4ba18cd3961607da804f8966d6d05b8))
+
 ## [3.20.1-beta.4](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.3...v3.20.1-beta.4) (2021-10-08)
 
 
