@@ -1,3 +1,10 @@
+## [3.20.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.0...v3.20.1) (2021-10-10)
+
+
+### Bug Fixes
+
+* support for node 16 ([f47a134](https://github.com/CrystallizeAPI/crystallize-cli/commit/f47a134a0eb71337976a9037d76f4102ce781100))
+
 ## [3.20.1-beta.10](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.9...v3.20.1-beta.10) (2021-10-10)
 
 
