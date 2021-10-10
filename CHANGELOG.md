@@ -1,3 +1,10 @@
+## [3.20.1-beta.6](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.5...v3.20.1-beta.6) (2021-10-10)
+
+
+### Bug Fixes
+
+* pull in ink-text-input ([b18665d](https://github.com/CrystallizeAPI/crystallize-cli/commit/b18665df9e6b004b6009343d433f2f04925bf00e))
+
 ## [3.20.1-beta.5](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1-beta.4...v3.20.1-beta.5) (2021-10-10)
 
 
