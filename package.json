@@ -62,6 +62,7 @@
     "import-jsx": "^4.0.0",
     "ink": "^3.2.0",
     "ink-link": "^2.0.0",
+    "ink-text-input": "github:hakonkrogh/ink-text-input",
     "meow": "^7.1.1",
     "node-fetch": "^2.6.1",
     "os": "^0.1.1",

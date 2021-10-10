@@ -4,8 +4,8 @@
 const React = require('react');
 const importJsx = require('import-jsx');
 const { Text, Box, Newline } = require('ink');
+const { UncontrolledTextInput } = require('ink-text-input');
 
-const { UncontrolledTextInput } = importJsx('../ui-modules/ink-text-input');
 const Select = importJsx('../ui-modules/select');
 
 function GetMultilingual({ onChange }) {
