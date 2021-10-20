@@ -1,3 +1,10 @@
+# [3.21.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1...v3.21.0) (2021-10-20)
+
+
+### Features
+
+* new welcome title ([8829368](https://github.com/CrystallizeAPI/crystallize-cli/commit/882936876771a3feab3e136537f348c5573fbc5a))
+
 ## [3.20.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.0...v3.20.1) (2021-10-10)
 
 
