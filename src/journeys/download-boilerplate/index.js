@@ -13,7 +13,9 @@ const baseAnswers = {
 const welcomeMessage = (
 	<>
 		<Text>
-			<Text underline>Crystallize Headless PIM</Text>
+			<Text underline>
+				Crystallize - headless commerce for product storytellers
+			</Text>
 			<Newline />
 			<Text>Hi you, let's make something awesome!</Text>
 		</Text>
