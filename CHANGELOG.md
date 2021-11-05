@@ -1,3 +1,10 @@
+# [3.23.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.22.0...v3.23.0) (2021-11-05)
+
+
+### Features
+
+* remove boilerplate topbar for content and commerce ([92fb6d7](https://github.com/CrystallizeAPI/crystallize-cli/commit/92fb6d7cf55bd83f449d70d37e7a1f2e82a2c5e0))
+
 # [3.22.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.21.0...v3.22.0) (2021-11-05)
 
 
