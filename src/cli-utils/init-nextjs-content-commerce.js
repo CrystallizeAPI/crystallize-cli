@@ -26,6 +26,19 @@ function initNextJSContentCommerce({ answers, projectPath }) {
 # Next build output
 .next`
 	);
+
+	// Remove boilerplate toolbar
+	const appPath = path.resolve(projectPath, 'src/pages/_app.js');
+	const _app = fs.readFileSync(appPath, 'utf-8');
+	const firstParts = _app.split('{/*crystallize-boilerplates-topbar-start*/}');
+
+	// Check for presence of the code
+	if (firstParts.length > 1) {
+		const secondParts = firstParts[1].split(
+			'{/*crystallize-boilerplates-topbar-end*/}'
+		);
+		fs.writeFileSync(appPath, firstParts[0] + secondParts[1]);
+	}
 }
 
 module.exports = initNextJSContentCommerce;
