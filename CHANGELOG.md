@@ -1,3 +1,10 @@
+# [3.22.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.21.0...v3.22.0) (2021-11-05)
+
+
+### Features
+
+* remove boilerplate toolbar for nextjs ([97e0587](https://github.com/CrystallizeAPI/crystallize-cli/commit/97e058769b2e05f3a07fccb79112c8c7114b0f33))
+
 # [3.21.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.20.1...v3.21.0) (2021-10-20)
 
 
