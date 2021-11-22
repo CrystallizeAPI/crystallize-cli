@@ -2,5 +2,5 @@
 'use strict';
 
 module.exports = {
-	highlightColor: '#f47f98',
+	highlightColor: '#FFBD54',
 };
