@@ -1,3 +1,10 @@
+# [3.24.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.23.1...v3.24.0) (2021-11-22)
+
+
+### Features
+
+* new highlight color ([f3827ba](https://github.com/CrystallizeAPI/crystallize-cli/commit/f3827ba36094f95e298915979af589b653732365))
+
 ## [3.23.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.23.0...v3.23.1) (2021-11-05)
 
 
