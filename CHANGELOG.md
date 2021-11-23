@@ -1,3 +1,10 @@
+## [3.24.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.24.0...v3.24.1) (2021-11-23)
+
+
+### Bug Fixes
+
+* use ink-text-input module ([703cfc5](https://github.com/CrystallizeAPI/crystallize-cli/commit/703cfc56648d81b2a69cdfd1e73f5307ce1bd5a6))
+
 # [3.24.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.23.1...v3.24.0) (2021-11-22)
 
 
