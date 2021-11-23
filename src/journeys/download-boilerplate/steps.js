@@ -4,8 +4,8 @@
 const React = require('react');
 const { Text, Newline, Box } = require('ink');
 const importJsx = require('import-jsx');
+const { UncontrolledTextInput } = require('ink-text-input');
 
-const { UncontrolledTextInput } = importJsx('../../ui-modules/ink-text-input');
 const { highlightColor } = require('../../shared');
 
 const { DownloadProject } = importJsx('../../cli-utils/download-project');
