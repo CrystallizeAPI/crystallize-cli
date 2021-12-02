@@ -89,7 +89,7 @@ const welcomeMessage = (
 				Crystallize - headless commerce for product storytellers
 			</Text>
 			<Newline />
-			<Text>Let's bootstrap a tenant (BETA)</Text>
+			<Text>Let's bootstrap a tenant</Text>
 		</Text>
 		<BootstrapWarning />
 	</Box>
