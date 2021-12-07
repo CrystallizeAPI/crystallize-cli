@@ -1,3 +1,10 @@
+## [3.27.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.27.0...v3.27.1) (2021-12-07)
+
+
+### Bug Fixes
+
+* remove trailing api path for sub. comm ([436c7a0](https://github.com/CrystallizeAPI/crystallize-cli/commit/436c7a064e04e7ee42a7e198d8718728a739b4b5))
+
 # [3.27.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.26.0...v3.27.0) (2021-12-07)
 
 
