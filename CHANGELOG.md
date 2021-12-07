@@ -1,3 +1,10 @@
+## [3.27.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.27.1...v3.27.2) (2021-12-07)
+
+
+### Bug Fixes
+
+* use normal spacing ([97d3fb6](https://github.com/CrystallizeAPI/crystallize-cli/commit/97d3fb6bc92589da0e978e9852eb0019a847a14a))
+
 ## [3.27.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.27.0...v3.27.1) (2021-12-07)
 
 
