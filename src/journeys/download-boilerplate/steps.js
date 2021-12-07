@@ -580,7 +580,7 @@ const steps = [
 									<Text>Website</Text>
 									<Newline />
 									<Text color={highlightColor}>
-										cd ./{projectName}/website &amp;&amp;&nbsp;
+										cd ./{projectName}/website &amp;&amp;{' '}
 									</Text>
 									<NodeStartCommand shouldUseYarn={shouldUseYarn} />
 									<Newline />
@@ -588,7 +588,7 @@ const steps = [
 									<Text>Service API</Text>
 									<Newline />
 									<Text color={highlightColor}>
-										cd ./{projectName}/service-api &amp;&amp;&nbsp;
+										cd ./{projectName}/service-api &amp;&amp;{' '}
 									</Text>
 									<NodeStartCommand shouldUseYarn={shouldUseYarn} />
 									<Newline />
