@@ -9,8 +9,7 @@ function initNextJSSubscriptionCommerce({ answers, projectPath }) {
 	// Update website .env file
 	const envVarsWebsite = {
 		NEXT_PUBLIC_CRYSTALLIZE_TENANT_IDENTIFIER: answers.tenant,
-		NEXT_PUBLIC_SERVICE_API_URL:
-			'https://api.photofinder.superfast.shop/api/graphql',
+		NEXT_PUBLIC_SERVICE_API_URL: 'https://api.photofinder.superfast.shop',
 	};
 	fs.writeFileSync(
 		path.resolve(projectPath, 'website/.env'),
