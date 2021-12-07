@@ -1,3 +1,10 @@
+# [3.25.0-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.24.1...v3.25.0-beta.1) (2021-12-02)
+
+
+### Features
+
+* add photofinder spec ([670c759](https://github.com/CrystallizeAPI/crystallize-cli/commit/670c759e516c4e08244ffd8afdb9901943ca2164))
+
 ## [3.24.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.24.0...v3.24.1) (2021-11-23)
 
 

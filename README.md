@@ -26,7 +26,7 @@ template and preferences you want to use.
 npx @crystallize/cli --help
 ```
 
-### Bootstrapping a tenant (BETA)
+### Bootstrapping a tenant
 
 ```sh
 npx @crystallize/cli --bootstrap-tenant

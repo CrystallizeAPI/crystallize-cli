@@ -24,15 +24,9 @@ function getFullSpec(tenantIdentifier) {
 
   bootstrapper.setTenantIdentifier(tenantIdentifier);
 
-  return bootstrapper.createSpec({
-    grids: true,
-    items: true,
-    languages: true,
-    priceVariants: true,
-    shapes: true,
-    topicMaps: true,
-    vatTypes: true,
-  });
+  console.log('⏳ Getting the full spec for ' + tenantIdentifier);
+
+  return bootstrapper.createSpec();
 }
 
 function removeItemCataloguePath(item) {
@@ -88,8 +82,24 @@ async function voyage() {
   console.log(`✔ voyage done`);
 }
 
+async function photofinder() {
+  const spec = await getFullSpec('hkn-subscriptions');
+
+  // Remove references as we do not want to update existing items
+  spec.items.forEach(removeItemCataloguePath);
+
+  writeFileSync(
+    resolve(__dirname, `./src/journeys/_shared/specs/photofinder.json`),
+    JSON.stringify(spec, null, 1),
+    'utf-8'
+  );
+
+  console.log(`✔ photofinder done`);
+}
+
 (async function createSpecs() {
   await furniture();
   await voyage();
+  await photofinder();
   process.exit(0);
 })();

@@ -80,7 +80,7 @@ function BootstrapWarning() {
 				- Alter your tenant
 				<Newline />
 				- Use your bandwidth to upload data
-				<Newline />- Use the API count metric for your tenant
+				<Newline />- Use the API count and bandwidth metrics for your tenant
 			</Text>
 		</Box>
 	);
@@ -163,9 +163,12 @@ const askIfBootstrapTenant = {
 			<>
 				<Box flexDirection="column">
 					<Text>
-						Would you like to bootstrap your tenant with example data? (BETA)
+						Would you like to bootstrap your tenant with example data?
 						<Newline />
-						<Text dimColor>This would add shapes, items, topics and more</Text>
+						<Text dimColor>
+							This would populate your tenant with shapes, items, topics and
+							more
+						</Text>
 					</Text>
 					<BootstrapWarning />
 					<Select
@@ -211,8 +214,8 @@ const stepsBootstrapExampleTenant = [
 											<Text>
 												furniture
 												<Newline />
-												A few different kinds of products. Some stories to go
-												along with it in multiple languages.
+												Retail commerce, with different kinds of products. Some
+												stories to go along with it in multiple languages.
 												<Newline />
 												<Text dimColor>
 													Example implementation:
@@ -229,10 +232,29 @@ const stepsBootstrapExampleTenant = [
 											<Text>
 												voyage
 												<Newline />
-												Content heavy tenant with a story driven ecommerce
+												Content heavy with a story driven ecommerce
 												<Newline />
 												<Text dimColor>
 													Example implementation: https://voyage.superfast.shop
+												</Text>
+											</Text>
+										</>
+									),
+								},
+								{
+									value: 'photofinder',
+									render: (
+										<>
+											<Text>
+												photofinder
+												<Newline />
+												Software As A Service (SAAS), giving access to digital
+												photographs. Perfectly matched to work with the SAAS
+												boilerplate.
+												<Newline />
+												<Text dimColor>
+													Example implementation:
+													https://photofinder.superfast.shop
 												</Text>
 											</Text>
 										</>
