@@ -1,3 +1,11 @@
+# [3.27.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.26.0...v3.27.0) (2021-12-07)
+
+
+### Features
+
+* automatic choose tenant based on boilerplate ([46dd545](https://github.com/CrystallizeAPI/crystallize-cli/commit/46dd545caa056366d004039fd58d45557009b693))
+* use proper source for photofinder ([65d84e2](https://github.com/CrystallizeAPI/crystallize-cli/commit/65d84e2ec10f85668ebbce8e2cc2a587f4842614))
+
 # [3.26.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.25.0...v3.26.0) (2021-12-07)
 
 
