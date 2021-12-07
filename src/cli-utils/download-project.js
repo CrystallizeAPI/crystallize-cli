@@ -14,6 +14,7 @@ const repos = {
 	'React Native': 'crystallize-react-native-boilerplate#main',
 	'Service API - Backend for any of the frontends':
 		'service-api-boilerplate#main',
+	'Next.js - Subscription Commerce': 'crystallize-saas-boilerplate#main',
 };
 
 function DownloadProject({
@@ -31,14 +32,15 @@ function DownloadProject({
 				.fetch(repo, {
 					force: true,
 				})
-				.then((a) => {
+				.then(async (a) => {
 					if (flags.info) {
 						console.log(a);
 					}
 
-					gittar.extract(repo, projectPath);
+					await gittar.extract(repo, projectPath);
 
-					setTimeout(resolveStep, 2000);
+					// Why a timeout here? And why was it 2000ms?
+					setTimeout(resolveStep, 100);
 				});
 		}
 	}, [answers.boilerplate, flags.info, projectName, projectPath, resolveStep]);

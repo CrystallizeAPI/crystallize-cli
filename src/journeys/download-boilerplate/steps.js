@@ -98,6 +98,26 @@ const steps = [
 								),
 							},
 							{
+								value: 'nextjs-subscription-commerce',
+								label: 'Next.js - Subscription Commerce',
+								render: (
+									<>
+										<Text>Next.js - Subscription Commerce</Text>
+										<Newline />
+										<Text dimColor>React, SSG</Text>
+										<Newline />
+										<Text dimColor>
+											Software As A Service boilerplate, providing access to
+											digital photos.
+										</Text>
+										<Newline />
+										<Text dimColor>
+											Demo: https://photofinder.superfast.shop/
+										</Text>
+									</>
+								),
+							},
+							{
 								value: 'gatsby',
 								label: 'Gatsby',
 								render: (
@@ -171,6 +191,8 @@ const steps = [
 
 			if (answer.value === 'nextjs-content-commerce') {
 				answers.defaultTenant = 'voyage';
+			} else if (answer.value === 'nextjs-subscription-commerce') {
+				answers.defaultTenant = 'photofinder';
 			}
 		},
 		staticMessage(props) {

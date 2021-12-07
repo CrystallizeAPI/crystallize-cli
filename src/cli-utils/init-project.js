@@ -97,27 +97,29 @@ function InitProject(props) {
 			fs.removeSync(path.resolve('yarn.lock'));
 
 			// Update the package.json with proper name
-			const oldPackageJson = JSON.parse(
-				fs.readFileSync(path.resolve('package.json'), 'utf-8')
-			);
+			if (!answers['nextjs-subscription-commerce']) {
+				const oldPackageJson = JSON.parse(
+					fs.readFileSync(path.resolve('package.json'), 'utf-8')
+				);
 
-			if (answers['service-api']) {
-				delete oldPackageJson.scripts['dev:boilerplate'];
+				if (answers['service-api']) {
+					delete oldPackageJson.scripts['dev:boilerplate'];
+				}
+
+				fs.writeFileSync(
+					path.resolve(projectPath, 'package.json'),
+					JSON.stringify(
+						{
+							...oldPackageJson,
+							name: projectName,
+							version: '1.0.0',
+							private: true,
+						},
+						null,
+						2
+					) + os.EOL
+				);
 			}
-
-			fs.writeFileSync(
-				path.resolve(projectPath, 'package.json'),
-				JSON.stringify(
-					{
-						...oldPackageJson,
-						name: projectName,
-						version: '1.0.0',
-						private: true,
-					},
-					null,
-					2
-				) + os.EOL
-			);
 
 			if (answers.nextjs) {
 				await require('./init-nextjs')(props);
@@ -129,21 +131,31 @@ function InitProject(props) {
 				await require('./init-nuxtjs')(props);
 			} else if (answers.rn) {
 				await require('./init-rn')(props);
+			} else if (answers['nextjs-subscription-commerce']) {
+				await require('./init-nextjs-subscription-commerce')(props);
 			}
 
-			exec(
-				shouldUseYarn ? 'yarnpkg install' : 'npm install',
-				{
-					stdio: flags.info ? 'inherit' : 'ignore',
-				},
-				async function (err) {
-					if (err) {
-						process.exit(1);
-					}
+			if (answers['nextjs-subscription-commerce']) {
+				/**
+				 * For now; let's not install the dependencies for both the repos,
+				 * as that would take a long time to do
+				 */
+				onDone();
+			} else {
+				exec(
+					shouldUseYarn ? 'yarnpkg install' : 'npm install',
+					{
+						stdio: flags.info ? 'inherit' : 'ignore',
+					},
+					async function (err) {
+						if (err) {
+							process.exit(1);
+						}
 
-					onDone();
-				}
-			);
+						onDone();
+					}
+				);
+			}
 		}
 		go();
 	});
