@@ -1,3 +1,10 @@
+# [3.26.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.25.0...v3.26.0) (2021-12-07)
+
+
+### Features
+
+* add subscription commerce boilerplate ([f36d67c](https://github.com/CrystallizeAPI/crystallize-cli/commit/f36d67ce291d1389ef33995b5e5cf03ba4ee1571))
+
 # [3.25.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.24.1...v3.25.0) (2021-12-07)
 
 
