@@ -40,7 +40,8 @@ function DownloadProject({
 					await gittar.extract(repo, projectPath);
 
 					// Why a timeout here? And why was it 2000ms?
-					setTimeout(resolveStep, 100);
+					// setTimeout(resolveStep, 2000);
+					resolveStep();
 				});
 		}
 	}, [answers.boilerplate, flags.info, projectName, projectPath, resolveStep]);

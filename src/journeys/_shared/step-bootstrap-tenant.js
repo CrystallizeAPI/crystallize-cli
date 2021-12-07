@@ -191,6 +191,22 @@ const askIfBootstrapTenant = {
 	},
 	answer({ answers, answer }) {
 		answers.bootstrapTenant = answer;
+
+		// Automatically pick the correct tenant based on the boilerplate
+		switch (answers.boilerplate) {
+			case 'Next.js': {
+				answers.bootstrapTenant = 'furniture';
+				break;
+			}
+			case 'Next.js - Content and commerce': {
+				answers.bootstrapTenant = 'voyage';
+				break;
+			}
+			case 'Next.js - Subscription Commerce': {
+				answers.bootstrapTenant = 'photofinder';
+				break;
+			}
+		}
 	},
 };
 

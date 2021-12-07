@@ -18,6 +18,14 @@ const { stepBootstrapTenant, RunBootstrapper } = importJsx(
 	'../_shared/step-bootstrap-tenant.js'
 );
 
+function NodeStartCommand({ shouldUseYarn }) {
+	return (
+		<Text color={highlightColor}>
+			{shouldUseYarn ? 'yarn dev' : 'npm run dev'}
+		</Text>
+	);
+}
+
 function InstallDepsAndBootstrap(props) {
 	const [initDone, setInitDone] = React.useState(false);
 	const [bootstrappingDone, setBootstrappingDone] = React.useState(
@@ -563,14 +571,38 @@ const steps = [
 					<Box flexDirection="column" marginBottom={2}>
 						<Text>
 							<Text>
-								Now, navigate to the project and start the dev server:
+								Now, navigate to the project and start creating magic.
 							</Text>
 							<Newline />
-							<Text color={highlightColor}>cd ./{projectName}</Text>
-							<Newline />
-							<Text color={highlightColor}>
-								{shouldUseYarn ? 'yarn dev' : 'npm run dev'}
-							</Text>
+							{answers['nextjs-subscription-commerce'] ? (
+								<>
+									<Newline />
+									<Text>Website</Text>
+									<Newline />
+									<Text color={highlightColor}>
+										cd ./{projectName}/website &amp;&amp;&nbsp;
+									</Text>
+									<NodeStartCommand shouldUseYarn={shouldUseYarn} />
+									<Newline />
+									<Newline />
+									<Text>Service API</Text>
+									<Newline />
+									<Text color={highlightColor}>
+										cd ./{projectName}/service-api &amp;&amp;&nbsp;
+									</Text>
+									<NodeStartCommand shouldUseYarn={shouldUseYarn} />
+									<Newline />
+									<Text dimColor>
+										Psst: remember to setup keys in .env.local
+									</Text>
+								</>
+							) : (
+								<>
+									<Text color={highlightColor}>cd ./{projectName}</Text>
+									<Newline />
+									<NodeStartCommand shouldUseYarn={shouldUseYarn} />
+								</>
+							)}
 						</Text>
 					</Box>
 					<Box flexDirection="column" marginBottom={2}>

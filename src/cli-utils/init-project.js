@@ -136,25 +136,15 @@ function InitProject(props) {
 			}
 
 			if (answers['nextjs-subscription-commerce']) {
-				/**
-				 * For now; let's not install the dependencies for both the repos,
-				 * as that would take a long time to do
-				 */
+				process.chdir(`${projectPath}/service-api`);
+				await installDeps({ shouldUseYarn, flags });
+				process.chdir(`${projectPath}/website`);
+				await installDeps({ shouldUseYarn, flags });
+
 				onDone();
 			} else {
-				exec(
-					shouldUseYarn ? 'yarnpkg install' : 'npm install',
-					{
-						stdio: flags.info ? 'inherit' : 'ignore',
-					},
-					async function (err) {
-						if (err) {
-							process.exit(1);
-						}
-
-						onDone();
-					}
-				);
+				await installDeps({ shouldUseYarn, flags });
+				onDone();
 			}
 		}
 		go();
@@ -165,6 +155,25 @@ function InitProject(props) {
 			<Text>{feedbacks[feedbackIndex]}</Text>
 		</Box>
 	);
+}
+
+async function installDeps({ shouldUseYarn, flags }) {
+	return new Promise((resolve, reject) => {
+		exec(
+			shouldUseYarn ? 'yarnpkg install' : 'npm install',
+			{
+				stdio: flags.info ? 'inherit' : 'ignore',
+			},
+			async function (err) {
+				if (err) {
+					reject(err);
+					process.exit(1);
+				}
+
+				resolve();
+			}
+		);
+	});
 }
 
 module.exports = {
