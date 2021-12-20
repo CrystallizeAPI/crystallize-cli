@@ -1,3 +1,10 @@
+# [3.28.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.27.2...v3.28.0) (2021-12-20)
+
+
+### Features
+
+* bump import-utilities ([39d2e13](https://github.com/CrystallizeAPI/crystallize-cli/commit/39d2e13fcda98381d78bd02a5556036ffe077803))
+
 ## [3.27.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.27.1...v3.27.2) (2021-12-07)
 
 
