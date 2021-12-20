@@ -1,3 +1,10 @@
+## [3.28.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.28.0...v3.28.1) (2021-12-20)
+
+
+### Bug Fixes
+
+* run install ([576119e](https://github.com/CrystallizeAPI/crystallize-cli/commit/576119ec07b0af7f298c5efbf57f9b00eb6ddd38))
+
 # [3.28.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.27.2...v3.28.0) (2021-12-20)
 
 
