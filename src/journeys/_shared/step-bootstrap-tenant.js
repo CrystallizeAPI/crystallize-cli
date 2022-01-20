@@ -206,6 +206,10 @@ const askIfBootstrapTenant = {
 				answers.bootstrapTenant = 'photofinder';
 				break;
 			}
+			case 'Next.js - Conference': {
+				answers.bootstrapTenant = 'conference';
+				break;
+			}
 		}
 	},
 };
@@ -271,6 +275,23 @@ const stepsBootstrapExampleTenant = [
 												<Text dimColor>
 													Example implementation:
 													https://photofinder.superfast.shop
+												</Text>
+											</Text>
+										</>
+									),
+								},
+								{
+									value: 'conference',
+									render: (
+										<>
+											<Text>
+												Conference
+												<Newline />
+												Conference boilerplate.
+												<Newline />
+												<Text dimColor>
+													Example implementation:
+													https://conference-boilerplate.netlify.app/
 												</Text>
 											</Text>
 										</>

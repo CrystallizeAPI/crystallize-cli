@@ -15,6 +15,7 @@ const repos = {
 	'Service API - Backend for any of the frontends':
 		'service-api-boilerplate#main',
 	'Next.js - Subscription Commerce': 'crystallize-saas-boilerplate#main',
+	'Next.js - Conference': 'conference-boilerplate#main'
 };
 
 function DownloadProject({
