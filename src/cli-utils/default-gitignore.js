@@ -27,5 +27,8 @@ jspm_packages/
 # OSX Finder folder settings
 .DS_STORE
 
+# Files containing sensitive variables
+.env.*
+
 # Vercel deployment settings
 .vercel`;

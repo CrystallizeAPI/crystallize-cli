@@ -29,7 +29,6 @@ function initNextJSConference({ answers, projectPath }) {
 		STRIPE_PUBLISHABLE_KEY: '',
 		SENDGRID_API_KEY: '',
 		SERVICE_CALLBACK_HOST: '',
-		TILLIT_API_KEY: '',
 	};
 	fs.writeFileSync(
 		path.resolve(projectPath, 'service-api/.env.local'),
