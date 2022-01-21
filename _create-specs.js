@@ -83,7 +83,7 @@ async function voyage() {
 }
 
 async function photofinder() {
-  const spec = await getFullSpec('hkn-subscriptions');
+  const spec = await getFullSpec('photofinder');
 
   // Remove references as we do not want to update existing items
   spec.items.forEach(removeItemCataloguePath);

@@ -1,3 +1,53 @@
+## [3.28.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.28.0...v3.28.1) (2021-12-20)
+
+
+### Bug Fixes
+
+* run install ([576119e](https://github.com/CrystallizeAPI/crystallize-cli/commit/576119ec07b0af7f298c5efbf57f9b00eb6ddd38))
+
+# [3.28.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.27.2...v3.28.0) (2021-12-20)
+
+
+### Features
+
+* bump import-utilities ([39d2e13](https://github.com/CrystallizeAPI/crystallize-cli/commit/39d2e13fcda98381d78bd02a5556036ffe077803))
+
+## [3.27.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.27.1...v3.27.2) (2021-12-07)
+
+
+### Bug Fixes
+
+* use normal spacing ([97d3fb6](https://github.com/CrystallizeAPI/crystallize-cli/commit/97d3fb6bc92589da0e978e9852eb0019a847a14a))
+
+## [3.27.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.27.0...v3.27.1) (2021-12-07)
+
+
+### Bug Fixes
+
+* remove trailing api path for sub. comm ([436c7a0](https://github.com/CrystallizeAPI/crystallize-cli/commit/436c7a064e04e7ee42a7e198d8718728a739b4b5))
+
+# [3.27.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.26.0...v3.27.0) (2021-12-07)
+
+
+### Features
+
+* automatic choose tenant based on boilerplate ([46dd545](https://github.com/CrystallizeAPI/crystallize-cli/commit/46dd545caa056366d004039fd58d45557009b693))
+* use proper source for photofinder ([65d84e2](https://github.com/CrystallizeAPI/crystallize-cli/commit/65d84e2ec10f85668ebbce8e2cc2a587f4842614))
+
+# [3.26.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.25.0...v3.26.0) (2021-12-07)
+
+
+### Features
+
+* add subscription commerce boilerplate ([f36d67c](https://github.com/CrystallizeAPI/crystallize-cli/commit/f36d67ce291d1389ef33995b5e5cf03ba4ee1571))
+
+# [3.25.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.24.1...v3.25.0) (2021-12-07)
+
+
+### Features
+
+* add photofinder spec ([670c759](https://github.com/CrystallizeAPI/crystallize-cli/commit/670c759e516c4e08244ffd8afdb9901943ca2164))
+
 # [3.25.0-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.24.1...v3.25.0-beta.1) (2021-12-02)
 
 

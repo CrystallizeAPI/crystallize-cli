@@ -18,6 +18,14 @@ const { stepBootstrapTenant, RunBootstrapper } = importJsx(
 	'../_shared/step-bootstrap-tenant.js'
 );
 
+function NodeStartCommand({ shouldUseYarn }) {
+	return (
+		<Text color={highlightColor}>
+			{shouldUseYarn ? 'yarn dev' : 'npm run dev'}
+		</Text>
+	);
+}
+
 function InstallDepsAndBootstrap(props) {
 	const [initDone, setInitDone] = React.useState(false);
 	const [bootstrappingDone, setBootstrappingDone] = React.useState(
@@ -98,6 +106,45 @@ const steps = [
 								),
 							},
 							{
+								value: 'nextjs-subscription-commerce',
+								label: 'Next.js - Subscription Commerce',
+								render: (
+									<>
+										<Text>Next.js - Subscription Commerce</Text>
+										<Newline />
+										<Text dimColor>React, SSG</Text>
+										<Newline />
+										<Text dimColor>
+											Software As A Service boilerplate, providing access to
+											digital photos.
+										</Text>
+										<Newline />
+										<Text dimColor>
+											Demo: https://photofinder.superfast.shop/
+										</Text>
+									</>
+								),
+							},
+							{
+								value: 'nextjs-conference',
+								label: 'Next.js - Conference',
+								render: (
+									<>
+										<Text>Next.js - Conference</Text>
+										<Newline />
+										<Text dimColor>React, SSG</Text>
+										<Newline />
+										<Text dimColor>
+											A boilerplate for conferences.
+										</Text>
+										<Newline />
+										<Text dimColor>
+											Demo: https://conference-boilerplate.netlify.app/ 
+										</Text>
+									</>
+								),
+							},
+							{
 								value: 'gatsby',
 								label: 'Gatsby',
 								render: (
@@ -171,6 +218,10 @@ const steps = [
 
 			if (answer.value === 'nextjs-content-commerce') {
 				answers.defaultTenant = 'voyage';
+			} else if (answer.value === 'nextjs-subscription-commerce') {
+				answers.defaultTenant = 'photofinder';
+			} else if (answer.value === 'nextjs-conference') {
+				answers.defaultTenant = 'conference-boilerplate';
 			}
 		},
 		staticMessage(props) {
@@ -541,14 +592,38 @@ const steps = [
 					<Box flexDirection="column" marginBottom={2}>
 						<Text>
 							<Text>
-								Now, navigate to the project and start the dev server:
+								Now, navigate to the project and start creating magic.
 							</Text>
 							<Newline />
-							<Text color={highlightColor}>cd ./{projectName}</Text>
-							<Newline />
-							<Text color={highlightColor}>
-								{shouldUseYarn ? 'yarn dev' : 'npm run dev'}
-							</Text>
+							{answers['nextjs-subscription-commerce'] || answers['nextjs-conference'] ? (
+								<>
+									<Newline />
+									<Text>Website</Text>
+									<Newline />
+									<Text color={highlightColor}>
+										cd ./{projectName}/website &amp;&amp;{' '}
+									</Text>
+									<NodeStartCommand shouldUseYarn={shouldUseYarn} />
+									<Newline />
+									<Newline />
+									<Text>Service API</Text>
+									<Newline />
+									<Text color={highlightColor}>
+										cd ./{projectName}/service-api &amp;&amp;{' '}
+									</Text>
+									<NodeStartCommand shouldUseYarn={shouldUseYarn} />
+									<Newline />
+									<Text dimColor>
+										Psst: remember to setup keys in .env.local
+									</Text>
+								</>
+							) : (
+								<>
+									<Text color={highlightColor}>cd ./{projectName}</Text>
+									<Newline />
+									<NodeStartCommand shouldUseYarn={shouldUseYarn} />
+								</>
+							)}
 						</Text>
 					</Box>
 					<Box flexDirection="column" marginBottom={2}>

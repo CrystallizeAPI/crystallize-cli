@@ -191,6 +191,26 @@ const askIfBootstrapTenant = {
 	},
 	answer({ answers, answer }) {
 		answers.bootstrapTenant = answer;
+
+		// Automatically pick the correct tenant based on the boilerplate
+		switch (answers.boilerplate) {
+			case 'Next.js': {
+				answers.bootstrapTenant = 'furniture';
+				break;
+			}
+			case 'Next.js - Content and commerce': {
+				answers.bootstrapTenant = 'voyage';
+				break;
+			}
+			case 'Next.js - Subscription Commerce': {
+				answers.bootstrapTenant = 'photofinder';
+				break;
+			}
+			case 'Next.js - Conference': {
+				answers.bootstrapTenant = 'conference';
+				break;
+			}
+		}
 	},
 };
 
@@ -255,6 +275,23 @@ const stepsBootstrapExampleTenant = [
 												<Text dimColor>
 													Example implementation:
 													https://photofinder.superfast.shop
+												</Text>
+											</Text>
+										</>
+									),
+								},
+								{
+									value: 'conference',
+									render: (
+										<>
+											<Text>
+												Conference
+												<Newline />
+												Conference boilerplate.
+												<Newline />
+												<Text dimColor>
+													Example implementation:
+													https://conference-boilerplate.netlify.app/
 												</Text>
 											</Text>
 										</>
