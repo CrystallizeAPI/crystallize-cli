@@ -1,0 +1,2178 @@
+{
+ "languages": [
+  {
+   "code": "en",
+   "name": "English",
+   "isDefault": true
+  }
+ ],
+ "vatTypes": [
+  {
+   "name": "No Tax",
+   "percent": 0
+  }
+ ],
+ "subscriptionPlans": [],
+ "priceVariants": [
+  {
+   "identifier": "usd-sales",
+   "name": "Early bird",
+   "currency": "usd"
+  },
+  {
+   "identifier": "default",
+   "name": "Retail",
+   "currency": "usd"
+  }
+ ],
+ "topicMaps": [],
+ "shapes": [
+  {
+   "name": "Collection",
+   "id": "collection",
+   "identifier": "collection",
+   "type": "document",
+   "components": [
+    {
+     "id": "title",
+     "name": "Title",
+     "type": "singleLine",
+     "description": "",
+     "config": null
+    },
+    {
+     "id": "brief",
+     "name": "Brief",
+     "type": "richText",
+     "description": "",
+     "config": null
+    },
+    {
+     "id": "collection",
+     "name": "Collection",
+     "type": "componentChoice",
+     "description": null,
+     "config": {
+      "choices": [
+       {
+        "id": "images",
+        "name": "Images",
+        "type": "images",
+        "description": "Image gallery",
+        "config": null
+       },
+       {
+        "id": "grid",
+        "name": "Grid",
+        "type": "gridRelations",
+        "description": "Can either be a collection of past sponsors or past conference videos",
+        "config": null
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "name": "Article",
+   "id": "default-document",
+   "identifier": "default-document",
+   "type": "document",
+   "components": [
+    {
+     "id": "title",
+     "name": "Title",
+     "type": "singleLine",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "image",
+     "name": "Image",
+     "type": "images",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "intro",
+     "name": "Intro",
+     "type": "richText",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "body",
+     "name": "Body",
+     "type": "paragraphCollection",
+     "description": null,
+     "config": null
+    }
+   ]
+  },
+  {
+   "name": "Folder",
+   "id": "default-folder",
+   "identifier": "default-folder",
+   "type": "folder",
+   "components": [
+    {
+     "id": "title",
+     "name": "Title",
+     "type": "singleLine",
+     "description": "",
+     "config": null
+    },
+    {
+     "id": "brief",
+     "name": "Brief",
+     "type": "richText",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "illustration",
+     "name": "Illustration",
+     "type": "images",
+     "description": "",
+     "config": null
+    },
+    {
+     "id": "marketing-content",
+     "name": "Marketing content",
+     "type": "contentChunk",
+     "description": null,
+     "config": {
+      "repeatable": false,
+      "components": [
+       {
+        "id": "title",
+        "name": "Title",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "description",
+        "name": "Description",
+        "type": "richText",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "image",
+        "name": "Image",
+        "type": "images",
+        "description": "",
+        "config": null
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "name": "Product",
+   "id": "default-product",
+   "identifier": "default-product",
+   "type": "product",
+   "components": [
+    {
+     "id": "summary",
+     "name": "Summary",
+     "type": "richText",
+     "description": null,
+     "config": null
+    },
+    {
+     "id": "description",
+     "name": "Description",
+     "type": "paragraphCollection",
+     "description": null,
+     "config": null
+    }
+   ]
+  },
+  {
+   "name": "Frontpage",
+   "id": "frontpage",
+   "identifier": "frontpage",
+   "type": "document",
+   "components": [
+    {
+     "id": "title",
+     "name": "Title",
+     "type": "singleLine",
+     "description": "",
+     "config": null
+    },
+    {
+     "id": "description",
+     "name": "Description",
+     "type": "richText",
+     "description": "",
+     "config": null
+    },
+    {
+     "id": "hero",
+     "name": "Hero",
+     "type": "images",
+     "description": "",
+     "config": null
+    },
+    {
+     "id": "cta",
+     "name": "CTA",
+     "type": "contentChunk",
+     "description": null,
+     "config": {
+      "repeatable": true,
+      "components": [
+       {
+        "id": "name",
+        "name": "Name",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "url",
+        "name": "URL",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       }
+      ]
+     }
+    },
+    {
+     "id": "main-sponsors",
+     "name": "Main Sponsors",
+     "type": "contentChunk",
+     "description": null,
+     "config": {
+      "repeatable": false,
+      "components": [
+       {
+        "id": "title",
+        "name": "Title",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "sponsors",
+        "name": "Sponsors",
+        "type": "itemRelations",
+        "description": "",
+        "config": {}
+       }
+      ]
+     }
+    },
+    {
+     "id": "usp",
+     "name": "USP",
+     "type": "contentChunk",
+     "description": null,
+     "config": {
+      "repeatable": true,
+      "components": [
+       {
+        "id": "title",
+        "name": "Title",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "description",
+        "name": "Description",
+        "type": "richText",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "image",
+        "name": "Image",
+        "type": "images",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "cta-name",
+        "name": "CTA name",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "cta-url",
+        "name": "CTA url",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       }
+      ]
+     }
+    },
+    {
+     "id": "speakers",
+     "name": "Speakers",
+     "type": "contentChunk",
+     "description": null,
+     "config": {
+      "repeatable": false,
+      "components": [
+       {
+        "id": "title",
+        "name": "Title",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "description",
+        "name": "Description",
+        "type": "richText",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "speaker",
+        "name": "Speaker",
+        "type": "itemRelations",
+        "description": "",
+        "config": {}
+       },
+       {
+        "id": "cta-name",
+        "name": "CTA name",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "cta-url",
+        "name": "CTA url",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       }
+      ]
+     }
+    },
+    {
+     "id": "schedule-header",
+     "name": "Schedule header",
+     "type": "singleLine",
+     "description": "",
+     "config": null
+    },
+    {
+     "id": "talk",
+     "name": "Talk",
+     "type": "contentChunk",
+     "description": null,
+     "config": {
+      "repeatable": true,
+      "components": [
+       {
+        "id": "title",
+        "name": "Title",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "description",
+        "name": "Description",
+        "type": "richText",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "time",
+        "name": "Time",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "date",
+        "name": "Date",
+        "type": "datetime",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "speaker",
+        "name": "Speaker",
+        "type": "itemRelations",
+        "description": "",
+        "config": {}
+       },
+       {
+        "id": "stream-url",
+        "name": "Stream url",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "is_premium",
+        "name": "is_premium",
+        "type": "boolean",
+        "description": "",
+        "config": null
+       }
+      ]
+     }
+    },
+    {
+     "id": "job-board-header",
+     "name": "Job board header",
+     "type": "singleLine",
+     "description": "",
+     "config": null
+    },
+    {
+     "id": "jobs",
+     "name": "Jobs",
+     "type": "contentChunk",
+     "description": null,
+     "config": {
+      "repeatable": true,
+      "components": [
+       {
+        "id": "title",
+        "name": "Title",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "location",
+        "name": "Location",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "url",
+        "name": "Url",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "sponsor",
+        "name": "Sponsor",
+        "type": "itemRelations",
+        "description": "",
+        "config": {}
+       }
+      ]
+     }
+    },
+    {
+     "id": "sponsors",
+     "name": "Sponsors",
+     "type": "contentChunk",
+     "description": null,
+     "config": {
+      "repeatable": false,
+      "components": [
+       {
+        "id": "title",
+        "name": "Title",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "description",
+        "name": "Description",
+        "type": "richText",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "cta-name",
+        "name": "CTA name",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "cta-url",
+        "name": "CTA url",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "sponsor",
+        "name": "Sponsor",
+        "type": "itemRelations",
+        "description": "",
+        "config": {}
+       }
+      ]
+     }
+    },
+    {
+     "id": "partners",
+     "name": "Partners",
+     "type": "contentChunk",
+     "description": null,
+     "config": {
+      "repeatable": false,
+      "components": [
+       {
+        "id": "title",
+        "name": "Title",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "description",
+        "name": "Description",
+        "type": "richText",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "cta-name",
+        "name": "CTA name",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "cta-url",
+        "name": "CTA Url",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "partner",
+        "name": "Partner",
+        "type": "itemRelations",
+        "description": "",
+        "config": {}
+       }
+      ]
+     }
+    },
+    {
+     "id": "gallery",
+     "name": "Gallery",
+     "type": "contentChunk",
+     "description": null,
+     "config": {
+      "repeatable": false,
+      "components": [
+       {
+        "id": "header",
+        "name": "Header",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "images",
+        "name": "Images",
+        "type": "images",
+        "description": "",
+        "config": null
+       }
+      ]
+     }
+    },
+    {
+     "id": "meta",
+     "name": "Meta",
+     "type": "contentChunk",
+     "description": null,
+     "config": {
+      "repeatable": false,
+      "components": [
+       {
+        "id": "title",
+        "name": "Title",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "description",
+        "name": "Description",
+        "type": "richText",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "image",
+        "name": "Image",
+        "type": "images",
+        "description": "",
+        "config": null
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "name": "Organization",
+   "id": "organization",
+   "identifier": "organization",
+   "type": "document",
+   "components": [
+    {
+     "id": "url",
+     "name": "URL",
+     "type": "singleLine",
+     "description": "",
+     "config": null
+    },
+    {
+     "id": "logo",
+     "name": "Logo",
+     "type": "images",
+     "description": "",
+     "config": null
+    }
+   ]
+  },
+  {
+   "name": "Speaker",
+   "id": "speaker",
+   "identifier": "speaker",
+   "type": "document",
+   "components": [
+    {
+     "id": "name",
+     "name": "Name",
+     "type": "singleLine",
+     "description": "",
+     "config": null
+    },
+    {
+     "id": "company",
+     "name": "Company",
+     "type": "singleLine",
+     "description": "",
+     "config": null
+    },
+    {
+     "id": "job-title",
+     "name": "Job title",
+     "type": "singleLine",
+     "description": "",
+     "config": null
+    },
+    {
+     "id": "speaker-image",
+     "name": "Speaker image",
+     "type": "images",
+     "description": "",
+     "config": null
+    },
+    {
+     "id": "social",
+     "name": "Social",
+     "type": "contentChunk",
+     "description": null,
+     "config": {
+      "repeatable": false,
+      "components": [
+       {
+        "id": "twitter-url",
+        "name": "Twitter URL",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "github-url",
+        "name": "GitHub URL",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "linkedin-url",
+        "name": "LinkedIn URL",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       },
+       {
+        "id": "facebook-url",
+        "name": "Facebook URL",
+        "type": "singleLine",
+        "description": "",
+        "config": null
+       }
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "grids": [],
+ "items": [
+  {
+   "name": "Speakers",
+   "cataloguePath": "/speakers",
+   "externalReference": null,
+   "shape": "default-folder",
+   "components": {
+    "brief": {
+     "json": [
+      {
+       "kind": "block",
+       "type": "paragraph",
+       "metadata": {},
+       "children": []
+      }
+     ]
+    }
+   },
+   "topics": null,
+   "children": [
+    {
+     "name": "Ivy Combs",
+     "cataloguePath": "/speakers/ivy-combs",
+     "externalReference": null,
+     "shape": "speaker",
+     "components": {
+      "name": "Ivy Combs",
+      "company": "Crystallize",
+      "job-title": "Head of Design",
+      "speaker-image": [
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/8/13/character-illustration.svg",
+        "altText": "Profile picture",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ],
+      "social": [
+       {
+        "twitter-url": "https://twitter.com/",
+        "github-url": "https://github.com/",
+        "linkedin-url": "https://linkedin.com/",
+        "facebook-url": "https://www.facebook.com/"
+       }
+      ]
+     },
+     "topics": null
+    },
+    {
+     "name": "Elizabeth Bennet",
+     "cataloguePath": "/speakers/elizabeth-bennet",
+     "externalReference": null,
+     "shape": "speaker",
+     "components": {
+      "name": "Elizabeth Adams",
+      "company": "Crystallize",
+      "job-title": "Head of Engineering",
+      "speaker-image": [
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/8/14/woman-jacket-illustration.svg",
+        "altText": "Profile picture",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ],
+      "social": [
+       {
+        "twitter-url": "https://twitter.com/",
+        "github-url": "https://github.com/",
+        "linkedin-url": "https://linkedin.com/",
+        "facebook-url": "https://www.facebook.com/"
+       }
+      ]
+     },
+     "topics": null
+    },
+    {
+     "name": "Pedro Pascal",
+     "cataloguePath": "/speakers/pedro-pascal",
+     "externalReference": null,
+     "shape": "speaker",
+     "components": {
+      "name": "Pedro Pascal",
+      "company": "Crystallize",
+      "job-title": "Frontend Developer",
+      "speaker-image": [
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/8/15/person-with-airpods.svg",
+        "altText": "Profile picture",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ],
+      "social": [
+       {
+        "twitter-url": "https://twitter.com/",
+        "github-url": "https://github.com/",
+        "linkedin-url": "https://linkedin.com/",
+        "facebook-url": "https://www.facebook.com/"
+       }
+      ]
+     },
+     "topics": null
+    },
+    {
+     "name": "Jude Francis",
+     "cataloguePath": "/speakers/jude-francis",
+     "externalReference": null,
+     "shape": "speaker",
+     "components": {
+      "name": "Jude Francis",
+      "company": "Crystallize",
+      "job-title": "Backend Developer",
+      "speaker-image": [
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/8/16/person-pink-shirt.svg",
+        "altText": "Profile picture",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ],
+      "social": [
+       {
+        "twitter-url": "https://twitter.com/",
+        "github-url": "https://github.com/",
+        "linkedin-url": "https://linkedin.com/",
+        "facebook-url": "https://www.facebook.com/"
+       }
+      ]
+     },
+     "topics": null
+    },
+    {
+     "name": "Jane Warner",
+     "cataloguePath": "/speakers/jane-warner",
+     "externalReference": null,
+     "shape": "speaker",
+     "components": {
+      "name": "Jane Warner",
+      "company": "Crystallize",
+      "job-title": "Intergalactic Expert",
+      "speaker-image": [
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/8/17/woman-purple-shirt.svg",
+        "altText": "Profile picture",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ],
+      "social": [
+       {
+        "twitter-url": "https://twitter.com/",
+        "github-url": "https://github.com/",
+        "linkedin-url": "https://linkedin.com/",
+        "facebook-url": "https://www.facebook.com/"
+       }
+      ]
+     },
+     "topics": null
+    },
+    {
+     "name": "Selena Jones",
+     "cataloguePath": "/speakers/selena-jones",
+     "externalReference": null,
+     "shape": "speaker",
+     "components": {
+      "name": "Selena Jones",
+      "company": "Crystallize",
+      "job-title": "Frontend Engineer",
+      "speaker-image": [
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/8/18/woman-blue-shirt.svg",
+        "altText": "Profile picture",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ],
+      "social": [
+       {
+        "twitter-url": "https://twitter.com/",
+        "github-url": "https://github.com/",
+        "linkedin-url": "https://linkedin.com/",
+        "facebook-url": "https://www.facebook.com/"
+       }
+      ]
+     },
+     "topics": null
+    }
+   ]
+  },
+  {
+   "name": "Frontpage",
+   "cataloguePath": "/frontpage",
+   "externalReference": null,
+   "shape": "frontpage",
+   "components": {
+    "title": "Intergalactic Conference",
+    "description": {
+     "json": [
+      {
+       "kind": "block",
+       "type": "paragraph",
+       "metadata": {},
+       "children": [
+        {
+         "kind": "inline",
+         "metadata": {},
+         "textContent": "Join the Intergalactic conference to up your game in all things. More content goes here. Also streamed live. Workshops have a small fee."
+        }
+       ]
+      }
+     ]
+    },
+    "hero": [
+     {
+      "src": "https://media.crystallize.com/conference-boilerplate/22/1/3/2/hero-illustration.png",
+      "altText": "Woman with laptop",
+      "caption": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": []
+        }
+       ]
+      }
+     }
+    ],
+    "cta": [
+     {
+      "name": "Workshop access"
+     },
+     {
+      "name": "Conference Tickets"
+     }
+    ],
+    "main-sponsors": [
+     {
+      "title": "Our main sponsors",
+      "sponsors": [
+       {
+        "cataloguePath": "/sponsors/cognite",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/sponsors/kelda-dynamics",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/sponsors/knowit",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/sponsors/formidable",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/sponsors/snowball",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/sponsors/nerds-and-company",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/sponsors/speed",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/sponsors/crystallize",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/sponsors/auth0",
+        "externalReference": null
+       }
+      ]
+     }
+    ],
+    "usp": [
+     {
+      "title": "Level Up Your Knowledge",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "metadata": {},
+         "type": "unordered-list",
+         "children": [
+          {
+           "kind": "block",
+           "type": "list-item",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Lorem ipsum dolor sit amet, consectetur elit."
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "type": "list-item",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Sed cursus erat a mollis sagittis mi convallis."
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "type": "list-item",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Mauris ut tellus convallis, tempus ipsum et."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      "image": [
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/8/2/woman-illustration.svg",
+        "altText": "Woman holding textbox",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ],
+      "cta-name": "Merch Store",
+      "cta-url": "/merch"
+     }
+    ],
+    "speakers": [
+     {
+      "title": "Our Speakers",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Join the Intergalactic conference to up your game in all things. More content goes here. Also streamed live. Workshops have a small fee."
+          }
+         ]
+        }
+       ]
+      },
+      "speaker": [
+       {
+        "cataloguePath": "/speakers/ivy-combs",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/speakers/elizabeth-bennet",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/speakers/pedro-pascal",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/speakers/jude-francis",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/speakers/jane-warner",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/speakers/selena-jones",
+        "externalReference": null
+       }
+      ],
+      "cta-name": "Submit talk"
+     }
+    ],
+    "schedule-header": "Schedule",
+    "talk": [
+     {
+      "title": "Latest Trends in Space Exploration",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Travel to the moon has not been top of the space exploration agenda for the past few decades, but that has changed as a number of strategic reasons to resume lunar landings have been identified in recent years. Space exploration will be conducted by autonomous landers and exploration vehicles."
+          }
+         ]
+        }
+       ]
+      },
+      "time": "9:00 - 10:00 AM",
+      "date": "2022-07-18T10:00:00.000Z",
+      "speaker": [
+       {
+        "cataloguePath": "/speakers/ivy-combs",
+        "externalReference": null
+       }
+      ],
+      "stream-url": "https://d2evmbjjvznea6.cloudfront.net/videos/Didrik_Steen_Hegna_Crystallize_React_New_York/Didrik_Steen_Hegna_Crystallize_React_New_York.m3u8",
+      "is_premium": false
+     },
+     {
+      "title": "Latest Trends in Space Exploration",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Travel to the moon has not been top of the space exploration agenda for the past few decades, but that has changed as a number of strategic reasons to resume lunar landings have been identified in recent years. Space exploration will be conducted by autonomous landers and exploration vehicles."
+          }
+         ]
+        }
+       ]
+      },
+      "time": "10:00 - 11:00 AM",
+      "date": "2022-07-18T10:00:00.000Z",
+      "speaker": [
+       {
+        "cataloguePath": "/speakers/elizabeth-bennet",
+        "externalReference": null
+       }
+      ],
+      "stream-url": "https://d2evmbjjvznea6.cloudfront.net/videos/Didrik_Steen_Hegna_Crystallize_React_New_York/Didrik_Steen_Hegna_Crystallize_React_New_York.m3u8",
+      "is_premium": false
+     },
+     {
+      "title": "Latest Trends in Space Exploration",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Travel to the moon has not been top of the space exploration agenda for the past few decades, but that has changed as a number of strategic reasons to resume lunar landings have been identified in recent years. Space exploration will be conducted by autonomous landers and exploration vehicles."
+          }
+         ]
+        }
+       ]
+      },
+      "time": "12:00 - 01:00 PM",
+      "date": "2022-07-18T10:00:00.000Z",
+      "speaker": [
+       {
+        "cataloguePath": "/speakers/pedro-pascal",
+        "externalReference": null
+       }
+      ],
+      "stream-url": "https://d2evmbjjvznea6.cloudfront.net/videos/Didrik_Steen_Hegna_Crystallize_React_New_York/Didrik_Steen_Hegna_Crystallize_React_New_York.m3u8",
+      "is_premium": false
+     },
+     {
+      "title": "Latest Trends in Space Exploration",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Travel to the moon has not been top of the space exploration agenda for the past few decades, but that has changed as a number of strategic reasons to resume lunar landings have been identified in recent years. Space exploration will be conducted by autonomous landers and exploration vehicles."
+          }
+         ]
+        }
+       ]
+      },
+      "time": "9:00 - 10:00 AM",
+      "date": "2022-07-19T10:00:00.000Z",
+      "speaker": [
+       {
+        "cataloguePath": "/speakers/jude-francis",
+        "externalReference": null
+       }
+      ],
+      "stream-url": "https://d2evmbjjvznea6.cloudfront.net/videos/Didrik_Steen_Hegna_Crystallize_React_New_York/Didrik_Steen_Hegna_Crystallize_React_New_York.m3u8",
+      "is_premium": false
+     },
+     {
+      "title": "Latest Trends in Space Exploration",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Travel to the moon has not been top of the space exploration agenda for the past few decades, but that has changed as a number of strategic reasons to resume lunar landings have been identified in recent years. Space exploration will be conducted by autonomous landers and exploration vehicles."
+          }
+         ]
+        }
+       ]
+      },
+      "time": "10:00 - 11:00 AM",
+      "date": "2022-07-19T10:00:00.000Z",
+      "speaker": [
+       {
+        "cataloguePath": "/speakers/selena-jones",
+        "externalReference": null
+       }
+      ],
+      "stream-url": "https://d2evmbjjvznea6.cloudfront.net/videos/Didrik_Steen_Hegna_Crystallize_React_New_York/Didrik_Steen_Hegna_Crystallize_React_New_York.m3u8",
+      "is_premium": false
+     },
+     {
+      "title": "Latest Trends in Space Exploration",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Travel to the moon has not been top of the space exploration agenda for the past few decades, but that has changed as a number of strategic reasons to resume lunar landings have been identified in recent years. Space exploration will be conducted by autonomous landers and exploration vehicles."
+          }
+         ]
+        }
+       ]
+      },
+      "time": "9:00 - 10:00 AM",
+      "date": "2022-07-20T10:00:00.000Z",
+      "speaker": [
+       {
+        "cataloguePath": "/speakers/jane-warner",
+        "externalReference": null
+       }
+      ],
+      "stream-url": "https://d2evmbjjvznea6.cloudfront.net/videos/Didrik_Steen_Hegna_Crystallize_React_New_York/Didrik_Steen_Hegna_Crystallize_React_New_York.m3u8",
+      "is_premium": false
+     }
+    ],
+    "job-board-header": "Job Board",
+    "jobs": [
+     {
+      "title": "Frontend Developer",
+      "location": "Remote / Anywhere in the world",
+      "url": "crystallize.com",
+      "sponsor": [
+       {
+        "cataloguePath": "/sponsors/crystallize",
+        "externalReference": null
+       }
+      ]
+     },
+     {
+      "title": "Backend Developer",
+      "location": "Remote / Anywhere in the world",
+      "url": "crystallize.com",
+      "sponsor": [
+       {
+        "cataloguePath": "/sponsors/crystallize",
+        "externalReference": null
+       }
+      ]
+     },
+     {
+      "title": "Intergalactic Expert",
+      "location": "Remote / Anywhere in the world",
+      "url": "crystallize.com",
+      "sponsor": [
+       {
+        "cataloguePath": "/sponsors/crystallize",
+        "externalReference": null
+       }
+      ]
+     }
+    ],
+    "sponsors": [
+     {
+      "title": "Sponsors",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "A list of all our sponsors."
+          }
+         ]
+        }
+       ]
+      },
+      "cta-name": "Become a sponsor",
+      "sponsor": [
+       {
+        "cataloguePath": "/sponsors/auth0",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/sponsors/formidable",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/sponsors/crystallize",
+        "externalReference": null
+       }
+      ]
+     }
+    ],
+    "partners": [
+     {
+      "title": "Partners",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": []
+        }
+       ]
+      },
+      "partner": [
+       {
+        "cataloguePath": "/sponsors/snowball",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/sponsors/cognite",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/sponsors/knowit",
+        "externalReference": null
+       }
+      ]
+     }
+    ],
+    "gallery": [
+     {
+      "header": "Conference 2021",
+      "images": [
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/19/1/react_new_york_audience.jpeg",
+        "altText": "Crowded hall",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       },
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/19/1/react_new_york_bard_farstad_opening.jpeg",
+        "altText": "Person speaking on stage",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       },
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/19/1/react_new_york_bowling_1.jpeg",
+        "altText": "Crowded room",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       },
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/19/1/react_new_york_bowling.jpeg",
+        "altText": "Crowded bowling alley",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       },
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/19/1/react_new_york_crowd_2.jpeg",
+        "altText": "Crowded room",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       },
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/19/1/react_new_york_crowd.jpeg",
+        "altText": "Crowded hall",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       },
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/19/1/react_new_york_didrik_hegna_crystallize.jpeg",
+        "altText": "Person speaking on stage",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       },
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/19/1/react_new_york_registration1.jpeg",
+        "altText": "People in queue",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ]
+     }
+    ],
+    "meta": [
+     {
+      "title": "Intergalactic conference",
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Crystallize conference boilerplate."
+          }
+         ]
+        }
+       ]
+      },
+      "image": [
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/18/1/meta-image.png",
+        "altText": "Conference tickets",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "topics": null
+  },
+  {
+   "name": "Sponsors",
+   "cataloguePath": "/sponsors",
+   "externalReference": null,
+   "shape": "default-folder",
+   "components": {
+    "brief": {
+     "json": [
+      {
+       "kind": "block",
+       "type": "paragraph",
+       "metadata": {},
+       "children": []
+      }
+     ]
+    }
+   },
+   "topics": null,
+   "children": [
+    {
+     "name": "Cognite",
+     "cataloguePath": "/sponsors/cognite",
+     "externalReference": null,
+     "shape": "organization",
+     "components": {
+      "url": "https://www.cognite.com/en/",
+      "logo": [
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/7/14/cognite-logo.svg",
+        "altText": "Cognite logo",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ]
+     },
+     "topics": null
+    },
+    {
+     "name": "Kelda Dynamics",
+     "cataloguePath": "/sponsors/kelda-dynamics",
+     "externalReference": null,
+     "shape": "organization",
+     "components": {
+      "url": "https://www.kelda.no/",
+      "logo": [
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/7/13/kelda-dynamics-logo.svg",
+        "altText": "Kelda dynamics logo",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ]
+     },
+     "topics": null
+    },
+    {
+     "name": "Auth0",
+     "cataloguePath": "/sponsors/auth0",
+     "externalReference": null,
+     "shape": "organization",
+     "components": {
+      "url": "https://auth0.com/",
+      "logo": [
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/7/15/auth0-logo.svg",
+        "altText": "Auth0 logo",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ]
+     },
+     "topics": null
+    },
+    {
+     "name": "Knowit",
+     "cataloguePath": "/sponsors/knowit",
+     "externalReference": null,
+     "shape": "organization",
+     "components": {
+      "url": "https://www.knowit.eu/",
+      "logo": [
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/7/16/knowit-logo.svg",
+        "altText": "Knowit logo",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ]
+     },
+     "topics": null
+    },
+    {
+     "name": "Snowball",
+     "cataloguePath": "/sponsors/snowball",
+     "externalReference": null,
+     "shape": "organization",
+     "components": {
+      "url": "https://snowball.digital/",
+      "logo": [
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/7/17/snowball-logo.svg",
+        "altText": "Snowball logo",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ]
+     },
+     "topics": null
+    },
+    {
+     "name": "Formidable",
+     "cataloguePath": "/sponsors/formidable",
+     "externalReference": null,
+     "shape": "organization",
+     "components": {
+      "url": "https://formidable.com/",
+      "logo": [
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/7/18/formidable-logo.svg",
+        "altText": "Formidable logo",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ]
+     },
+     "topics": null
+    },
+    {
+     "name": "Nerds & Company",
+     "cataloguePath": "/sponsors/nerds-and-company",
+     "externalReference": null,
+     "shape": "organization",
+     "components": {
+      "url": "https://nerds.company/",
+      "logo": [
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/7/19/nerds-company-logo.svg",
+        "altText": "Nerds & Company logo",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ]
+     },
+     "topics": null
+    },
+    {
+     "name": "Crystallize",
+     "cataloguePath": "/sponsors/crystallize",
+     "externalReference": null,
+     "shape": "organization",
+     "components": {
+      "url": "https://crystallize.com/",
+      "logo": [
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/7/20/crystallize-logo.svg",
+        "altText": "Crystallize logo",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ]
+     },
+     "topics": null
+    },
+    {
+     "name": "Speed",
+     "cataloguePath": "/sponsors/speed",
+     "externalReference": null,
+     "shape": "organization",
+     "components": {
+      "url": "https://speedcykkel.com/",
+      "logo": [
+       {
+        "src": "https://media.crystallize.com/conference-boilerplate/22/1/7/21/speed-logo.svg",
+        "altText": "Speed logo",
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ]
+     },
+     "topics": null
+    }
+   ]
+  },
+  {
+   "name": "Merch",
+   "cataloguePath": "/merch",
+   "externalReference": null,
+   "shape": "default-folder",
+   "components": {
+    "title": "Super Conference Sale",
+    "brief": {
+     "json": [
+      {
+       "kind": "block",
+       "type": "paragraph",
+       "metadata": {},
+       "children": [
+        {
+         "kind": "inline",
+         "metadata": {},
+         "textContent": "All tickets and merch 30% off"
+        }
+       ]
+      }
+     ]
+    },
+    "marketing-content": []
+   },
+   "topics": null,
+   "children": [
+    {
+     "name": "Intergalactic Cap",
+     "cataloguePath": "/merch/intergalactic-cap",
+     "externalReference": null,
+     "shape": "default-product",
+     "components": {
+      "summary": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Cool, sporty caps with six panels and rounded, snug fit. It truly is built to look great and last a very long time."
+          }
+         ]
+        }
+       ]
+      }
+     },
+     "topics": null,
+     "vatType": "No Tax",
+     "variants": [
+      {
+       "name": "Intergalactic Cap",
+       "sku": "intergalactic-cap-1641742621437",
+       "price": {
+        "default": 50
+       },
+       "isDefault": true,
+       "attributes": {},
+       "externalReference": null,
+       "stock": 300,
+       "images": [
+        {
+         "src": "https://media.crystallize.com/conference-boilerplate/22/1/13/3/hat.png",
+         "altText": "Purple cap",
+         "caption": {
+          "json": [
+           {
+            "kind": "block",
+            "type": "paragraph",
+            "metadata": {},
+            "children": []
+           }
+          ]
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Intergalactic T-Shirt",
+     "cataloguePath": "/merch/intergalactic-t-shirt",
+     "externalReference": null,
+     "shape": "default-product",
+     "components": {
+      "summary": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Our intergalactic shirt is perfect for the summer. It truly is built to look great and last a very long time."
+          }
+         ]
+        }
+       ]
+      }
+     },
+     "topics": null,
+     "vatType": "No Tax",
+     "variants": [
+      {
+       "name": "Intergalactic T-Shirt",
+       "sku": "intergalactic-t-shirt-1641742575340",
+       "price": {
+        "default": 20
+       },
+       "isDefault": true,
+       "attributes": {},
+       "externalReference": null,
+       "stock": 300,
+       "images": [
+        {
+         "src": "https://media.crystallize.com/conference-boilerplate/22/1/13/4/t-shirt.png",
+         "altText": "White T-shirt",
+         "caption": {
+          "json": [
+           {
+            "kind": "block",
+            "type": "paragraph",
+            "metadata": {},
+            "children": []
+           }
+          ]
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Intergalactic Mug Set",
+     "cataloguePath": "/merch/intergalactic-mug-set",
+     "externalReference": null,
+     "shape": "default-product",
+     "components": {
+      "summary": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Our 15 ounce ceramic coffee mug is perfect for all sorts of drinking activities. It truly is built to look great and last a very long time."
+          }
+         ]
+        }
+       ]
+      }
+     },
+     "topics": null,
+     "vatType": "No Tax",
+     "variants": [
+      {
+       "name": "Intergalactic Mug Set",
+       "sku": "intergalactic-mug-set-1641742535140",
+       "price": {
+        "default": 25
+       },
+       "isDefault": true,
+       "attributes": {},
+       "externalReference": null,
+       "stock": 300,
+       "images": [
+        {
+         "src": "https://media.crystallize.com/conference-boilerplate/22/1/13/2/intergalactic-mugs.png",
+         "altText": "White mug with purple handle",
+         "caption": {
+          "json": [
+           {
+            "kind": "block",
+            "type": "paragraph",
+            "metadata": {},
+            "children": []
+           }
+          ]
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Lanyard",
+     "cataloguePath": "/merch/lanyard",
+     "externalReference": null,
+     "shape": "default-product",
+     "components": {
+      "summary": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Cool, lanyard that can be used to display badges, tickets or ID cards. It truly is built to look great and last a very long time."
+          }
+         ]
+        }
+       ]
+      }
+     },
+     "topics": null,
+     "vatType": "No Tax",
+     "variants": [
+      {
+       "name": "Intergalactic Ticket",
+       "sku": "intergalactic-ticket-1641742452218",
+       "price": {
+        "default": 60
+       },
+       "isDefault": true,
+       "attributes": {},
+       "externalReference": null,
+       "stock": 300,
+       "images": [
+        {
+         "src": "https://media.crystallize.com/conference-boilerplate/22/1/13/5/lanyard.png",
+         "altText": "Purple lanyard",
+         "caption": {
+          "json": [
+           {
+            "kind": "block",
+            "type": "paragraph",
+            "metadata": {},
+            "children": []
+           }
+          ]
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Intergalactic Ticket",
+     "cataloguePath": "/merch/intergalactic-ticket",
+     "externalReference": null,
+     "shape": "default-product",
+     "components": {
+      "summary": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "This was a year of big changes. Join an amazing list of experts to gain insights into the intergalactic world."
+          }
+         ]
+        }
+       ]
+      }
+     },
+     "topics": null,
+     "vatType": "No Tax",
+     "variants": [
+      {
+       "name": "Intergalactic Ticket",
+       "sku": "intergalactic-ticket-1641742735707",
+       "price": {
+        "default": 490,
+        "usd-sales": 345
+       },
+       "isDefault": true,
+       "attributes": {},
+       "externalReference": null,
+       "stock": 250,
+       "images": [
+        {
+         "src": "https://media.crystallize.com/conference-boilerplate/22/1/13/8/tickets.png",
+         "altText": "Conference tickets",
+         "caption": {
+          "json": [
+           {
+            "kind": "block",
+            "type": "paragraph",
+            "metadata": {},
+            "children": []
+           }
+          ]
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "stockLocations": [
+  {
+   "identifier": "default",
+   "name": "Default",
+   "settings": null
+  }
+ ]
+}
