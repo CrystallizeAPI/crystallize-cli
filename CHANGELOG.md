@@ -1,3 +1,10 @@
+# [3.29.0-beta.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.29.0-beta.1...v3.29.0-beta.2) (2022-01-24)
+
+
+### Features
+
+* add json spec for conference boilerplate ([7c65e02](https://github.com/CrystallizeAPI/crystallize-cli/commit/7c65e02ff23c14ac6d05e9299627e88a69768014))
+
 # [3.29.0-beta.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.28.1...v3.29.0-beta.1) (2022-01-21)
 
 
