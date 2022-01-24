@@ -126,6 +126,25 @@ const steps = [
 								),
 							},
 							{
+								value: 'nextjs-conference',
+								label: 'Next.js - Conference',
+								render: (
+									<>
+										<Text>Next.js - Conference</Text>
+										<Newline />
+										<Text dimColor>React, SSG</Text>
+										<Newline />
+										<Text dimColor>
+											A boilerplate for conferences.
+										</Text>
+										<Newline />
+										<Text dimColor>
+											Demo: https://conference-boilerplate.netlify.app/ 
+										</Text>
+									</>
+								),
+							},
+							{
 								value: 'gatsby',
 								label: 'Gatsby',
 								render: (
@@ -201,6 +220,8 @@ const steps = [
 				answers.defaultTenant = 'voyage';
 			} else if (answer.value === 'nextjs-subscription-commerce') {
 				answers.defaultTenant = 'photofinder';
+			} else if (answer.value === 'nextjs-conference') {
+				answers.defaultTenant = 'conference-boilerplate';
 			}
 		},
 		staticMessage(props) {
@@ -574,7 +595,7 @@ const steps = [
 								Now, navigate to the project and start creating magic.
 							</Text>
 							<Newline />
-							{answers['nextjs-subscription-commerce'] ? (
+							{answers['nextjs-subscription-commerce'] || answers['nextjs-conference'] ? (
 								<>
 									<Newline />
 									<Text>Website</Text>

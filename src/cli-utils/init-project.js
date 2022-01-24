@@ -97,7 +97,10 @@ function InitProject(props) {
 			fs.removeSync(path.resolve('yarn.lock'));
 
 			// Update the package.json with proper name
-			if (!answers['nextjs-subscription-commerce']) {
+			if (
+				!answers['nextjs-conference'] &&
+				!answers['nextjs-subscription-commerce']
+			) {
 				const oldPackageJson = JSON.parse(
 					fs.readFileSync(path.resolve('package.json'), 'utf-8')
 				);
@@ -133,9 +136,14 @@ function InitProject(props) {
 				await require('./init-rn')(props);
 			} else if (answers['nextjs-subscription-commerce']) {
 				await require('./init-nextjs-subscription-commerce')(props);
+			} else if (answers['nextjs-conference']) {
+				await require('./init-nextjs-conference')(props);
 			}
 
-			if (answers['nextjs-subscription-commerce']) {
+			if (
+				answers['nextjs-conference'] ||
+				answers['nextjs-subscription-commerce']
+			) {
 				process.chdir(`${projectPath}/service-api`);
 				await installDeps({ shouldUseYarn, flags });
 				process.chdir(`${projectPath}/website`);
