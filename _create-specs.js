@@ -97,9 +97,25 @@ async function photofinder() {
   console.log(`✔ photofinder done`);
 }
 
+async function conference() {
+  const spec = await getFullSpec('conference-boilerplate');
+
+  // Remove references as we do not want to update existing items
+  spec.items.forEach(removeItemCataloguePath);
+
+  writeFileSync(
+    resolve(__dirname, `./src/journeys/_shared/specs/conference-boilerplate.json`),
+    JSON.stringify(spec, null, 1),
+    'utf-8'
+  );
+
+  console.log(`✔ conference done`);
+}
+
 (async function createSpecs() {
   await furniture();
   await voyage();
   await photofinder();
+  await conference();
   process.exit(0);
 })();

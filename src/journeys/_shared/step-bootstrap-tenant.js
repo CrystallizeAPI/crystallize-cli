@@ -207,7 +207,7 @@ const askIfBootstrapTenant = {
 				break;
 			}
 			case 'Next.js - Conference': {
-				answers.bootstrapTenant = 'conference';
+				answers.bootstrapTenant = 'conference-boilerplate';
 				break;
 			}
 		}
