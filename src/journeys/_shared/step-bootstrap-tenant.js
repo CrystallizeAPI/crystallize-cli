@@ -281,7 +281,7 @@ const stepsBootstrapExampleTenant = [
 									),
 								},
 								{
-									value: 'conference',
+									value: 'conference-boilerplate',
 									render: (
 										<>
 											<Text>
