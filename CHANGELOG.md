@@ -1,3 +1,10 @@
+# [3.29.0-beta.3](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.29.0-beta.2...v3.29.0-beta.3) (2022-01-24)
+
+
+### Bug Fixes
+
+* spec not found error ([e021cf5](https://github.com/CrystallizeAPI/crystallize-cli/commit/e021cf579edb976e2f0c5937a1b0aa81d4cd2ddc))
+
 # [3.29.0-beta.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.29.0-beta.1...v3.29.0-beta.2) (2022-01-24)
 
 
