@@ -1,3 +1,18 @@
+# [3.29.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.28.1...v3.29.0) (2022-01-25)
+
+
+### Bug Fixes
+
+* add .env to gitignore and remove unused variable ([101689c](https://github.com/CrystallizeAPI/crystallize-cli/commit/101689c00b334e59866f0f09fdd203e371dd14e1))
+* spec not found error ([e021cf5](https://github.com/CrystallizeAPI/crystallize-cli/commit/e021cf579edb976e2f0c5937a1b0aa81d4cd2ddc))
+
+
+### Features
+
+* add conference boilerplate ([f1b6e2d](https://github.com/CrystallizeAPI/crystallize-cli/commit/f1b6e2d2bdadaada962c87d7b5444118e54c223e))
+* add conference boilerplate ([#21](https://github.com/CrystallizeAPI/crystallize-cli/issues/21)) ([195b530](https://github.com/CrystallizeAPI/crystallize-cli/commit/195b530cd514f1157621300674bff2c106b7354e))
+* add json spec for conference boilerplate ([7c65e02](https://github.com/CrystallizeAPI/crystallize-cli/commit/7c65e02ff23c14ac6d05e9299627e88a69768014))
+
 # [3.29.0-beta.3](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.29.0-beta.2...v3.29.0-beta.3) (2022-01-24)
 
 
