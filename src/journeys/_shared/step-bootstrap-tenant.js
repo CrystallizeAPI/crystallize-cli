@@ -291,7 +291,7 @@ const stepsBootstrapExampleTenant = [
 												<Newline />
 												<Text dimColor>
 													Example implementation:
-													https://conference-boilerplate.netlify.app/
+													https://conference.superfast.shop/
 												</Text>
 											</Text>
 										</>

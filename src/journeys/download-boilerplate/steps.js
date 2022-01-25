@@ -139,7 +139,7 @@ const steps = [
 										</Text>
 										<Newline />
 										<Text dimColor>
-											Demo: https://conference-boilerplate.netlify.app/ 
+											Demo: https://conference.superfast.shop/
 										</Text>
 									</>
 								),
