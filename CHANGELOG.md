@@ -1,3 +1,10 @@
+# [3.30.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.29.0...v3.30.0) (2022-01-25)
+
+
+### Features
+
+* new urls for conference boiler ([794d33f](https://github.com/CrystallizeAPI/crystallize-cli/commit/794d33f0798700fcbb101c042f2bb4e1721ac0e3))
+
 # [3.29.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.28.1...v3.29.0) (2022-01-25)
 
 
