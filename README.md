@@ -38,7 +38,7 @@ or
 npx @crystallize/cli -b
 ```
 
-This will bootstrap an existing tenant with example data.
+This will bootstrap an existing tenant with example data
 
 ### Templates
 
