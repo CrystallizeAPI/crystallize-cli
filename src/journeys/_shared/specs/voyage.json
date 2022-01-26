@@ -331,7 +331,7 @@
         "colspan": 1
        },
        "item": {
-        "cataloguePath": "/shop/hiking-jacket"
+        "cataloguePath": "/shop/tent"
        }
       },
       {
@@ -349,7 +349,7 @@
         "colspan": 1
        },
        "item": {
-        "cataloguePath": "/stories/the-farm-life"
+        "cataloguePath": "/stories/she-moves-us"
        }
       },
       {
@@ -358,7 +358,7 @@
         "colspan": 1
        },
        "item": {
-        "cataloguePath": "/shop/adventure-cup"
+        "cataloguePath": "/stories/the-farm-life"
        }
       }
      ]
@@ -404,55 +404,6 @@
        "item": {
         "cataloguePath": "/stories/the-farm-life"
        }
-      }
-     ]
-    },
-    {
-     "columns": [
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 2
-       },
-       "item": {
-        "cataloguePath": "/shop/water-bottle"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 2
-       },
-       "item": {
-        "cataloguePath": "/shop/travel-backpack"
-       }
-      }
-     ]
-    },
-    {
-     "columns": [
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 2
-       },
-       "item": {
-        "cataloguePath": "/shop/chocolate-bar"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": null
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": null
       }
      ]
     }
@@ -1566,402 +1517,6 @@
      "topics": null
     },
     {
-     "name": "Iceland Adventure",
-     "externalReference": null,
-     "shape": "5f6c77a133ed22001d2797f0",
-     "components": {
-      "title": "Iceland Adventure",
-      "byline": [
-       {
-        "cataloguePath": "/authors/john-doe",
-        "externalReference": null
-       },
-       {
-        "cataloguePath": "/authors/jane-doe",
-        "externalReference": null
-       }
-      ],
-      "hero": [
-       {
-        "src": "https://media.crystallize.com/voyage/20/9/25/3/geysir-thumbnail-hero.jpg",
-        "altText": null,
-        "caption": null
-       }
-      ],
-      "hero-video": [
-       {
-        "src": "https://media.crystallize.com/voyage/20/10/15/5/geysir-iceland/cmaf/geysir-iceland.m3u8",
-        "title": "Iceland hot spring",
-        "thumbnails": [
-         {
-          "src": "https://media.crystallize.com/voyage/20/10/19/1/geysir.jpg",
-          "altText": "Geysir about to erupt",
-          "caption": null
-         }
-        ]
-       }
-      ],
-      "intro": {
-       "json": [
-        {
-         "kind": "block",
-         "type": "paragraph",
-         "metadata": {},
-         "children": [
-          {
-           "kind": "inline",
-           "metadata": {},
-           "textContent": "Icelands spectacular nature."
-          }
-         ]
-        }
-       ]
-      },
-      "story": [
-       {
-        "title": "Aurora Borealis Iceland",
-        "body": {
-         "json": [
-          {
-           "kind": "block",
-           "type": "paragraph",
-           "metadata": {},
-           "children": [
-            {
-             "kind": "inline",
-             "metadata": {},
-             "textContent": "Beautiful Aurora Borealis."
-            }
-           ]
-          },
-          {
-           "kind": "block",
-           "metadata": {},
-           "type": "unordered-list",
-           "children": [
-            {
-             "kind": "block",
-             "type": "list-item",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "Colorful"
-              }
-             ]
-            },
-            {
-             "kind": "block",
-             "type": "list-item",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "Bright"
-              }
-             ]
-            },
-            {
-             "kind": "block",
-             "type": "list-item",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "Blue"
-              }
-             ]
-            }
-           ]
-          }
-         ]
-        },
-        "images": [
-         {
-          "src": "https://media.crystallize.com/voyage/20/9/25/4/aurora-borealis-iceland.jpg",
-          "altText": "Aurora Borealis",
-          "caption": null
-         }
-        ]
-       },
-       {
-        "title": "Seljalandsfoss Waterfall, Iceland",
-        "body": {
-         "json": [
-          {
-           "kind": "block",
-           "type": "paragraph",
-           "metadata": {},
-           "children": [
-            {
-             "kind": "inline",
-             "metadata": {},
-             "textContent": "Idyllic landscape with a waterfall. Idyllic landscape with a waterfall. Idyllic landscape with a waterfall. Idyllic landscape with a waterfall."
-            }
-           ]
-          },
-          {
-           "kind": "block",
-           "type": "paragraph",
-           "metadata": {},
-           "children": [
-            {
-             "kind": "inline",
-             "metadata": {},
-             "textContent": "Idyllic landscape with a waterfall. Idyllic landscape with a waterfall. Idyllic landscape with a waterfall. Idyllic landscape with a waterfall."
-            }
-           ]
-          },
-          {
-           "kind": "block",
-           "metadata": {},
-           "type": "unordered-list",
-           "children": [
-            {
-             "kind": "block",
-             "type": "list-item",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "Colorful"
-              }
-             ]
-            },
-            {
-             "kind": "block",
-             "type": "list-item",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "Bright"
-              }
-             ]
-            },
-            {
-             "kind": "block",
-             "type": "list-item",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "Blue"
-              }
-             ]
-            }
-           ]
-          }
-         ]
-        },
-        "images": [
-         {
-          "src": "https://media.crystallize.com/voyage/20/9/25/5/seljalandsfoss-waterfall.jpg",
-          "altText": "Seljalandsfoss",
-          "caption": null
-         }
-        ]
-       },
-       {
-        "title": "Goðafoss Waterfall, Iceland",
-        "body": {
-         "json": [
-          {
-           "kind": "block",
-           "type": "paragraph",
-           "metadata": {},
-           "children": [
-            {
-             "kind": "inline",
-             "metadata": {},
-             "textContent": "Waterfall of the Gods."
-            }
-           ]
-          }
-         ]
-        },
-        "images": [
-         {
-          "src": "https://media.crystallize.com/voyage/20/9/25/6/godafoss.jpg",
-          "altText": "Goðafoss",
-          "caption": null
-         }
-        ]
-       },
-       {
-        "title": "Jökulsárlón, Iceland",
-        "body": {
-         "json": [
-          {
-           "kind": "block",
-           "type": "paragraph",
-           "metadata": {},
-           "children": [
-            {
-             "kind": "inline",
-             "metadata": {},
-             "textContent": "Jökulsárlón glaciers."
-            }
-           ]
-          }
-         ]
-        },
-        "images": [
-         {
-          "src": "https://media.crystallize.com/voyage/20/9/25/7/jokulsarlon.jpg",
-          "altText": null,
-          "caption": null
-         }
-        ]
-       },
-       {
-        "title": "Westfjords Region, Iceland",
-        "body": {
-         "json": [
-          {
-           "kind": "block",
-           "type": "paragraph",
-           "metadata": {},
-           "children": [
-            {
-             "kind": "inline",
-             "metadata": {},
-             "textContent": "Lupines in Iceland."
-            }
-           ]
-          }
-         ]
-        },
-        "images": [
-         {
-          "src": "https://media.crystallize.com/voyage/20/9/25/8/westfjords-region-iceland.jpg",
-          "altText": null,
-          "caption": null
-         }
-        ]
-       },
-       {
-        "title": "Iceberg",
-        "body": {
-         "json": [
-          {
-           "kind": "block",
-           "type": "paragraph",
-           "metadata": {},
-           "children": [
-            {
-             "kind": "inline",
-             "metadata": {},
-             "textContent": "Iceberg not Carlsberg,  not Spielberg, not Jarlsberg. The ice."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "title": "Iceland horse",
-        "body": {
-         "json": [
-          {
-           "kind": "block",
-           "type": "paragraph",
-           "metadata": {},
-           "children": [
-            {
-             "kind": "inline",
-             "metadata": {},
-             "textContent": "Grazing horses in Iceland"
-            }
-           ]
-          }
-         ]
-        },
-        "images": [
-         {
-          "src": "https://media.crystallize.com/voyage/20/9/25/9/iceland-horse.jpg",
-          "altText": null,
-          "caption": null
-         }
-        ]
-       },
-       {
-        "title": "Hofskirkja, Iceland",
-        "body": {
-         "json": [
-          {
-           "kind": "block",
-           "type": "paragraph",
-           "metadata": {},
-           "children": [
-            {
-             "kind": "inline",
-             "metadata": {},
-             "textContent": "Hofskirkja, Iceland."
-            }
-           ]
-          }
-         ]
-        },
-        "images": [
-         {
-          "src": "https://media.crystallize.com/voyage/20/9/25/10/hofskirkja.jpg",
-          "altText": "Hofskirkja",
-          "caption": null
-         }
-        ]
-       },
-       {
-        "title": "Blue Lagoon, Iceland",
-        "body": {
-         "json": [
-          {
-           "kind": "block",
-           "type": "paragraph",
-           "metadata": {},
-           "children": [
-            {
-             "kind": "inline",
-             "metadata": {},
-             "textContent": "Blue Lagoon hot springs Iceland"
-            }
-           ]
-          }
-         ]
-        },
-        "images": [
-         {
-          "src": "https://media.crystallize.com/voyage/20/9/25/11/blue-lagoon.jpg",
-          "altText": "Blue Lagoon, Iceland",
-          "caption": null
-         }
-        ]
-       }
-      ],
-      "featured-products": [
-       {
-        "cataloguePath": "/shop/chocolate-bar",
-        "externalReference": null
-       },
-       {
-        "cataloguePath": "/shop/hiking-jacket-orange",
-        "externalReference": null
-       },
-       {
-        "cataloguePath": "/shop/hiking-jacket",
-        "externalReference": null
-       }
-      ]
-     },
-     "topics": null
-    },
-    {
      "name": "Swiss Chocolate",
      "externalReference": null,
      "shape": "5f6c77a133ed22001d2797f0",
@@ -2426,6 +1981,426 @@
           }
          }
         ]
+       }
+      ]
+     },
+     "topics": null
+    },
+    {
+     "name": "Iceland Adventure",
+     "externalReference": null,
+     "shape": "5f6c77a133ed22001d2797f0",
+     "components": {
+      "title": "Iceland Adventure",
+      "byline": [
+       {
+        "cataloguePath": "/authors/john-doe",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/authors/jane-doe",
+        "externalReference": null
+       }
+      ],
+      "hero": [
+       {
+        "src": "https://media.crystallize.com/voyage/20/9/25/3/geysir-thumbnail-hero.jpg",
+        "altText": null,
+        "caption": null
+       }
+      ],
+      "hero-video": [
+       {
+        "src": "https://media.crystallize.com/voyage/20/10/15/5/geysir-iceland/cmaf/geysir-iceland.m3u8",
+        "title": "Iceland hot spring",
+        "thumbnails": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/10/19/1/geysir.jpg",
+          "altText": "Geysir about to erupt",
+          "caption": null
+         }
+        ]
+       }
+      ],
+      "intro": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "Icelands spectacular nature."
+          }
+         ]
+        }
+       ]
+      },
+      "story": [
+       {
+        "title": "Aurora Borealis Iceland",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Beautiful Aurora Borealis."
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "metadata": {},
+           "type": "unordered-list",
+           "children": [
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Colorful"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Bright"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Blue"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/25/4/aurora-borealis-iceland.jpg",
+          "altText": "Aurora Borealis",
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Seljalandsfoss Waterfall, Iceland",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Idyllic landscape with a waterfall. Idyllic landscape with a waterfall. Idyllic landscape with a waterfall. Idyllic landscape with a waterfall."
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Idyllic landscape with a waterfall. Idyllic landscape with a waterfall. Idyllic landscape with a waterfall. Idyllic landscape with a waterfall."
+            }
+           ]
+          },
+          {
+           "kind": "block",
+           "metadata": {},
+           "type": "unordered-list",
+           "children": [
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Colorful"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Bright"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Blue"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Red"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "list-item",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Pink"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/25/5/seljalandsfoss-waterfall.jpg",
+          "altText": "Seljalandsfoss",
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Goðafoss Waterfall, Iceland",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Waterfall of the Gods."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/25/6/godafoss.jpg",
+          "altText": "Goðafoss",
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Jökulsárlón, Iceland",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Jökulsárlón glaciers."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/25/7/jokulsarlon.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Westfjords Region, Iceland",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Lupines in Iceland."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/25/8/westfjords-region-iceland.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Iceberg",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Iceberg not Carlsberg,  not Spielberg, not Jarlsberg. The ice."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "title": "Iceland horse",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Grazing horses in Iceland"
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/25/9/iceland-horse.jpg",
+          "altText": null,
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Hofskirkja, Iceland",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Hofskirkja, Iceland."
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/25/10/hofskirkja.jpg",
+          "altText": "Hofskirkja",
+          "caption": null
+         }
+        ]
+       },
+       {
+        "title": "Blue Lagoon, Iceland",
+        "body": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Blue Lagoon hot springs Iceland"
+            }
+           ]
+          }
+         ]
+        },
+        "images": [
+         {
+          "src": "https://media.crystallize.com/voyage/20/9/25/11/blue-lagoon.jpg",
+          "altText": "Blue Lagoon, Iceland",
+          "caption": null
+         }
+        ]
+       }
+      ],
+      "featured-products": [
+       {
+        "cataloguePath": "/shop/chocolate-bar",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/shop/hiking-jacket-orange",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/shop/hiking-jacket",
+        "externalReference": null
        }
       ]
      },
@@ -3710,7 +3685,18 @@
      "name": "Water Bottle",
      "externalReference": null,
      "shape": "5f6c770133ed22001d2797ed",
-     "components": {},
+     "components": {
+      "summary": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": []
+        }
+       ]
+      }
+     },
      "topics": null,
      "vatType": "No Tax",
      "variants": [

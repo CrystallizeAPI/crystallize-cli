@@ -33,8 +33,8 @@
  "subscriptionPlans": [],
  "priceVariants": [
   {
-   "identifier": "norway",
-   "name": "Norway",
+   "identifier": "nok-test",
+   "name": "Norge",
    "currency": "NOK"
   },
   {
@@ -46,6 +46,11 @@
    "identifier": "sales",
    "name": "Sales",
    "currency": "EUR"
+  },
+  {
+   "identifier": "usa-dollars",
+   "name": "USA",
+   "currency": "USD"
   }
  ],
  "topicMaps": [
@@ -58,10 +63,6 @@
      "path": "/room/livingroom"
     },
     {
-     "name": "Outdoor",
-     "path": "/room/outdoor"
-    },
-    {
      "name": "Kitchen",
      "path": "/room/kitchen"
     },
@@ -72,6 +73,10 @@
     {
      "name": "Bedroom",
      "path": "/room/bedroom"
+    },
+    {
+     "name": "Outdoor",
+     "path": "/room/outdoor"
     }
    ]
   },
@@ -88,64 +93,24 @@
      "path": "/material/metal"
     },
     {
-     "name": "Glass",
-     "path": "/material/glass"
-    },
-    {
      "name": "Porcelain",
      "path": "/material/porcelain"
+    },
+    {
+     "name": "Glass",
+     "path": "/material/glass"
     },
     {
      "name": "Ceramic",
      "path": "/material/ceramic"
     },
     {
-     "name": "Stone",
-     "path": "/material/stone"
-    },
-    {
      "name": "Plastic",
      "path": "/material/plastic"
-    }
-   ]
-  },
-  {
-   "name": "Specials",
-   "path": "/specials",
-   "children": [
-    {
-     "name": "Organic",
-     "path": "/specials/organic"
     },
     {
-     "name": "Eco friendly",
-     "path": "/specials/eco-friendly"
-    },
-    {
-     "name": "New arrival",
-     "path": "/specials/new-arrival"
-    },
-    {
-     "name": "Outlet",
-     "path": "/specials/outlet"
-    },
-    {
-     "name": "Campaign",
-     "path": "/specials/campaign"
-    },
-    {
-     "name": "Sale",
-     "path": "/specials/sale"
-    },
-    {
-     "name": "Trending now",
-     "path": "/specials/trending-now",
-     "children": [
-      {
-       "name": "Brand New",
-       "path": "/specials/trending-now/brand-new"
-      }
-     ]
+     "name": "Stone",
+     "path": "/material/stone"
     }
    ]
   },
@@ -170,30 +135,16 @@
      "path": "/color/black"
     },
     {
-     "name": "Green",
-     "path": "/color/green",
-     "children": [
-      {
-       "name": "Light Green",
-       "path": "/color/green/light-green"
-      },
-      {
-       "name": "Dark Green",
-       "path": "/color/green/dark-green"
-      }
-     ]
-    },
-    {
      "name": "Blue",
      "path": "/color/blue",
      "children": [
       {
-       "name": "Dark Blue",
-       "path": "/color/blue/dark-blue"
-      },
-      {
        "name": "Light Blue",
        "path": "/color/blue/light-blue"
+      },
+      {
+       "name": "Dark Blue",
+       "path": "/color/blue/dark-blue"
       }
      ]
     },
@@ -210,12 +161,26 @@
        "path": "/color/red/maroon"
       },
       {
-       "name": "Purple",
-       "path": "/color/red/purple"
-      },
-      {
        "name": "Violet",
        "path": "/color/red/violet"
+      },
+      {
+       "name": "Purple",
+       "path": "/color/red/purple"
+      }
+     ]
+    },
+    {
+     "name": "Green",
+     "path": "/color/green",
+     "children": [
+      {
+       "name": "Light Green",
+       "path": "/color/green/light-green"
+      },
+      {
+       "name": "Dark Green",
+       "path": "/color/green/dark-green"
       }
      ]
     },
@@ -234,12 +199,62 @@
      "path": "/color/gray",
      "children": [
       {
-       "name": "Light grey",
-       "path": "/color/gray/light-grey"
-      },
-      {
        "name": "Dark grey",
        "path": "/color/gray/dark-grey"
+      },
+      {
+       "name": "Light grey",
+       "path": "/color/gray/light-grey"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Specials",
+   "path": "/specials",
+   "children": [
+    {
+     "name": "Organic",
+     "path": "/specials/organic"
+    },
+    {
+     "name": "New arrival",
+     "path": "/specials/new-arrival"
+    },
+    {
+     "name": "Outlet",
+     "path": "/specials/outlet"
+    },
+    {
+     "name": "Eco friendly",
+     "path": "/specials/eco-friendly"
+    },
+    {
+     "name": "Sale",
+     "path": "/specials/sale"
+    },
+    {
+     "name": "Campaign",
+     "path": "/specials/campaign",
+     "children": [
+      {
+       "name": "Summer special",
+       "path": "/specials/campaign/summer-special"
+      },
+      {
+       "name": "Winter cozy",
+       "path": "/specials/campaign/winter-cozy"
+      }
+     ]
+    },
+    {
+     "name": "Trending now",
+     "path": "/specials/trending-now",
+     "children": [
+      {
+       "name": "Brand New",
+       "path": "/specials/trending-now/brand-new"
       }
      ]
     }
@@ -282,6 +297,36 @@
       {
        "name": "Merino Wool",
        "path": "/fabric/wool/merino-wool"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Brands",
+   "path": "/brands",
+   "children": [
+    {
+     "name": "Apple",
+     "path": "/brands/apple",
+     "children": [
+      {
+       "name": "iPad",
+       "path": "/brands/apple/ipad"
+      },
+      {
+       "name": "iPhone",
+       "path": "/brands/apple/iphone",
+       "children": [
+        {
+         "name": "iPhone 12",
+         "path": "/brands/apple/iphone/iphone-12"
+        },
+        {
+         "name": "iPhone 11",
+         "path": "/brands/apple/iphone/iphone-11"
+        }
+       ]
       }
      ]
     }
@@ -560,7 +605,7 @@
      "name": "Related products",
      "type": "itemRelations",
      "description": null,
-     "config": null
+     "config": {}
     },
     {
      "id": "featured",
@@ -589,6 +634,36 @@
         "type": "images",
         "description": "",
         "config": null
+       }
+      ]
+     }
+    },
+    {
+     "id": "bundle",
+     "name": "Bundle",
+     "type": "contentChunk",
+     "description": null,
+     "config": {
+      "repeatable": true,
+      "components": [
+       {
+        "id": "product",
+        "name": "Product",
+        "type": "itemRelations",
+        "description": "",
+        "config": {}
+       },
+       {
+        "id": "count",
+        "name": "Count",
+        "type": "numeric",
+        "description": "",
+        "config": {
+         "decimalPlaces": 0,
+         "units": [
+          "Pcs"
+         ]
+        }
        }
       ]
      }
@@ -636,7 +711,9 @@
         "description": "",
         "config": {
          "decimalPlaces": 0,
-         "units": []
+         "units": [
+          "%"
+         ]
         }
        },
        {
@@ -646,7 +723,9 @@
         "description": "",
         "config": {
          "decimalPlaces": 0,
-         "units": []
+         "units": [
+          "EUR"
+         ]
         }
        }
       ]
@@ -660,11 +739,50 @@
      "config": null
     },
     {
+     "id": "valid-from",
+     "name": "Valid from",
+     "type": "datetime",
+     "description": "",
+     "config": null
+    },
+    {
      "id": "only-for",
      "name": "Only for",
      "type": "itemRelations",
      "description": "",
      "config": {}
+    },
+    {
+     "id": "only-for-these",
+     "name": "Only for these",
+     "type": "selection",
+     "description": "",
+     "config": {
+      "min": 1,
+      "max": 1,
+      "options": [
+       {
+        "key": "New customers",
+        "value": "1",
+        "isPreselected": true
+       },
+       {
+        "key": "Returning customers",
+        "value": "2",
+        "isPreselected": false
+       },
+       {
+        "key": "All customers",
+        "value": "3",
+        "isPreselected": false
+       },
+       {
+        "key": "B2B Customers",
+        "value": "4",
+        "isPreselected": false
+       }
+      ]
+     }
     }
    ]
   },
@@ -711,13 +829,6 @@
      "config": null
     }
    ]
-  },
-  {
-   "name": "Klær",
-   "id": "klaer",
-   "identifier": "klaer",
-   "type": "product",
-   "components": []
   },
   {
    "name": "learn-demo",
@@ -782,42 +893,6 @@
        }
       ]
      }
-    }
-   ]
-  },
-  {
-   "name": "TEST",
-   "id": "test",
-   "identifier": "test",
-   "type": "folder",
-   "components": [
-    {
-     "id": "title",
-     "name": "Title",
-     "type": "singleLine",
-     "description": null,
-     "config": null
-    },
-    {
-     "id": "opla",
-     "name": "opla",
-     "type": "paragraphCollection",
-     "description": "",
-     "config": null
-    },
-    {
-     "id": "grid",
-     "name": "grid",
-     "type": "gridRelations",
-     "description": "",
-     "config": null
-    },
-    {
-     "id": "image",
-     "name": "image",
-     "type": "images",
-     "description": "",
-     "config": null
     }
    ]
   }
@@ -1322,7 +1397,7 @@
         "colspan": 2
        },
        "item": {
-        "cataloguePath": "/stories/use-your-houseplants-as-decor"
+        "cataloguePath": "/shop/plants/philodendron-birkin"
        }
       },
       {
@@ -1331,7 +1406,7 @@
         "colspan": 1
        },
        "item": {
-        "cataloguePath": "/shop/chairs/black-chair"
+        "cataloguePath": "/stories/bohemian-interior-design"
        }
       },
       {
@@ -1340,7 +1415,7 @@
         "colspan": 1
        },
        "item": {
-        "cataloguePath": "/shop/plants/asplenium-nidus"
+        "cataloguePath": "/stories/how-to-choose-the-right-rug"
        }
       }
      ]
@@ -1353,7 +1428,7 @@
         "colspan": 1
        },
        "item": {
-        "cataloguePath": "/shop/decoration/shelves-in-wood"
+        "cataloguePath": "/stories/industrial-interior-design"
        }
       },
       {
@@ -1362,7 +1437,7 @@
         "colspan": 1
        },
        "item": {
-        "cataloguePath": "/shop/decoration/white-vase-with-handle"
+        "cataloguePath": "/stories/industrial-interior-design"
        }
       }
      ]
@@ -1375,7 +1450,7 @@
         "colspan": 2
        },
        "item": {
-        "cataloguePath": "/stories/industrial-interior-design"
+        "cataloguePath": "/stories/bathroom-trends-for-2020"
        }
       },
       {
@@ -1882,6 +1957,13 @@
        "item": {
         "cataloguePath": "/stories/industrial-interior-design"
        }
+      },
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 1
+       },
+       "item": null
       }
      ]
     },
@@ -1892,14 +1974,18 @@
         "rowspan": 1,
         "colspan": 1
        },
-       "item": null
+       "item": {
+        "cataloguePath": "/shop/sofas/arbour-eco"
+       }
       },
       {
        "layout": {
         "rowspan": 1,
-        "colspan": 1
+        "colspan": 2
        },
-       "item": null
+       "item": {
+        "cataloguePath": "/shop/tables"
+       }
       },
       {
        "layout": {
@@ -2019,6 +2105,150 @@
        },
        "item": {
         "cataloguePath": "/shop/plants/asplenium-nidus"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "61b72a30c76de7d27abc4c5f",
+   "name": "Black friday",
+   "rows": [
+    {
+     "columns": [
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 2
+       },
+       "item": {
+        "cataloguePath": "/shop/plants/aglaonemas-spotted-star"
+       }
+      },
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 1
+       },
+       "item": {
+        "cataloguePath": "/shop/plants/asplenium-nidus"
+       }
+      }
+     ]
+    },
+    {
+     "columns": [
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 1
+       },
+       "item": {
+        "cataloguePath": "/assets/posters-banner"
+       }
+      },
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 2
+       },
+       "item": {
+        "cataloguePath": "/stories/industrial-interior-design"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "61ddb16408d1d944d043a8d5",
+   "name": "Super Grd",
+   "rows": [
+    {
+     "columns": [
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 2
+       },
+       "item": {
+        "cataloguePath": "/shop/plants/philodendron-birkin"
+       }
+      },
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 1
+       },
+       "item": {
+        "cataloguePath": "/shop/chairs/black-chair"
+       }
+      }
+     ]
+    },
+    {
+     "columns": [
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 1
+       },
+       "item": {
+        "cataloguePath": "/assets/posters-assets/posters-assets"
+       }
+      },
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 2
+       },
+       "item": {
+        "cataloguePath": "/stories/bohemian-interior-design"
+       }
+      }
+     ]
+    },
+    {
+     "columns": [
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 3
+       },
+       "item": {
+        "cataloguePath": "/assets/posters-assets/posters-assets"
+       }
+      }
+     ]
+    },
+    {
+     "columns": [
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 1
+       },
+       "item": {
+        "cataloguePath": "/shop/plants/alocasia-portodora"
+       }
+      },
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 1
+       },
+       "item": {
+        "cataloguePath": "/shop/plants/peace-lily-spathiphyllum-wallisii"
+       }
+      },
+      {
+       "layout": {
+        "rowspan": 1,
+        "colspan": 1
+       },
+       "item": {
+        "cataloguePath": "/shop/plants/bonsai-ficus-ginseng"
        }
       }
      ]
@@ -2239,8 +2469,7 @@
          "name": "Chair",
          "sku": "chair-1625667436521",
          "price": {
-          "default": 78,
-          "norway": 803.51
+          "default": 78
          },
          "isDefault": true,
          "attributes": {},
@@ -2249,6 +2478,477 @@
          "images": [
           {
            "src": "https://media.crystallize.com/furniture/21/7/7/18/simple-black-chair.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "ALUMINIUM",
+       "externalReference": null,
+       "shape": "default-product",
+       "components": {
+        "summary": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Aluminium är en sittfåtölj designad av Mats Theselius år 1990 och produceras av Källemo. Fåtöljen, som namnet avslöjar, tillverkas i aluminium och går att få i antingen polerad eller mattborstad finish. Sitsen är klädd i ett kärnläder från Tärnsjö Garveri och kan väljas i ett flertal färger. Ryggen stoppas med kallskum och sitsen i kallskum samt Dymetrol. Stolskarmen kan matchas efter tycke till klädseln och går att få i naturlig bok, alternativt i svart- eller valnötslaserad bok."
+            }
+           ]
+          }
+         ]
+        },
+        "specs": [
+         {
+          "title": "Grundegenskaper",
+          "properties": {
+           "Width": "59 cm",
+           "Height": "73 cm",
+           "Depth": "61 cm",
+           "Sitting height": "45 cm",
+           "Material": "Aluminium, Bok, Kallskum, Läder",
+           "Stoppning": "Kallskum"
+          }
+         }
+        ],
+        "description": [
+         {
+          "body": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Aluminium ingår i en serie produkter som många kallar för Theselius-fåtöljer, där gemensamt är bruket av större stycken metall kombinerat med läder. Denna kombination gör att fåtöljen är lika elegant som industriell i sin look. Theselius stolar är idag väldigt eftertraktade världen över."
+              }
+             ]
+            }
+           ]
+          },
+          "images": [
+           {
+            "src": "https://media.crystallize.com/furniture/22/1/11/2/10178762r_2.jpg",
+            "altText": null,
+            "caption": null
+           },
+           {
+            "src": "https://media.crystallize.com/furniture/22/1/11/2/10178762r_3.jpg",
+            "altText": null,
+            "caption": null
+           },
+           {
+            "src": "https://media.crystallize.com/furniture/22/1/11/2/10178762r_4.jpg",
+            "altText": null,
+            "caption": null
+           },
+           {
+            "src": "https://media.crystallize.com/furniture/22/1/11/2/10178762r_5.jpg",
+            "altText": null,
+            "caption": null
+           },
+           {
+            "src": "https://media.crystallize.com/furniture/22/1/11/2/10178762r_6.jpg",
+            "altText": null,
+            "caption": null
+           },
+           {
+            "src": "https://media.crystallize.com/furniture/22/1/11/2/10178762r_7.jpg",
+            "altText": null,
+            "caption": null
+           }
+          ]
+         }
+        ],
+        "related-products": [
+         {
+          "cataloguePath": "/shop/chairs/bamboo-chair",
+          "externalReference": null
+         }
+        ],
+        "bundle": []
+       },
+       "topics": [
+        {
+         "path": "/room/livingroom"
+        },
+        {
+         "path": "/color/black"
+        },
+        {
+         "path": "/color/brown/dark-brown"
+        },
+        {
+         "path": "/specials/eco-friendly"
+        }
+       ],
+       "vatType": "No Tax",
+       "variants": [
+        {
+         "name": "Aluminium Mattborstad aluminium",
+         "sku": "10694220",
+         "price": {
+          "default": 3989,
+          "nok-test": 39895,
+          "sales": 2598,
+          "usa-dollars": 3989
+         },
+         "isDefault": true,
+         "attributes": {
+          "Upholstery": "Tärnsjöläder 8175",
+          "Legs": "Mattborstad aluminium",
+          "Finish": "Karm i naturlig bok"
+         },
+         "externalReference": null,
+         "stock": 0,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/10/1/10178762r_7.jpg",
+           "altText": null,
+           "caption": {
+            "json": [
+             {
+              "kind": "block",
+              "type": "paragraph",
+              "metadata": {},
+              "children": []
+             }
+            ]
+           }
+          },
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/10/1/10178762r_10.jpg",
+           "altText": null,
+           "caption": null
+          },
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/10/1/10178762r_9.jpg",
+           "altText": null,
+           "caption": null
+          },
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/10/1/10178762r_1.jpg",
+           "altText": null,
+           "caption": null
+          },
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/10/1/10178762r_8.jpg",
+           "altText": null,
+           "caption": null
+          },
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/10/1/10178762r_11-1.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "Aluminium Mattborstad aluminium",
+         "sku": "10178747",
+         "price": {
+          "default": 3989,
+          "nok-test": 39895,
+          "sales": 2598,
+          "usa-dollars": 3989
+         },
+         "isDefault": false,
+         "attributes": {
+          "Upholstery": "Tärnsjöläder 8678",
+          "Legs": "Mattborstad aluminium",
+          "Finish": "Karm i naturlig bok"
+         },
+         "externalReference": null,
+         "stock": 0,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/10/1/10178762r_10.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "Aluminium Mattborstad aluminium",
+         "sku": "10178754",
+         "price": {
+          "default": 3989,
+          "nok-test": 39895,
+          "sales": 2598,
+          "usa-dollars": 3989
+         },
+         "isDefault": false,
+         "attributes": {
+          "Upholstery": "Tärnsjöläder 8678",
+          "Legs": "Mattborstad aluminium",
+          "Finish": "Karm i svartlaserad bok"
+         },
+         "externalReference": null,
+         "stock": 0,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/10/1/10178762r_10.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "Aluminium Mattborstad aluminium",
+         "sku": "10178768",
+         "price": {
+          "default": 3989,
+          "nok-test": 39895,
+          "sales": 2598,
+          "usa-dollars": 3989
+         },
+         "isDefault": false,
+         "attributes": {
+          "Upholstery": "Tärnsjöläder 8678",
+          "Legs": "Polerad aluminium",
+          "Finish": "Karm i naturlig bok"
+         },
+         "externalReference": null,
+         "stock": 0,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/10/1/10178762r_10.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "Aluminium Mattborstad aluminium",
+         "sku": "10178775",
+         "price": {
+          "default": 3989,
+          "nok-test": 39895,
+          "sales": 2598,
+          "usa-dollars": 3989
+         },
+         "isDefault": false,
+         "attributes": {
+          "Upholstery": "Tärnsjöläder 8678",
+          "Legs": "Polerad aluminium",
+          "Finish": "Karm i svartlaserad bok"
+         },
+         "externalReference": null,
+         "stock": 0,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/10/1/10178762r_10.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "Aluminium Mattborstad aluminium",
+         "sku": "10233227",
+         "price": {
+          "default": 3989,
+          "nok-test": 39895,
+          "sales": 2598,
+          "usa-dollars": 3989
+         },
+         "isDefault": false,
+         "attributes": {
+          "Upholstery": "Tärnsjöläder 8800",
+          "Legs": "Mattborstad aluminium",
+          "Finish": "Karm i naturlig bok"
+         },
+         "externalReference": null,
+         "stock": 0,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/10/1/10178762r_9.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "Aluminium Mattborstad aluminium",
+         "sku": "10178753",
+         "price": {
+          "default": 3989,
+          "nok-test": 39895,
+          "sales": 2598,
+          "usa-dollars": 3989
+         },
+         "isDefault": false,
+         "attributes": {
+          "Upholstery": "Tärnsjöläder 8800",
+          "Legs": "Mattborstad aluminium",
+          "Finish": "Karm i svartlaserad bok"
+         },
+         "externalReference": null,
+         "stock": 0,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/10/1/10178762r_9.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "Aluminium Mattborstad aluminium",
+         "sku": "10233226",
+         "price": {
+          "default": 3989,
+          "nok-test": 39895,
+          "sales": 2598,
+          "usa-dollars": 3989
+         },
+         "isDefault": false,
+         "attributes": {
+          "Upholstery": "Tärnsjöläder 8800",
+          "Legs": "Polerad aluminium",
+          "Finish": "Karm i naturlig bok"
+         },
+         "externalReference": null,
+         "stock": 0,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/10/1/10178762r_9.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "Aluminium Mattborstad aluminium",
+         "sku": "10178774",
+         "price": {
+          "default": 3989,
+          "nok-test": 39895,
+          "sales": 2598,
+          "usa-dollars": 3989
+         },
+         "isDefault": false,
+         "attributes": {
+          "Upholstery": "Tärnsjöläder 8800",
+          "Legs": "Polerad aluminium",
+          "Finish": "Karm i svartlaserad bok"
+         },
+         "externalReference": null,
+         "stock": 0,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/10/1/10178762r_9.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "Aluminium Mattborstad aluminium",
+         "sku": "10178751",
+         "price": {
+          "default": 3989,
+          "nok-test": 39895,
+          "sales": 2598,
+          "usa-dollars": 3989
+         },
+         "isDefault": false,
+         "attributes": {
+          "Upholstery": "Tärnsjöläder 8870",
+          "Legs": "Mattborstad aluminium",
+          "Finish": "Karm i naturlig bok"
+         },
+         "externalReference": null,
+         "stock": 0,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/10/1/10178762r_1.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "Aluminium Mattborstad aluminium",
+         "sku": "10178758",
+         "price": {
+          "default": 3989,
+          "nok-test": 39895,
+          "sales": 2598,
+          "usa-dollars": 3989
+         },
+         "isDefault": false,
+         "attributes": {
+          "Upholstery": "Tärnsjöläder 8870",
+          "Legs": "Mattborstad aluminium",
+          "Finish": "Karm i svartlaserad bok"
+         },
+         "externalReference": null,
+         "stock": 0,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/10/1/10178762r_1.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "Aluminium Mattborstad aluminium",
+         "sku": "10178772",
+         "price": {
+          "default": 3989,
+          "nok-test": 39895,
+          "sales": 2598,
+          "usa-dollars": 3989
+         },
+         "isDefault": false,
+         "attributes": {
+          "Upholstery": "Tärnsjöläder 8870",
+          "Legs": "Polerad aluminium",
+          "Finish": "Karm i naturlig bok"
+         },
+         "externalReference": null,
+         "stock": 0,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/10/1/10178762r_1.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "Aluminium Mattborstad aluminium",
+         "sku": "10178779",
+         "price": {
+          "default": 3989,
+          "nok-test": 39895,
+          "sales": 2598,
+          "usa-dollars": 3989
+         },
+         "isDefault": false,
+         "attributes": {
+          "Upholstery": "Tärnsjöläder 8870",
+          "Legs": "Polerad aluminium",
+          "Finish": "Karm i svartlaserad bok"
+         },
+         "externalReference": null,
+         "stock": 0,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/10/1/10178762r_1.jpg",
            "altText": null,
            "caption": null
           }
@@ -2365,8 +3065,7 @@
          "name": "Classic Lounge Chair",
          "sku": "classic-lounge-chair-1625667418490",
          "price": {
-          "default": 229,
-          "norway": 2359.02
+          "default": 229
          },
          "isDefault": true,
          "attributes": {},
@@ -2479,8 +3178,7 @@
          "name": "Chair",
          "sku": "chair-1625667180481",
          "price": {
-          "default": 79,
-          "norway": 814.36
+          "default": 79
          },
          "isDefault": true,
          "attributes": {},
@@ -2493,6 +3191,15 @@
            "caption": null
           }
          ]
+        },
+        {
+         "name": "White Lounge Chair (2)",
+         "sku": "white-lounge-chair-1641484068541",
+         "price": {},
+         "isDefault": false,
+         "attributes": {},
+         "externalReference": null,
+         "stock": null
         }
        ]
       },
@@ -2623,8 +3330,7 @@
          "name": "Chair",
          "sku": "chair-1625667162618",
          "price": {
-          "default": 49,
-          "norway": 505.11
+          "default": 49
          },
          "isDefault": true,
          "attributes": {},
@@ -2731,8 +3437,7 @@
          "name": "Chair",
          "sku": "chair-1625667132935",
          "price": {
-          "default": 79,
-          "norway": 813.05
+          "default": 79
          },
          "isDefault": true,
          "attributes": {},
@@ -2858,8 +3563,7 @@
          "name": "White Simple Chair",
          "sku": "white-simple-chair-1625667085122",
          "price": {
-          "default": 49,
-          "norway": 503.88
+          "default": 49
          },
          "isDefault": true,
          "attributes": {},
@@ -2987,7 +3691,6 @@
          "name": "Red Chair",
          "sku": "red-chair-1625667067037",
          "price": {
-          "norway": 2256.01,
           "default": 219
          },
          "isDefault": true,
@@ -3111,8 +3814,7 @@
          "name": "Red Lounge Chair",
          "sku": "red-lounge-chair-1625667046883",
          "price": {
-          "default": 129,
-          "norway": 1329.78
+          "default": 129
          },
          "isDefault": true,
          "attributes": {},
@@ -3228,8 +3930,7 @@
          "name": "New variation",
          "sku": "office-chair-193727",
          "price": {
-          "default": 89,
-          "norway": 880
+          "default": 89
          },
          "isDefault": true,
          "attributes": {},
@@ -3238,6 +3939,116 @@
          "images": [
           {
            "src": "https://media.crystallize.com/furniture/21/1/7/1/black-simple-bar-stool.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Funky Yellow Chair",
+       "externalReference": null,
+       "shape": "default-product",
+       "components": {
+        "summary": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "This funky yellow chair is a unique piece. It has a simple design, but the bright yellow color keeps it from being boring. It gives off a playful and sophisticated vibe."
+            }
+           ]
+          }
+         ]
+        },
+        "specs": [
+         {
+          "title": "Dimensions ",
+          "properties": {
+           "Width": "40cm",
+           "Height": "70cm",
+           "Depth": "40cm"
+          }
+         },
+         {
+          "title": "Materials",
+          "properties": {
+           "Chair": "Recycled Plastic",
+           "Feet": "Stainless Steel"
+          }
+         }
+        ],
+        "description": [
+         {
+          "title": "Funky yellow chair",
+          "body": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "The funky yellow chair has a fun and simple design. It has a sleek shape, but the bright yellow color keeps it from being boring. You can put the chair in any given space."
+              }
+             ]
+            }
+           ]
+          },
+          "images": [
+           {
+            "src": "https://media.crystallize.com/furniture/20/7/21/35/funky-yellow-chair-on-street.jpg",
+            "altText": "Funky yellow chair",
+            "caption": null
+           }
+          ]
+         }
+        ],
+        "related-products": [
+         {
+          "cataloguePath": "/shop/chairs/red-lounge-chair",
+          "externalReference": null
+         }
+        ],
+        "bundle": []
+       },
+       "topics": [
+        {
+         "path": "/color/yellow"
+        },
+        {
+         "path": "/color/black"
+        },
+        {
+         "path": "/material/metal"
+        },
+        {
+         "path": "/material/plastic"
+        }
+       ],
+       "vatType": "Standard",
+       "variants": [
+        {
+         "name": "New variation",
+         "sku": "funky-yellow-chair-194763 ",
+         "price": {
+          "default": 59
+         },
+         "isDefault": true,
+         "attributes": {},
+         "externalReference": null,
+         "stock": 30,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/20/12/16/1/funky-yellow-chair-on-street.jpg",
            "altText": null,
            "caption": null
           }
@@ -3325,8 +4136,7 @@
          "name": null,
          "sku": "citrus-chair-183829",
          "price": {
-          "default": 59,
-          "norway": 600
+          "default": 59
          },
          "isDefault": true,
          "attributes": {},
@@ -3428,8 +4238,7 @@
          "name": null,
          "sku": "blue-and-pink-minimalistic-chair-1739",
          "price": {
-          "default": 60,
-          "norway": 600
+          "default": 60
          },
          "isDefault": true,
          "attributes": {},
@@ -3529,8 +4338,7 @@
          "name": "New variation",
          "sku": "green-leather-chair-473",
          "price": {
-          "default": 49,
-          "norway": 8900
+          "default": 49
          },
          "isDefault": true,
          "attributes": {},
@@ -3630,8 +4438,7 @@
          "name": "New variation",
          "sku": "bubblegum-lounge-62074",
          "price": {
-          "default": 189,
-          "norway": 1800
+          "default": 189
          },
          "isDefault": true,
          "attributes": {},
@@ -3780,8 +4587,7 @@
          "name": "Dust",
          "sku": "vibrant-office-chair-dust-157",
          "price": {
-          "default": 989,
-          "norway": 10000
+          "default": 989
          },
          "isDefault": false,
          "attributes": {},
@@ -3790,110 +4596,6 @@
          "images": [
           {
            "src": "https://media.crystallize.com/furniture/20/6/11/16/vibrant-office-chair-dust.png",
-           "altText": null,
-           "caption": null
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "name": "Funky Yellow Chair",
-       "externalReference": null,
-       "shape": "default-product",
-       "components": {
-        "summary": {
-         "json": [
-          {
-           "kind": "block",
-           "type": "paragraph",
-           "metadata": {},
-           "children": [
-            {
-             "kind": "inline",
-             "metadata": {},
-             "textContent": "This funky yellow chair is a unique piece. It has a simple design, but the bright yellow color keeps it from being boring. It gives off a playful and sophisticated vibe."
-            }
-           ]
-          }
-         ]
-        },
-        "specs": [
-         {
-          "title": "Dimensions ",
-          "properties": {
-           "Width": "40cm",
-           "Height": "70cm",
-           "Depth": "40cm"
-          }
-         },
-         {
-          "title": "Materials",
-          "properties": {
-           "Chair": "Recycled Plastic",
-           "Feet": "Stainless Steel"
-          }
-         }
-        ],
-        "description": [
-         {
-          "title": "Funky yellow chair",
-          "body": {
-           "json": [
-            {
-             "kind": "block",
-             "type": "paragraph",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "The funky yellow chair has a fun and simple design. It has a sleek shape, but the bright yellow color keeps it from being boring. You can put the chair in any given space."
-              }
-             ]
-            }
-           ]
-          },
-          "images": [
-           {
-            "src": "https://media.crystallize.com/furniture/20/7/21/35/funky-yellow-chair-on-street.jpg",
-            "altText": "Funky yellow chair",
-            "caption": null
-           }
-          ]
-         }
-        ]
-       },
-       "topics": [
-        {
-         "path": "/color/yellow"
-        },
-        {
-         "path": "/color/black"
-        },
-        {
-         "path": "/material/metal"
-        },
-        {
-         "path": "/material/plastic"
-        }
-       ],
-       "vatType": "Standard",
-       "variants": [
-        {
-         "name": "New variation",
-         "sku": "funky-yellow-chair-194763 ",
-         "price": {
-          "default": 59,
-          "norway": 0
-         },
-         "isDefault": true,
-         "attributes": {},
-         "externalReference": null,
-         "stock": 30,
-         "images": [
-          {
-           "src": "https://media.crystallize.com/furniture/20/12/16/1/funky-yellow-chair-on-street.jpg",
            "altText": null,
            "caption": null
           }
@@ -3988,8 +4690,7 @@
          "name": "New variation",
          "sku": "red-stool",
          "price": {
-          "default": 78,
-          "norway": 800
+          "default": 78
          },
          "isDefault": true,
          "attributes": {},
@@ -4007,8 +4708,7 @@
          "name": null,
          "sku": "a-unique-sku-1603280870180",
          "price": {
-          "default": 78,
-          "norway": 800
+          "default": 78
          },
          "isDefault": false,
          "attributes": {},
@@ -4138,7 +4838,6 @@
          "sku": "big-bowl-blue",
          "price": {
           "default": 599,
-          "norway": 5900,
           "sales": 0
          },
          "isDefault": false,
@@ -4180,7 +4879,6 @@
          "sku": "big-bowl-green",
          "price": {
           "default": 499,
-          "norway": 5200,
           "sales": 390
          },
          "isDefault": true,
@@ -4252,8 +4950,7 @@
          "name": "Stressmore rough chair",
          "sku": "stressmore-rough-chair-1611910289533",
          "price": {
-          "default": 299,
-          "norway": 3499
+          "default": 299
          },
          "isDefault": true,
          "attributes": {},
@@ -4354,7 +5051,7 @@
        ]
       },
       {
-       "name": " Calathea Lancifolia",
+       "name": "Monstera",
        "externalReference": null,
        "shape": "default-product",
        "components": {
@@ -4368,7 +5065,18 @@
             {
              "kind": "inline",
              "metadata": {},
-             "textContent": "Calathea lancifolia is a tropical evergreen perennial native to Brazil's rainforests, and belongs to the plant family Marantaceae."
+             "textContent": "One of the most trendy plants of 2020, the "
+            },
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Monstera Deliciosa",
+             "type": "emphasized"
+            },
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": " is one of the most precious houseplants of the decade. It has become a recommended choice for its balance between beautiful look and easy maintenance."
             }
            ]
           }
@@ -4387,7 +5095,7 @@
               {
                "kind": "inline",
                "metadata": {},
-               "textContent": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+               "textContent": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim."
               }
              ]
             },
@@ -4399,7 +5107,7 @@
               {
                "kind": "inline",
                "metadata": {},
-               "textContent": "Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi."
+               "textContent": "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus."
               }
              ]
             },
@@ -4411,7 +5119,7 @@
               {
                "kind": "inline",
                "metadata": {},
-               "textContent": "Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh."
+               "textContent": "Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi."
               }
              ]
             },
@@ -4423,7 +5131,7 @@
               {
                "kind": "inline",
                "metadata": {},
-               "textContent": "Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut."
+               "textContent": "Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,"
               }
              ]
             }
@@ -4433,11 +5141,15 @@
         ],
         "related-products": [
          {
-          "cataloguePath": "/shop/plants/peperomia-polybotrya",
+          "cataloguePath": "/shop/plants/scindapsus-pictus",
           "externalReference": null
          },
          {
-          "cataloguePath": "/shop/plants/agalaonema-plant",
+          "cataloguePath": "/shop/plants/aglaonemas-spotted-star",
+          "externalReference": null
+         },
+         {
+          "cataloguePath": "/shop/plants/peace-lily-spathiphyllum-wallisii-1",
           "externalReference": null
          },
          {
@@ -4445,45 +5157,126 @@
           "externalReference": null
          },
          {
-          "cataloguePath": "/shop/plants/philodendron-squamiferum",
-          "externalReference": null
-         },
-         {
           "cataloguePath": "/shop/plants/bonsai-ficus-ginseng",
           "externalReference": null
+         }
+        ],
+        "bundle": [
+         {
+          "product": [
+           {
+            "cataloguePath": "/shop/plants/alocasia-portodora",
+            "externalReference": null
+           }
+          ],
+          "count": {
+           "number": 1,
+           "unit": "Pcs"
+          }
+         },
+         {
+          "product": [
+           {
+            "cataloguePath": "/shop/plants/philodendron-erubescens",
+            "externalReference": null
+           }
+          ],
+          "count": {
+           "number": 3,
+           "unit": "Pcs"
+          }
+         },
+         {
+          "product": [
+           {
+            "cataloguePath": "/shop/plants/polyscias-ming-bonsai",
+            "externalReference": null
+           }
+          ],
+          "count": {
+           "number": 3,
+           "unit": "Pcs"
+          }
          }
         ]
        },
        "topics": [
         {
-         "path": "/color/red/purple"
-        },
-        {
          "path": "/color/green"
-        },
-        {
-         "path": "/color/green/dark-green"
-        },
-        {
-         "path": "/color/green/light-green"
         }
        ],
-       "vatType": "Standard",
+       "vatType": "No Tax",
        "variants": [
         {
-         "name": "plant",
-         "sku": " calathea-lancifolia-1628522772928",
+         "name": "Monstera Small",
+         "sku": "monstera-1628258035946",
          "price": {
-          "default": 42,
-          "norway": 440.52
+          "default": 8
          },
-         "isDefault": true,
-         "attributes": {},
+         "isDefault": false,
+         "attributes": {
+          "Size": "small"
+         },
          "externalReference": null,
          "stock": 23,
          "images": [
           {
-           "src": "https://media.crystallize.com/furniture/21/8/9/48/plant19.jpg",
+           "src": "https://media.crystallize.com/furniture/22/1/7/5/monstera-deliciosa-grow-pot-small_1000x1000.jpg",
+           "altText": null,
+           "caption": null
+          },
+          {
+           "src": "https://media.crystallize.com/furniture/21/8/6/9/plan1.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "Monstera Medium",
+         "sku": "a-unique-sku-1641545494459",
+         "price": {
+          "default": 5
+         },
+         "isDefault": false,
+         "attributes": {
+          "Size": "medium"
+         },
+         "externalReference": null,
+         "stock": 23,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/7/3/monstera-deliciosa-grow-pot-large_1000x1000.jpg",
+           "altText": null,
+           "caption": null
+          },
+          {
+           "src": "https://media.crystallize.com/furniture/21/8/6/9/plan1.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "Monstera Large",
+         "sku": "a-unique-sku-1641545512156",
+         "price": {
+          "default": 25
+         },
+         "isDefault": true,
+         "attributes": {
+          "Size": "large"
+         },
+         "externalReference": null,
+         "stock": 23,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/7/4/monstera-deliciosa-grow-pot-extra-large_1000x1000.jpg",
+           "altText": null,
+           "caption": null
+          },
+          {
+           "src": "https://media.crystallize.com/furniture/21/8/6/9/plan1.jpg",
            "altText": null,
            "caption": null
           }
@@ -4652,8 +5445,7 @@
          "name": "Monstera Deliciosa",
          "sku": "monstera-deliciosa-1611849978931",
          "price": {
-          "default": 99,
-          "norway": 910
+          "default": 99
          },
          "isDefault": true,
          "attributes": {},
@@ -4707,7 +5499,7 @@
        ]
       },
       {
-       "name": "Pilea Plant",
+       "name": " Calathea Lancifolia",
        "externalReference": null,
        "shape": "default-product",
        "components": {
@@ -4721,12 +5513,20 @@
             {
              "kind": "inline",
              "metadata": {},
-             "textContent": "Pilea are known for their bright green, coin-shaped leaves. They are fast-growing and can adapt to low light areas, making them low-maintenance and great for beginner plant owners."
+             "textContent": "Calathea lancifolia is a tropical evergreen perennial native to Brazil's rainforests, and belongs to the plant family Marantaceae."
             }
            ]
           }
          ]
         },
+        "specs": [
+         {
+          "title": "Specs",
+          "properties": {
+           "Size": "54 cm"
+          }
+         }
+        ],
         "description": [
          {
           "title": "About",
@@ -4786,11 +5586,7 @@
         ],
         "related-products": [
          {
-          "cataloguePath": "/shop/plants/philodendron-verrucosum",
-          "externalReference": null
-         },
-         {
-          "cataloguePath": "/shop/plants/polyscias-ming-bonsai",
+          "cataloguePath": "/shop/plants/peperomia-polybotrya",
           "externalReference": null
          },
          {
@@ -4798,53 +5594,60 @@
           "externalReference": null
          },
          {
-          "cataloguePath": "/shop/plants/asplenium-nidus",
+          "cataloguePath": "/shop/plants/pilea-peperomioides",
           "externalReference": null
          },
          {
-          "cataloguePath": "/shop/plants/philodendron-erubescens",
+          "cataloguePath": "/shop/plants/philodendron-squamiferum",
+          "externalReference": null
+         },
+         {
+          "cataloguePath": "/shop/plants/bonsai-ficus-ginseng",
           "externalReference": null
          }
         ],
-        "featured": {
-         "featured-text": []
-        }
+        "bundle": []
        },
        "topics": [
+        {
+         "path": "/color/red/purple"
+        },
         {
          "path": "/color/green"
         },
         {
+         "path": "/color/green/dark-green"
+        },
+        {
          "path": "/color/green/light-green"
-        },
-        {
-         "path": "/room/kitchen"
-        },
-        {
-         "path": "/room/bathroom"
-        },
-        {
-         "path": "/fabric/wool/merino-wool"
         }
        ],
        "vatType": "Standard",
        "variants": [
         {
-         "name": "p",
-         "sku": "pilea-plant-1628522168912",
+         "name": "plant",
+         "sku": " calathea-lancifolia-1628522772928",
          "price": {
-          "default": 35,
-          "norway": 367.1
+          "default": 42
          },
          "isDefault": true,
          "attributes": {},
          "externalReference": null,
-         "stock": 15,
+         "stock": 23,
          "images": [
           {
-           "src": "https://media.crystallize.com/furniture/21/8/9/47/plant17.jpg",
+           "src": "https://media.crystallize.com/furniture/21/8/9/48/plant19.jpg",
            "altText": null,
-           "caption": null
+           "caption": {
+            "json": [
+             {
+              "kind": "block",
+              "type": "paragraph",
+              "metadata": {},
+              "children": []
+             }
+            ]
+           }
           }
          ]
         }
@@ -5211,8 +6014,7 @@
          "name": "Pothos",
          "sku": "pothos-1611853808146",
          "price": {
-          "default": 59,
-          "norway": 610
+          "default": 59
          },
          "isDefault": true,
          "attributes": {},
@@ -5234,7 +6036,7 @@
        ]
       },
       {
-       "name": "Aglaonemas 'Spotted Star'",
+       "name": "Pilea Plant",
        "externalReference": null,
        "shape": "default-product",
        "components": {
@@ -5248,7 +6050,7 @@
             {
              "kind": "inline",
              "metadata": {},
-             "textContent": "Aglaonemas grow wild in the tropical rainforests of South East Asia and make unique houseplants as decoration. The 'Spotted Star' is one for the lovers of colour, it's wide broad leaves mottled with dark pinks, light reds and khaki greens."
+             "textContent": "Pilea are known for their bright green, coin-shaped leaves. They are fast-growing and can adapt to low light areas, making them low-maintenance and great for beginner plant owners."
             }
            ]
           }
@@ -5313,11 +6115,7 @@
         ],
         "related-products": [
          {
-          "cataloguePath": "/shop/plants/monstera",
-          "externalReference": null
-         },
-         {
-          "cataloguePath": "/shop/plants/alocasia-cucullata",
+          "cataloguePath": "/shop/plants/philodendron-verrucosum",
           "externalReference": null
          },
          {
@@ -5325,47 +6123,66 @@
           "externalReference": null
          },
          {
-          "cataloguePath": "/shop/plants/scindapsus-pictus-1",
+          "cataloguePath": "/shop/plants/agalaonema-plant",
           "externalReference": null
          },
          {
-          "cataloguePath": "/shop/plants/peace-lily-spathiphyllum-wallisii",
+          "cataloguePath": "/shop/plants/asplenium-nidus",
+          "externalReference": null
+         },
+         {
+          "cataloguePath": "/shop/plants/philodendron-erubescens",
           "externalReference": null
          }
-        ]
+        ],
+        "featured": {
+         "featured-text": []
+        },
+        "bundle": []
        },
        "topics": [
-        {
-         "path": "/color/green/light-green"
-        },
         {
          "path": "/color/green"
         },
         {
-         "path": "/color/red/pink"
+         "path": "/color/green/light-green"
         },
         {
-         "path": "/specials/eco-friendly"
+         "path": "/room/kitchen"
+        },
+        {
+         "path": "/room/bathroom"
+        },
+        {
+         "path": "/fabric/wool/merino-wool"
         }
        ],
        "vatType": "Standard",
        "variants": [
         {
-         "name": "p",
-         "sku": "aglaonemas-1628522154666",
+         "name": "Pilea",
+         "sku": "pilea-plant-1628522168912",
          "price": {
-          "default": 39,
-          "norway": 230.75
+          "default": 35
          },
          "isDefault": true,
          "attributes": {},
          "externalReference": null,
-         "stock": 56,
+         "stock": 15,
          "images": [
           {
-           "src": "https://media.crystallize.com/furniture/21/8/9/46/plant20.jpg",
+           "src": "https://media.crystallize.com/furniture/21/8/9/47/plant17.jpg",
            "altText": null,
-           "caption": null
+           "caption": {
+            "json": [
+             {
+              "kind": "block",
+              "type": "paragraph",
+              "metadata": {},
+              "children": []
+             }
+            ]
+           }
           }
          ]
         }
@@ -5492,8 +6309,7 @@
          "name": "Maranta Leuconeura",
          "sku": "maranta-leuconeura-1611849929203",
          "price": {
-          "default": 23,
-          "norway": 550
+          "default": 23
          },
          "isDefault": true,
          "attributes": {},
@@ -5625,7 +6441,6 @@
          "sku": "alocasia-portodora -1628522140107",
          "price": {
           "default": 78,
-          "norway": 818.1,
           "sales": 44
          },
          "isDefault": true,
@@ -5646,6 +6461,143 @@
              }
             ]
            }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Aglaonemas 'Spotted Star'",
+       "externalReference": null,
+       "shape": "default-product",
+       "components": {
+        "summary": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Aglaonemas grow wild in the tropical rainforests of South East Asia and make unique houseplants as decoration. The 'Spotted Star' is one for the lovers of colour, it's wide broad leaves mottled with dark pinks, light reds and khaki greens."
+            }
+           ]
+          }
+         ]
+        },
+        "description": [
+         {
+          "title": "About",
+          "body": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut."
+              }
+             ]
+            }
+           ]
+          }
+         }
+        ],
+        "related-products": [
+         {
+          "cataloguePath": "/shop/plants/monstera",
+          "externalReference": null
+         },
+         {
+          "cataloguePath": "/shop/plants/alocasia-cucullata",
+          "externalReference": null
+         },
+         {
+          "cataloguePath": "/shop/plants/polyscias-ming-bonsai",
+          "externalReference": null
+         },
+         {
+          "cataloguePath": "/shop/plants/scindapsus-pictus-1",
+          "externalReference": null
+         },
+         {
+          "cataloguePath": "/shop/plants/peace-lily-spathiphyllum-wallisii",
+          "externalReference": null
+         }
+        ]
+       },
+       "topics": [
+        {
+         "path": "/color/green/light-green"
+        },
+        {
+         "path": "/color/green"
+        },
+        {
+         "path": "/color/red/pink"
+        },
+        {
+         "path": "/specials/eco-friendly"
+        }
+       ],
+       "vatType": "Standard",
+       "variants": [
+        {
+         "name": "Aglaonemas 'Spotted Star'",
+         "sku": "aglaonemas-1628522154666",
+         "price": {
+          "default": 39
+         },
+         "isDefault": true,
+         "attributes": {},
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/21/8/9/46/plant20.jpg",
+           "altText": null,
+           "caption": null
           }
          ]
         }
@@ -5982,8 +6934,7 @@
          "name": "Ficus Tineke",
          "sku": "ficus-tineke-1611849903045",
          "price": {
-          "default": 39,
-          "norway": 420
+          "default": 39
          },
          "isDefault": true,
          "attributes": {},
@@ -6137,8 +7088,7 @@
          "name": "p",
          "sku": "peperomia-polybotrya-1628522104921",
          "price": {
-          "default": 29,
-          "norway": 304.17
+          "default": 29
          },
          "isDefault": true,
          "attributes": {},
@@ -6269,8 +7219,7 @@
          "name": "p",
          "sku": "philodendron-birkin-1628522095606",
          "price": {
-          "default": 36,
-          "norway": 377.59
+          "default": 36
          },
          "isDefault": true,
          "attributes": {},
@@ -6442,8 +7391,7 @@
          "name": "Sansevieria Laurentii",
          "sku": "sansevieria-laurentii-1611849656034",
          "price": {
-          "default": 20,
-          "norway": 280
+          "default": 20
          },
          "isDefault": true,
          "attributes": {},
@@ -6571,8 +7519,7 @@
          "name": "p",
          "sku": "asplenium-nidus-1628522085639",
          "price": {
-          "default": 41,
-          "norway": 430.03
+          "default": 41
          },
          "isDefault": true,
          "attributes": {},
@@ -7051,8 +7998,7 @@
          "name": "Ficus Lyrata",
          "sku": "ficus-lyrata-1611846775476",
          "price": {
-          "default": 3.5,
-          "norway": 999
+          "default": 3.5
          },
          "isDefault": true,
          "attributes": {},
@@ -7177,7 +8123,8 @@
           "cataloguePath": "/shop/plants/monstera-minima",
           "externalReference": null
          }
-        ]
+        ],
+        "bundle": []
        },
        "topics": [
         {
@@ -7190,8 +8137,7 @@
          "name": "p",
          "sku": "peace-lily-1628522075554",
          "price": {
-          "default": 48,
-          "norway": 503.45
+          "default": 48
          },
          "isDefault": true,
          "attributes": {},
@@ -7201,139 +8147,16 @@
           {
            "src": "https://media.crystallize.com/furniture/21/8/9/39/plant26.jpg",
            "altText": null,
-           "caption": null
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "name": "Philodendron Scandens Brazil",
-       "externalReference": null,
-       "shape": "default-product",
-       "components": {
-        "summary": {
-         "json": [
-          {
-           "kind": "block",
-           "type": "paragraph",
-           "metadata": {},
-           "children": [
-            {
-             "kind": "inline",
-             "metadata": {},
-             "textContent": "Philodendron Scandens is known as the Sweetheart Plant, due to it’s heart-like leaf shape. This 'Brasil' variety has gorgeous golden-yellow variegated leaves. Mature plants may produce spathes of green-white flowers."
-            }
-           ]
-          }
-         ]
-        },
-        "description": [
-         {
-          "title": "About",
-          "body": {
-           "json": [
-            {
-             "kind": "block",
-             "type": "paragraph",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
-              }
-             ]
-            },
-            {
-             "kind": "block",
-             "type": "paragraph",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi."
-              }
-             ]
-            },
-            {
-             "kind": "block",
-             "type": "paragraph",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh."
-              }
-             ]
-            },
-            {
-             "kind": "block",
-             "type": "paragraph",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut."
-              }
-             ]
-            }
-           ]
-          }
-         }
-        ],
-        "related-products": [
-         {
-          "cataloguePath": "/shop/plants/polyscias-ming-bonsai",
-          "externalReference": null
-         },
-         {
-          "cataloguePath": "/shop/plants/peace-lily-spathiphyllum-wallisii",
-          "externalReference": null
-         },
-         {
-          "cataloguePath": "/shop/plants/sansevieria-trifasciata",
-          "externalReference": null
-         },
-         {
-          "cataloguePath": "/shop/plants/calathea-lancifolia",
-          "externalReference": null
-         },
-         {
-          "cataloguePath": "/shop/plants/aglaonemas-spotted-star",
-          "externalReference": null
-         }
-        ]
-       },
-       "topics": [
-        {
-         "path": "/color/green"
-        },
-        {
-         "path": "/color/green/light-green"
-        }
-       ],
-       "vatType": "Standard",
-       "variants": [
-        {
-         "name": "p",
-         "sku": "philodendron scandens brazil-1628522066919",
-         "price": {
-          "default": 27,
-          "norway": 283.19
-         },
-         "isDefault": true,
-         "attributes": {},
-         "externalReference": null,
-         "stock": 15,
-         "images": [
-          {
-           "src": "https://media.crystallize.com/furniture/21/8/9/38/plant27.jpg",
-           "altText": null,
-           "caption": null
+           "caption": {
+            "json": [
+             {
+              "kind": "block",
+              "type": "paragraph",
+              "metadata": {},
+              "children": []
+             }
+            ]
+           }
           }
          ]
         }
@@ -7445,8 +8268,7 @@
          "name": "Peace lilly",
          "sku": "peace-lily-1628522058663",
          "price": {
-          "default": 19,
-          "norway": 199.28
+          "default": 19
          },
          "isDefault": true,
          "attributes": {},
@@ -7455,6 +8277,138 @@
          "images": [
           {
            "src": "https://media.crystallize.com/furniture/21/8/9/37/plant28.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Philodendron Scandens Brazil",
+       "externalReference": null,
+       "shape": "default-product",
+       "components": {
+        "summary": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Philodendron Scandens is known as the Sweetheart Plant, due to it’s heart-like leaf shape. This 'Brasil' variety has gorgeous golden-yellow variegated leaves. Mature plants may produce spathes of green-white flowers."
+            }
+           ]
+          }
+         ]
+        },
+        "description": [
+         {
+          "title": "About",
+          "body": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut."
+              }
+             ]
+            }
+           ]
+          }
+         }
+        ],
+        "related-products": [
+         {
+          "cataloguePath": "/shop/plants/polyscias-ming-bonsai",
+          "externalReference": null
+         },
+         {
+          "cataloguePath": "/shop/plants/peace-lily-spathiphyllum-wallisii",
+          "externalReference": null
+         },
+         {
+          "cataloguePath": "/shop/plants/sansevieria-trifasciata",
+          "externalReference": null
+         },
+         {
+          "cataloguePath": "/shop/plants/calathea-lancifolia",
+          "externalReference": null
+         },
+         {
+          "cataloguePath": "/shop/plants/aglaonemas-spotted-star",
+          "externalReference": null
+         }
+        ],
+        "bundle": []
+       },
+       "topics": [
+        {
+         "path": "/color/green"
+        },
+        {
+         "path": "/color/green/light-green"
+        }
+       ],
+       "vatType": "Standard",
+       "variants": [
+        {
+         "name": "p",
+         "sku": "philodendron scandens brazil-1628522066919",
+         "price": {
+          "default": 27
+         },
+         "isDefault": true,
+         "attributes": {},
+         "externalReference": null,
+         "stock": 15,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/21/8/9/38/plant27.jpg",
            "altText": null,
            "caption": null
           }
@@ -7571,8 +8525,7 @@
          "name": "p",
          "sku": "philodendron-erubescens-1628522049940",
          "price": {
-          "default": 23,
-          "norway": 241.24
+          "default": 23
          },
          "isDefault": true,
          "attributes": {},
@@ -7694,8 +8647,7 @@
          "name": "plant",
          "sku": "agalaonema-plant-1628522041013",
          "price": {
-          "default": 47,
-          "norway": 492.96
+          "default": 47
          },
          "isDefault": true,
          "attributes": {},
@@ -7820,8 +8772,7 @@
          "name": "plant",
          "sku": "alocasia-dragon-scale-plant-1628521146003",
          "price": {
-          "default": 37,
-          "norway": 388.07
+          "default": 37
          },
          "isDefault": true,
          "attributes": {},
@@ -7943,8 +8894,7 @@
          "name": "plant",
          "sku": "pilea-peperomioides-1628521117414",
          "price": {
-          "default": 24,
-          "norway": 251.72
+          "default": 24
          },
          "isDefault": true,
          "attributes": {},
@@ -8069,8 +9019,7 @@
          "name": "Bonsai Ficus Ginseng",
          "sku": "bonsai-ficus-ginseng-1628521099821",
          "price": {
-          "default": 29,
-          "norway": 304.17
+          "default": 29
          },
          "isDefault": true,
          "attributes": {},
@@ -8192,8 +9141,7 @@
          "name": "Polyscias ming bonsai",
          "sku": "polyscias-ming-bonsai-1628258555503",
          "price": {
-          "default": 43,
-          "norway": 448.19
+          "default": 43
          },
          "isDefault": true,
          "attributes": {},
@@ -8202,130 +9150,6 @@
          "images": [
           {
            "src": "https://media.crystallize.com/furniture/21/8/6/18/plant11.jpg",
-           "altText": null,
-           "caption": null
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "name": "Monstera Minima",
-       "externalReference": null,
-       "shape": "default-product",
-       "components": {
-        "summary": {
-         "json": [
-          {
-           "kind": "block",
-           "type": "paragraph",
-           "metadata": {},
-           "children": []
-          }
-         ]
-        },
-        "description": [
-         {
-          "title": "About",
-          "body": {
-           "json": [
-            {
-             "kind": "block",
-             "type": "paragraph",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
-              }
-             ]
-            },
-            {
-             "kind": "block",
-             "type": "paragraph",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi."
-              }
-             ]
-            },
-            {
-             "kind": "block",
-             "type": "paragraph",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh."
-              }
-             ]
-            },
-            {
-             "kind": "block",
-             "type": "paragraph",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut."
-              }
-             ]
-            }
-           ]
-          }
-         }
-        ],
-        "related-products": [
-         {
-          "cataloguePath": "/shop/plants/alocasia-dragon-scale",
-          "externalReference": null
-         },
-         {
-          "cataloguePath": "/shop/plants/monstera",
-          "externalReference": null
-         },
-         {
-          "cataloguePath": "/shop/plants/philodendron-verrucosum",
-          "externalReference": null
-         },
-         {
-          "cataloguePath": "/shop/plants/philodendron-birkin",
-          "externalReference": null
-         },
-         {
-          "cataloguePath": "/shop/plants/alocasia-portodora",
-          "externalReference": null
-         }
-        ]
-       },
-       "topics": [
-        {
-         "path": "/color/green"
-        }
-       ],
-       "vatType": "Standard",
-       "variants": [
-        {
-         "name": "plant",
-         "sku": "monstera-minima-1628258160008",
-         "price": {
-          "default": 21,
-          "norway": 218.88,
-          "sales": 9
-         },
-         "isDefault": true,
-         "attributes": {},
-         "externalReference": null,
-         "stock": 12,
-         "images": [
-          {
-           "src": "https://media.crystallize.com/furniture/21/8/6/17/plant10.jpg",
            "altText": null,
            "caption": null
           }
@@ -8442,8 +9266,7 @@
          "name": "plant",
          "sku": "philodendron-squamiferum-1628258149478",
          "price": {
-          "default": 38,
-          "norway": 396.07
+          "default": 38
          },
          "isDefault": true,
          "attributes": {},
@@ -8452,6 +9275,130 @@
          "images": [
           {
            "src": "https://media.crystallize.com/furniture/21/8/6/16/plant9.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Monstera Minima",
+       "externalReference": null,
+       "shape": "default-product",
+       "components": {
+        "summary": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        },
+        "description": [
+         {
+          "title": "About",
+          "body": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo, justo."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut."
+              }
+             ]
+            }
+           ]
+          }
+         }
+        ],
+        "related-products": [
+         {
+          "cataloguePath": "/shop/plants/alocasia-dragon-scale",
+          "externalReference": null
+         },
+         {
+          "cataloguePath": "/shop/plants/monstera",
+          "externalReference": null
+         },
+         {
+          "cataloguePath": "/shop/plants/philodendron-verrucosum",
+          "externalReference": null
+         },
+         {
+          "cataloguePath": "/shop/plants/philodendron-birkin",
+          "externalReference": null
+         },
+         {
+          "cataloguePath": "/shop/plants/alocasia-portodora",
+          "externalReference": null
+         }
+        ],
+        "bundle": []
+       },
+       "topics": [
+        {
+         "path": "/color/green"
+        }
+       ],
+       "vatType": "Standard",
+       "variants": [
+        {
+         "name": "plant",
+         "sku": "monstera-minima-1628258160008",
+         "price": {
+          "default": 21,
+          "sales": 9
+         },
+         "isDefault": true,
+         "attributes": {},
+         "externalReference": null,
+         "stock": 12,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/21/8/6/17/plant10.jpg",
            "altText": null,
            "caption": null
           }
@@ -8565,8 +9512,7 @@
          "name": "plant",
          "sku": "alocasia-cucullata-1628258107794",
          "price": {
-          "default": 24,
-          "norway": 250.15
+          "default": 24
          },
          "isDefault": true,
          "attributes": {},
@@ -8691,8 +9637,7 @@
          "name": "plant",
          "sku": "scindapsus-pictus-1628258093802",
          "price": {
-          "default": 32,
-          "norway": 333.5
+          "default": 32
          },
          "isDefault": true,
          "attributes": {},
@@ -8817,8 +9762,7 @@
          "name": "plant",
          "sku": "philodendron-verrucosum-1628258084997",
          "price": {
-          "default": 19,
-          "norway": 198.04
+          "default": 19
          },
          "isDefault": true,
          "attributes": {},
@@ -8940,8 +9884,7 @@
          "name": "plant",
          "sku": "sansevieria-trifasciata-1628258074500",
          "price": {
-          "default": 12,
-          "norway": 125.08
+          "default": 12
          },
          "isDefault": true,
          "attributes": {},
@@ -9066,8 +10009,7 @@
          "name": "plant",
          "sku": "scindapsus-pictus-1628258064160",
          "price": {
-          "default": 17,
-          "norway": 177.19
+          "default": 17
          },
          "isDefault": true,
          "attributes": {},
@@ -9154,7 +10096,8 @@
            ]
           }
          }
-        ]
+        ],
+        "bundle": []
        },
        "topics": [
         {
@@ -9164,11 +10107,10 @@
        "vatType": "Standard",
        "variants": [
         {
-         "name": "plant",
+         "name": "Dracaena",
          "sku": "plant-1628258054839",
          "price": {
-          "default": 27,
-          "norway": 281.42
+          "default": 27
          },
          "isDefault": true,
          "attributes": {},
@@ -9177,146 +10119,6 @@
          "images": [
           {
            "src": "https://media.crystallize.com/furniture/21/8/6/10/plant2.jpg",
-           "altText": null,
-           "caption": null
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "name": "Monstera",
-       "externalReference": null,
-       "shape": "default-product",
-       "components": {
-        "summary": {
-         "json": [
-          {
-           "kind": "block",
-           "type": "paragraph",
-           "metadata": {},
-           "children": [
-            {
-             "kind": "inline",
-             "metadata": {},
-             "textContent": "One of the most trendy plants of 2020, the "
-            },
-            {
-             "kind": "inline",
-             "metadata": {},
-             "textContent": "Monstera Deliciosa",
-             "type": "emphasized"
-            },
-            {
-             "kind": "inline",
-             "metadata": {},
-             "textContent": " is one of the most precious houseplants of the decade. It has become a recommended choice for its balance between beautiful look and easy maintenance."
-            }
-           ]
-          }
-         ]
-        },
-        "description": [
-         {
-          "title": "About",
-          "body": {
-           "json": [
-            {
-             "kind": "block",
-             "type": "paragraph",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim."
-              }
-             ]
-            },
-            {
-             "kind": "block",
-             "type": "paragraph",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus."
-              }
-             ]
-            },
-            {
-             "kind": "block",
-             "type": "paragraph",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi."
-              }
-             ]
-            },
-            {
-             "kind": "block",
-             "type": "paragraph",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,"
-              }
-             ]
-            }
-           ]
-          }
-         }
-        ],
-        "related-products": [
-         {
-          "cataloguePath": "/shop/plants/scindapsus-pictus",
-          "externalReference": null
-         },
-         {
-          "cataloguePath": "/shop/plants/aglaonemas-spotted-star",
-          "externalReference": null
-         },
-         {
-          "cataloguePath": "/shop/plants/peace-lily-spathiphyllum-wallisii-1",
-          "externalReference": null
-         },
-         {
-          "cataloguePath": "/shop/plants/pilea-peperomioides",
-          "externalReference": null
-         },
-         {
-          "cataloguePath": "/shop/plants/bonsai-ficus-ginseng",
-          "externalReference": null
-         }
-        ]
-       },
-       "topics": [
-        {
-         "path": "/color/green"
-        }
-       ],
-       "vatType": "No Tax",
-       "variants": [
-        {
-         "name": "plant",
-         "sku": "monstera-1628258035946",
-         "price": {
-          "default": 37,
-          "norway": 385.65
-         },
-         "isDefault": true,
-         "attributes": {},
-         "externalReference": null,
-         "stock": 23,
-         "images": [
-          {
-           "src": "https://media.crystallize.com/furniture/21/8/6/9/plan1.jpg",
            "altText": null,
            "caption": null
           }
@@ -9486,8 +10288,7 @@
          "name": "Alocasia Cuprea",
          "sku": "alocasia-cuprea-1611849829920",
          "price": {
-          "default": 60,
-          "norway": 650
+          "default": 60
          },
          "isDefault": true,
          "attributes": {},
@@ -15474,6 +16275,7 @@
      "externalReference": null,
      "shape": "default-article",
      "components": {
+      "title": "Use your houseplants as decor",
       "image": [
        {
         "src": "https://media.crystallize.com/furniture/20/6/23/11/houseplants-as-decor-potting.jpg",
@@ -15963,6 +16765,14 @@
        {
         "cataloguePath": "/shop/decoration/white-ceramic-vase",
         "externalReference": null
+       },
+       {
+        "cataloguePath": "/shop/plants/alocasia-portodora",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/shop/plants/pilea-plant",
+        "externalReference": null
        }
       ]
      },
@@ -16350,59 +17160,6 @@
      "topics": null,
      "children": [
       {
-       "name": "_most-popular",
-       "externalReference": null,
-       "shape": "collection",
-       "components": {
-        "title": "Our most popular sofa",
-        "description": {
-         "json": [
-          {
-           "kind": "block",
-           "type": "paragraph",
-           "metadata": {},
-           "children": [
-            {
-             "kind": "inline",
-             "metadata": {},
-             "textContent": "If you sit down you feel relaxed"
-            }
-           ]
-          }
-         ]
-        },
-        "content": {
-         "items": [
-          {
-           "cataloguePath": "/shop/sofas/green-velour-sofa",
-           "externalReference": null
-          },
-          {
-           "cataloguePath": "/shop/sofas/black-sofa",
-           "externalReference": null
-          },
-          {
-           "cataloguePath": "/shop/sofas/cream-coloured-sofa",
-           "externalReference": null
-          },
-          {
-           "cataloguePath": "/shop/sofas/pink-sofa",
-           "externalReference": null
-          },
-          {
-           "cataloguePath": "/shop/sofas/big-leather-sofa",
-           "externalReference": null
-          },
-          {
-           "cataloguePath": "/shop/sofas/white-corner-sofa",
-           "externalReference": null
-          }
-         ]
-        }
-       },
-       "topics": null
-      },
-      {
        "name": "_new-arrivals",
        "externalReference": null,
        "shape": "collection",
@@ -16439,7 +17196,7 @@
        "externalReference": null,
        "shape": "banner",
        "components": {
-        "title": "Check out our all black sofa",
+        "title": "Check out our hand picked selection of sofas",
         "description": {
          "json": [
           {
@@ -16450,22 +17207,82 @@
             {
              "kind": "inline",
              "metadata": {},
-             "textContent": "Watch your toes in the dark"
+             "textContent": "A new and stylish sofa? Yes please. This is where you cand find all of our sofas, and find exactly what model, shape or colour that suits you and your style best. From colourful to toned down, and from practical to a centrepiece. We dare to say that we have it all. "
             }
            ]
           }
          ]
         },
-        "link": "/",
-        "link-text": "See our black sofa",
         "image": [
          {
-          "src": "https://media.crystallize.com/furniture/21/8/10/1/olivier-piquer-pv26u-tr3fw-unsplash.jpg",
+          "src": "https://media.crystallize.com/furniture/21/12/22/20/jumping-in-sofa.jpg",
           "altText": null,
-          "caption": null
+          "caption": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": []
+            }
+           ]
+          }
          }
         ],
         "add-text-as-overlay": true
+       },
+       "topics": null
+      },
+      {
+       "name": "_most-popular",
+       "externalReference": null,
+       "shape": "collection",
+       "components": {
+        "title": "Our most popular sofa",
+        "description": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "If you sit down you feel relaxed"
+            }
+           ]
+          }
+         ]
+        },
+        "content": {
+         "items": [
+          {
+           "cataloguePath": "/shop/sofas/green-velour-sofa",
+           "externalReference": null
+          },
+          {
+           "cataloguePath": "/shop/sofas/black-sofa",
+           "externalReference": null
+          },
+          {
+           "cataloguePath": "/shop/sofas/white-corner-sofa",
+           "externalReference": null
+          },
+          {
+           "cataloguePath": "/shop/sofas/orange-sofa",
+           "externalReference": null
+          },
+          {
+           "cataloguePath": "/shop/sofas/white-cloud-sofa",
+           "externalReference": null
+          },
+          {
+           "cataloguePath": "/shop/sofas/gray-sofa",
+           "externalReference": null
+          }
+         ]
+        }
        },
        "topics": null
       }
@@ -16903,6 +17720,144 @@
      "topics": null
     },
     {
+     "name": "_bed-assets",
+     "externalReference": null,
+     "shape": "banner",
+     "components": {
+      "description": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": []
+        }
+       ]
+      },
+      "image": [
+       {
+        "src": "https://media.crystallize.com/furniture/21/12/22/2/cozy-bed-sheets2.jpg",
+        "altText": null,
+        "caption": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       }
+      ],
+      "add-text-as-overlay": true
+     },
+     "topics": null
+    },
+    {
+     "name": "_bed-assets",
+     "externalReference": null,
+     "shape": "default-folder",
+     "components": {
+      "brief": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": []
+        }
+       ]
+      }
+     },
+     "topics": null,
+     "children": [
+      {
+       "name": "_bed-assets",
+       "externalReference": null,
+       "shape": "collection",
+       "components": {
+        "description": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        }
+       },
+       "topics": null
+      }
+     ]
+    },
+    {
+     "name": "_posters-assets",
+     "externalReference": null,
+     "shape": "default-folder",
+     "components": {
+      "brief": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": []
+        }
+       ]
+      }
+     },
+     "topics": null,
+     "children": [
+      {
+       "name": "_posters-assets",
+       "externalReference": null,
+       "shape": "banner",
+       "components": {
+        "description": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": []
+          }
+         ]
+        },
+        "image": [
+         {
+          "src": "https://media.crystallize.com/furniture/21/12/22/3/poster-on-wall.jpg",
+          "altText": null,
+          "caption": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "quote",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "10% DISCOUNT ON ALL POSTERS"
+              }
+             ]
+            }
+           ]
+          }
+         }
+        ],
+        "add-text-as-overlay": true
+       },
+       "topics": [
+        {
+         "path": "/specials/new-arrival"
+        }
+       ]
+      }
+     ]
+    },
+    {
      "name": "frontpage-grid",
      "externalReference": null,
      "shape": "grid-collection",
@@ -16992,6 +17947,10 @@
        },
        {
         "cataloguePath": "/shop/chairs/minimalistic-chair",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/shop/chairs/funky-yellow-chair",
         "externalReference": null
        },
        {
@@ -17276,16 +18235,6 @@
         "altText": null,
         "caption": null
        }
-      ],
-      "displayed-product": [
-       {
-        "cataloguePath": "/shop/sofas/arbour-eco",
-        "externalReference": null
-       },
-       {
-        "cataloguePath": "/shop/sofas/small-leather-sofa",
-        "externalReference": null
-       }
       ]
      },
      "topics": null
@@ -17295,24 +18244,8 @@
  ],
  "stockLocations": [
   {
-   "identifier": "athens",
-   "name": "Athens",
-   "settings": {
-    "minimum": 0,
-    "unlimited": false
-   }
-  },
-  {
    "identifier": "default",
    "name": "Online",
-   "settings": {
-    "minimum": 0,
-    "unlimited": false
-   }
-  },
-  {
-   "identifier": "london",
-   "name": "London",
    "settings": {
     "minimum": 0,
     "unlimited": false
@@ -17323,22 +18256,6 @@
    "name": "New York",
    "settings": {
     "minimum": 5,
-    "unlimited": false
-   }
-  },
-  {
-   "identifier": "oslo",
-   "name": "Oslo",
-   "settings": {
-    "minimum": 0,
-    "unlimited": false
-   }
-  },
-  {
-   "identifier": "tokyo",
-   "name": "Tokyo",
-   "settings": {
-    "minimum": 0,
     "unlimited": false
    }
   }
