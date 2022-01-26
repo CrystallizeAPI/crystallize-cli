@@ -40,8 +40,8 @@ function initNextJSConference({ answers, projectPath }) {
 	// Add a sensible .gitignore
 	const gitIgnore = `${require('./default-gitignore')}
 
-	# Next build output
-	.next`;
+# Next build output
+.next`;
 	fs.writeFileSync(path.resolve(projectPath, 'website/.gitignore'), gitIgnore);
 	fs.writeFileSync(
 		path.resolve(projectPath, 'service-api/.gitignore'),
