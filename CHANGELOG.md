@@ -1,3 +1,10 @@
+# [3.31.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.30.0...v3.31.0) (2022-01-26)
+
+
+### Features
+
+* updated specs ([278220a](https://github.com/CrystallizeAPI/crystallize-cli/commit/278220ae5d608514f31abeabbbfa192556e5ed54))
+
 # [3.30.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.29.0...v3.30.0) (2022-01-25)
 
 
