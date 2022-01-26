@@ -3,6 +3,19 @@
 
 ### Bug Fixes
 
+* conf spec ([b89dbce](https://github.com/CrystallizeAPI/crystallize-cli/commit/b89dbced7884f427066f283fb3c26d1d5af52c79))
+* updated readme ([bd672e9](https://github.com/CrystallizeAPI/crystallize-cli/commit/bd672e9dbad1f8877c2a0bbffd98373601e983b3))
+
+
+### Features
+
+* updated specs ([278220a](https://github.com/CrystallizeAPI/crystallize-cli/commit/278220ae5d608514f31abeabbbfa192556e5ed54))
+
+# [3.31.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.30.0...v3.31.0) (2022-01-26)
+
+
+### Bug Fixes
+
 * updated readme ([bd672e9](https://github.com/CrystallizeAPI/crystallize-cli/commit/bd672e9dbad1f8877c2a0bbffd98373601e983b3))
 
 
