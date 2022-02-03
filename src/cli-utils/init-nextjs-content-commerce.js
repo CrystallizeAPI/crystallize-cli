@@ -28,7 +28,7 @@ function initNextJSContentCommerce({ answers, projectPath }) {
 	);
 
 	// Remove boilerplate toolbar
-	const appPath = path.resolve(projectPath, 'src/pages/index.js');
+	const appPath = path.resolve(projectPath, 'pages/index.js');
 	const _app = fs.readFileSync(appPath, 'utf-8');
 	const firstParts = _app.split('{/*crystallize-boilerplates-topbar-start*/}');
 
