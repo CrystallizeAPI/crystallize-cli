@@ -11,6 +11,23 @@
 
 ### Features
 
+* update readme to force new minor ([b58f6b2](https://github.com/CrystallizeAPI/crystallize-cli/commit/b58f6b279f29fbc224f2df1d3375629dbe7c96f6))
+* updated specs ([278220a](https://github.com/CrystallizeAPI/crystallize-cli/commit/278220ae5d608514f31abeabbbfa192556e5ed54))
+* updated tenant specs ([526e54b](https://github.com/CrystallizeAPI/crystallize-cli/commit/526e54b9a1215380827a73ce9e058cfe10a1dac4))
+
+# [3.31.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.30.0...v3.31.0) (2022-02-03)
+
+
+### Bug Fixes
+
+* app path for content and commerce setup ([8e3fe91](https://github.com/CrystallizeAPI/crystallize-cli/commit/8e3fe9170e8b84252adb5b7c9069caef33af10b6))
+* conf spec ([b89dbce](https://github.com/CrystallizeAPI/crystallize-cli/commit/b89dbced7884f427066f283fb3c26d1d5af52c79))
+* ignore .next files on conf boiler ([54deed3](https://github.com/CrystallizeAPI/crystallize-cli/commit/54deed31c4fbba275f5cea226b7dc548c642398a))
+* updated readme ([bd672e9](https://github.com/CrystallizeAPI/crystallize-cli/commit/bd672e9dbad1f8877c2a0bbffd98373601e983b3))
+
+
+### Features
+
 * update readme to force new minor ([5e9e074](https://github.com/CrystallizeAPI/crystallize-cli/commit/5e9e074c9bc5ac1ccd74199bd8ede0e2a41e44b0))
 * updated specs ([278220a](https://github.com/CrystallizeAPI/crystallize-cli/commit/278220ae5d608514f31abeabbbfa192556e5ed54))
 
