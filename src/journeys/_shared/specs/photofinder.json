@@ -56,12 +56,12 @@
    "path": "/type",
    "children": [
     {
-     "name": "Home",
-     "path": "/type/home"
-    },
-    {
      "name": "Pro",
      "path": "/type/pro"
+    },
+    {
+     "name": "Home",
+     "path": "/type/home"
     }
    ]
   }
@@ -2512,6 +2512,7 @@
         {
          "kind": "block",
          "type": "paragraph",
+         "metadata": {},
          "children": []
         }
        ]
@@ -2532,9 +2533,11 @@
         {
          "kind": "block",
          "type": "paragraph",
+         "metadata": {},
          "children": [
           {
            "kind": "inline",
+           "metadata": {},
            "textContent": "Cras id nulla fringilla, tincidunt tellus eget, euismod leo. Ut finibus, elit et mattis. a"
           }
          ]

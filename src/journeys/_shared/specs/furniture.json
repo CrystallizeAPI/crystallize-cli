@@ -71,12 +71,12 @@
      "path": "/room/bathroom"
     },
     {
-     "name": "Bedroom",
-     "path": "/room/bedroom"
-    },
-    {
      "name": "Outdoor",
      "path": "/room/outdoor"
+    },
+    {
+     "name": "Bedroom",
+     "path": "/room/bedroom"
     }
    ]
   },
@@ -93,120 +93,24 @@
      "path": "/material/metal"
     },
     {
-     "name": "Porcelain",
-     "path": "/material/porcelain"
-    },
-    {
      "name": "Glass",
      "path": "/material/glass"
+    },
+    {
+     "name": "Porcelain",
+     "path": "/material/porcelain"
     },
     {
      "name": "Ceramic",
      "path": "/material/ceramic"
     },
     {
-     "name": "Plastic",
-     "path": "/material/plastic"
-    },
-    {
      "name": "Stone",
      "path": "/material/stone"
-    }
-   ]
-  },
-  {
-   "name": "Color",
-   "path": "/color",
-   "children": [
-    {
-     "name": "White",
-     "path": "/color/white"
     },
     {
-     "name": "Orange",
-     "path": "/color/orange"
-    },
-    {
-     "name": "Yellow",
-     "path": "/color/yellow"
-    },
-    {
-     "name": "Black",
-     "path": "/color/black"
-    },
-    {
-     "name": "Blue",
-     "path": "/color/blue",
-     "children": [
-      {
-       "name": "Light Blue",
-       "path": "/color/blue/light-blue"
-      },
-      {
-       "name": "Dark Blue",
-       "path": "/color/blue/dark-blue"
-      }
-     ]
-    },
-    {
-     "name": "Red",
-     "path": "/color/red",
-     "children": [
-      {
-       "name": "Pink",
-       "path": "/color/red/pink"
-      },
-      {
-       "name": "Maroon",
-       "path": "/color/red/maroon"
-      },
-      {
-       "name": "Violet",
-       "path": "/color/red/violet"
-      },
-      {
-       "name": "Purple",
-       "path": "/color/red/purple"
-      }
-     ]
-    },
-    {
-     "name": "Green",
-     "path": "/color/green",
-     "children": [
-      {
-       "name": "Light Green",
-       "path": "/color/green/light-green"
-      },
-      {
-       "name": "Dark Green",
-       "path": "/color/green/dark-green"
-      }
-     ]
-    },
-    {
-     "name": "Brown",
-     "path": "/color/brown",
-     "children": [
-      {
-       "name": "Dark brown",
-       "path": "/color/brown/dark-brown"
-      }
-     ]
-    },
-    {
-     "name": "Gray",
-     "path": "/color/gray",
-     "children": [
-      {
-       "name": "Dark grey",
-       "path": "/color/gray/dark-grey"
-      },
-      {
-       "name": "Light grey",
-       "path": "/color/gray/light-grey"
-      }
-     ]
+     "name": "Plastic",
+     "path": "/material/plastic"
     }
    ]
   },
@@ -273,13 +177,19 @@
      "path": "/fabric/leather"
     },
     {
+     "name": "Wool",
+     "path": "/fabric/wool",
+     "children": [
+      {
+       "name": "Merino Wool",
+       "path": "/fabric/wool/merino-wool"
+      }
+     ]
+    },
+    {
      "name": "Cotton",
      "path": "/fabric/cotton",
      "children": [
-      {
-       "name": "Organic Cotton",
-       "path": "/fabric/cotton/organic-cotton"
-      },
       {
        "name": "Egyptian Cotton",
        "path": "/fabric/cotton/egyptian-cotton"
@@ -287,16 +197,112 @@
       {
        "name": "Velour",
        "path": "/fabric/cotton/velour"
+      },
+      {
+       "name": "Organic Cotton",
+       "path": "/fabric/cotton/organic-cotton",
+       "children": [
+        {
+         "name": "Italian Organic Cotton",
+         "path": "/fabric/cotton/organic-cotton/italian-organic-cotton"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Color",
+   "path": "/color",
+   "children": [
+    {
+     "name": "White",
+     "path": "/color/white"
+    },
+    {
+     "name": "Orange",
+     "path": "/color/orange"
+    },
+    {
+     "name": "Black",
+     "path": "/color/black"
+    },
+    {
+     "name": "Yellow",
+     "path": "/color/yellow"
+    },
+    {
+     "name": "Red",
+     "path": "/color/red",
+     "children": [
+      {
+       "name": "Purple",
+       "path": "/color/red/purple"
+      },
+      {
+       "name": "Pink",
+       "path": "/color/red/pink"
+      },
+      {
+       "name": "Violet",
+       "path": "/color/red/violet"
+      },
+      {
+       "name": "Maroon",
+       "path": "/color/red/maroon"
       }
      ]
     },
     {
-     "name": "Wool",
-     "path": "/fabric/wool",
+     "name": "Blue",
+     "path": "/color/blue",
      "children": [
       {
-       "name": "Merino Wool",
-       "path": "/fabric/wool/merino-wool"
+       "name": "Light Blue",
+       "path": "/color/blue/light-blue"
+      },
+      {
+       "name": "Dark Blue",
+       "path": "/color/blue/dark-blue"
+      }
+     ]
+    },
+    {
+     "name": "Green",
+     "path": "/color/green",
+     "children": [
+      {
+       "name": "Light Green",
+       "path": "/color/green/light-green"
+      },
+      {
+       "name": "Dark Green",
+       "path": "/color/green/dark-green"
+      }
+     ]
+    },
+    {
+     "name": "Brown",
+     "path": "/color/brown",
+     "children": [
+      {
+       "name": "Dark brown",
+       "path": "/color/brown/dark-brown"
+      }
+     ]
+    },
+    {
+     "name": "Gray",
+     "path": "/color/gray",
+     "children": [
+      {
+       "name": "Dark grey",
+       "path": "/color/gray/dark-grey"
+      },
+      {
+       "name": "Light grey",
+       "path": "/color/gray/light-grey"
       }
      ]
     }
@@ -1397,7 +1403,7 @@
         "colspan": 2
        },
        "item": {
-        "cataloguePath": "/shop/plants/philodendron-birkin"
+        "cataloguePath": "/shop/plants/aglaonemas-spotted-star"
        }
       },
       {
@@ -1406,7 +1412,7 @@
         "colspan": 1
        },
        "item": {
-        "cataloguePath": "/stories/bohemian-interior-design"
+        "cataloguePath": "/stories/use-your-houseplants-as-decor"
        }
       },
       {
@@ -1415,7 +1421,7 @@
         "colspan": 1
        },
        "item": {
-        "cataloguePath": "/stories/how-to-choose-the-right-rug"
+        "cataloguePath": "/stories/retro-colors"
        }
       }
      ]
@@ -1437,7 +1443,7 @@
         "colspan": 1
        },
        "item": {
-        "cataloguePath": "/stories/industrial-interior-design"
+        "cataloguePath": "/shop/plants/alocasia-portodora"
        }
       }
      ]
@@ -1459,7 +1465,7 @@
         "colspan": 1
        },
        "item": {
-        "cataloguePath": "/shop/plants/alocasia-portodora"
+        "cataloguePath": "/shop/plants/philodendron-scandens-brazil"
        }
       },
       {
@@ -1650,159 +1656,6 @@
    ]
   },
   {
-   "id": "6061b006b4897a0008afc72f",
-   "name": "Nine grid test black friday",
-   "rows": [
-    {
-     "columns": [
-      {
-       "layout": {
-        "rowspan": 2,
-        "colspan": 2
-       },
-       "item": {
-        "cataloguePath": "/shop/plants/ficus-tineke"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 2,
-        "colspan": 1
-       },
-       "item": {
-        "cataloguePath": "/shop/plants/ficus-tineke"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": {
-        "cataloguePath": "/shop/plants/alocasia"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": {
-        "cataloguePath": "/shop/plants/monstera-deliciosa"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": null
-      }
-     ]
-    },
-    {
-     "columns": [
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": {
-        "cataloguePath": "/shop/plants/sansevieria-laurentii"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": {
-        "cataloguePath": "/shop/plants/alocasia"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": null
-      }
-     ]
-    },
-    {
-     "columns": [
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": null
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": null
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": null
-      },
-      {
-       "layout": {
-        "rowspan": 2,
-        "colspan": 2
-       },
-       "item": null
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": null
-      }
-     ]
-    },
-    {
-     "columns": [
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": null
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": null
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": null
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": null
-      }
-     ]
-    }
-   ]
-  },
-  {
    "id": "607fbe182b57c2000717e2f7",
    "name": "Spring featured",
    "rows": [
@@ -1853,138 +1706,6 @@
        },
        "item": {
         "cataloguePath": "/shop/bathroom-fitting/mounted-bathroom-vanity-in-treated-wood"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": null
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "60896103ec8cfa00096ebf73",
-   "name": "Foo test",
-   "rows": [
-    {
-     "columns": [
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 2
-       },
-       "item": {
-        "cataloguePath": "/assets/posters-banner"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 2
-       },
-       "item": {
-        "cataloguePath": "/shop/plants/ficus-tineke"
-       }
-      }
-     ]
-    },
-    {
-     "columns": [
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 2
-       },
-       "item": {
-        "cataloguePath": "/stories/use-your-houseplants-as-decor"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": {
-        "cataloguePath": "/shop/plants/sansevieria-laurentii"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": {
-        "cataloguePath": "/shop/plants/monstera-deliciosa"
-       }
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "610d504ac0a06d000876d033",
-   "name": "test",
-   "rows": [
-    {
-     "columns": [
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": {
-        "cataloguePath": "/stories/use-your-houseplants-as-decor"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": {
-        "cataloguePath": "/stories/mid-century-modern-interior-design"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": {
-        "cataloguePath": "/stories/industrial-interior-design"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": null
-      }
-     ]
-    },
-    {
-     "columns": [
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": {
-        "cataloguePath": "/shop/sofas/arbour-eco"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 2
-       },
-       "item": {
-        "cataloguePath": "/shop/tables"
        }
       },
       {
@@ -2155,100 +1876,6 @@
        },
        "item": {
         "cataloguePath": "/stories/industrial-interior-design"
-       }
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "61ddb16408d1d944d043a8d5",
-   "name": "Super Grd",
-   "rows": [
-    {
-     "columns": [
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 2
-       },
-       "item": {
-        "cataloguePath": "/shop/plants/philodendron-birkin"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": {
-        "cataloguePath": "/shop/chairs/black-chair"
-       }
-      }
-     ]
-    },
-    {
-     "columns": [
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": {
-        "cataloguePath": "/assets/posters-assets/posters-assets"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 2
-       },
-       "item": {
-        "cataloguePath": "/stories/bohemian-interior-design"
-       }
-      }
-     ]
-    },
-    {
-     "columns": [
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 3
-       },
-       "item": {
-        "cataloguePath": "/assets/posters-assets/posters-assets"
-       }
-      }
-     ]
-    },
-    {
-     "columns": [
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": {
-        "cataloguePath": "/shop/plants/alocasia-portodora"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": {
-        "cataloguePath": "/shop/plants/peace-lily-spathiphyllum-wallisii"
-       }
-      },
-      {
-       "layout": {
-        "rowspan": 1,
-        "colspan": 1
-       },
-       "item": {
-        "cataloguePath": "/shop/plants/bonsai-ficus-ginseng"
        }
       }
      ]
@@ -2957,6 +2584,633 @@
        ]
       },
       {
+       "name": "AAC Chair",
+       "externalReference": null,
+       "shape": "default-product",
+       "components": {
+        "summary": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "AAC chair designed by Hay. Nordic minimalistic design at its best. For your home office. "
+            }
+           ]
+          }
+         ]
+        },
+        "specs": [
+         {
+          "title": "Specs",
+          "properties": {
+           "Width": "50 cm",
+           "Height": "110 cm",
+           "Sitting heigth": "65 cm"
+          }
+         }
+        ],
+        "bundle": []
+       },
+       "topics": null,
+       "vatType": "No Tax",
+       "variants": [
+        {
+         "name": "AAC Chair",
+         "sku": "aac-2-1",
+         "price": {
+          "default": 990,
+          "nok-test": 9900,
+          "sales": 798,
+          "usa-dollars": 798
+         },
+         "isDefault": true,
+         "attributes": {
+          "Color": "Cognac",
+          "Base": "Aluminium"
+         },
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/2/9392376105899_aac-21-soft_sense-nougat_black-powder-coated-alu-base.jpg",
+           "altText": null,
+           "caption": null
+          },
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/1/9392376105899_aac-21-soft_sense-nougat_black-powder-coated-alu-base.jpg",
+           "altText": "Beautiful cognac chair",
+           "caption": {
+            "json": [
+             {
+              "kind": "block",
+              "type": "paragraph",
+              "metadata": {},
+              "children": [
+               {
+                "kind": "inline",
+                "metadata": {},
+                "textContent": "Beautiful cognac chair"
+               }
+              ]
+             }
+            ]
+           }
+          },
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/2/2212011201603_aac-21-uph-hallingdal-130_white-base.jpg",
+           "altText": null,
+           "caption": null
+          },
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/2/2214011201603_aac-21-uph-hallingdal-130_alu-base.jpg",
+           "altText": null,
+           "caption": null
+          },
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/2/9392451101320_aac-21-soft-steelcut-trio-713_polished-alu-base.jpg",
+           "altText": null,
+           "caption": null
+          },
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/2/9392376212789_aac-21-soft-lola-navy_black-powder-coated-alu-base.jpg",
+           "altText": null,
+           "caption": null
+          },
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/2/9392456303538_aac-21-soft-swarm-multi-colour_polished-alu-base.jpg",
+           "altText": null,
+           "caption": null
+          },
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/3/9392457842625_aac-21-soft-nevada-nv0500_polished-alu-base.jpg",
+           "altText": null,
+           "caption": null
+          },
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/2/9392451703708_aac-21-soft-coda-100_polished-alu-base.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "AAC Chair",
+         "sku": "aac-2-2",
+         "price": {
+          "default": 990,
+          "nok-test": 9900,
+          "sales": 798,
+          "usa-dollars": 798
+         },
+         "isDefault": false,
+         "attributes": {
+          "Color": "Brown",
+          "Base": "Aluminium"
+         },
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/1/2210016105898_aac-21-uph-sense-cognac_black-base.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "AAC Chair",
+         "sku": "aac-2-3",
+         "price": {
+          "default": 990,
+          "nok-test": 9900,
+          "sales": 798,
+          "usa-dollars": 798
+         },
+         "isDefault": false,
+         "attributes": {
+          "Color": "Blue",
+          "Base": "Aluminium"
+         },
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/1/9392451101320_aac-21-soft-steelcut-trio-713_polished-alu-base.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "AAC Chair",
+         "sku": "aac-2-4",
+         "price": {
+          "default": 990,
+          "nok-test": 9900,
+          "sales": 798,
+          "usa-dollars": 798
+         },
+         "isDefault": false,
+         "attributes": {
+          "Color": "Light Gray",
+          "Base": "Aluminium"
+         },
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/1/2214011201603_aac-21-uph-hallingdal-130_alu-base.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "AAC Chair",
+         "sku": "aac-2-5",
+         "price": {
+          "default": 990,
+          "nok-test": 9900,
+          "sales": 798,
+          "usa-dollars": 798
+         },
+         "isDefault": false,
+         "attributes": {
+          "Color": "Gray",
+          "Base": "Aluminium"
+         },
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/1/2212011201603_aac-21-uph-hallingdal-130_white-base.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "AAC Chair",
+         "sku": "aac-2-6",
+         "price": {
+          "default": 990,
+          "nok-test": 9900,
+          "sales": 798,
+          "usa-dollars": 798
+         },
+         "isDefault": false,
+         "attributes": {
+          "Color": "Black",
+          "Base": "Aluminium"
+         },
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/1/9392457842625_aac-21-soft-nevada-nv0500_polished-alu-base.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "AAC Chair",
+         "sku": "aac-2-7",
+         "price": {
+          "default": 990,
+          "nok-test": 9900,
+          "sales": 798,
+          "usa-dollars": 798
+         },
+         "isDefault": false,
+         "attributes": {
+          "Color": "Purple",
+          "Base": "Aluminium"
+         },
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/1/9392376212789_aac-21-soft-lola-navy_black-powder-coated-alu-base.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "AAC Chair",
+         "sku": "aac-2-8",
+         "price": {
+          "default": 990,
+          "nok-test": 9900,
+          "sales": 798,
+          "usa-dollars": 798
+         },
+         "isDefault": false,
+         "attributes": {
+          "Color": "Cognac",
+          "Base": "Black"
+         },
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/1/9392376105899_aac-21-soft_sense-nougat_black-powder-coated-alu-base.jpg",
+           "altText": "Beautiful cognac chair",
+           "caption": {
+            "json": [
+             {
+              "kind": "block",
+              "type": "paragraph",
+              "metadata": {},
+              "children": [
+               {
+                "kind": "inline",
+                "metadata": {},
+                "textContent": "Beautiful cognac chair"
+               }
+              ]
+             }
+            ]
+           }
+          }
+         ]
+        },
+        {
+         "name": "AAC Chair",
+         "sku": "aac-2-9",
+         "price": {
+          "default": 990,
+          "nok-test": 9900,
+          "sales": 798,
+          "usa-dollars": 798
+         },
+         "isDefault": false,
+         "attributes": {
+          "Color": "Brown",
+          "Base": "Black"
+         },
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/1/2210016105898_aac-21-uph-sense-cognac_black-base.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "AAC Chair",
+         "sku": "aac-2-10",
+         "price": {
+          "default": 990,
+          "nok-test": 9900,
+          "sales": 798,
+          "usa-dollars": 798
+         },
+         "isDefault": false,
+         "attributes": {
+          "Color": "Blue",
+          "Base": "Black"
+         },
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/1/9392451101320_aac-21-soft-steelcut-trio-713_polished-alu-base.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "AAC Chair",
+         "sku": "aac-2-11",
+         "price": {
+          "default": 990,
+          "nok-test": 9900,
+          "sales": 798,
+          "usa-dollars": 798
+         },
+         "isDefault": false,
+         "attributes": {
+          "Color": "Light Gray",
+          "Base": "Black"
+         },
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/1/2214011201603_aac-21-uph-hallingdal-130_alu-base.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "AAC Chair",
+         "sku": "aac-2-12",
+         "price": {
+          "default": 990,
+          "nok-test": 9900,
+          "sales": 798,
+          "usa-dollars": 798
+         },
+         "isDefault": false,
+         "attributes": {
+          "Color": "Gray",
+          "Base": "Black"
+         },
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/1/2212011201603_aac-21-uph-hallingdal-130_white-base.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "AAC Chair",
+         "sku": "aac-2-13",
+         "price": {
+          "default": 990,
+          "nok-test": 9900,
+          "sales": 798,
+          "usa-dollars": 798
+         },
+         "isDefault": false,
+         "attributes": {
+          "Color": "Black",
+          "Base": "Black"
+         },
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/1/9392457842625_aac-21-soft-nevada-nv0500_polished-alu-base.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "AAC Chair",
+         "sku": "aac-2-14",
+         "price": {
+          "default": 990,
+          "nok-test": 9900,
+          "sales": 798,
+          "usa-dollars": 798
+         },
+         "isDefault": false,
+         "attributes": {
+          "Color": "Purple",
+          "Base": "Black"
+         },
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/1/9392376212789_aac-21-soft-lola-navy_black-powder-coated-alu-base.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "AAC Chair",
+         "sku": "aac-2-15",
+         "price": {
+          "default": 990,
+          "nok-test": 9900,
+          "sales": 798,
+          "usa-dollars": 798
+         },
+         "isDefault": false,
+         "attributes": {
+          "Color": "Cognac",
+          "Base": "White"
+         },
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/1/9392376105899_aac-21-soft_sense-nougat_black-powder-coated-alu-base.jpg",
+           "altText": "Beautiful cognac chair",
+           "caption": {
+            "json": [
+             {
+              "kind": "block",
+              "type": "paragraph",
+              "metadata": {},
+              "children": [
+               {
+                "kind": "inline",
+                "metadata": {},
+                "textContent": "Beautiful cognac chair"
+               }
+              ]
+             }
+            ]
+           }
+          }
+         ]
+        },
+        {
+         "name": "AAC Chair",
+         "sku": "aac-2-16",
+         "price": {
+          "default": 990,
+          "nok-test": 9900,
+          "sales": 798,
+          "usa-dollars": 798
+         },
+         "isDefault": false,
+         "attributes": {
+          "Color": "Brown",
+          "Base": "White"
+         },
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/1/2210016105898_aac-21-uph-sense-cognac_black-base.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "AAC Chair",
+         "sku": "aac-2-17",
+         "price": {
+          "default": 990,
+          "nok-test": 9900,
+          "sales": 798,
+          "usa-dollars": 798
+         },
+         "isDefault": false,
+         "attributes": {
+          "Color": "Blue",
+          "Base": "White"
+         },
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/1/9392451101320_aac-21-soft-steelcut-trio-713_polished-alu-base.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "AAC Chair",
+         "sku": "aac-2-18",
+         "price": {
+          "default": 990,
+          "nok-test": 9900,
+          "sales": 798,
+          "usa-dollars": 798
+         },
+         "isDefault": false,
+         "attributes": {
+          "Color": "Light Gray",
+          "Base": "White"
+         },
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/1/2214011201603_aac-21-uph-hallingdal-130_alu-base.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "AAC Chair",
+         "sku": "aac-2-19",
+         "price": {
+          "default": 990,
+          "nok-test": 9900,
+          "sales": 798,
+          "usa-dollars": 798
+         },
+         "isDefault": false,
+         "attributes": {
+          "Color": "Gray",
+          "Base": "White"
+         },
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/1/2212011201603_aac-21-uph-hallingdal-130_white-base.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "AAC Chair",
+         "sku": "aac-2-20",
+         "price": {
+          "default": 990,
+          "nok-test": 9900,
+          "sales": 798,
+          "usa-dollars": 798
+         },
+         "isDefault": false,
+         "attributes": {
+          "Color": "Black",
+          "Base": "White"
+         },
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/1/9392457842625_aac-21-soft-nevada-nv0500_polished-alu-base.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        },
+        {
+         "name": "AAC Chair",
+         "sku": "aac-2-21",
+         "price": {
+          "default": 990,
+          "nok-test": 9900,
+          "sales": 798,
+          "usa-dollars": 798
+         },
+         "isDefault": false,
+         "attributes": {
+          "Color": "Purple",
+          "Base": "White"
+         },
+         "externalReference": null,
+         "stock": 100,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/22/1/31/1/9392376212789_aac-21-soft-lola-navy_black-powder-coated-alu-base.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        }
+       ]
+      },
+      {
        "name": "Classic Lounge Chair",
        "externalReference": null,
        "shape": "default-product",
@@ -3078,128 +3332,6 @@
            "caption": null
           }
          ]
-        }
-       ]
-      },
-      {
-       "name": "White Lounge Chair",
-       "externalReference": null,
-       "shape": "default-product",
-       "components": {
-        "summary": {
-         "json": [
-          {
-           "kind": "block",
-           "type": "paragraph",
-           "metadata": {},
-           "children": [
-            {
-             "kind": "inline",
-             "metadata": {},
-             "textContent": "Sleek and elegant. Perfect for when you want a place to sit in an open environment, but still talk to the people around you. "
-            }
-           ]
-          }
-         ]
-        },
-        "specs": [
-         {
-          "title": "Dimensions",
-          "properties": {
-           "Width": "80 cm",
-           "Height": "90 cm",
-           "Depth": "50 cm"
-          }
-         }
-        ],
-        "description": [
-         {
-          "title": "White Lounge Chair",
-          "body": {
-           "json": [
-            {
-             "kind": "block",
-             "type": "paragraph",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu."
-              }
-             ]
-            },
-            {
-             "kind": "block",
-             "type": "paragraph",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus."
-              }
-             ]
-            },
-            {
-             "kind": "block",
-             "type": "paragraph",
-             "metadata": {},
-             "children": [
-              {
-               "kind": "inline",
-               "metadata": {},
-               "textContent": "Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem."
-              }
-             ]
-            }
-           ]
-          }
-         }
-        ]
-       },
-       "topics": [
-        {
-         "path": "/material/wood"
-        },
-        {
-         "path": "/color/white"
-        },
-        {
-         "path": "/color/orange"
-        },
-        {
-         "path": "/fabric/leather"
-        }
-       ],
-       "vatType": "Standard",
-       "variants": [
-        {
-         "name": "Chair",
-         "sku": "chair-1625667180481",
-         "price": {
-          "default": 79
-         },
-         "isDefault": true,
-         "attributes": {},
-         "externalReference": null,
-         "stock": 12,
-         "images": [
-          {
-           "src": "https://media.crystallize.com/furniture/21/7/7/16/lounge-chair-white.jpg",
-           "altText": null,
-           "caption": null
-          }
-         ]
-        },
-        {
-         "name": "White Lounge Chair (2)",
-         "sku": "white-lounge-chair-1641484068541",
-         "price": {},
-         "isDefault": false,
-         "attributes": {},
-         "externalReference": null,
-         "stock": null
         }
        ]
       },
@@ -3446,6 +3578,120 @@
          "images": [
           {
            "src": "https://media.crystallize.com/furniture/21/7/7/14/bohemian-chair.jpg",
+           "altText": null,
+           "caption": null
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "White Lounge Chair",
+       "externalReference": null,
+       "shape": "default-product",
+       "components": {
+        "summary": {
+         "json": [
+          {
+           "kind": "block",
+           "type": "paragraph",
+           "metadata": {},
+           "children": [
+            {
+             "kind": "inline",
+             "metadata": {},
+             "textContent": "Sleek and elegant. Perfect for when you want a place to sit in an open environment, but still talk to the people around you. "
+            }
+           ]
+          }
+         ]
+        },
+        "specs": [
+         {
+          "title": "Dimensions",
+          "properties": {
+           "Width": "80 cm",
+           "Height": "90 cm",
+           "Depth": "50 cm"
+          }
+         }
+        ],
+        "description": [
+         {
+          "title": "White Lounge Chair",
+          "body": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus."
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem."
+              }
+             ]
+            }
+           ]
+          }
+         }
+        ],
+        "bundle": []
+       },
+       "topics": [
+        {
+         "path": "/material/wood"
+        },
+        {
+         "path": "/color/white"
+        },
+        {
+         "path": "/color/orange"
+        },
+        {
+         "path": "/fabric/leather"
+        }
+       ],
+       "vatType": "Standard",
+       "variants": [
+        {
+         "name": "Chair",
+         "sku": "chair-1625667180481",
+         "price": {
+          "default": 79
+         },
+         "isDefault": true,
+         "attributes": {},
+         "externalReference": null,
+         "stock": 12,
+         "images": [
+          {
+           "src": "https://media.crystallize.com/furniture/21/7/7/16/lounge-chair-white.jpg",
            "altText": null,
            "caption": null
           }
@@ -5082,6 +5328,16 @@
           }
          ]
         },
+        "specs": [
+         {
+          "title": "Specs",
+          "properties": {
+           "KWh": "123 ",
+           "Air to air": "123123",
+           "fghfgh": "fgh"
+          }
+         }
+        ],
         "description": [
          {
           "title": "About",
@@ -5137,6 +5393,80 @@
             }
            ]
           }
+         },
+         {
+          "title": "Ny paragraf",
+          "body": {
+           "json": [
+            {
+             "kind": "block",
+             "type": "paragraph",
+             "metadata": {},
+             "children": [
+              {
+               "kind": "inline",
+               "metadata": {},
+               "textContent": "dsfg dsfgsd fgdsfg"
+              }
+             ]
+            },
+            {
+             "kind": "block",
+             "metadata": {},
+             "type": "unordered-list",
+             "children": [
+              {
+               "kind": "block",
+               "type": "list-item",
+               "metadata": {},
+               "children": [
+                {
+                 "kind": "inline",
+                 "metadata": {},
+                 "textContent": "sdfgdsfg"
+                }
+               ]
+              },
+              {
+               "kind": "block",
+               "type": "list-item",
+               "metadata": {},
+               "children": [
+                {
+                 "kind": "inline",
+                 "metadata": {},
+                 "textContent": "dsfg"
+                }
+               ]
+              },
+              {
+               "kind": "block",
+               "type": "list-item",
+               "metadata": {},
+               "children": [
+                {
+                 "kind": "inline",
+                 "metadata": {},
+                 "textContent": "ds"
+                }
+               ]
+              },
+              {
+               "kind": "block",
+               "type": "list-item",
+               "metadata": {},
+               "children": [
+                {
+                 "kind": "inline",
+                 "metadata": {},
+                 "textContent": "fg"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
          }
         ],
         "related-products": [
@@ -5159,6 +5489,14 @@
          {
           "cataloguePath": "/shop/plants/bonsai-ficus-ginseng",
           "externalReference": null
+         },
+         {
+          "cataloguePath": "/shop/plants/alocasia-portodora",
+          "externalReference": null
+         },
+         {
+          "cataloguePath": "/shop/plants/philodendron-erubescens",
+          "externalReference": null
          }
         ],
         "bundle": [
@@ -5170,7 +5508,7 @@
            }
           ],
           "count": {
-           "number": 1,
+           "number": 2,
            "unit": "Pcs"
           }
          },
@@ -5195,6 +5533,18 @@
           ],
           "count": {
            "number": 3,
+           "unit": "Pcs"
+          }
+         },
+         {
+          "product": [
+           {
+            "cataloguePath": "/shop/plants/philodendron-birkin",
+            "externalReference": null
+           }
+          ],
+          "count": {
+           "number": 2,
            "unit": "Pcs"
           }
          }
@@ -5268,7 +5618,7 @@
           "Size": "large"
          },
          "externalReference": null,
-         "stock": 23,
+         "stock": 34,
          "images": [
           {
            "src": "https://media.crystallize.com/furniture/22/1/7/4/monstera-deliciosa-grow-pot-extra-large_1000x1000.jpg",
@@ -5625,7 +5975,7 @@
        "vatType": "Standard",
        "variants": [
         {
-         "name": "plant",
+         "name": "Calathea",
          "sku": " calathea-lancifolia-1628522772928",
          "price": {
           "default": 42
@@ -6056,6 +6406,14 @@
           }
          ]
         },
+        "specs": [
+         {
+          "title": "",
+          "properties": {
+           "": ""
+          }
+         }
+        ],
         "description": [
          {
           "title": "About",
@@ -6132,6 +6490,14 @@
          },
          {
           "cataloguePath": "/shop/plants/philodendron-erubescens",
+          "externalReference": null
+         },
+         {
+          "cataloguePath": "/shop/plants/philodendron-scandens-brazil",
+          "externalReference": null
+         },
+         {
+          "cataloguePath": "/shop/plants/monstera-deliciosa",
           "externalReference": null
          }
         ],
@@ -8134,7 +8500,7 @@
        "vatType": "Standard",
        "variants": [
         {
-         "name": "p",
+         "name": "Peace Lily",
          "sku": "peace-lily-1628522075554",
          "price": {
           "default": 48
@@ -16772,6 +17138,10 @@
        },
        {
         "cataloguePath": "/shop/plants/pilea-plant",
+        "externalReference": null
+       },
+       {
+        "cataloguePath": "/shop/plants/peace-lily-spathiphyllum-wallisii-1",
         "externalReference": null
        }
       ]

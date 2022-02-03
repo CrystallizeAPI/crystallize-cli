@@ -3052,51 +3052,6 @@
      ]
     },
     {
-     "name": "Dog Carrier",
-     "externalReference": null,
-     "shape": "5f6c770133ed22001d2797ed",
-     "components": {
-      "summary": {
-       "json": [
-        {
-         "kind": "block",
-         "type": "paragraph",
-         "metadata": {},
-         "children": [
-          {
-           "kind": "inline",
-           "metadata": {},
-           "textContent": "A dog carrier for small dogs. "
-          }
-         ]
-        }
-       ]
-      }
-     },
-     "topics": null,
-     "vatType": "No Tax",
-     "variants": [
-      {
-       "name": "New variation",
-       "sku": "dog-carrier-423710",
-       "price": {
-        "default": 89
-       },
-       "isDefault": true,
-       "attributes": {},
-       "externalReference": null,
-       "stock": 34,
-       "images": [
-        {
-         "src": "https://media.crystallize.com/voyage/20/10/8/11/dog-carrier.jpg",
-         "altText": null,
-         "caption": null
-        }
-       ]
-      }
-     ]
-    },
-    {
      "name": "Compass",
      "externalReference": null,
      "shape": "5f6c770133ed22001d2797ed",
@@ -3713,6 +3668,51 @@
        "images": [
         {
          "src": "https://media.crystallize.com/voyage/20/10/8/13/water-bottle.jpg",
+         "altText": null,
+         "caption": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Dog Carrier",
+     "externalReference": null,
+     "shape": "5f6c770133ed22001d2797ed",
+     "components": {
+      "summary": {
+       "json": [
+        {
+         "kind": "block",
+         "type": "paragraph",
+         "metadata": {},
+         "children": [
+          {
+           "kind": "inline",
+           "metadata": {},
+           "textContent": "A dog carrier for small dogs. "
+          }
+         ]
+        }
+       ]
+      }
+     },
+     "topics": null,
+     "vatType": "No Tax",
+     "variants": [
+      {
+       "name": "Dog Carrier",
+       "sku": "dog-carrier-423710",
+       "price": {
+        "default": 89
+       },
+       "isDefault": true,
+       "attributes": {},
+       "externalReference": null,
+       "stock": 34,
+       "images": [
+        {
+         "src": "https://media.crystallize.com/voyage/20/10/8/11/dog-carrier.jpg",
          "altText": null,
          "caption": null
         }
