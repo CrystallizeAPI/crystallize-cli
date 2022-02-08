@@ -1,3 +1,10 @@
+## [3.31.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.31.0...v3.31.1) (2022-02-08)
+
+
+### Bug Fixes
+
+* furniture grid missing items ([2a0b4c7](https://github.com/CrystallizeAPI/crystallize-cli/commit/2a0b4c72ab51b53610e6c3f9bad7dffb65514a80))
+
 # [3.31.0](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.30.0...v3.31.0) (2022-02-03)
 
 
