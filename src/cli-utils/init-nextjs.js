@@ -28,7 +28,7 @@ async function initNextJS({ answers, projectPath }) {
 	});
 
 	let nextJsConfigContent = fs.readFileSync(
-		path.resolve(projectPath, 'next.config.js'),
+		path.resolve(projectPath, 'next-i18next.config'),
 		'utf-8'
 	);
 	nextJsConfigContent = nextJsConfigContent.replace(
@@ -40,7 +40,7 @@ async function initNextJS({ answers, projectPath }) {
 		`defaultLocale: '${locales[0]}'`
 	);
 	fs.writeFileSync(
-		path.resolve(projectPath, 'next.config.js'),
+		path.resolve(projectPath, 'next-i18next.config'),
 		nextJsConfigContent,
 		'utf-8'
 	);
