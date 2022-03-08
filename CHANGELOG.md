@@ -1,3 +1,10 @@
+## [3.31.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.31.1...v3.31.2) (2022-03-08)
+
+
+### Bug Fixes
+
+* multilingual setup for next.js works properly again ([cd3de5d](https://github.com/CrystallizeAPI/crystallize-cli/commit/cd3de5d9385e7c48bebd34b91c817e52145315e1))
+
 ## [3.31.1](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.31.0...v3.31.1) (2022-02-08)
 
 
