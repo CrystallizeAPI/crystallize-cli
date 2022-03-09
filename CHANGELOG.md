@@ -1,3 +1,10 @@
+## [3.31.3](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.31.2...v3.31.3) (2022-03-09)
+
+
+### Bug Fixes
+
+* correct path to config for next.js ([1f4af08](https://github.com/CrystallizeAPI/crystallize-cli/commit/1f4af08cb8747b53af2869defa97027b4ea5a5da))
+
 ## [3.31.2](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.31.1...v3.31.2) (2022-03-08)
 
 
