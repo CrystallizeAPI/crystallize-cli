@@ -1,3 +1,10 @@
+## [3.31.6](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.31.5...v3.31.6) (2022-05-12)
+
+
+### Bug Fixes
+
+* yet another ([6fa020c](https://github.com/CrystallizeAPI/crystallize-cli/commit/6fa020cd3d7175c4188aadbf6943e924d31981e5))
+
 ## [3.31.5](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.31.4...v3.31.5) (2022-05-12)
 
 
