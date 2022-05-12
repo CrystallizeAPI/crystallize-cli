@@ -54,7 +54,7 @@
     ]
   },
   "dependencies": {
-    "@crystallize/import-utilities": "^0.71.2",
+    "@crystallize/import-utilities": "^0.93.3",
     "conf": "^10.0.1",
     "fs-extra": "^9.0.1",
     "gittar": "^0.1.1",
