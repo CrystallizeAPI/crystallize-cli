@@ -1,3 +1,10 @@
+## [3.31.5](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.31.4...v3.31.5) (2022-05-12)
+
+
+### Bug Fixes
+
+* bump deps ([8bd5246](https://github.com/CrystallizeAPI/crystallize-cli/commit/8bd524635628b1c8e42de24cc08432dc131ce816))
+
 ## [3.31.4](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.31.3...v3.31.4) (2022-05-12)
 
 
