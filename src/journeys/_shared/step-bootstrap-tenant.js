@@ -34,6 +34,8 @@ areaIdToName.set('languages', 'Languages');
 areaIdToName.set('priceVariants', 'Price variants');
 areaIdToName.set('vatTypes', 'VAT types');
 areaIdToName.set('topicMaps', 'Topic maps');
+areaIdToName.set('customers', 'Customers');
+areaIdToName.set('orders', 'Orders');
 
 function AreaStatus({ id, progress, warnings }) {
 	const name = areaIdToName.get(id) || id;
@@ -364,11 +366,11 @@ function RunBootstrapper({ answers, onDone }) {
 	}
 
 	const keys = Object.keys(status);
-	const dynamicStatuses = keys.filter((k) => !['media', 'items'].includes(k));
+	const firstAreas = keys.filter((k) => !['media', 'items'].includes(k));
 
 	return (
 		<>
-			{dynamicStatuses.map((area) => (
+			{firstAreas.map((area) => (
 				<AreaStatus key={area} id={area} {...status[area]} />
 			))}
 			<AreaStatus id="media" {...status.media} />
