@@ -1,3 +1,10 @@
+## [3.31.7](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.31.6...v3.31.7) (2022-05-13)
+
+
+### Bug Fixes
+
+* corrected name output in bootstrapper ([7f7a155](https://github.com/CrystallizeAPI/crystallize-cli/commit/7f7a1558871f07cf78bf70d5a5917bf27ed9748b))
+
 ## [3.31.6](https://github.com/CrystallizeAPI/crystallize-cli/compare/v3.31.5...v3.31.6) (2022-05-12)
 
 
